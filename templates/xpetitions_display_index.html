@@ -1,0 +1,29 @@
+<{include file='db:xpetitions_header.html'}>
+
+<{if !$petition_offline}>
+
+<div class="xpetitions">
+
+	<div class="xpetitions_title"><{$petition_title}><br/>
+	<{$whoview}>
+	<{if $xoops_isadmin == true}>
+		&nbsp;<a href="<{$xoops_url}><{$link_adm_modif}>"><img src="images/edit.gif" /></a>
+		&nbsp;<a href="<{$xoops_url}><{$link_adm_delete}>"><img src="images/delete.gif" /></a>
+	<{/if}>
+	</div>
+
+	<{include file='db:xpetitions_display_toolbar.html'}>
+
+	<div class="xpetition_desc">
+		<{$petition_desc}>
+	</div>
+
+	<{include file='db:xpetitions_display_toolbar.html'}>
+
+</div>
+
+<{else}>
+<div class="xpetitions_offline"><{$petition_offline}></div>
+<{/if}>
+
+<{include file='db:xpetitions_footer.html'}>

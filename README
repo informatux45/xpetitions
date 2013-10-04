@@ -1,0 +1,95 @@
+Module Xpetitions
+=================
+
+Petitions module on line multilangues developed to function with the hack Smartfactory Multilanguages.
+The forms can be accompanied by an CAPTCHA to avoid the spams (choices of 3 captchas).
+
+You can create petitions as many as wish it to you.
+
+Each petition can have 3 statutes:
+* Active (the petition can be signed if the date of starting is not higher than the current date)
+* Offline (the petition is not visible and cannot be signed)
+* Archived (the petition is visible and consultable but cannot be signed)
+
+A help is present on each page of the admin to help you with the various possible options.
+
+The module has a style sheet which you can modify according to your graphic charters.
+
+Functionalities of the module (admin):
+- Creation of petitions (table of the signatures, titles, description, email of answer, statute, date of starting, associated paper document)
+- Modification and removal of petitions
+- Visualization of the signatures
+- Extraction of the signatures to the csv format
+- Revival of the signatories who did not confirm their signature
+- manual Recording of signatures (signature by paper document)
+- Removal of signatures
+- Preferences with multiple choices
+- Blocks with preferences (last signatures, active petitions, filed petitions)
+
+Functionality of the module (customer):
+- Bar of navigation in the petitions (skeletal)
+- Reception of the module with recapitulation of the petitions and numbers of signatures associated (skeletal)
+- Reception with a petition with description and bars dynamic (variable parameters: downloadable associated document, to send to a friend (yes or not))
+- Send to a friend: form with image captcha if activated and dynamic when the fields are filled.
+- Signature: form with image captcha if activated and controls address email by script (5 levels of control - to see function)
+- Creation of a key MD5 (15 positions) for the validation of the signatures
+- Visualization of all the signatories or alphabetically
+
+
+Additional functionalities
+===============================
+
+- Settings: Signatures validation by email or double click
+- Settings: Choice of the Editor type (for the seizure of the petitions)
+- Management of the signatures: Forced validation of the unconfirmed signatories
+- Management of the emails: Modification of the emails contents sent to the authors of signatures
+- Management of the fields: Management of the visible and required form fields of the petitions signatures
+- Management of the captcha (NEW): Management of the captcha in forms
+- Style sheet: Modification of the petitions dynamic bars(clear: both)
+- Signature Form: Dynamic message following selected option (email or Automatic)
+- Signatures (visualization): Between brackets, posting of the job (if it) if not posting of the country (if it) if not removal of the brackets
+- Signatures (visualization): Suppression of the last comma after the last signatory of the list
+
+
+Module Installation
+===================
+
+Xpetitions settles like all the other Xoops modules.
+You must copy the directory /xpetitions in the directory of the Xoops modules of your site.
+Then identify as administrator, menu Admin System - modules then in the modules not installed, click on the icon of installation.
+Then, follow the instruction which follows to the screen.
+
+Put the directory /xpetitions/csv/ accessible in writing for export from the signatures (chmod 777).
+
+Create a directory, in the directory upload of Xoops, (ex: /upload/xpetitions) accessible in writing for storage from the petitions papers which you will associate your petitions on line.
+
+There is a 'mysql.en.sql' file for the english users in the directory 'mysql'. Rename this file into 'mysql.sql' if you want to use the email messages in english.
+There is a 'mysql.it.sql' file for the italian users in the directory 'mysql'. Rename this file into 'mysql.sql' if you want to use the email messages in italian.
+
+
+Xoops Supported Versions
+========================
+
+The Xpetitions module was tested on Xoops 2.5.5 (Supported Versions 2.5.x).
+
+
+
+Languages
+=========
+
+The module is translate in French, English and Italian (thanks to Francesco).
+
+
+
+PHP/MYSQL supported versions
+============================
+
+Mysql >= 3.23, 4.x, 5.x Php 4 & 5
+
+
+
+Feedback
+========
+
+Use the INFORMATUX contact form or the forum on the website:
+http://www.informatux.com/xpetitions

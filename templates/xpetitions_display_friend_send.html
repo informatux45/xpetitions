@@ -1,0 +1,20 @@
+<{include file='db:xpetitions_header.html'}>
+
+<{if !$petition_offline}>
+
+<div class="xpetitions">
+
+	<div class="xpetitions_title"><{$petition_title}></div>
+
+	<div class="xpetitions_sign_recorded">
+		<img class="xpetitions_sign_img" src="images/xpetitions_sign.jpg" />
+		<{$petition_email_send}>
+	</div>
+
+</div>
+
+<{else}>
+<div class="xpetitions_offline"><{$petition_offline}></div>
+<{/if}>
+
+<{include file='db:xpetitions_footer.html'}>

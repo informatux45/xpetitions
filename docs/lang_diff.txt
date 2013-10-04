@@ -1,0 +1,14 @@
+LANGUAGE DIFFERENCES
+=====================
+
+Aucun changement de langue depuis la version précédente.
+
+Légende :
++ Ajouté
+- Supprimé
+* Modifié
+x renommé
+
+---------------------------------------
+       1.10 Final  02-10-2013
+---------------------------------------

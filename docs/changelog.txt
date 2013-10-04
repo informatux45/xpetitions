@@ -1,0 +1,94 @@
+=========================================================
+2009/05/24  1.20 Final
+=========================================================
+
+Modification du module XPETITIONS pour qu'il fonctionne sous XOOPS 2.5.x.
+Mise en conformité du modules avec le Framework "ModuleClasses" en version 1.1.
+[admin] Modification de l'accueil du module pour fonctionnement avec ModuleAdmin 1.1
+[admin] Création de la page d'index
+[admin] Création de la page "about"
+[admin] Création de boutons d'action sur toutes les pages admin
+[admin] Ajout d'un bouton "créer le répertoire" d'upload des fichiers joints aux pétitions
+[admin - client] Nombreux tests pour corrections de bugs
+
+
+=========================================================
+2009/05/24  1.10 Final
+=========================================================
+
+Le module a été traduit en italien par Francesco (http://takeaweb.it).
+Francesco a également développé quelques fonctionnalités supplémentaires à XPETITIONS. Un grand merci à Francesco.
+
+Voici les nouveautés de cette version :
+[ADMIN] Gestion des captchas (choix de 3 captchas)
+[ADMIN] Gestion de l'affichage des signatures (colonne, ligne, informations dans les signatures)
+[ADMIN] Tableau de bord avec détection des paramètres du bon fonctionnement du module
+[ADMIN] Modification des icônes de modification et de suppression
+[ADMIN] Modification de la couleur des onglets (survol)
+[ADMIN] Modification de l'affichage de l'aide (icône)
+[ADMIN] Création d'une pétition : choix de la visualisation des signatures par groupes (tous, utilisateurs enregistrés, admin)
+
+[FRONT] Signatures : Mise en gras de la lettre des signataires consultés (modifiable dans la feuille de style du module)
+[FRONT] Signatures : Affichage selon paramètres (modifiable dans l'administration)
+[FRONT] Signatures : Contrôle de l'affichage des signatures suivant paramètres de groupe (tous, utilisateurs enregistrés, admin)
+
+[DIVERS] Nouveau logo
+[DIVERS] Modification des l'ajout des antislashs dans les chaînes
+[DIVERS] Une nouvelle table SQL (options des captchas et des signatures)
+[DIVERS] Traduction du module en italien
+[DIVERS] Traduction du fichier mysql
+
+
+=========================================================
+2008/09/11  1.01 Final
+=========================================================
+
+Corrections mineures.
+
+
+=========================================================
+2008/07/05  1.00 Final
+=========================================================
+
+1. [admin] Nouvel onglet admin "captcha" - préférences des images captcha par l'administration
+2. [admin] Choix de deux captchas (image ou texte)
+3. [admin] Amélioration visuel de l'aide en ligne
+4. [admin] Choix de l'affichage des signataires (vertical ou séparés par des virgules)
+5. [client] Affichage des signataires : lettre sélectionnée dans une couleur différente 
+
+
+=========================================================
+2008/05/02  0.19 Beta
+=========================================================
+
+1. Nouvel onglet admin "email" - gestion des emails par l'administration
+2. Nouvel onglet admin "captcha" - préférences des images captcha par l'administration
+3. Validation des signatures par double validation sans email - réglages par les préférences
+4. Choix des éditeurs pour la saisie de la pétition 
+
+
+=========================================================
+2008/04/14  0.18 Final
+=========================================================
+
+Version stable du module XPETITIONS :
+
+- Stable : Passage en version final 0.18 du module xpetitions
+Un bug corrigé (conflit de récupération de variable rencontré sur quelques versions de xoops)
+- RC2 : Passage du module en version RC2. Correction effectuée sur le nom de la session du captcha qui rentrait en conflit avec d'autres captcha déjà embarqué par d'autres modules xoops.
+- RC1 : Suite aux retours effectués par les utilisateurs du module, "XPETITIONS" passe en version RC1 0.18. Le module tend vers une version stable prochainement. Merci pour tous les retours effectués
+- BETA 7 : Correction de la page index d'une pétition qui affichait les icônes de modification et suppression pour les groupes autres que les administrateurs
+- BETA 6 : Corrections pour xoops 2.0.18
+- BETA 5 : corrections de bug pour fonctionnement avec Xoops 2.0.18
+- BETA 4 : Correction du fichier index.php (accueil du module) - Erreur d'assignation d'une variable
+- BETA 3 : Modification de la vérification de l'email à la signature d'un internaute
+- BETA 2 : Version 0.17 bétâ 2 compatible xoops 2.0.16. En cours de test pour xoops 2.0.18
+
+
+=========================================================
+2008/01/23  0.17 Beta
+=========================================================
+
+Version intermédiaire avant version stable 0.18.
+Pour connaitre les fonctionnalités du modules, voir la description dans la catégorie Sommaire.
+Cette version fonctionne sur xoops 2.0.16 (hacké avec multilangues 2.0.7 final de Smartfactory) et fonctionnera pleinement avec xoops 2.0.18 dans la version stable. 

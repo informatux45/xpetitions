@@ -1,0 +1,8 @@
+CREDITS
+==========
+
+XPETITIONS est développé par INFORMATUX (http://www.informatux.com/).
+
+XPETITIONS est un module de pétitions en ligne créé et adapter pour XOOPS suite à un développement pour la Coalition Mondiale Contre La Peine De Mort (http://www.worldcoalition.org/).
+
+Il vous permet de gérer autant de pétitions que vous le souhaitez, d'extraire les signataires par fichier .csv, d'agrémenter vos formulaires de signature par des contrôles captcha, etc.
