@@ -29,6 +29,8 @@ define('_MI_XPETITIONS_MENU7',                  'Captcha');
 // Préférences du module
 define('_MI_XPETITIONS_NAVIGATION',		'Navigation bar');
 define('_MI_XPETITIONS_NAVIGATION_DSC',		'This option enables visitors to navigate through your petitions via a dedicated toolbar');
+define('_MI_XPETITIONS_NAVIGATION_HOME',        'Navigation bar link to home website');
+define('_MI_XPETITIONS_NAVIGATION_HOME_DSC',	'This option enables to show in the breadcrumb the link to your website homepage');
 define('_MI_XPETITIONS_UPLOAD_SIZE',		'Maximum upload size for printable petitions');
 define('_MI_XPETITIONS_UPLOAD_SIZE_DSC',	'Maximum size (in bytes) for the attached file containing a printable version of an online petition');
 define('_MI_XPETITIONS_ADMIN_PAGE',		'Number of petitions to display');
