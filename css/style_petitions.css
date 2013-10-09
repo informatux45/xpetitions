@@ -1,0 +1,14 @@
+/* 
+    Document   : style_petitions
+    Created on : 9 oct. 2013, 22:17:56
+    Author     : Patrice
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.xpetitions_column {
+    width: 49%;
+    display: block;
+    float: left;
+    padding: 2px;
+}
