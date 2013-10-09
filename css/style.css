@@ -45,7 +45,7 @@ div#xpetitions_help_a {border: 0px solid silver; background: url('../images/help
 .xpetitions_title {font-size: 14px; font-weight: bold; color: black; padding: 0px;}
 .xpetitions_name {font-size: 10px; font-weight: bold; color: black;}
 .xpetitions_name a {font-size: 10px; font-weight: bold; color: gray;}
-.xpetitions_home {width: 100%; line-height: 18px; font-weight: normal; font-size: 14px; color: black; background-color: silver; padding: 3px;}
+.xpetitions_home {width: 99%; line-height: 1.6em; font-weight: normal; font-size: 1em; color: black; background-color: silver; padding: 0.1%;}
 .xpetitions_offline {font-size: 14px; font-weight: bold; color: black; padding: 0px 0px 12px 0px;}
 
 .xpetitions_sign {width: 99%; border: 1px solid gray; padding: 3px; background-color: silver; text-align: center; font: normal 12px; color: black; margin: 12px 0px; clear: both;}
