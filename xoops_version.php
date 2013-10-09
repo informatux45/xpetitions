@@ -197,7 +197,15 @@ $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = 1;
 
 $i++;
-$modversion['config'][$i]['name'] = 'upload_size'; // taille d'upload maximum autorisée pour une pétition papier
+$modversion['config'][$i]['name'] = 'navigation_home'; // barre de navigation visiteur, accueil du site
+$modversion['config'][$i]['title'] = '_MI_XPETITIONS_NAVIGATION_HOME';
+$modversion['config'][$i]['description'] = '_MI_XPETITIONS_NAVIGATION_HOME_DSC';
+$modversion['config'][$i]['formtype'] = 'yesno';
+$modversion['config'][$i]['valuetype'] = 'int';
+$modversion['config'][$i]['default'] = 1;
+
+$i++;
+$modversion['config'][$i]['name'] = 'upload_size'; // taille d'upload maximum autorisee pour une petition papier
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_UPLOAD_SIZE';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_UPLOAD_SIZE_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
@@ -205,7 +213,7 @@ $modversion['config'][$i]['valuetype'] = 'string';
 $modversion['config'][$i]['default'] = '2000000';
 
 $i++;
-$modversion['config'][$i]['name'] = 'adminindex_page'; // nombre de pétitions visibles par page [admin]
+$modversion['config'][$i]['name'] = 'adminindex_page'; // nombre de petitions visibles par page [admin]
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_ADMIN_PAGE';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_ADMIN_PAGE_DSC';
 $modversion['config'][$i]['formtype'] = 'select';
@@ -214,7 +222,7 @@ $modversion['config'][$i]['default'] = '10';
 $modversion['config'][$i]['options'] = array('5' => 5, '10' => 10, '15' => 15, '20' => 20, '25' => 25, '30' => 30, '50' => 50);
 
 $i++;
-$modversion['config'][$i]['name'] = 'index_per_page'; // nombre de pétitions visibles par page [visiteurs]
+$modversion['config'][$i]['name'] = 'index_per_page'; // nombre de petitions visibles par page [visiteurs]
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_INDEX_PAGE';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_INDEX_PAGE_DSC';
 $modversion['config'][$i]['formtype'] = 'select';
@@ -232,7 +240,7 @@ $modversion['config'][$i]['default'] = '25';
 $modversion['config'][$i]['options'] = array('5' => 5, '10' => 10, '15' => 15, '20' => 20, '25' => 25, '30' => 30, '50' => 50, '55' => 55, '60' => 60, '65' => 65, '70' => 70, '75' => 75, '80' => 80, '85' => 85, '90' => 90, '95' => 95, '100' => 100);
 
 $i++;
-$modversion['config'][$i]['name'] = 'get_counter_signs'; // afficher le nombre de signature par pétitions [accueil visiteurs]
+$modversion['config'][$i]['name'] = 'get_counter_signs'; // afficher le nombre de signature par petitions [accueil visiteurs]
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_INDEX_SIGNS';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_INDEX_SIGNS_DSC';
 $modversion['config'][$i]['formtype'] = 'yesno';
@@ -240,7 +248,7 @@ $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = '1';
 
 $i++;
-$modversion['config'][$i]['name'] = 'petitions_archives'; // afficher les pétitions archivées sur la page d'accueil
+$modversion['config'][$i]['name'] = 'petitions_archives'; // afficher les petitions archivees sur la page d'accueil
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_INDEX_ARCHI';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_INDEX_ARCHI_DSC';
 $modversion['config'][$i]['formtype'] = 'yesno';
@@ -248,7 +256,7 @@ $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = 1;
 
 $i++;
-$modversion['config'][$i]['name'] = 'validation_form'; // Méthode de validation des signatures
+$modversion['config'][$i]['name'] = 'validation_form'; // Methode de validation des signatures
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_VALID_METHOD';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_VALID_METHODSC';
 $modversion['config'][$i]['formtype'] = 'select';
@@ -265,7 +273,7 @@ $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = '1';
 
 $i++;
-$modversion['config'][$i]['name'] = 'signature_title'; // intitulé de lien pour signer une pétition
+$modversion['config'][$i]['name'] = 'signature_title'; // intitule de lien pour signer une petition
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_TITLE';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_TITLE_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
@@ -273,7 +281,7 @@ $modversion['config'][$i]['valuetype'] = 'string';
 $modversion['config'][$i]['default'] = 'Je signe';
 
 $i++;
-$modversion['config'][$i]['name'] = 'use_wysiwyg'; // Changement de l'éditeur wysiwyg de description de la pétition
+$modversion['config'][$i]['name'] = 'use_wysiwyg'; // Changement de l'editeur wysiwyg de description de la petition
 $modversion['config'][$i]['title'] = '_MI_SSECTION_WYSIWYG';
 $modversion['config'][$i]['description'] = '_MI_SSECTION_WYSIWYGDSC';
 $modversion['config'][$i]['formtype'] = 'select';
@@ -282,7 +290,7 @@ $modversion['config'][$i]['options'] = array('XoopsEditor'  => 'default', 'Koivi
 $modversion['config'][$i]['default'] ='default';
 
 $i++;
-$modversion['config'][$i]['name'] = 'signature_download'; // intitulé du lien pour télécharger la pétition papier 
+$modversion['config'][$i]['name'] = 'signature_download'; // intitule du lien pour telecharger la petition papier 
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_DOWNL';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_DOWNL_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
@@ -290,7 +298,7 @@ $modversion['config'][$i]['valuetype'] = 'string';
 $modversion['config'][$i]['default'] = 'T&eacute;l&eacute;charger une version imprimable de la p&eacute;tition';
 
 $i++;
-$modversion['config'][$i]['name'] = 'signature_friend'; // intitulé du lien pour prévenir un ami
+$modversion['config'][$i]['name'] = 'signature_friend'; // intitule du lien pour prevenir un ami
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_FRIEND';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_FRIEND_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
@@ -298,7 +306,7 @@ $modversion['config'][$i]['valuetype'] = 'string';
 $modversion['config'][$i]['default'] = 'Pr&eacute;venir un ami';
 
 $i++;
-$modversion['config'][$i]['name'] = 'signature_show'; // intitulé du lien pour voir les signatures
+$modversion['config'][$i]['name'] = 'signature_show'; // intitule du lien pour voir les signatures
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_SHOW';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_SHOW_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
@@ -306,7 +314,7 @@ $modversion['config'][$i]['valuetype'] = 'string';
 $modversion['config'][$i]['default'] = 'Voir les signatures';
 
 $i++;
-$modversion['config'][$i]['name'] = 'send_a_friend'; // afficher envoyer à un ami
+$modversion['config'][$i]['name'] = 'send_a_friend'; // afficher envoyer e un ami
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SEND_FRIEN';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SEND_FRIEN_DSC';
 $modversion['config'][$i]['formtype'] = 'yesno';
@@ -314,7 +322,7 @@ $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = 1;
 
 $i++;
-$modversion['config'][$i]['name'] = 'path_upload'; // Chemin physique des pétitions attachés
+$modversion['config'][$i]['name'] = 'path_upload'; // Chemin physique des petitions attaches
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_PATH_UPLOAD';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_PATH_UPLOAD_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
