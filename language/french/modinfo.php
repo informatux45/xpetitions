@@ -29,6 +29,8 @@ define('_MI_XPETITIONS_MENU7',			'Captchas');
 // Préférences du module
 define('_MI_XPETITIONS_NAVIGATION',		'Barre de navigation');
 define('_MI_XPETITIONS_NAVIGATION_DSC',		'Cette option permet aux visiteurs de votre site d\'utiliser une barre de navigation pour se déplacer dans le module entre vos différentes pétitions');
+define('_MI_XPETITIONS_NAVIGATION_HOME',        'Barre de navigation lien page d\'accueil');
+define('_MI_XPETITIONS_NAVIGATION_HOME_DSC',	'Cette option permet d\'afficher le lien de la page d\'accueil de votre site web');
 define('_MI_XPETITIONS_UPLOAD_SIZE',		'Taille d\'upload maximum de la pétition papier');
 define('_MI_XPETITIONS_UPLOAD_SIZE_DSC',	'Taille maximum en octets des fichiers joints (pétitions papier) à vos pétitions en ligne');
 define('_MI_XPETITIONS_ADMIN_PAGE',		'Nombre de pétitions affichées');
