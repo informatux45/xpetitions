@@ -205,6 +205,15 @@ $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = 1;
 
 $i++;
+$modversion['config'][$i]['name'] = 'show_petitions_home'; // affichage des petitions page accueil
+$modversion['config'][$i]['title'] = '_MI_XPETITIONS_SHOW_HOME';
+$modversion['config'][$i]['description'] = '_MI_XPETITIONS_SHOW_HOME_DSC';
+$modversion['config'][$i]['formtype'] = 'select';
+$modversion['config'][$i]['valuetype'] = 'text';
+$modversion['config'][$i]['options'] = array(_MI_XPETITIONS_SHOW_HOME_LINE  => '1', _MI_XPETITIONS_SHOW_HOME_COL => '2');
+$modversion['config'][$i]['default'] ='1';
+
+$i++;
 $modversion['config'][$i]['name'] = 'upload_size'; // taille d'upload maximum autorisee pour une petition papier
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_UPLOAD_SIZE';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_UPLOAD_SIZE_DSC';
