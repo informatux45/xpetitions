@@ -40,21 +40,25 @@ $xoopsTpl->assign("xpetitions_urlmod", $module_url);
 $name_nav = ($xoopsModuleConfig['navigation'] == 1) ? '1' : '';
 $xoopsTpl->assign("name_nav", $name_nav);
 
+// si l'option barre de navigation lien de la page accueil à oui alors on l'affiche
+$name_nav_home = ($xoopsModuleConfig['navigation_home'] == 1) ? '1' : '';
+$xoopsTpl->assign("name_nav_home", $name_nav_home);
+
 //urbanspaceman mod
 $petition_detail = getPetitionDetails(intval($id));
 if ($petition_detail['whoview'] == '1'){
-$xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW1);
-$xoopsTpl->assign("whoview_group", 1);
+    $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW1);
+    $xoopsTpl->assign("whoview_group", 1);
 }
 
 elseif ($petition_detail['whoview'] == '2'){
-$xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW2);
-$xoopsTpl->assign("whoview_group", 2);
+    $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW2);
+    $xoopsTpl->assign("whoview_group", 2);
 }
 
 elseif ($petition_detail['whoview'] == '3'){
-$xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW3);
-$xoopsTpl->assign("whoview_group", 3);
+    $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW3);
+    $xoopsTpl->assign("whoview_group", 3);
 }
 
 switch ($op) {
