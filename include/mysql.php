@@ -362,7 +362,7 @@ function insertPetition($name, $title, $description, $email, $date, $status, $wh
               date int(15) NOT NULL,
               ip varchar(20) NOT NULL default "",
               cle varchar(60) NOT NULL default "",
-              PRIMARY KEY (id)) TYPE=MyISAM;';
+              PRIMARY KEY (id));';
 
    $result1 = $xoopsDB->query($sql1);
    if (!$result1)
