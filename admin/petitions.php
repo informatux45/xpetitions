@@ -40,14 +40,13 @@ switch ($op) {
 case "post": // formulaire posté
 	include XOOPS_ROOT_PATH.'/header.php';
 	// récupération des données
-	extract($_POST,EXTR_OVERWRITE);
-	$name        = $myts->oopsAddSlashes($name);
-	$title       = $myts->oopsAddSlashes($title);
-	$description = $myts->oopsAddSlashes($description);
-	$email       = $myts->oopsAddSlashes($email);
-	$whoview     = $myts->oopsAddSlashes($whoview);
-	$date        = formatdatestamp($date);
-	$status      = $myts->oopsAddSlashes($status);
+	$name        = $myts->oopsAddSlashes($_POST['name']);
+	$title       = $myts->oopsAddSlashes($_POST['title']);
+	$description = $myts->oopsAddSlashes($_POST['description']);
+	$email       = $myts->oopsAddSlashes($_POST['email']);
+	$whoview     = $myts->oopsAddSlashes($_POST['whoview']);
+	$date        = formatdatestamp($_POST['date']);
+	$status      = $myts->oopsAddSlashes($_POST['status']);
 	$link_file   = '';
 	$link        = '0';
 
