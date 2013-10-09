@@ -3,11 +3,11 @@
 </style>
 <{if $name_nav}>
 <div class="xpetitions_header">
+        <{if $name_nav_home}>
+            <span class="xpetitions_name"><a href="<{$xoops_url}>"><{$smarty.const._YOURHOME}></a></span>
+            &nbsp;&raquo;&nbsp;
+        <{/if}>
 	<{if $name_nav1}>
-            <{if $name_nav_home}>
-                <span class="xpetitions_name"><a href="<{$xoops_url}>"><{$smarty.const._YOURHOME}></a></span>
-                &nbsp;&raquo;&nbsp;
-            <{/if}>
             <span class="xpetitions_name"><a href="<{$xoops_url}><{$xpetitions_urlmod}>"><{$smarty.const._MD_XPETITIONS_INDEX}></a></span>
 	<{else}>
             <span class="xpetitions_name"><{$smarty.const._MD_XPETITIONS_INDEX}></span>
