@@ -295,7 +295,7 @@ $modversion['config'][$i]['title'] = '_MI_SSECTION_WYSIWYG';
 $modversion['config'][$i]['description'] = '_MI_SSECTION_WYSIWYGDSC';
 $modversion['config'][$i]['formtype'] = 'select';
 $modversion['config'][$i]['valuetype'] = 'text';
-$modversion['config'][$i]['options'] = array('XoopsEditor'  => 'default', 'Koivi Editor' => 'koivi', 'TinyEditor' => 'tiny', 'FCKEditor' => 'FCKeditor', 'InBetween' => 'inbetween', 'HTMLArea' => 'htmlarea', 'Spaw Editor v1' => 'spaw', 'Spaw Editor v2' => 'spaw2');
+$modversion['config'][$i]['options'] = XoopsLists::getEditorList();
 $modversion['config'][$i]['default'] ='default';
 
 $i++;

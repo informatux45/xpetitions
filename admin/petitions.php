@@ -38,6 +38,7 @@ $upload_dir  = XOOPS_ROOT_PATH.$xoopsModuleConfig['path_upload'];
 
 switch ($op) {
     case "petitions": //
+    default:
         include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
 	xoops_cp_header();
 	xpetitions_adminmenu('petitions.php');

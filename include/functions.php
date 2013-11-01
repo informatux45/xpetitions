@@ -168,23 +168,42 @@ global $xoopsModule;
     $urlSup2 = "http://www.informatux.com/xpetitions";
 
     echo "<div style='padding-top: 8px; padding-bottom: 10px; text-align: center;'><a href='" . $urlSup2 . "' target='_blank'><img src='" . $urlMod . "/images/xpetitions_icone.png' title='" . $modfootertxt . "' alt='" . $modfootertxt . "'/></a></div>";
-
-//    echo '<div style="border: 2px solid #C2CDD6">';
-//    echo '<div style="font-weight:bold; padding-top: 5px; text-align: center;">' . _AM_XPETITIONS_XOOPS_PRO3 . '</div><br />';
-//    echo '<table style="text-align: left; width: 100%;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="text-align: right; width: 60%;">';
-//    echo '<a href="http://www.informatux.com/"><img src="http://www.informatux.com/imgs/logom.jpg" title="INFORMATUX - Solutions et developpement WEB - Consultant informatique" align="middle" /></a>&nbsp;';
-//    echo '</td><td style="width: 40%; text-align: left;">';
-//    echo '&nbsp;<a href="http://www.informatux.com/"><img src="' . $urlMod . '/images/xoops_services_pro.gif" title="INFORMATUX - Solutions et developpement WEB - Consultant informatique" /></a>';
-//    echo '</td></tr></tbody></table>';
-//    echo "<span style=\"font-size: smaller;\">";
-//    echo '<div style="font-weight:bold; padding-top: 5px; text-align: center;">' . _AM_XPETITIONS_XOOPS_PRO1." <a href=\" $urlSup \" target=\"_blank\">INFORMATUX.COM</a> (<a href='$urlSup' target=\"_blank\">" . _AM_XPETITIONS_XOOPS_PRO2 . "</a>)";
-//    echo '</div>';
-//    echo '</div>';
-//    echo '<div style="font-weight:bold; padding-top: 5px; text-align: center;"><br /></div>';
-//    echo '</div>';
+    
 } // fin de la fonction
 
 function helpMenu($titre, $aide) {
+        ?>
+        <script>
+        window.onload = function(){
+
+            var legends = document.getElementsByTagName("legend");
+
+            for(var i=0; i<legends.length; i++)
+            {
+                legends[i].onclick = function()
+                {
+                    var myDivs = this.parentNode.getElementsByTagName("div");
+                    var myDiv;
+
+                    if(myDivs.length > 0)
+                    {
+                        var myDiv = myDivs[0];
+
+                        if(myDiv.style.display == "")
+                        {
+                            myDiv.style.display = "none"
+                        }
+                        else
+                        {
+                            myDiv.style.display = "";
+                        }
+                    }
+                }
+            }
+
+        };
+        </script>
+        <?php
 	echo '<fieldset id="xpetitions_help_a">';
 	echo '<legend class="label">' . $titre . '</legend>';
 	echo '<div class="xpetitions_help" id="help_index">' . $aide . '</div>';
@@ -294,166 +313,6 @@ function mailValid($email) {
 	} else {
 		return 0; // Non valide
 	}
-}
-
-function getEditor($caption, $name, $value = "", $width = '100%', $height ='400px', $supplemental='', $dhtml = true){
-
-	global $xoopsModuleConfig;
-	$editor = false;
-	$x22    = false;
-	$xv     = str_replace('XOOPS ','',XOOPS_VERSION);
-	if(substr($xv,2,1)=='2') {
-		$x22=true;
-	}
-	$editor_configs=array();
-	$editor_configs["name"]   = $name;
-	$editor_configs["value"]  = $value;
-	$editor_configs["rows"]   = 10;
-	$editor_configs["cols"]   = 40;
-	$editor_configs["width"]  = "100%";
-	$editor_configs["height"] = "400px";
-
-	switch(strtolower($xoopsModuleConfig['use_wysiwyg'])){
-
-		case 'tiny' :
-		if (!$x22) {
-
-			if ( is_readable(XOOPS_ROOT_PATH . "/class/xoopseditor/tinyeditor/formtinyeditortextarea.php"))	{ // XOOPS
-				include_once(XOOPS_ROOT_PATH . "/class/xoopseditor/tinyeditor/formtinyeditortextarea.php");
-				$editor = new XoopsFormTinyeditorTextArea(array('caption'=>$caption, 'name'=>$name, 'value'=>$value, 'width'=>'100%', 'height'=>'400px'));
-			} elseif ( is_readable(XOOPS_ROOT_PATH . "/editors/tinymce/formtinymce.php"))	{ // IMPRESSCMS
-				include_once(XOOPS_ROOT_PATH . "/editors/tinymce/formtinymce.php");
-				$editor = new XoopsFormTinymce(array('caption'=>$caption, 'name'=>$name, 'value'=>$value, 'width'=>'100%', 'height'=>'400px'));
-			} else {
-				if ($dhtml) {
-					$editor = new XoopsFormDhtmlTextArea($caption, $name, $value, 10, 40);
-				} else {
-					$editor = new XoopsFormTextArea($caption, $name, $value, 7, 40);
-				}
-			}
-		} else {
-			$editor = new XoopsFormEditor($caption, "tinyeditor", $editor_configs);
-		}
-		break;
-
-		case 'inbetween' :
-		if (!$x22) {
-			if ( is_readable(XOOPS_ROOT_PATH . "/class/xoopseditor/inbetween/forminbetweentextarea.php"))	{
-				include_once(XOOPS_ROOT_PATH . "/class/xoopseditor/inbetween/forminbetweentextarea.php");
-				$editor = new XoopsFormInbetweenTextArea(array('caption'=> $caption, 'name'=>$name, 'value'=>$value, 'width'=>'100%', 'height'=>'400px'),true);
-			} else {
-				if ($dhtml) {
-					$editor = new XoopsFormDhtmlTextArea($caption, $name, $value, 10, 40);
-				} else {
-					$editor = new XoopsFormTextArea($caption, $name, $value, 7, 40);
-				}
-			}
-		} else {
-			$editor = new XoopsFormEditor($caption, "inbetween", $editor_configs);
-		}
-		break;
-
-		case 'fckeditor' :
-		if (!$x22) {
-			if ( is_readable(XOOPS_ROOT_PATH . "/class/xoopseditor/FCKeditor/formfckeditor.php")) {
-				include_once(XOOPS_ROOT_PATH . "/class/xoopseditor/FCKeditor/formfckeditor.php");
-				$editor = new XoopsFormFckeditor($editor_configs,true);
-			} else {
-				if ($dhtml) {
-					$editor = new XoopsFormDhtmlTextArea($caption, $name, $value, 10, 40);
-				} else {
-					$editor = new XoopsFormTextArea($caption, $name, $value, 7, 40);
-				}
-			}
-		} else {
-			$editor = new XoopsFormEditor($caption, "fckeditor", $editor_configs);
-		}
-		break;
-
-		case 'koivi' :
-		if (!$x22) {
-			if ( is_readable(XOOPS_ROOT_PATH . "/class/wysiwyg/formwysiwygtextarea.php")) {  // XOOPS
-				include_once(XOOPS_ROOT_PATH . "/class/wysiwyg/formwysiwygtextarea.php");
-				$editor = new XoopsFormWysiwygTextArea($caption, $name, $value, '100%', '400px');
-			} elseif ( is_readable(XOOPS_ROOT_PATH . "/editors/wysiwyg/formwysiwygtextarea.php")) { // IMPRESSCMS
-				include_once(XOOPS_ROOT_PATH . "/editors/wysiwyg/formwysiwygtextarea.php");
-				$editor = new XoopsFormWysiwygTextArea($caption, $name, $value, '100%', '400px');
-			} else {
-				if ($dhtml) {
-					$editor = new XoopsFormDhtmlTextArea($caption, $name, $value, 10, 40);
-				} else {
-					$editor = new XoopsFormTextArea($caption, $name, $value, 7, 40);
-				}
-			}
-		} else {
-			$editor = new XoopsFormEditor($caption, "koivi", $editor_configs);
-		}
-		break;
-
-		case "spaw":
-		if(!$x22) {
-			if (is_readable(XOOPS_ROOT_PATH . "/class/spaw/formspaw.php"))	{
-				include_once(XOOPS_ROOT_PATH . "/class/spaw/formspaw.php");
-				$editor = new XoopsFormSpaw($caption, $name, $value);
-			} else {
-				if ($dhtml) {
-					$editor = new XoopsFormDhtmlTextArea($caption, $name, $value, 10, 40);
-				} else {
-					$editor = new XoopsFormTextArea($caption, $name, $value, 7, 40);
-				}
-			}
-
-		} else {
-			$editor = new XoopsFormEditor($caption, "spaw", $editor_configs);
-		}
-		break;
-
-		case "spaw2":
-		if(!$x22) {
-			if (is_readable(XOOPS_ROOT_PATH . "/class/spaw2/formspaw.php"))	{
-				include_once(XOOPS_ROOT_PATH . "/class/spaw2/formspaw.php");
-				$editor = new XoopsFormSpaw($caption, $name, $value);
-			} else {
-				if ($dhtml) {
-					$editor = new XoopsFormDhtmlTextArea($caption, $name, $value, 10, 40);
-				} else {
-					$editor = new XoopsFormTextArea($caption, $name, $value, 7, 40);
-				}
-			}
-
-		} else {
-			$editor = new XoopsFormEditor($caption, "spaw", $editor_configs);
-		}
-		break;
-
-		case "htmlarea":
-		if(!$x22) {
-			if ( is_readable(XOOPS_ROOT_PATH . "/class/htmlarea/formhtmlarea.php"))	{
-				include_once(XOOPS_ROOT_PATH . "/class/htmlarea/formhtmlarea.php");
-				$editor = new XoopsFormHtmlarea($caption, $name, $value);
-			} else {
-				if ($dhtml) {
-					$editor = new XoopsFormDhtmlTextArea($caption, $name, $value, 10, 40);
-				} else {
-					$editor = new XoopsFormTextArea($caption, $name, $value, 7, 40);
-				}
-			}
-		} else {
-			$editor = new XoopsFormEditor($caption, "htmlarea", $editor_configs);
-		}
-		break;
-
-		default :
-		if ($dhtml) {
-			$editor = new XoopsFormDhtmlTextArea($caption, $name, $value, 10, 40);
-		} else {
-			$editor = new XoopsFormTextArea($caption, $name, $value, 7, 40);
-		}
-
-		break;
-	}
-
-	return $editor;
 }
 
 ?>
