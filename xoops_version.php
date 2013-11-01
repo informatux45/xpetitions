@@ -25,9 +25,12 @@ $modversion['license_url']    = "//www.gnu.org/licenses/gpl-2.0.html";
 $modversion['official']       = 0;
 $modversion['image']          = "images/xpetitions_logo.png";
 $modversion['dirname']        = $mydirname;
-$modversion['dirmoduleadmin'] = 'Frameworks/moduleclasses/';
-$modversion['icons16']        = 'Frameworks/moduleclasses/icons/16/';
-$modversion['icons32']        = 'Frameworks/moduleclasses/icons/32/';
+//$modversion['dirmoduleadmin'] = 'Frameworks/moduleclasses/';
+//$modversion['icons16']        = 'Frameworks/moduleclasses/icons/16/';
+//$modversion['icons32']        = 'Frameworks/moduleclasses/icons/32/';
+$modversion['dirmoduleadmin'] = '/Frameworks/moduleclasses/moduleadmin';
+$modversion['icons16']        = '../../Frameworks/moduleclasses/icons/16';
+$modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
 
 // System menu
 $modversion['system_menu'] = 1;
@@ -107,7 +110,7 @@ $modversion['adminmenu']  = "admin/menu.php";
 // Search
 $modversion['hasSearch']      = 1;
 $modversion['search']['file'] = "include/search.inc.php";
-$modversion['search']['func'] = "xpetitions_search";
+$modversion['search']['func'] = $modversion["dirname"] . "_search";
 
 // Menu
 $modversion['hasMain'] = 1;

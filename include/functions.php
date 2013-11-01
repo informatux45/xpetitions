@@ -17,6 +17,25 @@ function get_xoops_version() {
 	return $xoopsVersion;
 }
 
+function petitions_summary() {
+global $xoopsDB;
+
+
+
+	$summary = array();
+
+
+// Recuperer les valeurs dans la base de donnees
+$summary['existingPetitions']   = getPetitionsCount() ? getPetitionsCount() : '0';
+$summary['activePetitions']   = getPetitionsCountOnline(1) ? getPetitionsCountOnline(1) : '0';
+$summary['offlinePetitions'] = getPetitionsCountOnline(2) ? getPetitionsCountOnline(2) : '0';
+$summary['archivedPetitions'] = getPetitionsCountOnline(3) ? getPetitionsCountOnline(3) : '0';
+
+
+	//print_r($summary);
+	return $summary;
+}
+
 function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
 	global $xoopsModule, $pathIcon16;
 
@@ -29,18 +48,23 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
 	
 	echo $indexAdmin->addNavigation($navigation);
 	if ($navigation == 'index.php') {
-		// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		//              Nouvelle box
 		// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-		$box1 = 'Configuration';
+		$box1 = 'Configuration XPETITIONS';
 		$box2 = 'Synth&egrave;se';
+                
 		$indexAdmin->addInfoBox($box1);
-		// --- Affichage de boutons
-		$indexAdmin->addItemButton(_AM_XPETITIONS_CREATE_BUTTON, 'petitions.php', 'add', '');
+                // ------------------------------------
+                // --- Affichage de boutons
+                // ------------------------------------
+                $indexAdmin->addItemButton(_AM_XPETITIONS_CREATE_BUTTON, 'petitions.php', 'add', '');
 		$indexAdmin->addInfoBoxLine($box1, $indexAdmin->renderbutton('left'), '', '', 'default');
-
+                
+                // ------------------------------------
 		// --- Repertoire d'upload
-		$dir_upload_xpetitions = $home_info[0];
+                // ------------------------------------
+                $dir_upload_xpetitions = $home_info[0];
 		if (is_dir($dir_upload_xpetitions)) {
 			$dir_upload['value']  = 'cr&eacute;&eacute;';
 			$dir_upload['button'] = '';
@@ -51,8 +75,10 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
 			$dir_upload['color']  = 'red';
 		}
 		$indexAdmin->addInfoBoxLine($box1, _AM_XPETITIONS_CHECK1.' ('.$dir_upload_xpetitions.')'.$dir_upload['button'], $dir_upload['value'], $dir_upload['color'], 'default');
-		// --- Droits d'ecriture du repertoire d'upload
-		$dir_upload_xpetitions_writable = $home_info[5];
+                // ------------------------------------
+                // --- Droits d'ecriture du repertoire d'upload
+                // ------------------------------------
+                $dir_upload_xpetitions_writable = $home_info[5];
 		if ($dir_upload_xpetitions_writable) {
 			$dir_upload_writable['value'] = _YES;
 			$dir_upload_writable['color'] = 'green';
@@ -61,8 +87,10 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
 			$dir_upload_writable['color'] = 'red';
 		}
 		$indexAdmin->addInfoBoxLine($box1, _AM_XPETITIONS_CHECK2, $dir_upload_writable['value'], $dir_upload_writable['color'], 'default');
-		// --- Droits d'ecriture du repertoire d'upload CSV
-		$dir_csv_xpetitions_writable = $home_info[6];
+                // ------------------------------------
+                // --- Droits d'ecriture du repertoire d'upload CSV
+                // ------------------------------------
+                $dir_csv_xpetitions_writable = $home_info[6];
 		if ($dir_csv_xpetitions_writable) {
 			$dir_csv_writable['value'] = _YES;
 			$dir_csv_writable['color'] = 'green';
@@ -72,7 +100,7 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
 		}
 		$indexAdmin->addInfoBoxLine($box1, _AM_XPETITIONS_CHECK3, $dir_csv_writable['value'], $dir_csv_writable['color'], 'default');
 		// --- Pourcentage acompte
-		$xpetition_csv_php_version = $home_info[7];
+                $xpetition_csv_php_version = $home_info[7];
 		if ($xpetition_csv_php_version) {
 			$dir_php_version['value'] = _YES;
 			$dir_php_version['color'] = 'green';
@@ -81,25 +109,19 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
 			$dir_php_version['color'] = 'red';
 		}
 		$indexAdmin->addInfoBoxLine($box1, _AM_XPETITIONS_CHECK4, $dir_php_version['value'], $dir_php_version['color'], 'default');
-		// --- Tableau
+		
+                // --- Tableau
 		$indexAdmin->addInfoBox($box2);
-		$xpetitions_petitions_create   = $home_info[1];
-		$xpetitions_petitions_online   = $home_info[2];
-		$xpetitions_petitions_offline  = $home_info[3];
-		$xpetitions_petitions_archives = $home_info[4];
 		// Petitions Status
-		// 1 : Online
-		// 2 : Offline
-		// 3 : Archive
-		$tabxpetitions  = "<table class='outer'><tr>";
-		$tabxpetitions .= "<td class='head'>" . _AM_XPETITIONS_PETITIONS_CREATE . "</td><td align='center' class='even'>" . $xpetitions_petitions_create    . "</td>";
-		$tabxpetitions .= "<td class='head'><img src='{$pathIcon16}green.gif' align='absmiddle' /> " . _AM_XPETITIONS_PETITIONS_ONLINE . "</td><td align='center' class='even'>" . $xpetitions_petitions_online    . "</td>";
-		$tabxpetitions .= "</tr><tr>";
-		$tabxpetitions .= "<td class='head'><img src='{$pathIcon16}red_off.gif' align='absmiddle' /> " . _AM_XPETITIONS_PETITIONS_OFFLINE . "</td><td align='center' class='even'>" . $xpetitions_petitions_offline  . "</td>";
-		$tabxpetitions .= "<td class='head'><img src='{$pathIcon16}red.gif' align='absmiddle' /> " . _AM_XPETITIONS_PETITIONS_ARCHIVE . "</td><td align='center' class='even'>" . $xpetitions_petitions_archives . "</td>";
-		$tabxpetitions .= "</tr>";
-		$tabxpetitions .= "</table>";
-		$indexAdmin->addInfoBoxLine($box2, $tabxpetitions, '', '', 'default');
+                $xpetitions_create  = ($home_info[1] < 2) ? sprintf(_AM_XPETITIONS_PETITION_CREATE, $home_info[1]) : sprintf(_AM_XPETITIONS_PETITIONS_CREATE, $home_info[1]);
+                $indexAdmin->addInfoBoxLine($box2, $xpetitions_create, '');
+                $xpetitions_online  = ($home_info[2] < 2) ? sprintf(_AM_XPETITIONS_PETITION_ONLINE, $home_info[2]) : sprintf(_AM_XPETITIONS_PETITIONS_ONLINE, $home_info[2]);
+                $indexAdmin->addInfoBoxLine($box2, $xpetitions_online, '');
+                $xpetitions_offline = ($home_info[3] < 2) ? sprintf(_AM_XPETITIONS_PETITION_OFFLINE, $home_info[3]) : sprintf(_AM_XPETITIONS_PETITIONS_OFFLINE, $home_info[3]);
+                $indexAdmin->addInfoBoxLine($box2, $xpetitions_offline, '');
+                $xpetitions_archive = ($home_info[4] < 2) ? sprintf(_AM_XPETITIONS_PETITION_ARCHIVE, $home_info[4]) : sprintf(_AM_XPETITIONS_PETITIONS_ARCHIVE, $home_info[4]);
+                $indexAdmin->addInfoBoxLine($box2, $xpetitions_archive, '');                      
+                
 		// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		//               Affichage
 		// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

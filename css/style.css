@@ -67,3 +67,8 @@ div#xpetitions_help_a {border: 0px solid silver; background: url('../images/help
 .xpetitions_verfication_ko {width: auto; border: 1px solid red; padding: 5px; background-color: #fff0f2;}
 
 .xpetitions_liste_archived li a {color: red;}
+
+.xpetitions_summary_create {color: green; font-weight: bold;}
+.xpetitions_summary_online {color: green; font-weight: bold;}
+.xpetitions_summary_offline {color: orange; font-weight: bold;}
+.xpetitions_summary_archive {color: red; font-weight: bold;}
