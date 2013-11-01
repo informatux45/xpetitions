@@ -175,32 +175,24 @@ function helpMenu($titre, $aide) {
         ?>
         <script>
         window.onload = function(){
-
             var legends = document.getElementsByTagName("legend");
-
-            for(var i=0; i<legends.length; i++)
-            {
-                legends[i].onclick = function()
-                {
+            for(var i=0; i<legends.length; i++) {
+                legends[i].onclick = function() {
                     var myDivs = this.parentNode.getElementsByTagName("div");
                     var myDiv;
 
-                    if(myDivs.length > 0)
-                    {
+                    if (myDivs.length > 0) {
                         var myDiv = myDivs[0];
 
-                        if(myDiv.style.display == "")
-                        {
+                        if (myDiv.style.display == "") {
                             myDiv.style.display = "none"
-                        }
-                        else
-                        {
+                        } else {
                             myDiv.style.display = "";
                         }
                     }
                 }
             }
-
+            
         };
         </script>
         <?php
