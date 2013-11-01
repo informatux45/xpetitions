@@ -27,9 +27,9 @@
 
 // includes
 include_once("header.inc.php");
-global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
+global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB, $pathIcon16;
 
-$op = isset($_REQUEST['op']) ? $_REQUEST['op'] : 'form';
+$op = isset($_REQUEST['op']) ? $_REQUEST['op'] : 'petitions';
 
 // variable pour fichier uploader
 $upload_size = $xoopsModuleConfig['upload_size'];
@@ -37,7 +37,61 @@ $mimetypes   = array('application/pdf', 'application/msword');
 $upload_dir  = XOOPS_ROOT_PATH.$xoopsModuleConfig['path_upload'];
 
 switch ($op) {
-case "post": // formulaire posté
+    case "petitions": //
+        include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
+	xoops_cp_header();
+	xpetitions_adminmenu('petitions.php');
+        // Aide
+        helpMenu(_AM_XPETITIONS_INDEX_HELP1, _AM_XPETITIONS_INDEX_HELP2);
+
+        // Tableau des pétitions
+        echo '<br /><table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="1" class="outer">';
+        echo '<tbody><tr class="bg3">';
+        echo '<td style="width: 5%; text-align: center;">'  . _AM_XPETITIONS_INDEX_TAB1 . '</td>';
+        echo '<td style="width: 50%; text-align: center;">' . _AM_XPETITIONS_INDEX_TAB2 . '</td>';
+        echo '<td style="width: 15%; text-align: center;">' . _AM_XPETITIONS_INDEX_TAB3 . '</td>';
+        echo '<td style="width: 15%; text-align: center;">' . _AM_XPETITIONS_INDEX_TAB4 . '</td>';
+        echo '<td style="width: 15%; text-align: center;">' . _AM_XPETITIONS_INDEX_TAB5 . '</td>';
+        echo '</tr>';
+
+        $petitions_count      = getPetitionsCount();
+        $petitions_sql        = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions');
+        $petitions_pagestart  = isset($_GET['page']) ? intval($_GET['page']) : 0;
+
+        if ($petitions_count < 1) {
+        echo '<tr><td colspan="5">';
+        echo '<span class="gras">' . _AM_XPETITIONS_NONE . '</span>';
+        echo '</td></tr>';
+        echo '</tbody></table>';
+        } else {
+          $pagenav = new XoopsPageNav($petitions_count, $xoopsModuleConfig['adminindex_page'], $petitions_pagestart, 'page');
+          $limite = limite($petitions_pagestart, $petitions_count, $xoopsModuleConfig['adminindex_page'], $petitions_sql);
+          $petitions_aff_tab = dbResultToArray($limite);
+
+          foreach ($petitions_aff_tab as $row) {
+            echo '<tr class="bg1"><td style="text-align: center;">';
+            echo $row['id'];
+            echo '</td><td style="text-align: left;">';
+            echo '<a href="' . XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname') . '/index.php?id='.$row['id'].'">'.$myts->DisplayTarea($row['title']).'</a>';
+            echo '</td><td style="text-align: center;">';
+            echo formatdatefr($row['date']);
+            echo '</td><td style="text-align: center;">';
+            // Petitions Status
+            // 1 : Online
+            // 2 : Offline
+            // 3 : Archive
+            echo '<img src="'.$pathIcon16.'/'.($row['status'] == 1 ? 'green' : ($row['status'] == 2 ? 'red_off' : 'red')).'.gif" />';
+            echo '</td><td style="text-align: center;">';
+            echo '<a href="petitions.php?op=modif&id='.$row['id'].'"><img src="'.$pathIcon16.'/edit.png" alt="'._AM_XPETITIONS_UPDATE.'" title="'._AM_XPETITIONS_UPDATE.'" /></a>';
+            echo '&nbsp;';
+            echo '<a href="petitions.php?op=delete&id='.$row['id'].'&name='.$row['name'].'&ok=0"><img src="'.$pathIcon16.'/delete.png" alt="'._AM_XPETITIONS_CANCEL.'" title="'._AM_XPETITIONS_CANCEL.'" /></a>';
+            echo '</td></tr>';
+           }
+        echo '</tbody></table>';
+        echo "<div align='right'>".$pagenav->renderNav().'</div><br />';
+        }        
+    break;
+    case "post": // formulaire posté
 	include XOOPS_ROOT_PATH.'/header.php';
 	// récupération des données
 	$name        = $myts->oopsAddSlashes($_POST['name']);
@@ -75,11 +129,11 @@ case "post": // formulaire posté
 	}
 
 	$create_petition = insertPetition($name, $title, $description, $email, $date, $status, $whoview, $link, $link_file);
-	$message = (!$create_petition) ? redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_ERROR_INSERT) : redirect_header("index.php", 2, _AM_XPETITIONS_VALID_INSERT);
+	$message = (!$create_petition) ? redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_ERROR_INSERT) : redirect_header("petitions.php", 2, _AM_XPETITIONS_VALID_INSERT);
 
-	break;
+    break;
 
-case "update": // formulaire posté (mis à jour)
+    case "update": // formulaire posté (mis à jour)
 	include XOOPS_ROOT_PATH.'/header.php';
 	// récupération des données
 	extract($_POST,EXTR_OVERWRITE);
@@ -142,13 +196,12 @@ case "update": // formulaire posté (mis à jour)
 	
 	$update_petition = updatePetition($id, $title, $description, $email,  $status, $whoview, $date, $link, $link_file);
 	
-	$message = (!$update_petition) ? redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_ERROR_UPDATE) : redirect_header("index.php", 2, _AM_XPETITIONS_VALID_UPDATE);
+	$message = (!$update_petition) ? redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_ERROR_UPDATE) : redirect_header("petitions.php", 2, _AM_XPETITIONS_VALID_UPDATE);
 
-	break;
+    break;
 
 
-case "form": // affichage du formulaire
-	default:
+    case "form": // affichage du formulaire
 	xoops_cp_header();
 	xpetitions_adminmenu('petitions.php');
 
@@ -161,9 +214,9 @@ case "form": // affichage du formulaire
 	//$whoview     = '';
 
 	include "../include/addform.inc.php"; // affichage du formulaire
-	break;
+    break;
 
-case "delete": // suppression d'une pétition avant confirmation
+    case "delete": // suppression d'une pétition avant confirmation
 	include XOOPS_ROOT_PATH.'/header.php';
 	$delid   = intval($_REQUEST['id']);
 	$delname = $myts->oopsAddSlashes($_REQUEST['name']);
@@ -177,9 +230,9 @@ case "delete": // suppression d'une pétition avant confirmation
 	xoops_confirm(array('op' => 'delete', 'id' => $delid, 'name' => $delname, 'ok' => 1), 'petitions.php', _AM_XPETITIONS_DELETE_CONFIRM);
 	xoops_cp_footer();
 	}
-	break;
+    break;
 
-case "modif": // modification d'une pétition
+    case "modif": // modification d'une pétition
 	xoops_cp_header();
 	xpetitions_adminmenu('petitions.php');
 
@@ -194,7 +247,7 @@ case "modif": // modification d'une pétition
 	$whoview     = $petitionid['whoview'];
 	// affichage du formulaire
 	include "../include/editform.inc.php";
-	break;
+    break;
 	
 }
 

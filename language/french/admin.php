@@ -201,12 +201,12 @@ define("_AM_XPETITIONS_SUBMIT_EMAILS",		"Modifier les emails");
 define("_AM_XPETITIONS_SUB_EMAIL_TODSC",	"Vous pouvez insérer le nom de la pétition dans le sujet en mettant {PETITION} et le nom de votre site en mettant {SITENAME}  (respectez la même syntaxe)");
 define("_AM_XPETITIONS_MESS_EMAIL_TO",		"Email envoyé aux signataires pour valider leur signature");
 define("_AM_XPETITIONS_MESS_EMAIL_TODSC",	"Vous pouvez insérer des variables dans le corps de votre message (voir l'aide)");
-define("_AM_XPETITIONS_MESS_EMAIL_HELP1",	"<b>Aide</b>");
+define("_AM_XPETITIONS_MESS_EMAIL_HELP1",	"<b>AIDE</b>");
 define("_AM_XPETITIONS_MESS_EMAIL_HELP2",	"<div style='font-weight: normal; text-align: center;'>Vous pouvez insérer les variables suivantes dans le corps de votre message (respectez la même syntaxe) :</div><br /><table style='text-align: left; width: 100%;' border='0' cellpadding='0' cellspacing='0'><tbody><tr><td style='text-align: center; vertical-align: middle;'><span style='font-weight: bold; text-decoration: underline;'>Email aux retardaires</span></td><td style='text-align: center; vertical-align: middle;'><span style='font-weight: bold; text-decoration: underline;'>Email aux signataires pour validation</span></td></tr><tr><td style='width: 50%; text-align: center; vertical-align: top;'>{PETITION} nom de la pétition<br />{USER_NAME} Nom complet du retardataire.<br />{USER_EMAIL} Email du retardataire.<br />{LINK_URL} Lien à cliquer pour que le retardataire valide sa signature.<br />{SITE_NAME} Nom de votre site.<br />{SITE_URL} Url de votre site.</td><td style='width: 50%; text-align: center; vertical-align: top;'>{PETITION} nom de la pétition<br />{PRENOM} prénom du signataire<br />{NOM} nom du signataire<br />{INFOS} informations sur le signataire<br />{VALIDATION} lien de confirmation de signature<br />{SITENAME} nom de votre site<br />{SITESLOGAN} slogan de votre site<br />{SITEURL} url de votre site</td></tr></tbody></table>");
 define("_AM_XPETITIONS_MESS_NONE",		"");
 
 // * field.php
-define("_AM_XPETITIONS_FIELD_HELP1",		"<b>Aide</b>");
+define("_AM_XPETITIONS_FIELD_HELP1",		"<b>AIDE</b>");
 define("_AM_XPETITIONS_FIELD_HELP2",		"Gérer le formulaire de signatures des pétitions.<br /><br />Vous pouvez afficher ou non les champs du formulaire et les rendre ou non obligatoire.<br /><br />Si vous cochez un champs 'obligatoire' et qu'il n'est pas coché 'visible', celui-ci n'apparaitra pas dans le formulaire et son caractère d'obligation ne sera pas pris en compte.<br />Il faut d'abord qu'un champs soit 'visible' pour que le paramètre 'obligatoire' soit accessible.");
 define("_AM_XPETITIONS_TITLE_FIELDS",		"Gestion des champs du formulaire de signature des pétitions");
 define("_AM_XPETITIONS_FIELD_VISIBLE",		"Visible&nbsp;&nbsp;");

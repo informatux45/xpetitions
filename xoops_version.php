@@ -28,7 +28,7 @@ $modversion['dirname']        = $mydirname;
 //$modversion['dirmoduleadmin'] = 'Frameworks/moduleclasses/';
 //$modversion['icons16']        = 'Frameworks/moduleclasses/icons/16/';
 //$modversion['icons32']        = 'Frameworks/moduleclasses/icons/32/';
-$modversion['dirmoduleadmin'] = '/Frameworks/moduleclasses/moduleadmin';
+$modversion['dirmoduleadmin'] = '../../Frameworks/moduleclasses/moduleadmin';
 $modversion['icons16']        = '../../Frameworks/moduleclasses/icons/16';
 $modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
 

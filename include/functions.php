@@ -17,25 +17,6 @@ function get_xoops_version() {
 	return $xoopsVersion;
 }
 
-function petitions_summary() {
-global $xoopsDB;
-
-
-
-	$summary = array();
-
-
-// Recuperer les valeurs dans la base de donnees
-$summary['existingPetitions']   = getPetitionsCount() ? getPetitionsCount() : '0';
-$summary['activePetitions']   = getPetitionsCountOnline(1) ? getPetitionsCountOnline(1) : '0';
-$summary['offlinePetitions'] = getPetitionsCountOnline(2) ? getPetitionsCountOnline(2) : '0';
-$summary['archivedPetitions'] = getPetitionsCountOnline(3) ? getPetitionsCountOnline(3) : '0';
-
-
-	//print_r($summary);
-	return $summary;
-}
-
 function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
 	global $xoopsModule, $pathIcon16;
 
@@ -47,7 +28,10 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
 	$indexAdmin = new ModuleAdmin();
 	
 	echo $indexAdmin->addNavigation($navigation);
-	if ($navigation == 'index.php') {
+        
+        switch ($navigation) {
+        
+            case "index.php":
                 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		//              Nouvelle box
 		// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -126,34 +110,47 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
 		//               Affichage
 		// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		echo $indexAdmin->renderIndex();
-	}
-	//if ($navigation == 'about.php') echo $indexAdmin->renderAbout('DP72DNEB4LAZG', false);
-	if ($navigation == 'about.php') echo $indexAdmin->renderAbout();
+            break;
+            
+            case "about.php":
+                //if ($navigation == 'about.php') echo $indexAdmin->renderAbout('DP72DNEB4LAZG', false);
+                echo $indexAdmin->renderAbout();
+            break;
+        
+            case "petitions.php":
+                if (!isset($_REQUEST['op'])) {
+                    $indexAdmin->addItemButton(_AM_XPETITIONS_CREATE_BUTTON, 'petitions.php?op=form', 'add', '');	
+                    echo $indexAdmin->renderButton('left', '');
+                }
+            break;
+        
+        } // End Switch
+        
 } // end function
 
 function xpetitions_adminfooter() {
 global $xoopsModule;
 
-    $modfootertxt = "Module " . $xoopsModule->getVar('name') . " - Version " . $xoopsModule->getVar('version')/100 . "";
+    $modfootertxt = "Module " . $xoopsModule->getVar('name') . " - Version " . $xoopsModule->getVar('version')/100 . " - INFORMATUX.COM";
     $urlMod  = XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname');
     $urlSup  = "http://www.informatux.com/";
     $urlSup2 = "http://www.informatux.com/xpetitions";
 
     echo "<div style='padding-top: 8px; padding-bottom: 10px; text-align: center;'><a href='" . $urlSup2 . "' target='_blank'><img src='" . $urlMod . "/images/xpetitions_icone.png' title='" . $modfootertxt . "' alt='" . $modfootertxt . "'/></a></div>";
 
-    echo '<div style="border: 2px solid #C2CDD6">';
-    echo '<div style="font-weight:bold; padding-top: 5px; text-align: center;">' . _AM_XPETITIONS_XOOPS_PRO3 . '</div><br />';
-    echo '<table style="text-align: left; width: 100%;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="text-align: right; width: 60%;">';
-    echo '<a href="http://www.informatux.com/"><img src="http://www.informatux.com/imgs/logom.jpg" title="INFORMATUX - Solutions et developpement WEB - Consultant informatique" align="middle" /></a>&nbsp;';
-    echo '</td><td style="width: 40%; text-align: left;">';
-    echo '&nbsp;<a href="http://www.informatux.com/"><img src="' . $urlMod . '/images/xoops_services_pro.gif" title="INFORMATUX - Solutions et developpement WEB - Consultant informatique" /></a>';
-    echo '</td></tr></tbody></table>';
-    echo "<span style=\"font-size: smaller;\">";
-    echo '<div style="font-weight:bold; padding-top: 5px; text-align: center;">' . _AM_XPETITIONS_XOOPS_PRO1." <a href=\" $urlSup \" target=\"_blank\">INFORMATUX.COM</a> (<a href='$urlSup' target=\"_blank\">" . _AM_XPETITIONS_XOOPS_PRO2 . "</a>)";
-    echo '</div>';
-    echo '</div>';
-    echo '<div style="font-weight:bold; padding-top: 5px; text-align: center;"><br /></div>';
-    echo '</div>';
+//    echo '<div style="border: 2px solid #C2CDD6">';
+//    echo '<div style="font-weight:bold; padding-top: 5px; text-align: center;">' . _AM_XPETITIONS_XOOPS_PRO3 . '</div><br />';
+//    echo '<table style="text-align: left; width: 100%;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="text-align: right; width: 60%;">';
+//    echo '<a href="http://www.informatux.com/"><img src="http://www.informatux.com/imgs/logom.jpg" title="INFORMATUX - Solutions et developpement WEB - Consultant informatique" align="middle" /></a>&nbsp;';
+//    echo '</td><td style="width: 40%; text-align: left;">';
+//    echo '&nbsp;<a href="http://www.informatux.com/"><img src="' . $urlMod . '/images/xoops_services_pro.gif" title="INFORMATUX - Solutions et developpement WEB - Consultant informatique" /></a>';
+//    echo '</td></tr></tbody></table>';
+//    echo "<span style=\"font-size: smaller;\">";
+//    echo '<div style="font-weight:bold; padding-top: 5px; text-align: center;">' . _AM_XPETITIONS_XOOPS_PRO1." <a href=\" $urlSup \" target=\"_blank\">INFORMATUX.COM</a> (<a href='$urlSup' target=\"_blank\">" . _AM_XPETITIONS_XOOPS_PRO2 . "</a>)";
+//    echo '</div>';
+//    echo '</div>';
+//    echo '<div style="font-weight:bold; padding-top: 5px; text-align: center;"><br /></div>';
+//    echo '</div>';
 } // fin de la fonction
 
 function helpMenu($titre, $aide) {
@@ -161,7 +158,7 @@ function helpMenu($titre, $aide) {
 	//echo '<div style="display: none;" class="xpetitions_help" id="help_index">' . $aide . '</div></div>';
 	echo '<fieldset id="xpetitions_help_a">';
 	echo '<legend class="label">' . $titre . '</legend>';
-	echo '<div class="xpetitions_help" id="help_index">' . $aide;
+	echo '<div class="xpetitions_help" id="help_index">' . $aide . '</div>';
 	echo '</fieldset>';
 }
 

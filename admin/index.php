@@ -27,7 +27,6 @@
 
 // includes
 include_once("header.inc.php");
-include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
 
 xoops_cp_header();
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
@@ -67,59 +66,6 @@ $home_info = array($dir_upload_xpetitions,
 		   );
 
 xpetitions_adminmenu('index.php', $home_info);
-
-// Aide
-helpMenu(_AM_XPETITIONS_INDEX_HELP1, _AM_XPETITIONS_INDEX_HELP2);
-echo '<br />';
-
-// Tableau des pétitions
-echo '<br /><table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="1" class="outer">';
-echo '<tbody><tr class="bg3">';
-echo '<td style="width: 5%; text-align: center;">'  . _AM_XPETITIONS_INDEX_TAB1 . '</td>';
-echo '<td style="width: 50%; text-align: center;">' . _AM_XPETITIONS_INDEX_TAB2 . '</td>';
-echo '<td style="width: 15%; text-align: center;">' . _AM_XPETITIONS_INDEX_TAB3 . '</td>';
-echo '<td style="width: 15%; text-align: center;">' . _AM_XPETITIONS_INDEX_TAB4 . '</td>';
-echo '<td style="width: 15%; text-align: center;">' . _AM_XPETITIONS_INDEX_TAB5 . '</td>';
-echo '</tr>';
-
-$petitions_count      = getPetitionsCount();
-$petitions_sql        = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions');
-$petitions_pagestart  = isset($_GET['page']) ? intval($_GET['page']) : 0;
-
-if ($petitions_count < 1) {
-echo '<tr><td colspan="5">';
-echo '<span class="gras">' . _AM_XPETITIONS_NONE . '</span>';
-echo '</td></tr>';
-echo '</tbody></table>';
-} else {
-  $pagenav = new XoopsPageNav($petitions_count, $xoopsModuleConfig['adminindex_page'], $petitions_pagestart, 'page');
-  $limite = limite($petitions_pagestart, $petitions_count, $xoopsModuleConfig['adminindex_page'], $petitions_sql);
-  $petitions_aff_tab = dbResultToArray($limite);
-
-  foreach ($petitions_aff_tab as $row) {
-    echo '<tr class="bg1"><td style="text-align: center;">';
-    echo $row['id'];
-    echo '</td><td style="text-align: left;">';
-    echo '<a href="' . XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname') . '/index.php?id='.$row['id'].'">'.$myts->DisplayTarea($row['title']).'</a>';
-    echo '</td><td style="text-align: center;">';
-    echo formatdatefr($row['date']);
-    echo '</td><td style="text-align: center;">';
-    // Petitions Status
-    // 1 : Online
-    // 2 : Offline
-    // 3 : Archive
-    echo '<img src="'.$pathIcon16.($row['status'] == 1 ? 'green' : ($row['status'] == 2 ? 'red_off' : 'red')).'.gif" />';
-    echo '</td><td style="text-align: center;">';
-    echo '<a href="petitions.php?op=modif&id='.$row['id'].'"><img src="'.$pathIcon16.'edit.png" alt="'._AM_XPETITIONS_UPDATE.'" title="'._AM_XPETITIONS_UPDATE.'" /></a>';
-    echo '&nbsp;';
-    echo '<a href="petitions.php?op=delete&id='.$row['id'].'&name='.$row['name'].'&ok=0"><img src="'.$pathIcon16.'delete.png" alt="'._AM_XPETITIONS_CANCEL.'" title="'._AM_XPETITIONS_CANCEL.'" /></a>';
-    echo '</td></tr>';
-   }
-echo '</tbody></table>';
-echo "<div align='right'>".$pagenav->renderNav().'</div><br />';
-}
-
-//echo '</div>'; // fin id central
 
 xpetitions_adminfooter();
 xoops_cp_footer();

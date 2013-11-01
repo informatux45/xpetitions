@@ -26,9 +26,10 @@ include_once("../include/functions.php");
 include_once("../include/config.php");
 include_once("../include/mysql.php");
 
-$moduleInfo =& $module_handler->get($xoopsModule->getVar('mid'));
-$pathIcon16 = XOOPS_URL .'/'. $moduleInfo->getInfo('icons16');
-$pathIcon32 = XOOPS_URL .'/'. $moduleInfo->getInfo('icons32');
+$moduleInfo      =& $module_handler->get($xoopsModule->getVar('mid'));
+$pathModuleAdmin = $xoopsModule->getInfo('dirmoduleadmin');
+$pathIcon16      = '../'.$xoopsModule->getInfo('icons16');
+$pathIcon32      = '../'.$xoopsModule->getInfo('icons32');
 
 $myts =& MyTextSanitizer::getInstance();
 
