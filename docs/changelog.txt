@@ -10,6 +10,7 @@ Mise en conformite du modules avec le Framework "ModuleClasses" en version 1.1.
 [admin] Creation de boutons d'action sur toutes les pages admin
 [admin] Ajout d'un bouton "creer le repertoire" d'upload des fichiers joints aux petitions
 [admin - client] Nombreux tests pour corrections de bugs
+[admin] Normalisation du module (spec XOOPS)
 
 
 =========================================================
