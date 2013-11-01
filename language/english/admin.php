@@ -41,8 +41,13 @@ define("_AM_XPETITIONS_PETITION_ARCHIVE",	"<span class='xpetitions_summary_archi
 define("_AM_XPETITIONS_PETITIONS_ARCHIVE",	"<span class='xpetitions_summary_archive'>%s</span> archived petitions");
 define("_AM_XPETITIONS_SIGNATURE_NOVALID",	"Signatures awaiting confirmation:");
 define("_AM_XPETITIONS_INDEX_SUMMARY",		"Index");
+define("_AM_XPETITIONS_INDEX_SUMMARY_BOX1",     "XPETITIONS Configuration");
+define("_AM_XPETITIONS_INDEX_SUMMARY_BOX2",     "Synthesis");
 define("_AM_XPETITIONS_CREATE",			"Creation");
 define("_AM_XPETITIONS_CREATE_BUTTON",		"Create a petition");
+define("_AM_XPETITIONS_DIR_CREATED",            "created");
+define("_AM_XPETITIONS_DIR_NOT_CREATED",        "not created");
+define("_AM_XPETITIONS_DIR_TO_CREATE",          "create it now");
 define("_AM_XPETITIONS_INDEX_TAB1",		"Id");
 define("_AM_XPETITIONS_INDEX_TAB2",		"Online petitions");
 define("_AM_XPETITIONS_INDEX_TAB3",		"Date");
@@ -244,8 +249,19 @@ define("_AM_XPETITIONS_CAPTCHA_CHOICE3A",	"Choice 3");
 define("_AM_XPETITIONS_CAPTCHA_CHOICE3_DSC",	"No regulation is necessary.<br />The questions are unpredictable, refresh the page to see the other questions.");
 
 // * about.php *
-define("_AM_XPETITIONS_ABOUT",			"About");
-
+define("_AM_XPETITIONS_ABOUT_1",		"About");
 define("_AM_XPETITIONS_UPDATE",			"Update");
 define("_AM_XPETITIONS_CANCEL",			"Remove");
+define("_AM_XPETITIONS_ABOUT_1_DSC",            "Petitions module on line multilangues developed to function with XOOPS.
+The forms can be accompanied by an CAPTCHA to avoid the spams (choices of 3 captchas).");
+define("_AM_XPETITIONS_ABOUT_2",                "Update");
+define("_AM_XPETITIONS_ABOUT_2_DSC",            "Check for updates");
+define("_AM_XPETITIONS_ABOUT_3",                "Support, inquiries and comments");
+define("_AM_XPETITIONS_ABOUT_3_DSC",            " get <a href='http://www.informatux.com/xpetitions' target='_blank'>a website and a forum for tracking bugs</a>. Verify that a bug has already been submitted before adding your own.");
+define("_AM_XPETITIONS_ABOUT_4",                "Enhancement requests");
+define("_AM_XPETITIONS_ABOUT_4_DSC",            "You can make requests for improvement on <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'> the website through the contact form</a>.");
+define("_AM_XPETITIONS_ABOUT_5",                "Email");
+define("_AM_XPETITIONS_ABOUT_5_DSC",            "I can also be contacted by email through my website <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'>on the contact form</a>.");
+define("_AM_XPETITIONS_ABOUT_6",                "Special thanks");
+define("_AM_XPETITIONS_ABOUT_6_DSC",            "A big thank you to Thomas HUBERT (worldcoalition.org) for the English translation of the module.");
 ?>

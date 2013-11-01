@@ -4,7 +4,7 @@
 /*         http://www.informatux.com/          */
 /*       SOLUTIONS AND WEB DEVELOPMENT         */
 /*             Patrice BOUTHIER                */
-/*                   2008                      */
+/*                   2013                      */
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
@@ -24,11 +24,11 @@ xpetitions_adminmenu('about.php');
 <!-- <br /> -->
 <table border="0" cellspacing="1" style="width: 100%;" class="outer">
   <tr>
-    <th><?php echo _AM_XPETITIONS_ABOUT; ?></th>
+    <th><?php echo _AM_XPETITIONS_ABOUT_1; ?></th>
   </tr>
   <tr>
     <td class="odd">
-	  Xpetitions est un module de p&eacute;titions en ligne multilangue pour XOOPS v2, d&eacute;velopp&eacute; pour &ecirc;tre compatible avec le hack Smartfactory Multilanguages. Les formulaires ont &eacute;t&eacute; accompagn&eacute; d'une image captcha param&eacute;trable par son fichier ini et activable depuis le backoffice.
+	  <?php echo _AM_XPETITIONS_ABOUT_1_DSC; ?>
 	</td>
   </tr>
 </table>
@@ -40,12 +40,12 @@ xpetitions_adminmenu('about.php');
   </tr>
   <tr>
     <td class="head" width="100">Version</td>
-	<td class="odd"> version install&eacute;e du module <?php echo $xoopsModule->getVar('name'); ?> : <?php echo number_format(round($xoopsModule->getVar('version')/100 , 2), 2); ?></td>
+	<td class="odd"> <?php echo $xoopsModule->getVar('name'); ?> : <?php echo number_format(round($xoopsModule->getVar('version')/100 , 2), 2); ?></td>
   </tr>
   <tr>
-    <td class="head" width="100">Mise &agrave; jour</td>
+    <td class="head" width="100"><?php echo _AM_XPETITIONS_ABOUT_2; ?></td>
 	<td class="odd">
-	  <a href="http://www.informatux.com/xpetitions/">V&eacute;rifier les mises &agrave; jour</a>
+	  <a href="http://www.informatux.com/xpetitions/"><?php echo _AM_XPETITIONS_ABOUT_2_DSC; ?></a>
 	</td>
   </tr>
   <tr>
@@ -54,25 +54,24 @@ xpetitions_adminmenu('about.php');
 <br />
 <table border="0" cellspacing="1" style="width: 100%;" class="outer">
   <tr>
-    <th colspan="2">Support, demandes et commentaires</th>
+    <th colspan="2"><?php echo _AM_XPETITIONS_ABOUT_3; ?></th>
   </tr>
 <tr>
     <td class="head" width="100">Forums Support</td>
     <td class="odd">
-      <?php echo $xoopsModule->getVar('name'); ?> poss&egrave;de <a href="http://www.informatux.com/xpetitions" target="_blank">un site et un forum pour le suivi des bugs</a>. V&eacute;rifier qu'un bug n'a pas d&eacute;j&agrave; &eacute;t&eacute; soumis avant d'ajouter le votre.
+        <?php echo $xoopsModule->getVar('name').' '._AM_XPETITIONS_ABOUT_3_DSC; ?>
     </td>
   </tr>
   <tr>
-    <td class="head" width="100">Demandes d'am&eacute;lioration</td>
+    <td class="head" width="100"><?php echo _AM_XPETITIONS_ABOUT_4; ?></td>
     <td class="odd">
-      Vous pouvez effectuer vos demandes d'am&eacute;lioration sur <a href="http://www.informatux.com/xpetitions/modules/liaise" target="_blank"> le site par le biais du formulaire de contact</a>.
+      <?php echo _AM_XPETITIONS_ABOUT_4_DSC; ?>
     </td>
   </tr>
   <tr>
-    <td class="head" width="100">E-mail</td>
+    <td class="head" width="100"><?php echo _AM_XPETITIONS_ABOUT_5; ?></td>
 	<td class="odd">
-	  Je peux aussi &ecirc;tre contacter par email sur mon site par le biais  
-	  <a href="http://www.informatux.com/xpetitions/modules/liaise" target="_blank">du formulaire de contact</a>.
+	  <?php echo _AM_XPETITIONS_ABOUT_5_DSC; ?>
 	</td>
   </tr>
 </table>
@@ -80,11 +79,11 @@ xpetitions_adminmenu('about.php');
 <br />
 <table border="0" cellspacing="1" style="width: 100%;" class="outer">
   <tr>
-    <th>Remerciements</th>
+    <th><?php echo _AM_XPETITIONS_ABOUT_6; ?></th>
   </tr>
   <tr>
     <td class="odd">
-	Un grand merci &agrave; Thomas HUBERT (worldcoalition.org) pour la traduction en anglais du module <?php echo $xoopsModule->getVar('name'); ?>.
+	<?php echo _AM_XPETITIONS_ABOUT_6_DSC; ?>
 	</td>
   </tr>
 </table>

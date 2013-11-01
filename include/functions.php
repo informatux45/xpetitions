@@ -35,14 +35,14 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
                 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		//              Nouvelle box
 		// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-		$box1 = 'Configuration XPETITIONS';
-		$box2 = 'Synth&egrave;se';
+		$box1 = _AM_XPETITIONS_INDEX_SUMMARY_BOX1;
+		$box2 = _AM_XPETITIONS_INDEX_SUMMARY_BOX2;
                 
 		$indexAdmin->addInfoBox($box1);
                 // ------------------------------------
                 // --- Affichage de boutons
                 // ------------------------------------
-                $indexAdmin->addItemButton(_AM_XPETITIONS_CREATE_BUTTON, 'petitions.php', 'add', '');
+                $indexAdmin->addItemButton(_AM_XPETITIONS_CREATE_BUTTON, 'petitions.php?op=form', 'add', '');
 		$indexAdmin->addInfoBoxLine($box1, $indexAdmin->renderbutton('left'), '', '', 'default');
                 
                 // ------------------------------------
@@ -50,12 +50,12 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
                 // ------------------------------------
                 $dir_upload_xpetitions = $home_info[0];
 		if (is_dir($dir_upload_xpetitions)) {
-			$dir_upload['value']  = 'cr&eacute;&eacute;';
+			$dir_upload['value']  = _AM_XPETITIONS_DIR_CREATED;
 			$dir_upload['button'] = '';
 			$dir_upload['color']  = 'green';
 		} else {
-			$dir_upload['value']  = 'pas cr&eacute;&eacute;<br />';
-			$dir_upload['button'] = '<form name="create_dir" action="dir.php" method="post"><input type="submit" value="le cr&eacute;er maintenant" /></form>';
+			$dir_upload['value']  = _AM_XPETITIONS_DIR_NOT_CREATED . '<br />';
+			$dir_upload['button'] = '<form name="create_dir" action="dir.php" method="post"><input type="submit" value="'._AM_XPETITIONS_DIR_TO_CREATE.'" /></form>';
 			$dir_upload['color']  = 'red';
 		}
 		$indexAdmin->addInfoBoxLine($box1, _AM_XPETITIONS_CHECK1.' ('.$dir_upload_xpetitions.')'.$dir_upload['button'], $dir_upload['value'], $dir_upload['color'], 'default');
@@ -97,15 +97,16 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
                 // --- Tableau
 		$indexAdmin->addInfoBox($box2);
 		// Petitions Status
-                $xpetitions_create  = ($home_info[1] < 2) ? sprintf(_AM_XPETITIONS_PETITION_CREATE, $home_info[1]) : sprintf(_AM_XPETITIONS_PETITIONS_CREATE, $home_info[1]);
-                $indexAdmin->addInfoBoxLine($box2, $xpetitions_create, '');
                 $xpetitions_online  = ($home_info[2] < 2) ? sprintf(_AM_XPETITIONS_PETITION_ONLINE, $home_info[2]) : sprintf(_AM_XPETITIONS_PETITIONS_ONLINE, $home_info[2]);
                 $indexAdmin->addInfoBoxLine($box2, $xpetitions_online, '');
                 $xpetitions_offline = ($home_info[3] < 2) ? sprintf(_AM_XPETITIONS_PETITION_OFFLINE, $home_info[3]) : sprintf(_AM_XPETITIONS_PETITIONS_OFFLINE, $home_info[3]);
                 $indexAdmin->addInfoBoxLine($box2, $xpetitions_offline, '');
                 $xpetitions_archive = ($home_info[4] < 2) ? sprintf(_AM_XPETITIONS_PETITION_ARCHIVE, $home_info[4]) : sprintf(_AM_XPETITIONS_PETITIONS_ARCHIVE, $home_info[4]);
-                $indexAdmin->addInfoBoxLine($box2, $xpetitions_archive, '');                      
-                
+                $indexAdmin->addInfoBoxLine($box2, $xpetitions_archive, '');
+                // ----------------------------------------
+                $indexAdmin->addInfoBoxLine($box2, '-------------------------------', '');
+                $xpetitions_create  = ($home_info[1] < 2) ? sprintf(_AM_XPETITIONS_PETITION_CREATE, $home_info[1]) : sprintf(_AM_XPETITIONS_PETITIONS_CREATE, $home_info[1]);
+                $indexAdmin->addInfoBoxLine($box2, $xpetitions_create, '');                
 		// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		//               Affichage
 		// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -119,8 +120,38 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
         
             case "petitions.php":
                 if (!isset($_REQUEST['op'])) {
+                    // Creer une nouvelle petition
                     $indexAdmin->addItemButton(_AM_XPETITIONS_CREATE_BUTTON, 'petitions.php?op=form', 'add', '');	
                     echo $indexAdmin->renderButton('left', '');
+                }
+            break;
+            
+            case "signature.php":
+                if (!isset($_REQUEST['op'])) {
+                    // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
+                    $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
+                    $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
+                    echo $indexAdmin->renderButton('left');
+                }
+                if ($_REQUEST['op'] == 'novalid') {
+                    // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
+                    $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
+                    $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
+                    // Validation forcée des signatures non validées
+                    $indexAdmin->addItemButton(_AM_XPETITIONS_FORCE_SIGN, 'signature.php?op=signfo&id='.$_REQUEST['id'].'&name='.$_REQUEST['name'].'&ok=0', 'button_ok');
+                    echo $indexAdmin->renderButton('left');
+                }
+                if ($_REQUEST['op'] == 'recorded') {
+                    // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
+                    $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
+                    $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
+                    echo $indexAdmin->renderButton('left');
+                }
+                if ($_REQUEST['op'] == 'extract') {
+                    // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
+                    $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
+                    $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
+                    echo $indexAdmin->renderButton('left');
                 }
             break;
         
@@ -154,8 +185,6 @@ global $xoopsModule;
 } // fin de la fonction
 
 function helpMenu($titre, $aide) {
-	//echo '<div id="xpetitions_help_a"><a class="xpetitions_help_title" onclick="helpMenu(\'help_index\');">' . $titre . '</a>';
-	//echo '<div style="display: none;" class="xpetitions_help" id="help_index">' . $aide . '</div></div>';
 	echo '<fieldset id="xpetitions_help_a">';
 	echo '<legend class="label">' . $titre . '</legend>';
 	echo '<div class="xpetitions_help" id="help_index">' . $aide . '</div>';

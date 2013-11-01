@@ -1,7 +1,7 @@
 Module Xpetitions
 =================
 
-Petitions module on line multilangues developed to function with the hack Smartfactory Multilanguages.
+Petitions module on line multilangues developed to function with XOOPS.
 The forms can be accompanied by an CAPTCHA to avoid the spams (choices of 3 captchas).
 
 You can create petitions as many as wish it to you.

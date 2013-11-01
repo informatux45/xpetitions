@@ -86,13 +86,11 @@ case "addsign": // Ajouter manuellement une signature
 
 case "signma": // Enregistrer/Supprimer des signatures manuellement
 	xoops_cp_header();
-	//echo '<div id="central">';
 	xpetitions_adminmenu('signature.php');
 	global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 	
 	// Aide
 	helpMenu(_AM_XPETITIONS_SIGN_HELP1, _AM_XPETITIONS_SIGN_HELP4);
-	echo '<br />';
 
 	?>
 	<script type="text/javascript" src="<?php echo XOOPS_URL.'/modules/'.$xoopsModule->getVar('dirname'); ?>/include/functions.js"></script>
@@ -108,37 +106,21 @@ case "signma": // Enregistrer/Supprimer des signatures manuellement
 
 case "novalid": // Formulaire d'envoi email multiple pour les retardataires
 	xoops_cp_header();
-	echo '<div id="central">';
 	xpetitions_adminmenu('signature.php');
 	global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
 	// Aide
 	helpMenu(_AM_XPETITIONS_SIGN_HELP1, _AM_XPETITIONS_SIGN_HELP3);
-	echo '<br />';
 
 	?>
 	<script type="text/javascript" src="<?php echo XOOPS_URL.'/modules/'.$xoopsModule->getVar('dirname'); ?>/include/functions.js"></script>
 	<?php
 
-	$petition_name = $_REQUEST['name'];
-	$petition_id   = $_REQUEST['id'];
-
-	// Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
-	echo '<form><div style="margin-bottom: 12px;">';
-	echo '<input type="button" name="button" onclick="location=\'signature.php?op=signma\'" value="' . _AM_XPETITIONS_SAVE_SIGN . '">&nbsp;&nbsp;';
-	echo '<input type="button" name="button" onclick="location=\'signature.php?op=signshow\'" value="' . _AM_XPETITIONS_SIGN_SHOW . '">';
-	echo '</div></form>';
-
-	// Validation forcée des signatures non validées
-	echo '<form><div style="margin-bottom: 12px;">';
-	echo '<input type="button" name="button" onclick="location=\'signature.php?op=signfo&id='.$petition_id.'&name='.$petition_name.'&ok=0\'" value="' . _AM_XPETITIONS_FORCE_SIGN . '">';
-	echo '</div></form>';
-
 	// Formulaire d'envoi email multiple (retardataires)
 	include "../include/sendlatecomer.inc.php";
 
-	echo '</div>'; // fin id central
 	xpetitions_adminfooter();
+        xoops_cp_footer();
 	break;
 
 case "signfo": // Validation forcée des signatures non validées
@@ -209,17 +191,10 @@ case "latecomer_send": // Envoi des emails aux retardaires
 
 case "recorded": // Affichage des signatures enregistrées
 	xoops_cp_header();
-	echo '<div id="central">';
 	xpetitions_adminmenu('signature.php');
 	global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 	$petition_name = $_REQUEST['name'];
 	$petition_id   = $_REQUEST['id'];
-
-	// Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
-	echo '<form><div style="margin-bottom: 12px;">';
-	echo '<input type="button" name="button" onclick="location=\'signature.php?op=signma\'" value="' . _AM_XPETITIONS_SAVE_SIGN . '">&nbsp;&nbsp;';
-	echo '<input type="button" name="button" onclick="location=\'signature.php?op=signshow\'" value="' . _AM_XPETITIONS_SIGN_SHOW . '">';
-	echo '</div></form>';
 
 	// Tableau des signatures
 	echo '<br /><table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="1" class="outer">';
@@ -275,22 +250,14 @@ case "recorded": // Affichage des signatures enregistrées
 	echo '</tbody></table>';
 	echo "<div align='right'>".$pagenav->renderNav().'</div><br />';
 
-	echo '</div>'; // fin id central
 	xpetitions_adminfooter();
 	xoops_cp_footer();
 	break;
 
 case "extract": // Extraire les signatures validées au format csv
 	xoops_cp_header();
-	echo '<div id="central">';
 	xpetitions_adminmenu('signature.php');
 	global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
-
-	// Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
-	echo '<form><div style="margin-bottom: 12px;">';
-	echo '<input type="button" name="button" onclick="location=\'signature.php?op=signma\'" value="' . _AM_XPETITIONS_SAVE_SIGN . '">&nbsp;&nbsp;';
-	echo '<input type="button" name="button" onclick="location=\'signature.php?op=signshow\'" value="' . _AM_XPETITIONS_SIGN_SHOW . '">';
-	echo '</div></form>';
 
 	?>
 	<script type="text/javascript" src="<?php echo XOOPS_URL.'/modules/'.$xoopsModule->getVar('dirname'); ?>/include/functions.js"></script>
@@ -321,7 +288,6 @@ case "extract": // Extraire les signatures validées au format csv
 	} else {
 	echo '<script type="text/javascript">chdiv("construct_csv","'. _AM_XPETITIONS_SIGN_CSV_ERROR .'");</script>';
 	}
-	echo '</div>'; // fin id central
 	xpetitions_adminfooter();
 	xoops_cp_footer();
 	break;
@@ -329,23 +295,15 @@ case "extract": // Extraire les signatures validées au format csv
 case "tab": // Récapitulatifs des signatures par pétitions
 	default:
 	xoops_cp_header();
-	echo '<div id="central">';
 	xpetitions_adminmenu('signature.php');
 	global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
 	// Aide
 	helpMenu(_AM_XPETITIONS_SIGN_HELP1, _AM_XPETITIONS_SIGN_HELP2);
-	echo '<br />';
 
 	?>
 	<script type="text/javascript" src="<?php echo XOOPS_URL.'/modules/'.$xoopsModule->getVar('dirname'); ?>/include/functions.js"></script>
 	<?php
-
-	// Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
-	echo '<form><div style="margin-bottom: 12px;">';
-	echo '<input type="button" name="button" onclick="location=\'signature.php?op=signma\'" value="' . _AM_XPETITIONS_SAVE_SIGN . '">&nbsp;&nbsp;';
-	echo '<input type="button" name="button" onclick="location=\'signature.php?op=signshow\'" value="' . _AM_XPETITIONS_SIGN_SHOW . '">';
-	echo '</div></form>';
 
 	// Tableau des pétitions
 	echo '<br /><table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="1" class="outer">';
@@ -409,20 +367,17 @@ case "tab": // Récapitulatifs des signatures par pétitions
 	echo "<div align='right'>".$pagenav->renderNav().'</div><br />';
 	}
 
-	echo '</div>'; // fin id central
 	xpetitions_adminfooter();
 	xoops_cp_footer();
 	break;
 
 case "signshow": // Gestion de l'affichage des signatures
 	xoops_cp_header();
-	echo '<div id="central">';
 	xpetitions_adminmenu('signature.php');
 	global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
 	// Aide
 	helpMenu(_AM_XPETITIONS_SIGN_HELP1, _AM_XPETITIONS_SIGN_HELP5);
-	echo '<br />';
 
 	?>
 	<script type="text/javascript" src="<?php echo XOOPS_URL.'/modules/'.$xoopsModule->getVar('dirname'); ?>/include/functions.js"></script>
@@ -441,7 +396,6 @@ case "signshow": // Gestion de l'affichage des signatures
 	// Formulaire insérer/supprimer des signatures
 	include "../include/signs.inc.php";
 
-	echo '</div>'; // fin id central
 	xpetitions_adminfooter();
 	xoops_cp_footer();
 	break;

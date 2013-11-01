@@ -84,6 +84,12 @@ define("_MI_XPETITIONS_DISPLAY_VALID",		"Template per la conferma della firma");
 define("_MI_XPETITIONS_DISPLAY_PRESIGN",	"Template per la pre-firma prima della convalida automatica");
 define("_MI_XPETITIONS_DISPLAY_VALID_PRESIGN",	"Template per la conferma della firma");
 
+// xoops version config
+define("_MI_XPETITIONS_SIGN_TITLE_DEFAULT",     "Firmo");
+define("_MI_XPETITIONS_SIGN_DOWNL_DEFAULT",     "Scaricare una versione stampabile della petizione");
+define("_MI_XPETITIONS_SIGN_FRIEND_DEFAULT",    "Dillo ad un amico");
+define("_MI_XPETITIONS_SIGN_SHOW_DEFAULT",      "Vedere firme");
+
 // blocks
 define("_MI_XPETITIONS_BNAME1",			"Ultime firme");
 define("_MI_XPETITIONS_BNAME2",			"Petizioni attive");

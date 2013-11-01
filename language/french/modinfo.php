@@ -81,6 +81,12 @@ define("_MI_XPETITIONS_DISPLAY_VALID",		"Template validation d'une signature");
 define("_MI_XPETITIONS_DISPLAY_PRESIGN",	"Template présignature avant validation automatique");
 define("_MI_XPETITIONS_DISPLAY_VALID_PRESIGN",	"Template validation d'une présignature");
 
+// xoops version config
+define("_MI_XPETITIONS_SIGN_TITLE_DEFAULT",     "Je signe");
+define("_MI_XPETITIONS_SIGN_DOWNL_DEFAULT",     "Télécharger une version imprimable de la pétition");
+define("_MI_XPETITIONS_SIGN_FRIEND_DEFAULT",    "Prévenir un ami");
+define("_MI_XPETITIONS_SIGN_SHOW_DEFAULT",      "Voir les signatures");
+
 // blocks
 define("_MI_XPETITIONS_BNAME1",			"Dernières signatures");
 define("_MI_XPETITIONS_BNAME2",			"Mes pétitions actives");

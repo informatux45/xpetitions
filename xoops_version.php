@@ -12,7 +12,7 @@
 /* ******************************************* */
 
 // Directory XPETITIONS
-$mydirname                    = basename(dirname(__FILE__));
+$xpetition_dirname            = basename(dirname(__FILE__));
 
 $modversion['name']           = _MI_XPETITIONS_NAME;
 $modversion['version']        = "1.20";
@@ -24,10 +24,7 @@ $modversion['license']        = 'GPLv2 see LICENSE';
 $modversion['license_url']    = "//www.gnu.org/licenses/gpl-2.0.html";
 $modversion['official']       = 0;
 $modversion['image']          = "images/xpetitions_logo.png";
-$modversion['dirname']        = $mydirname;
-//$modversion['dirmoduleadmin'] = 'Frameworks/moduleclasses/';
-//$modversion['icons16']        = 'Frameworks/moduleclasses/icons/16/';
-//$modversion['icons32']        = 'Frameworks/moduleclasses/icons/32/';
+$modversion['dirname']        = $xpetition_dirname;
 $modversion['dirmoduleadmin'] = '../../Frameworks/moduleclasses/moduleadmin';
 $modversion['icons16']        = '../../Frameworks/moduleclasses/icons/16';
 $modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
@@ -36,7 +33,7 @@ $modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
 $modversion['system_menu'] = 1;
 
 // About
-$modversion['release_date']        = '2013/10/03';
+$modversion['release_date']        = '2013/11/01';
 $modversion["module_website_url"]  = "//www.informatux.com/";
 $modversion["module_website_name"] = "INFORMATUX";
 $modversion["status_version"]      = "Stable";
@@ -290,7 +287,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_TITLE';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_TITLE_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = 'Je signe';
+$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_TITLE_DEFAULT';
 
 $i++;
 $modversion['config'][$i]['name'] = 'use_wysiwyg'; // Changement de l'editeur wysiwyg de description de la petition
@@ -307,7 +304,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_DOWNL';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_DOWNL_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = 'T&eacute;l&eacute;charger une version imprimable de la p&eacute;tition';
+$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_DOWNL_DEFAULT';
 
 $i++;
 $modversion['config'][$i]['name'] = 'signature_friend'; // intitule du lien pour prevenir un ami
@@ -315,7 +312,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_FRIEND';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_FRIEND_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = 'Pr&eacute;venir un ami';
+$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_FRIEND_DEFAULT';
 
 $i++;
 $modversion['config'][$i]['name'] = 'signature_show'; // intitule du lien pour voir les signatures
@@ -323,7 +320,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_SHOW';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_SHOW_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = 'Voir les signatures';
+$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_SHOW_DEFAULT';
 
 $i++;
 $modversion['config'][$i]['name'] = 'send_a_friend'; // afficher envoyer e un ami

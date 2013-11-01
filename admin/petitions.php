@@ -80,7 +80,7 @@ switch ($op) {
             // 1 : Online
             // 2 : Offline
             // 3 : Archive
-            echo '<img src="'.$pathIcon16.'/'.($row['status'] == 1 ? 'green' : ($row['status'] == 2 ? 'red_off' : 'red')).'.gif" />';
+            echo '<img src="'.$pathIcon16.'/'.($row['status'] == 1 ? 'on' : 'off').'.png" />';
             echo '</td><td style="text-align: center;">';
             echo '<a href="petitions.php?op=modif&id='.$row['id'].'"><img src="'.$pathIcon16.'/edit.png" alt="'._AM_XPETITIONS_UPDATE.'" title="'._AM_XPETITIONS_UPDATE.'" /></a>';
             echo '&nbsp;';
