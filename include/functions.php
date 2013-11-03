@@ -307,4 +307,37 @@ function mailValid($email) {
 	}
 }
 
+function getEditor($caption, $name, $value = "", $width = '100%', $height ='400px', $supplemental='', $dhtml = true){
+
+global $xoopsModuleConfig;
+$editor = false;
+$xv     = str_replace('XOOPS ','',XOOPS_VERSION);
+
+$editor_configs           = array();
+$editor_configs["name"]   = $name;
+$editor_configs["value"]  = $value;
+$editor_configs["rows"]   = 10;
+$editor_configs["cols"]   = 40;
+$editor_configs["width"]  = "100%";
+$editor_configs["height"] = "400px";
+
+	switch(strtolower($xoopsModuleConfig['use_wysiwyg'])) {
+                case 'tiny':
+                case 'tinymce':
+                    $editor = new XoopsFormEditor($caption, $xoopsModuleConfig['use_wysiwyg'], $editor_configs, $nohtml = false, $onfailure = 'textarea');    
+                break;
+
+		default :
+		if ($dhtml) {
+			$editor = new XoopsFormDhtmlTextArea($caption, $name, $value, 10, 40);
+		} else {
+			$editor = new XoopsFormTextArea($caption, $name, $value, 7, 40);
+		}
+
+		break;
+	}
+
+	return $editor;
+}
+
 ?>

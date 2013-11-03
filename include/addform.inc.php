@@ -14,9 +14,6 @@
 // includes
 include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
 
-if (is_file(XOOPS_ROOT_PATH . "/class/wysiwyg/formwysiwygtextarea.php"))
-	include_once(XOOPS_ROOT_PATH . "/class/wysiwyg/formwysiwygtextarea.php");
-
 // Initialisation du formulaire
 $addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE1_ADDFORM, "addform", "petitions.php?op=post");
 $addform->setExtra("enctype='multipart/form-data'");
