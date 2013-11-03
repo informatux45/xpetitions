@@ -17,6 +17,6 @@ include XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->getVar('dirname').'/include/my
 
 $myts =& MyTextSanitizer::getInstance();
 
-error_reporting(E_ALL);
+error_reporting(0);
 
 ?>
