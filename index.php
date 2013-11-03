@@ -370,7 +370,7 @@ case "friend_send": // envoi du message à un ami
                                 case "1":
 				default: // Option CAPTCHA (K.OHWADA) => 1
 				require_once ('class/captcha_x/class.captcha_x.php');
-				$captcha_check = &new captcha_x();
+				$captcha_check = new captcha_x();
 				if ( !isset($captcha) || !$captcha_check->validate($captcha) ) {
 					redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
 				}
@@ -560,7 +560,7 @@ case "sign": // enregistrement d'une signature en ligne par email (par retour de
                                 case "1":
 				default: // Option CAPTCHA (K.OHWADA) => 1
 				require_once ('class/captcha_x/class.captcha_x.php');
-				$captcha_check = &new captcha_x();
+				$captcha_check = new captcha_x();
 				if ( !isset($captcha) || !$captcha_check->validate($captcha) ) {
 					redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
 				}
@@ -727,7 +727,7 @@ case "presign": // enregistrement d'une signature en ligne en automatique (doubl
                                 case "1":
 				default: // Option CAPTCHA (K.OHWADA) => 1
 				require_once ('class/captcha_x/class.captcha_x.php');
-				$captcha_check = &new captcha_x();
+				$captcha_check = new captcha_x();
 				if ( !isset($captcha) || !$captcha_check->validate($captcha) ) {
 					redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
 				}
