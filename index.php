@@ -48,20 +48,22 @@ $xoopsTpl->assign("name_nav_home", $name_nav_home);
 $xoopsTpl->assign("show_petitions_home", $xoopsModuleConfig['show_petitions_home']);
 
 //urbanspaceman mod
-$petition_detail = getPetitionDetails(intval($id));
-if ($petition_detail['whoview'] == '1'){
-    $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW1);
-    $xoopsTpl->assign("whoview_group", 1);
-}
+if (isset($id)) {
+    $petition_detail = getPetitionDetails(intval($id));
+    if ($petition_detail['whoview'] == '1'){
+        $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW1);
+        $xoopsTpl->assign("whoview_group", 1);
+    }
 
-elseif ($petition_detail['whoview'] == '2'){
-    $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW2);
-    $xoopsTpl->assign("whoview_group", 2);
-}
+    elseif ($petition_detail['whoview'] == '2'){
+        $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW2);
+        $xoopsTpl->assign("whoview_group", 2);
+    }
 
-elseif ($petition_detail['whoview'] == '3'){
-    $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW3);
-    $xoopsTpl->assign("whoview_group", 3);
+    elseif ($petition_detail['whoview'] == '3'){
+        $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW3);
+        $xoopsTpl->assign("whoview_group", 3);
+    }
 }
 
 switch ($op) {
