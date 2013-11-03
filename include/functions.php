@@ -50,12 +50,12 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
                 // ------------------------------------
                 $dir_upload_xpetitions = $home_info[0];
 		if (is_dir($dir_upload_xpetitions)) {
-			$dir_upload['value']  = _AM_XPETITIONS_DIR_CREATED;
+			$dir_upload['value']  = _AM_XPETITIONS_DIRECTORY_CREATED;
 			$dir_upload['button'] = '';
 			$dir_upload['color']  = 'green';
 		} else {
-			$dir_upload['value']  = _AM_XPETITIONS_DIR_NOT_CREATED . '<br />';
-			$dir_upload['button'] = '<form name="create_dir" action="dir.php" method="post"><input type="submit" value="'._AM_XPETITIONS_DIR_TO_CREATE.'" /></form>';
+			$dir_upload['value']  = _AM_XPETITIONS_DIRECTORY_NOT_CREATED . '<br />';
+			$dir_upload['button'] = '<form name="create_dir" action="dir.php" method="post"><input type="submit" value="'._AM_XPETITIONS_DIRECTORY_TO_CREATE.'" /></form>';
 			$dir_upload['color']  = 'red';
 		}
 		$indexAdmin->addInfoBoxLine($box1, _AM_XPETITIONS_CHECK1.' ('.$dir_upload_xpetitions.')'.$dir_upload['button'], $dir_upload['value'], $dir_upload['color'], 'default');
