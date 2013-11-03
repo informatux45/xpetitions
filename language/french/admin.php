@@ -16,6 +16,9 @@ define("_AM_XPETITIONS_XOOPS_PRO1",		"Support et mise à jour disponible sur ");
 define("_AM_XPETITIONS_XOOPS_PRO2",		"Solutions et développement WEB");
 define("_AM_XPETITIONS_XOOPS_PRO3",		"Avez-vous besoin d'aide avec ce module ?");
 
+// * header.inc.php *
+define("_AM_MODULEADMIN_MISSING",               "La classe ModuleAdmin n'est pas présente, installez là sur votre xoops.<br />/Frameworks/moduleclasses/moduleadmin/");
+
 // * index.php *
 define("_AM_XPETITIONS_INDEX_HELP1",		"<b>AIDE</b>");
 define("_AM_XPETITIONS_INDEX_HELP2",		"- En cliquant sur le nom d'une pétition, vous accéder à la page d'accueil de celle-ci.<br />- La date correspond à la mise en ligne d'une pétition.<br />- Le statut d'une pétition possède 3 états :<br />* <b style='color: green;'>Active</b> (La pétition peut être signée si la date n'est pas supérieur à la date du jour)<br />* <b style='color: orange;'>hors ligne</b> (La pétition n'est pas visible et ne peut pas être signée)<br />* <b style='color: red;'>Archivée</b> (La pétition est visible mais ne peut pas être signée)<br />- Les actions possibles :<br />* Modification (Vous pouvez tout modifier sauf le nom de la table qui recevra les signatures)<br />* Suppression (Cette action supprimera la pétition en ligne y compris toutes les signatures enregistrées. Si vous souhaitez conserver votre pétition mais quelle ne soit plus signée ni accessible, modifiez l'état à 'hors ligne')");

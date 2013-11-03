@@ -16,6 +16,9 @@ define("_AM_XPETITIONS_XOOPS_PRO1",		"Support and updates available at ");
 define("_AM_XPETITIONS_XOOPS_PRO2",		"WEB solutions and development");
 define("_AM_XPETITIONS_XOOPS_PRO3",		"Do you need help with this module?");
 
+// * header.inc.php *
+define("_AM_MODULEADMIN_MISSING",               "The ModuleAdmin class is not installed, install it on your xoops.<br />/Frameworks/moduleclasses/moduleadmin/");
+
 // * index.php *
 define("_AM_XPETITIONS_INDEX_HELP1",		"<b>HELP</b>");
 define("_AM_XPETITIONS_INDEX_HELP2",		"- Please click on the name of a petition to open its homepage.<br />- The date displayed is that of the day the petition was put online.<br />- Petition status can be set to three levels:<br />* <b style='color: green;'>Active</b> (The petition can be signed as long as the petition date is in the past)<br />* <b style='color: orange;'>Offline</b> (The petition is not displayed and cannot be signed)<br />* <b style='color: red;'>Archived</b> (The petition is displayed but cannot be signed)<br />- Possible actions:<br />* Modification (You can modify everything except for the name of the signatures table)<br />* Deletion (This will delete the petition, including all attached signatures. If you want to keep your petition without displaying it nor registering new signatures, set it to 'Offline')");

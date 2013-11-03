@@ -16,6 +16,9 @@ define("_AM_XPETITIONS_XOOPS_PRO1",		"Support and updates available at ");
 define("_AM_XPETITIONS_XOOPS_PRO2",		"WEB solutions and development");
 define("_AM_XPETITIONS_XOOPS_PRO3",		"Do you need help with this module?");
 
+// * header.inc.php *
+define("_AM_MODULEADMIN_MISSING",               "La classe ModuleAdmin non è presente, installarlo sul tuo Xoops.<br />/Frameworks/moduleclasses/moduleadmin/");
+
 // * index.php *
 define("_AM_XPETITIONS_INDEX_HELP1",		"<b>HELP</b>");
 define("_AM_XPETITIONS_INDEX_HELP2",		"- Clicca sul nome di una petizione per aprire la pagina dedicata.<br />- La data visualizzata riferisce alla messa online della petizione.<br />- Lo stato della petizione pu&ograve; assumere tre valori:<br />* <b style='color: green;'>Attiva</b> (La petizione pu&ograve; essere firmata)<br />* <b style='color: orange;'>Offline</b> (La petizione non viene visualizzata e non pu&ograve; essere firmata)<br />* <b style='color: red;'>Archiviata</b> (La petizione viene visualizzata in archivio ma non pu&ograve; essere firmata)<br />- Azioni possibili:<br />* Modifiche (E' possibile modificare tutto tranne il nome della tabella che contiene le firme)<br />* Eliminazione (La petizione viene cancellata dal sistema, comprese tutte le firme ad essa associate. Se vuoi mantenere la petizione e tutte le firme senza cancellarla ma rendendola non visibile, mettila nello stato 'Offline')");
