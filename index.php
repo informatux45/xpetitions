@@ -367,6 +367,7 @@ case "friend_send": // envoi du message à un ami
 			// Recuperation de l'option captcha
 			$captcha_inprogress = getOptionInfos('captcha');
 			switch($captcha_inprogress['options']) {
+                                case "1":
 				default: // Option CAPTCHA (K.OHWADA) => 1
 				require_once ('class/captcha_x/class.captcha_x.php');
 				$captcha_check = &new captcha_x();
@@ -556,6 +557,7 @@ case "sign": // enregistrement d'une signature en ligne par email (par retour de
 			// Recuperation de l'option captcha
 			$captcha_inprogress = getOptionInfos('captcha');
 			switch($captcha_inprogress['options']) {
+                                case "1":
 				default: // Option CAPTCHA (K.OHWADA) => 1
 				require_once ('class/captcha_x/class.captcha_x.php');
 				$captcha_check = &new captcha_x();
@@ -722,6 +724,7 @@ case "presign": // enregistrement d'une signature en ligne en automatique (doubl
 			// Recuperation de l'option captcha
 			$captcha_inprogress = getOptionInfos('captcha');
 			switch($captcha_inprogress['options']) {
+                                case "1":
 				default: // Option CAPTCHA (K.OHWADA) => 1
 				require_once ('class/captcha_x/class.captcha_x.php');
 				$captcha_check = &new captcha_x();
