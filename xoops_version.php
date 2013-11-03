@@ -25,7 +25,7 @@ $modversion['license_url']    = "//www.gnu.org/licenses/gpl-2.0.html";
 $modversion['official']       = 0;
 $modversion['image']          = "images/xpetitions_logo.png";
 $modversion['dirname']        = $xpetition_dirname;
-$modversion['dirmoduleadmin'] = '../../Frameworks/moduleclasses/moduleadmin';
+$modversion['dirmoduleadmin'] = '/Frameworks/moduleclasses/moduleadmin';
 $modversion['icons16']        = '../../Frameworks/moduleclasses/icons/16';
 $modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
 
