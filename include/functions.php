@@ -127,13 +127,14 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
             break;
             
             case "signature.php":
-                if (!isset($_REQUEST['op'])) {
+                $op = (isset($_REQUEST['op'])) ? trim($_REQUEST['op']) : false;
+                if (!isset($op)) {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
                     echo $indexAdmin->renderButton('left');
                 }
-                if ($_REQUEST['op'] == 'novalid') {
+                if ($op == 'novalid') {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
@@ -141,13 +142,13 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
                     $indexAdmin->addItemButton(_AM_XPETITIONS_FORCE_SIGN, 'signature.php?op=signfo&id='.$_REQUEST['id'].'&name='.$_REQUEST['name'].'&ok=0', 'button_ok');
                     echo $indexAdmin->renderButton('left');
                 }
-                if ($_REQUEST['op'] == 'recorded') {
+                if ($op == 'recorded') {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
                     echo $indexAdmin->renderButton('left');
                 }
-                if ($_REQUEST['op'] == 'extract') {
+                if ($op == 'extract') {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
