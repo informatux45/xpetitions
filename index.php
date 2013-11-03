@@ -47,7 +47,7 @@ $xoopsTpl->assign("name_nav_home", $name_nav_home);
 // si l'option affichage des petitions de la page accueil : Ligne (1) ou Colonne (2)
 $xoopsTpl->assign("show_petitions_home", $xoopsModuleConfig['show_petitions_home']);
 
-//urbanspaceman mod
+// urbanspaceman mod
 if (isset($id)) {
     $petition_detail = getPetitionDetails(intval($id));
     if ($petition_detail['whoview'] == '1'){
