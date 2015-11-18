@@ -260,11 +260,11 @@ The forms can be accompanied by an CAPTCHA to avoid the spams (choices of 3 capt
 define("_AM_XPETITIONS_ABOUT_2",                "Update");
 define("_AM_XPETITIONS_ABOUT_2_DSC",            "Check for updates");
 define("_AM_XPETITIONS_ABOUT_3",                "Support, inquiries and comments");
-define("_AM_XPETITIONS_ABOUT_3_DSC",            " get <a href='http://www.informatux.com/xpetitions' target='_blank'>a website and a forum for tracking bugs</a>. Verify that a bug has already been submitted before adding your own.");
+define("_AM_XPETITIONS_ABOUT_3_DSC",            " get <a href='https://github.com/informatux45/xpetitions' target='_blank'>a repository for tracking bugs</a>. Verify that a bug has already been submitted before adding your own.");
 define("_AM_XPETITIONS_ABOUT_4",                "Enhancement requests");
-define("_AM_XPETITIONS_ABOUT_4_DSC",            "You can make requests for improvement on <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'> the website through the contact form</a>.");
+define("_AM_XPETITIONS_ABOUT_4_DSC",            "You can make requests for improvement on <a href='https://github.com/informatux45/xpetitions' target='_blank'> the repository through the contact form</a>.");
 define("_AM_XPETITIONS_ABOUT_5",                "Email");
-define("_AM_XPETITIONS_ABOUT_5_DSC",            "I can also be contacted by email through my website <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'>on the contact form</a>.");
+define("_AM_XPETITIONS_ABOUT_5_DSC",            "I can also be contacted by email through my website <a href='http://www.informatux.com/' target='_blank'>on the contact form</a>.");
 define("_AM_XPETITIONS_ABOUT_6",                "Special thanks");
 define("_AM_XPETITIONS_ABOUT_6_DSC",            "A big thank you to Thomas HUBERT (worldcoalition.org) for the English translation of the module.");
 ?>

@@ -48,10 +48,10 @@ $modversion['author_website_name'] = "Consultant informatique";
 $modversion['author_email']        = "contact@informatux.com";
 $modversion['demo_site_url']       = "";
 $modversion['demo_site_name']      = "";
-$modversion['support_site_url']    = "//www.informatux.com/xpetitions";
-$modversion['support_site_name']   = "Consultant informatique - Forums";
-$modversion['submit_bug']          = "//www.informatux.com/xpetitions";
-$modversion['submit_feature']      = "//www.informatux.com/xpetitions";
+$modversion['support_site_url']    = "https://github.com/informatux45/xpetitions";
+$modversion['support_site_name']   = "Consultant informatique - Github";
+$modversion['submit_bug']          = "https://github.com/informatux45/xpetitions";
+$modversion['submit_feature']      = "https://github.com/informatux45/xpetitions";
 
 // Developers
 $modversion['contributors']['developers'][0]['name']      = "Patrice Bouthier";

@@ -114,7 +114,6 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
             break;
             
             case "about.php":
-                //if ($navigation == 'about.php') echo $indexAdmin->renderAbout('DP72DNEB4LAZG', false);
                 echo $indexAdmin->renderAbout();
             break;
         
@@ -166,9 +165,9 @@ global $xoopsModule;
     $modfootertxt = "Module " . $xoopsModule->getVar('name') . " - Version " . $xoopsModule->getVar('version')/100 . " - INFORMATUX.COM";
     $urlMod  = XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname');
     $urlSup  = "http://www.informatux.com/";
-    $urlSup2 = "http://www.informatux.com/xpetitions";
+    $urlSup2 = "https://github.com/informatux45/xpetitions";
 
-    echo "<div style='padding-top: 8px; padding-bottom: 10px; text-align: center;'><a href='" . $urlSup2 . "' target='_blank'><img src='" . $urlMod . "/images/xpetitions_icone.png' title='" . $modfootertxt . "' alt='" . $modfootertxt . "'/></a></div>";
+    echo "<div style='padding-top: 8px; padding-bottom: 10px; text-align: center;'><a href='" . $urlSup2 . "' target='_blank'><img src='" . $urlMod . "/images/xpetitions_icone.png' title='" . $modfootertxt . "' alt='" . $modfootertxt . "'/></a><div class='xpetitions_admin_footer_inf2'>Developed and maintained by <a href='" . $urlSup . "'>INFORMATUX</a></div></div>";
     
 } // fin de la fonction
 

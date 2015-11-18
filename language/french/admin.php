@@ -257,11 +257,11 @@ define("_AM_XPETITIONS_ABOUT_1_DSC",            "Xpetitions est un module de pé
 define("_AM_XPETITIONS_ABOUT_2",                "Mise à jour");
 define("_AM_XPETITIONS_ABOUT_2_DSC",            "Vérifier les mises à jour");
 define("_AM_XPETITIONS_ABOUT_3",                "Support, demandes et commentaires");
-define("_AM_XPETITIONS_ABOUT_3_DSC",            " possède <a href='http://www.informatux.com/xpetitions' target='_blank'>un site et un forum pour le suivi des bugs</a>. Vérifier qu'un bug n'a pas déjà été soumis avant d'ajouter le votre.");
+define("_AM_XPETITIONS_ABOUT_3_DSC",            " possède <a href='https://github.com/informatux45/xpetitions' target='_blank'>un dépôt pour le suivi des bugs</a>. Vérifier qu'un bug n'a pas déjà été soumis avant d'ajouter le votre.");
 define("_AM_XPETITIONS_ABOUT_4",                "Demandes d'amélioration");
-define("_AM_XPETITIONS_ABOUT_4_DSC",            "Vous pouvez effectuer vos demandes d'amélioration sur <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'> le site par le biais du formulaire de contact</a>.");
+define("_AM_XPETITIONS_ABOUT_4_DSC",            "Vous pouvez effectuer vos demandes d'amélioration sur <a href='https://github.com/informatux45/xpetitions' target='_blank'> le dépôt par le biais du formulaire de contact</a>.");
 define("_AM_XPETITIONS_ABOUT_5",                "Email");
-define("_AM_XPETITIONS_ABOUT_5_DSC",            "Je peux aussi être contacter par email sur mon site par le biais <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'>du formulaire de contact</a>.");
+define("_AM_XPETITIONS_ABOUT_5_DSC",            "Je peux aussi être contacter par email sur mon site par le biais <a href='http://www.informatux.com/' target='_blank'>du formulaire de contact</a>.");
 define("_AM_XPETITIONS_ABOUT_6",                "Remerciements");
 define("_AM_XPETITIONS_ABOUT_6_DSC",            "Un grand merci à Thomas HUBERT (worldcoalition.org) pour la traduction en anglais du module.");
 ?>
