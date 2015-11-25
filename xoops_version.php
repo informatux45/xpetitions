@@ -287,7 +287,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_TITLE';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_TITLE_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_TITLE_DEFAULT';
+$modversion['config'][$i]['default'] = _MI_XPETITIONS_SIGN_TITLE_DEFAULT;
 
 $i++;
 $modversion['config'][$i]['name'] = 'use_wysiwyg'; // Changement de l'editeur wysiwyg de description de la petition
@@ -304,7 +304,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_DOWNL';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_DOWNL_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_DOWNL_DEFAULT';
+$modversion['config'][$i]['default'] = _MI_XPETITIONS_SIGN_DOWNL_DEFAULT;
 
 $i++;
 $modversion['config'][$i]['name'] = 'signature_friend'; // intitule du lien pour prevenir un ami
@@ -312,7 +312,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_FRIEND';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_FRIEND_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_FRIEND_DEFAULT';
+$modversion['config'][$i]['default'] = _MI_XPETITIONS_SIGN_FRIEND_DEFAULT;
 
 $i++;
 $modversion['config'][$i]['name'] = 'signature_show'; // intitule du lien pour voir les signatures
@@ -320,7 +320,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_SHOW';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_SHOW_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_SHOW_DEFAULT';
+$modversion['config'][$i]['default'] = _MI_XPETITIONS_SIGN_SHOW_DEFAULT;
 
 $i++;
 $modversion['config'][$i]['name'] = 'send_a_friend'; // afficher envoyer e un ami
