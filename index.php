@@ -395,7 +395,7 @@ case "friend_send": // envoi du message à un ami
 		$sname   = $xoopsConfig['sitename'];
 		$subject = sprintf(_MD_XPETITIONS_SUBJECT_EMAIL, $sname);
 		if (get_xoops_version() >= 230)
-			$xoopsMailer =& xoops_getMailer();
+			$xoopsMailer = xoops_getMailer();
 		else
 			$xoopsMailer =& getMailer();
 		$xoopsMailer->useMail();
@@ -605,7 +605,7 @@ case "sign": // enregistrement d'une signature en ligne par email (par retour de
 		// envoi email de confirmation au signataire
 		include XOOPS_ROOT_PATH."/class/xoopsmailer.php";
 		if (get_xoops_version() >= 230)
-			$xoopsMailer =& xoops_getMailer();
+			$xoopsMailer = xoops_getMailer();
 		else
 			$xoopsMailer =& getMailer();
 		$xoopsMailer->useMail();

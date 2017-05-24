@@ -31,6 +31,6 @@ $pathModuleAdmin = $xoopsModule->getInfo('dirmoduleadmin');
 $pathIcon16      = '../'.$xoopsModule->getInfo('icons16');
 $pathIcon32      = '../'.$xoopsModule->getInfo('icons32');
 
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 ?>

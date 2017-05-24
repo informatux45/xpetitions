@@ -18,7 +18,7 @@ require_once(XOOPS_ROOT_PATH.'/modules/xpetitions/include/mysql.php');
 require_once(XOOPS_ROOT_PATH.'/modules/xpetitions/include/functions.php');
 
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 $block = array();
 
@@ -70,7 +70,7 @@ function b_xpetitions_last_signs_edit($options) {
 
 // includes
 require_once(XOOPS_ROOT_PATH.'/modules/xpetitions/include/mysql.php');
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 $form = '<span style="font-weight: bold;">'._MB_XPETITIONS_INFOS.'</span><br />';
 

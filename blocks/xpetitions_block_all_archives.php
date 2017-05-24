@@ -17,7 +17,7 @@ require_once(XOOPS_ROOT_PATH.'/modules/xpetitions/include/mysql.php');
 require_once(XOOPS_ROOT_PATH.'/modules/xpetitions/include/functions.php');
 
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 $block = array();
 
@@ -49,7 +49,7 @@ function b_xpetitions_all_archives_edit($options) {
 // options : Choix de la longueur des titres de pétitions
 // includes
 require_once(XOOPS_ROOT_PATH.'/modules/xpetitions/include/mysql.php');
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 $form = _MB_XPETITIONS_INFOS_TITLE_SIZE_P . "<input type='text' name='options[0]' size='3' value='" . $options[0] . "' />";
 
