@@ -18,7 +18,7 @@ function get_xoops_version()
     return $xoopsVersion;
 }
 
-function xpetitions_adminmenu($navigation = 'index.php', $home_info = array())
+function xpetitions_adminmenu($navigation = 'index.php', $home_info = [])
 {
     global $xoopsModule, $pathIcon16;
 
@@ -326,7 +326,7 @@ function getEditor($caption, $name, $value = "", $width = '100%', $height ='400p
     $editor = false;
     $xv     = str_replace('XOOPS ', '', XOOPS_VERSION);
 
-    $editor_configs           = array();
+    $editor_configs           = [];
     $editor_configs["name"]   = $name;
     $editor_configs["value"]  = $value;
     $editor_configs["rows"]   = 10;

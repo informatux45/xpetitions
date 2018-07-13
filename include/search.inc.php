@@ -30,7 +30,7 @@ function xpetitions_search($queryarray, $andor, $limit, $offset, $userid)
     }
     $sql .= "ORDER BY date DESC";
     $result = $xoopsDB->query($sql, $limit, $offset);
-    $ret = array();
+    $ret = [];
     $i = 0;
     while ($myrow = $xoopsDB->fetchArray($result)) {
         // 		$ret[$i]['image'] = "images/cat/default.gif";

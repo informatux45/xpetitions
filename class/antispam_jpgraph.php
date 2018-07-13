@@ -22,7 +22,7 @@
 
 class HandDigits
 {
-    public $chars = array();
+    public $chars = [];
     public $iHeight=30;
     public $iWidth=30;
 

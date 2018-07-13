@@ -63,7 +63,7 @@ $addform->addElement($field_date, true);
 $field_petition_name = new XoopsFormSelect(_AM_XPETITIONS_PETITIONS_ADDFORM, 'name_petition', '');
 $xpetitions_name = getPetitionsInfos();
 foreach ($xpetitions_name as $row) {
-    $xpetitions_liste = array($row['name'] => substr($myts->DisplayTarea($row['title']), 0, 50));
+    $xpetitions_liste = [$row['name'] => substr($myts->DisplayTarea($row['title']), 0, 50)];
     $field_petition_name->addOptionArray($xpetitions_liste);
 }
 $addform->addElement($field_petition_name, true);

@@ -54,7 +54,7 @@ case "delsign": // Supprimer une signature
         }
     } else {
         xoops_cp_header();
-        xoops_confirm(array('op' => 'delsign', 'signs' => $xpetitions_signid, 'petitions' => $xpetitions_name, 'ok' => 1), 'signature.php?op=signma', _AM_XPETITIONS_DELETE_SIGN);
+        xoops_confirm(['op' => 'delsign', 'signs' => $xpetitions_signid, 'petitions' => $xpetitions_name, 'ok' => 1], 'signature.php?op=signma', _AM_XPETITIONS_DELETE_SIGN);
         xoops_cp_footer();
     }
     break;
@@ -135,7 +135,7 @@ case "signfo": // Validation forcée des signatures non validées
     } else {
         xoops_cp_header();
         $petition_title = getPetitionDetails($id);
-        xoops_confirm(array('op' => 'signfo', 'name' => $petition_name, 'id' => $petition_id, 'ok' => 1), 'signature.php', sprintf(_AM_XPETITIONS_FORCE_SIGN_CONFIRM, $myts->DisplayTarea($petition_title['title'])));
+        xoops_confirm(['op' => 'signfo', 'name' => $petition_name, 'id' => $petition_id, 'ok' => 1], 'signature.php', sprintf(_AM_XPETITIONS_FORCE_SIGN_CONFIRM, $myts->DisplayTarea($petition_title['title'])));
         xoops_cp_footer();
     }
     break;
@@ -266,7 +266,7 @@ case "extract": // Extraire les signatures validées au format csv
     // Paramètre : 1 (signatures validées)
     $petition_name        = $_REQUEST['name'];
     $petition_title       = getPetitionDetails(intval($_GET['id']));
-    $petition_sign_entete = array(_AM_XPETITIONS_SIGN_CSV_LASTNAME, _AM_XPETITIONS_SIGN_CSV_FIRSTNAME, _AM_XPETITIONS_SIGN_CSV_EMAIL, _AM_XPETITIONS_SIGN_CSV_ADDRESS, _AM_XPETITIONS_SIGN_CSV_ZIP, _AM_XPETITIONS_SIGN_CSV_CITY, _AM_XPETITIONS_SIGN_CSV_COUNTRY, _AM_XPETITIONS_SIGN_CSV_JOB, _AM_XPETITIONS_SIGN_CSV_IP);
+    $petition_sign_entete = [_AM_XPETITIONS_SIGN_CSV_LASTNAME, _AM_XPETITIONS_SIGN_CSV_FIRSTNAME, _AM_XPETITIONS_SIGN_CSV_EMAIL, _AM_XPETITIONS_SIGN_CSV_ADDRESS, _AM_XPETITIONS_SIGN_CSV_ZIP, _AM_XPETITIONS_SIGN_CSV_CITY, _AM_XPETITIONS_SIGN_CSV_COUNTRY, _AM_XPETITIONS_SIGN_CSV_JOB, _AM_XPETITIONS_SIGN_CSV_IP];
     $petition_signs       = getSignaturesCsv($petition_name);
     $date                 = date("jmY-Hi");
 

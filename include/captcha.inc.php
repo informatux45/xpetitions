@@ -54,7 +54,7 @@ $captcha_inprogress = getOptionInfos('captcha');
 // Choix du captcha
 // --------------------------------
 $captcha_choice = new xoopsFormRadio(_AM_XPETITIONS_CAPTCHA_CHOICE, 'captcha_choice', $captcha_inprogress['options'], '<br />');
-$captcha_option = array('1' => _AM_XPETITIONS_CAPTCHA_CHOICE1A, '2' => _AM_XPETITIONS_CAPTCHA_CHOICE2A, '3' => _AM_XPETITIONS_CAPTCHA_CHOICE3A);
+$captcha_option = ['1' => _AM_XPETITIONS_CAPTCHA_CHOICE1A, '2' => _AM_XPETITIONS_CAPTCHA_CHOICE2A, '3' => _AM_XPETITIONS_CAPTCHA_CHOICE3A];
 $captcha_choice->addOptionArray($captcha_option);
 $captcha->addElement($captcha_choice, true);
 

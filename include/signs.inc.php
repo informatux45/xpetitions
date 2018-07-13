@@ -24,14 +24,14 @@ $signsform->setExtra("enctype='multipart/form-data'");
 
 // Choix de l'affichage des signatures (colonnes ou lignes)
 $field_select1   = new XoopsFormSelect(_AM_XPETITIONS_SELECT_SHOW, 'col', $col);
-$select1_options = array('colonne' => _AM_XPETITIONS_SELECT_SHOW1, 'ligne' => _AM_XPETITIONS_SELECT_SHOW2);
+$select1_options = ['colonne' => _AM_XPETITIONS_SELECT_SHOW1, 'ligne' => _AM_XPETITIONS_SELECT_SHOW2];
 $field_select1->addOptionArray($select1_options);
 $field_select1->setDescription(_AM_XPETITIONS_SELECT_SHOW_DSC);
 $signsform->addElement($field_select1, true);
 
 // Choix du nombre de colonnes visible sur la page des signatures
 $field_select2   = new XoopsFormSelect(_AM_XPETITIONS_SELECT_NBCOL, 'nbcol', $nbcol);
-$select2_options = array('1' => 1, '2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6, '7' => 7, '8' => 8, '9' => 9, '10' => 10);
+$select2_options = ['1' => 1, '2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6, '7' => 7, '8' => 8, '9' => 9, '10' => 10];
 $field_select2->addOptionArray($select2_options);
 $field_select2->setDescription(_AM_XPETITIONS_SELECT_NBCOL_DSC);
 $signsform->addElement($field_select2, true);

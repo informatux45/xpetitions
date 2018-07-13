@@ -44,7 +44,7 @@ $editform->addElement($field_email, true);
 
 // Statut de la petition
 $field_status = new XoopsFormSelect(_AM_XPETITIONS_STATUS_ADDFORM, 'status', $status);
-$options = array('1' => _AM_XPETITIONS_STATUS1, '2' => _AM_XPETITIONS_STATUS2, '3' => _AM_XPETITIONS_STATUS3);
+$options = ['1' => _AM_XPETITIONS_STATUS1, '2' => _AM_XPETITIONS_STATUS2, '3' => _AM_XPETITIONS_STATUS3];
 $field_status->addOptionArray($options);
 $field_status->setDescription(_AM_XPETITIONS_STATUS_ADDFORM_DSC);
 $editform->addElement($field_status, true);
@@ -56,7 +56,7 @@ $editform->addElement($field_date);
 
 //chi può vedere le firme di questa petizione - modifica urbanspaceman 22/05
 $field_whoview = new XoopsFormSelect(_AM_XPETITIONS_WHOVIEW_ADDFORM, 'whoview', $whoview);
-$options = array('1' => _AM_XPETITIONS_WHOVIEW1, '2' => _AM_XPETITIONS_WHOVIEW2, '3' => _AM_XPETITIONS_WHOVIEW3);
+$options = ['1' => _AM_XPETITIONS_WHOVIEW1, '2' => _AM_XPETITIONS_WHOVIEW2, '3' => _AM_XPETITIONS_WHOVIEW3];
 $field_whoview->addOptionArray($options);
 $field_whoview->setDescription(_AM_XPETITIONS_WHOVIEW_ADDFORM_DSC);
 $editform->addElement($field_whoview, true);

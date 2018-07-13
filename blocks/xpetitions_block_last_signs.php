@@ -21,7 +21,7 @@ function b_xpetitions_last_signs_show($options)
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
     $myts = MyTextSanitizer::getInstance();
 
-    $block = array();
+    $block = [];
 
     $number_signatures = intval($options[4]);
     $petition_detail   = getPetitionDetails(intval($options[6]));

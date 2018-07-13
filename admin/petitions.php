@@ -33,7 +33,7 @@ $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : 'petitions';
 
 // variable pour fichier uploader
 $upload_size = $xoopsModuleConfig['upload_size'];
-$mimetypes   = array('application/pdf', 'application/msword');
+$mimetypes   = ['application/pdf', 'application/msword'];
 $upload_dir  = XOOPS_ROOT_PATH.$xoopsModuleConfig['path_upload'];
 
 switch ($op) {
@@ -227,7 +227,7 @@ switch ($op) {
         $message = (!$delete_petition) ? redirect_header("index.php", 2, _AM_XPETITIONS_ERROR_DELETE) : redirect_header("index.php", 2, _AM_XPETITIONS_VALID_DELETE);
     } else {
         xoops_cp_header();
-        xoops_confirm(array('op' => 'delete', 'id' => $delid, 'name' => $delname, 'ok' => 1), 'petitions.php', _AM_XPETITIONS_DELETE_CONFIRM);
+        xoops_confirm(['op' => 'delete', 'id' => $delid, 'name' => $delname, 'ok' => 1], 'petitions.php', _AM_XPETITIONS_DELETE_CONFIRM);
         xoops_cp_footer();
     }
     break;

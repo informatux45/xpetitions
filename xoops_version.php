@@ -39,7 +39,7 @@ $modversion["status_version"]      = "Stable";
 $modversion['min_php']             = '5.2';
 $modversion['min_xoops']           = "2.5.0";
 $modversion['min_admin']           = '1.1';
-$modversion['min_db']              = array('mysql' => '5.0.7', 'mysqli' => '5.0.7');
+$modversion['min_db']              = ['mysql' => '5.0.7', 'mysqli' => '5.0.7'];
 $modversion['author_realname']     = "Patrice BOUTHIER";
 $modversion['author_website_url']  = "//www.informatux.com";
 $modversion['author_website_name'] = "Consultant informatique";
@@ -208,7 +208,7 @@ $modversion['config'][$i]['title']       = '_MI_XPETITIONS_SHOW_HOME';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SHOW_HOME_DSC';
 $modversion['config'][$i]['formtype']    = 'select';
 $modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['options']     = array(_MI_XPETITIONS_SHOW_HOME_LINE => '1', _MI_XPETITIONS_SHOW_HOME_COL => '2');
+$modversion['config'][$i]['options']     = [_MI_XPETITIONS_SHOW_HOME_LINE => '1', _MI_XPETITIONS_SHOW_HOME_COL => '2'];
 $modversion['config'][$i]['default']     = '1';
 
 $i++;
@@ -226,7 +226,7 @@ $modversion['config'][$i]['description'] = '_MI_XPETITIONS_ADMIN_PAGE_DSC';
 $modversion['config'][$i]['formtype']    = 'select';
 $modversion['config'][$i]['valuetype']   = 'int';
 $modversion['config'][$i]['default']     = '10';
-$modversion['config'][$i]['options']     = array('5' => 5, '10' => 10, '15' => 15, '20' => 20, '25' => 25, '30' => 30, '50' => 50);
+$modversion['config'][$i]['options']     = ['5' => 5, '10' => 10, '15' => 15, '20' => 20, '25' => 25, '30' => 30, '50' => 50];
 
 $i++;
 $modversion['config'][$i]['name']        = 'index_per_page'; // nombre de petitions visibles par page [visiteurs]
@@ -235,7 +235,7 @@ $modversion['config'][$i]['description'] = '_MI_XPETITIONS_INDEX_PAGE_DSC';
 $modversion['config'][$i]['formtype']    = 'select';
 $modversion['config'][$i]['valuetype']   = 'int';
 $modversion['config'][$i]['default']     = '10';
-$modversion['config'][$i]['options']     = array('5' => 5, '10' => 10, '15' => 15, '20' => 20, '25' => 25, '30' => 30, '50' => 50);
+$modversion['config'][$i]['options']     = ['5' => 5, '10' => 10, '15' => 15, '20' => 20, '25' => 25, '30' => 30, '50' => 50];
 
 $i++;
 $modversion['config'][$i]['name']        = 'adminsign_per_page'; // nombre de signatures par page [admin]
@@ -244,7 +244,7 @@ $modversion['config'][$i]['description'] = '_MI_XPETITIONS_ADMIN_SIGN_PAGE_DSC';
 $modversion['config'][$i]['formtype']    = 'select';
 $modversion['config'][$i]['valuetype']   = 'int';
 $modversion['config'][$i]['default']     = '25';
-$modversion['config'][$i]['options']     = array('5' => 5, '10' => 10, '15' => 15, '20' => 20, '25' => 25, '30' => 30, '50' => 50, '55' => 55, '60' => 60, '65' => 65, '70' => 70, '75' => 75, '80' => 80, '85' => 85, '90' => 90, '95' => 95, '100' => 100);
+$modversion['config'][$i]['options']     = ['5' => 5, '10' => 10, '15' => 15, '20' => 20, '25' => 25, '30' => 30, '50' => 50, '55' => 55, '60' => 60, '65' => 65, '70' => 70, '75' => 75, '80' => 80, '85' => 85, '90' => 90, '95' => 95, '100' => 100];
 
 $i++;
 $modversion['config'][$i]['name']        = 'get_counter_signs'; // afficher le nombre de signature par petitions [accueil visiteurs]
@@ -268,7 +268,7 @@ $modversion['config'][$i]['title']       = '_MI_XPETITIONS_VALID_METHOD';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_VALID_METHODSC';
 $modversion['config'][$i]['formtype']    = 'select';
 $modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['options']     = array('Email' => '1', 'Auto' => '0');
+$modversion['config'][$i]['options']     = ['Email' => '1', 'Auto' => '0'];
 $modversion['config'][$i]['default']     = '1';
 
 $i++;

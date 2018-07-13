@@ -72,20 +72,20 @@ case "allsigns": // affichage des signatures validées
         // pétition offline (statut = 2)
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_OFFLINE,
-        ));
+                              ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.intval($id);
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_ALLSIGNS;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"      => $name_nav1,
         "name_nav2"      => $name_nav2,
         "link_nav1"      => $link_nav1,
         "petition_title" => $name_nav1,
-        ));
+                              ]);
         }
 
         // Initialisation de l'affichage des signatures
@@ -98,7 +98,7 @@ case "allsigns": // affichage des signatures validées
         $xpetitions_signature_nbcol = $option2['options'];
 
         // Assignation des variables smarty
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
         "petitions_option_col"     =>	$xpetitions_signature_col,
         "petitions_option_nbcol"   =>	$xpetitions_signature_nbcol,
         "petitions_option_job"     =>	$signature_job,
@@ -106,7 +106,7 @@ case "allsigns": // affichage des signatures validées
         "petitions_option_email"   =>	$signature_email,
         "petitions_option_city"    =>	$signature_city,
         "petitions_option_date"    =>	$signature_date
-        ));
+                          ]);
 
         // affichage des lettres alphabétiques
         $link           = '/index.php?id='.intval($id).'&op=allsigns&letter=';
@@ -114,11 +114,11 @@ case "allsigns": // affichage des signatures validées
         $show_cpt       = getSignaturesInfos($petition_name, '1');
         $show_cpt      .= ' '._MD_XPETITIONS_CPT_ALLSIGNS;
         $allsigns_title = _MD_XPETITIONS_TITLE_ALLSIGNS;
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
         "petitions_allsigns"       => $show_signs,
         "petitions_allsigns_title" => $allsigns_title,
         "petitions_allsigns_cpt"   => $show_cpt,
-        ));
+                          ]);
         if ($_REQUEST['letter']) {
             $aff_signatures = getSignatureLetter($myts->addSlashes($_REQUEST['letter']), $petition_name);
             if ($aff_signatures) {
@@ -137,11 +137,11 @@ case "allsigns": // affichage des signatures validées
                 } else {
                     $allsigns_letter = sprintf(_MD_XPETITIONS_ALLSIGNS_LETTER, $myts->addSlashes($_REQUEST['letter']), count($petitions_letter));
                 }
-                $xoopsTpl->assign(array(
+                $xoopsTpl->assign([
                 "petitions_allsigns_show"    => $petitions_letter,
                 "petitions_allsigns_letter"  => $allsigns_letter,
                 "petitions_allsigns_counter" => count($petitions_letter)
-                ));
+                                  ]);
 
                 // Calcul des tailles des colonnes
                 // Si plus de 1 colonne
@@ -169,10 +169,10 @@ case "allsigns": // affichage des signatures validées
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
     "name_nav1"        => $name_nav1,
     "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
-    ));
+                          ]);
     }
     break;
 
@@ -183,26 +183,26 @@ case "valid": // validation d'un signature
         // pétition offline (statut = 2) ou archivée (statut = 3)
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_OFFLINE,
-        ));
+                              ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_ARCHIVE,
-        ));
+                              ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.intval($id);
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_VALID;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"      => $name_nav1,
         "name_nav2"      => $name_nav2,
         "link_nav1"      => $link_nav1,
         "petition_title" => $name_nav1,
-        ));
+                              ]);
         }
         // récupération des variables
         $petition_name   = $myts->addSlashes($_GET['name']);
@@ -229,10 +229,10 @@ case "valid": // validation d'un signature
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
     "name_nav1"        => $name_nav1,
     "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
-    ));
+                          ]);
     }
     break;
 
@@ -243,26 +243,26 @@ case "validpre": // validation d'un signature
         // pétition offline (statut = 2) ou archivée (statut = 3)
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_OFFLINE,
-        ));
+                              ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_ARCHIVE,
-        ));
+                              ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.intval($id);
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_VALID;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"      => $name_nav1,
         "name_nav2"      => $name_nav2,
         "link_nav1"      => $link_nav1,
         "petition_title" => $name_nav1,
-        ));
+                              ]);
         }
         // récupération des variables
         $petition_name = $myts->addSlashes($_GET['name']);
@@ -306,10 +306,10 @@ case "validpre": // validation d'un signature
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
     "name_nav1"        => $name_nav1,
     "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
-    ));
+                          ]);
     }
     break;
 
@@ -321,26 +321,26 @@ case "friend_send": // envoi du message à un ami
         // pétition offline (statut = 2) ou archivée (statut = 3)
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_OFFLINE,
-        ));
+                              ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_ARCHIVE,
-        ));
+                              ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.intval($id);
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_FRIEND;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"      => $name_nav1,
         "name_nav2"      => $name_nav2,
         "link_nav1"      => $link_nav1,
         "petition_title" => $name_nav1,
-        ));
+                              ]);
             // récupération des variables
             $yourname   = $myts->addSlashes(trim($_POST['yourname']));
             $friendname = $myts->addSlashes(trim($_POST['friendname']));
@@ -411,10 +411,10 @@ case "friend_send": // envoi du message à un ami
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
     "name_nav1"        => $name_nav1,
     "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
-    ));
+                          ]);
     }
     break;
 
@@ -425,26 +425,26 @@ case "friend": // saisie des coordonnées pour l'envoi par mail d'un message à 
         // pétition offline (statut = 2) ou archivée (statut = 3)
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_OFFLINE,
-        ));
+                              ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_ARCHIVE,
-        ));
+                              ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_FRIEND;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"      => $name_nav1,
         "name_nav2"      => $name_nav2,
         "link_nav1"      => $link_nav1,
         "petition_title" => $name_nav1,
-        ));
+                              ]);
             // initialisation des variables
             $yourname = $friendname = $femail = '';
             // affichage du formulaire
@@ -454,10 +454,10 @@ case "friend": // saisie des coordonnées pour l'envoi par mail d'un message à 
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
     "name_nav1"        => $name_nav1,
     "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
-    ));
+                          ]);
     }
     break;
 
@@ -470,26 +470,26 @@ case "sign": // enregistrement d'une signature en ligne par email (par retour de
         // pétition offline (statut = 2) ou archivée (statut = 3)
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_OFFLINE,
-        ));
+                              ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_ARCHIVE,
-        ));
+                              ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_SIGN_RECORDED;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"      => $name_nav1,
         "name_nav2"      => $name_nav2,
         "link_nav1"      => $link_nav1,
         "petition_title" => $name_nav1,
-        ));
+                              ]);
             // récupération des données
             $firstname = $myts->addSlashes(trim($_POST['firstname']));
             $lastname  = $myts->addSlashes(trim($_POST['lastname']));
@@ -627,10 +627,10 @@ case "sign": // enregistrement d'une signature en ligne par email (par retour de
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
     "name_nav1"        => $name_nav1,
     "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
-    ));
+                          ]);
     }
     break;
 
@@ -643,26 +643,26 @@ case "presign": // enregistrement d'une signature en ligne en automatique (doubl
         // pétition offline (statut = 2) ou archivée (statut = 3)
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_OFFLINE,
-        ));
+                              ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_ARCHIVE,
-        ));
+                              ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_PRESIGNED;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"      => $name_nav1,
         "name_nav2"      => $name_nav2,
         "link_nav1"      => $link_nav1,
         "petition_title" => $name_nav1,
-        ));
+                              ]);
             // récupération des données
             $firstname = $myts->addSlashes(trim($_POST['firstname']));
             $lastname  = $myts->addSlashes(trim($_POST['lastname']));
@@ -738,7 +738,7 @@ case "presign": // enregistrement d'une signature en ligne en automatique (doubl
             }
                 }
                 // Passage des variables (form hidden)
-                $xoopsTpl->assign(array(
+                $xoopsTpl->assign([
         "pre_firstname"	=> $firstname,
         "pre_lastname"	=> $lastname,
         "pre_address"	=> $address,
@@ -750,7 +750,7 @@ case "presign": // enregistrement d'une signature en ligne en automatique (doubl
         "pre_date"	=> $date,
         "pre_ip"	=> $ip,
         "pre_cle"	=> $cle
-        ));
+                                  ]);
 
                 // message de validation par click
                 $petition_presign1 = _MD_XPETITIONS_SIGN_PRESIGNED;
@@ -766,10 +766,10 @@ case "presign": // enregistrement d'une signature en ligne en automatique (doubl
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
     "name_nav1"        => $name_nav1,
     "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
-    ));
+                          ]);
     }
     break;
 
@@ -780,26 +780,26 @@ case "form": // affichage du formulaire de signature de la pétition
         // pétition offline (statut = 2) ou archivée (statut = 3)
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_OFFLINE,
-        ));
+                              ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_ARCHIVE,
-        ));
+                              ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_SIGN;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"      => $name_nav1,
         "name_nav2"      => $name_nav2,
         "link_nav1"      => $link_nav1,
         "petition_title" => $name_nav1,
-        ));
+                              ]);
             // initialisation des variables
             $firstname = $lastname = $address = $zip = $city = $country = $job = $email = '';
             // affichage du formulaire
@@ -810,10 +810,10 @@ case "form": // affichage du formulaire de signature de la pétition
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
     "name_nav1"        => $name_nav1,
     "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
-    ));
+                          ]);
     }
     break;
 
@@ -824,10 +824,10 @@ case "indexid": // affichage d'une pétition à signer
         // pétition offline (statut = 2)
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"        => $name_nav1,
         "petition_offline" => _MD_XPETITIONS_OFFLINE,
-        ));
+                              ]);
         } else {
             // vérifier si la pétition est archivée
             if ($status == '3') {
@@ -861,7 +861,7 @@ case "indexid": // affichage d'une pétition à signer
             $name_nav2          = _MD_XPETITIONS_HOME_NAV;
             $link_adm_modif     = $module_url.'/admin/petitions.php?op=modif&id='.$id;
             $link_adm_delete    = $module_url.'/admin/petitions.php?op=delete&id='.$id;
-            $xoopsTpl->assign(array(
+            $xoopsTpl->assign([
         "name_nav1"             => $name_nav1,
         "link_nav1"             => $link_nav1,
         "name_nav2"             => $name_nav2,
@@ -879,15 +879,15 @@ case "indexid": // affichage d'une pétition à signer
         "petition_desc"         => $myts->DisplayTarea($petition_detail['description'], 1, 1, 1, 1, 1),
         "petition_date"         => $petition_detail['date'],
         "petition_id"           => $id,
-        ));
+                              ]);
         }
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
-        $xoopsTpl->assign(array(
+        $xoopsTpl->assign([
     "name_nav1"        => $name_nav1,
     "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
-    ));
+                          ]);
     }
     break;
 

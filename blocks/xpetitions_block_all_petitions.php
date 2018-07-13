@@ -20,7 +20,7 @@ function b_xpetitions_all_petitions_show($options)
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
     $myts = MyTextSanitizer::getInstance();
 
-    $block = array();
+    $block = [];
 
     $xpetitions_details = getPetitionsOnline(1);
 

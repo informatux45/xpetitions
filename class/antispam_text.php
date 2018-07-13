@@ -30,7 +30,7 @@ function _captchaLettres()
 
 function _captchaCalculChiffres()
 {
-    $operators = array('-','+','*');
+    $operators = ['-', '+', '*'];
     $operator = $operators[array_rand($operators)];// on recupere l'operateur de calcul
     
     $nb1 = rand(1, 10);
@@ -49,16 +49,16 @@ function _captchaCalculChiffres()
 
 function _captchaCalculLettres()
 {
-    $operators = array('-' => _MD_XPETITIONS_CAPTCHA_TXT_LESS, '+' => _MD_XPETITIONS_CAPTCHA_TXT_MORE, '*' => _MD_XPETITIONS_CAPTCHA_TXT_TIMES);
+    $operators = ['-' => _MD_XPETITIONS_CAPTCHA_TXT_LESS, '+' => _MD_XPETITIONS_CAPTCHA_TXT_MORE, '*' => _MD_XPETITIONS_CAPTCHA_TXT_TIMES];
     $operator = array_rand($operators);
     $op = $operators[$operator]; // on recupere l'operateur de calcul
     
-    $num = array(
+    $num = [
                 _MD_XPETITIONS_CAPTCHA_TXT_ZERO, _MD_XPETITIONS_CAPTCHA_TXT_ONE, _MD_XPETITIONS_CAPTCHA_TXT_TWO,
         _MD_XPETITIONS_CAPTCHA_TXT_THREE, _MD_XPETITIONS_CAPTCHA_TXT_FOUR, _MD_XPETITIONS_CAPTCHA_TXT_FIVE,
                 _MD_XPETITIONS_CAPTCHA_TXT_SIX, _MD_XPETITIONS_CAPTCHA_TXT_SEVEN, _MD_XPETITIONS_CAPTCHA_TXT_EIGHT,
                 _MD_XPETITIONS_CAPTCHA_TXT_NINE, _MD_XPETITIONS_CAPTCHA_TXT_TEN
-                );
+    ];
 
     $nb1 = array_rand($num);
     $nb2 = array_rand($num);
@@ -107,10 +107,10 @@ function _captchaAlphaNum()
 
 function getCaptcha()
 {
-    $functions = array(
+    $functions = [
                     '_captchaLettres',  '_captchaCalculChiffres',
                     '_captchaCalculLettres', '_captchaAlphaNum'
-                    );
+    ];
     
     $captcha = $functions[array_rand($functions)];
     return $captcha();

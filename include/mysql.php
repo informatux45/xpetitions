@@ -15,7 +15,7 @@ function dbResultToArray($result)
 {
     // construction d'un tableau pour les scripts
     global $xoopsDB;
-    $result_array = array();
+    $result_array = [];
 
     for (
         $count = 0;
