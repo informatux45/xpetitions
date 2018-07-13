@@ -41,7 +41,7 @@ case 'delsign': // Supprimer une signature
     // Récupération des variables
     $xpetitions_name   = $_POST['petitions'];
     $xpetitions_signid = $_POST['signs'];
-    $ok = isset($_REQUEST['ok']) ? intval($_REQUEST['ok']) : 0;
+    $ok = isset($_REQUEST['ok']) ? (int)$_REQUEST['ok'] : 0;
 
     if ($ok == 1 && isset($xpetitions_signid) && isset($xpetitions_name)) {
         $xpetitions_delete = deleteSignature($xpetitions_name, $xpetitions_signid);
@@ -125,9 +125,9 @@ case 'novalid': // Formulaire d'envoi email multiple pour les retardataires
 
 case 'signfo': // Validation forcée des signatures non validées
     include XOOPS_ROOT_PATH.'/header.php';
-    $petition_id   = intval($_REQUEST['id']);
+    $petition_id   = (int)$_REQUEST['id'];
     $petition_name = $myts->oopsAddSlashes($_REQUEST['name']);
-    $ok            = isset($_REQUEST['ok']) ? intval($_REQUEST['ok']) : 0;
+    $ok            = isset($_REQUEST['ok']) ? (int)$_REQUEST['ok'] : 0;
     // confirmation donc suppression de la pétition
     if ($ok == 1 && isset($petition_name)) {
         $update_validation = validSignatureForced($petition_name);
@@ -144,11 +144,11 @@ case 'latecomer_send': // Envoi des emails aux retardaires
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
     // Récupération des variables
-    $petition_detail  = getPetitionDetails(intval($_POST['id']));
+    $petition_detail  = getPetitionDetails((int)$_POST['id']);
     $petition_email   = $petition_detail['email'];
     $array_latecomers = getSignaturesDetails($_POST['name'], 0);
     
-    $link_url         = XOOPS_URL.'/modules/'.$xoopsModule->getVar('dirname').'/index.php?op=valid&id='.intval($_POST['id']).'&name='.$_POST['name'].'&key=';
+    $link_url         = XOOPS_URL.'/modules/'.$xoopsModule->getVar('dirname').'/index.php?op=valid&id=' . (int)$_POST['id'] . '&name=' . $_POST['name'] . '&key=';
 
     // Remplacer les chaines de caracteres dans le corps du message
     foreach ($array_latecomers as $row) {
@@ -214,7 +214,7 @@ case 'recorded': // Affichage des signatures enregistrées
     // Paramètres getSignaturesInfos : 2 = totales;
     $petitions_count     = getSignaturesInfos($petition_name, 2);
     $petitions_sql       = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name);
-    $petitions_pagestart = isset($_GET['page']) ? intval($_GET['page']) : 0;
+    $petitions_pagestart = isset($_GET['page']) ? (int)$_GET['page'] : 0;
 
     if ($petitions_count < 1) {
         echo '<tr><td colspan="5">';
@@ -265,7 +265,7 @@ case 'extract': // Extraire les signatures validées au format csv
 
     // Paramètre : 1 (signatures validées)
     $petition_name        = $_REQUEST['name'];
-    $petition_title       = getPetitionDetails(intval($_GET['id']));
+    $petition_title       = getPetitionDetails((int)$_GET['id']);
     $petition_sign_entete = [_AM_XPETITIONS_SIGN_CSV_LASTNAME, _AM_XPETITIONS_SIGN_CSV_FIRSTNAME, _AM_XPETITIONS_SIGN_CSV_EMAIL, _AM_XPETITIONS_SIGN_CSV_ADDRESS, _AM_XPETITIONS_SIGN_CSV_ZIP, _AM_XPETITIONS_SIGN_CSV_CITY, _AM_XPETITIONS_SIGN_CSV_COUNTRY, _AM_XPETITIONS_SIGN_CSV_JOB, _AM_XPETITIONS_SIGN_CSV_IP];
     $petition_signs       = getSignaturesCsv($petition_name);
     $date                 = date('jmY-Hi');
@@ -319,7 +319,7 @@ case 'tab': // Récapitulatifs des signatures par pétitions
 
     $petitions_count     = getPetitionsCount();
     $petitions_sql       = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions');
-    $petitions_pagestart = isset($_GET['page']) ? intval($_GET['page']) : 0;
+    $petitions_pagestart = isset($_GET['page']) ? (int)$_GET['page'] : 0;
 
     if ($petitions_count < 1) {
         echo '<tr><td colspan="5">';

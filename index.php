@@ -18,11 +18,11 @@ if (!isset($_REQUEST['op']) && !isset($_REQUEST['id'])) {
     $template = 'index';
 } elseif (isset($REQUEST['id']) || !isset($_REQUEST['op'])) {
     $op       = 'indexid';
-    $id       = intval($_REQUEST['id']);
+    $id       = (int)$_REQUEST['id'];
     $template = 'display_index';
 } else {
     $op       = $myts->addSlashes($_REQUEST['op']);
-    $id       = intval($_REQUEST['id']);
+    $id       = (int)$_REQUEST['id'];
     $template = 'display_'.$op;
 }
 
@@ -49,7 +49,7 @@ $xoopsTpl->assign('show_petitions_home', $xoopsModuleConfig['show_petitions_home
 
 // urbanspaceman mod
 if (isset($id)) {
-    $petition_detail = getPetitionDetails(intval($id));
+    $petition_detail = getPetitionDetails((int)$id);
     if ($petition_detail['whoview'] == '1') {
         $xoopsTpl->assign('whoview', _MD_XPETITIONS_WHOVIEW1);
         $xoopsTpl->assign('whoview_group', 1);
@@ -64,7 +64,7 @@ if (isset($id)) {
 
 switch ($op) {
 case 'allsigns': // affichage des signatures validées
-    $petition_detail = getPetitionDetails(intval($id));
+    $petition_detail = getPetitionDetails((int)$id);
     $petition_name   = $petition_detail['name'];
     $status          = $petition_detail['status'];
     
@@ -78,7 +78,7 @@ case 'allsigns': // affichage des signatures validées
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
-            $link_nav1 = $module_url.'/index.php?id='.intval($id);
+            $link_nav1 = $module_url.'/index.php?id=' . (int)$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_ALLSIGNS;
             $xoopsTpl->assign([
                                   'name_nav1'      => $name_nav1,
@@ -109,8 +109,8 @@ case 'allsigns': // affichage des signatures validées
                           ]);
 
         // affichage des lettres alphabétiques
-        $link           = '/index.php?id='.intval($id).'&op=allsigns&letter=';
-        $show_signs     = showLettersSigns(intval($id), $module_url, $link);
+        $link           = '/index.php?id=' . (int)$id . '&op=allsigns&letter=';
+        $show_signs     = showLettersSigns((int)$id, $module_url, $link);
         $show_cpt       = getSignaturesInfos($petition_name, '1');
         $show_cpt      .= ' '._MD_XPETITIONS_CPT_ALLSIGNS;
         $allsigns_title = _MD_XPETITIONS_TITLE_ALLSIGNS;
@@ -177,7 +177,7 @@ case 'allsigns': // affichage des signatures validées
     break;
 
 case 'valid': // validation d'un signature
-    $petition_detail = getPetitionDetails(intval($id));
+    $petition_detail = getPetitionDetails((int)$id);
     $status          = $petition_detail['status'];
     if ($petition_detail) {
         // pétition offline (statut = 2) ou archivée (statut = 3)
@@ -195,7 +195,7 @@ case 'valid': // validation d'un signature
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
-            $link_nav1 = $module_url.'/index.php?id='.intval($id);
+            $link_nav1 = $module_url.'/index.php?id=' . (int)$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_VALID;
             $xoopsTpl->assign([
                                   'name_nav1'      => $name_nav1,
@@ -237,7 +237,7 @@ case 'valid': // validation d'un signature
     break;
 
 case 'validpre': // validation d'un signature
-    $petition_detail = getPetitionDetails(intval($id));
+    $petition_detail = getPetitionDetails((int)$id);
     $status          = $petition_detail['status'];
     if ($petition_detail) {
         // pétition offline (statut = 2) ou archivée (statut = 3)
@@ -255,7 +255,7 @@ case 'validpre': // validation d'un signature
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
-            $link_nav1 = $module_url.'/index.php?id='.intval($id);
+            $link_nav1 = $module_url.'/index.php?id=' . (int)$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_VALID;
             $xoopsTpl->assign([
                                   'name_nav1'      => $name_nav1,
@@ -314,7 +314,7 @@ case 'validpre': // validation d'un signature
     break;
 
 case 'friend_send': // envoi du message à un ami
-    $petition_detail = getPetitionDetails(intval($id));
+    $petition_detail = getPetitionDetails((int)$id);
     $petition_email  = $petition_detail['email'];
     $status = $petition_detail['status'];
     if ($petition_detail) {
@@ -333,7 +333,7 @@ case 'friend_send': // envoi du message à un ami
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
-            $link_nav1 = $module_url.'/index.php?id='.intval($id);
+            $link_nav1 = $module_url.'/index.php?id=' . (int)$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_FRIEND;
             $xoopsTpl->assign([
                                   'name_nav1'      => $name_nav1,
@@ -346,7 +346,7 @@ case 'friend_send': // envoi du message à un ami
             $friendname = $myts->addSlashes(trim($_POST['friendname']));
             $femail     = $myts->addSlashes(trim($_POST['email']));
             $captcha    = $myts->addSlashes(trim($_POST['captcha']));
-            $body       = sprintf(_MD_XPETITIONS_EMAIL_FRIENDFORM_SEND, $yourname, $friendname, $xoopsConfig['sitename'], $name_nav1, XOOPS_URL.$module_url.'/index.php?id='.intval($id), $xoopsConfig['sitename'], $xoopsConfig['slogan'], XOOPS_URL);
+            $body       = sprintf(_MD_XPETITIONS_EMAIL_FRIENDFORM_SEND, $yourname, $friendname, $xoopsConfig['sitename'], $name_nav1, XOOPS_URL.$module_url.'/index.php?id=' . (int)$id, $xoopsConfig['sitename'], $xoopsConfig['slogan'], XOOPS_URL);
 
             if (!filled_out($_POST)) {
                 redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_ERROR_BLANK);
@@ -419,7 +419,7 @@ case 'friend_send': // envoi du message à un ami
     break;
 
 case 'friend': // saisie des coordonnées pour l'envoi par mail d'un message à un ami
-    $petition_detail = getPetitionDetails(intval($id));
+    $petition_detail = getPetitionDetails((int)$id);
     $status = $petition_detail['status'];
     if ($petition_detail) {
         // pétition offline (statut = 2) ou archivée (statut = 3)
@@ -462,7 +462,7 @@ case 'friend': // saisie des coordonnées pour l'envoi par mail d'un message à 
     break;
 
 case 'sign': // enregistrement d'une signature en ligne par email (par retour de lien)
-    $petition_detail = getPetitionDetails(intval($id));
+    $petition_detail = getPetitionDetails((int)$id);
     $name_petition   = $petition_detail['name'];
     $email_petition  = $petition_detail['email'];
     $status          = $petition_detail['status'];
@@ -505,37 +505,37 @@ case 'sign': // enregistrement d'une signature en ligne par email (par retour de
             $date      = $_SERVER['REQUEST_TIME'];
             $ip        = $_SERVER['REMOTE_ADDR'];
             $cle       = substr(createKey(), 0, 15);
-            $urlcle    = XOOPS_URL.$module_url.'/index.php?op=valid&id='.intval($id).'&name='.$name_petition.'&key='.$cle;
+            $urlcle    = XOOPS_URL.$module_url.'/index.php?op=valid&id=' . (int)$id . '&name=' . $name_petition . '&key=' . $cle;
 
             // vérification des champs obligatoire
             if (!$firstname && !$lastname && !$email) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK);
             }
 
             if (getFieldInfos(3, 2) == 1 && getFieldInfos(3, 1) == 1 && !$address) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_ADDRESS);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_ADDRESS);
                 break;
             }
             if (getFieldInfos(4, 2) == 1 && getFieldInfos(4, 1) == 1 && !$zip) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_ZIP);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_ZIP);
                 break;
             }
             if (getFieldInfos(5, 2) == 1 && getFieldInfos(5, 1) == 1 && !$city) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_CITY);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_CITY);
                 break;
             }
             if (getFieldInfos(6, 2) == 1 && getFieldInfos(6, 1) == 1 && !$country) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_COUNTRY);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_COUNTRY);
                 break;
             }
             if (getFieldInfos(7, 2) == 1 && getFieldInfos(7, 1) == 1 && !$job) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_JOB);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_JOB);
                 break;
             }
 
             // vérification du format valide de l'email
             if (mailValid($email) == 0) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_EMAIL);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_EMAIL);
                 break;
             }
             // vérification de la signature en double
@@ -574,7 +574,7 @@ case 'sign': // enregistrement d'une signature en ligne par email (par retour de
                 // enregistrement dans la base de données
                 $insert_signatures = insertSignatures($name_petition, $id, strtoupper($firstname), strtolower($lastname), $address, $zip, strtoupper($city), $country, $job, $email, $date, $ip, $cle);
                 if (!$insert_signatures) {
-                    redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_INSERT);
+                    redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_INSERT);
                 }
 
                 // préparation du corps de l'email
@@ -613,7 +613,7 @@ case 'sign': // enregistrement d'une signature en ligne par email (par retour de
                 if ($xoopsMailer->getErrors()) {
                     $id_sign = getSignatureId($name_petition, $cle);
                     deleteSignature($name_petition, $id_sign['id']);
-                    redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_EMAIL_SEND_ERROR);
+                    redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_EMAIL_SEND_ERROR);
                 }
 
                 // message de remerciement
@@ -635,7 +635,7 @@ case 'sign': // enregistrement d'une signature en ligne par email (par retour de
     break;
 
 case 'presign': // enregistrement d'une signature en ligne en automatique (double click)
-    $petition_detail = getPetitionDetails(intval($id));
+    $petition_detail = getPetitionDetails((int)$id);
     $name_petition   = $petition_detail['name'];
     $email_petition  = $petition_detail['email'];
     $status          = $petition_detail['status'];
@@ -676,31 +676,31 @@ case 'presign': // enregistrement d'une signature en ligne en automatique (doubl
             $date      = $_SERVER['REQUEST_TIME'];
             $ip        = $_SERVER['REMOTE_ADDR'];
             $cle       = substr(createKey(), 0, 15);
-            $urlcle    = XOOPS_URL.$module_url.'/index.php?op=validpre&id='.intval($id).'&name='.$name_petition.'&key='.$cle;
+            $urlcle    = XOOPS_URL.$module_url.'/index.php?op=validpre&id=' . (int)$id . '&name=' . $name_petition . '&key=' . $cle;
 
             // vérification des champs obligatoire
             if (!$firstname && !$lastname && !$email) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK);
             }
 
             if (getFieldInfos(3, 2) == 1 && getFieldInfos(3, 1) == 1 && !$address) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_ADDRESS);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_ADDRESS);
                 break;
             }
             if (getFieldInfos(4, 2) == 1 && getFieldInfos(4, 1) == 1 && !$zip) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_ZIP);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_ZIP);
                 break;
             }
             if (getFieldInfos(5, 2) == 1 && getFieldInfos(5, 1) == 1 && !$city) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_CITY);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_CITY);
                 break;
             }
             if (getFieldInfos(6, 2) == 1 && getFieldInfos(6, 1) == 1 && !$country) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_COUNTRY);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_COUNTRY);
                 break;
             }
             if (getFieldInfos(7, 2) == 1 && getFieldInfos(7, 1) == 1 && !$job) {
-                redirect_header('index.php?id='.intval($id).'&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_JOB);
+                redirect_header('index.php?id=' . (int)$id . '&op=form', 2, _MD_XPETITIONS_ERROR_BLANK_JOB);
                 break;
             }
 
@@ -774,7 +774,7 @@ case 'presign': // enregistrement d'une signature en ligne en automatique (doubl
     break;
 
 case 'form': // affichage du formulaire de signature de la pétition
-    $petition_detail = getPetitionDetails(intval($id));
+    $petition_detail = getPetitionDetails((int)$id);
     $status = $petition_detail['status'];
     if ($petition_detail) {
         // pétition offline (statut = 2) ou archivée (statut = 3)
@@ -818,7 +818,7 @@ case 'form': // affichage du formulaire de signature de la pétition
     break;
 
 case 'indexid': // affichage d'une pétition à signer
-    $petition_detail = getPetitionDetails(intval($id));
+    $petition_detail = getPetitionDetails((int)$id);
     $status = $petition_detail['status'];
     if ($petition_detail) {
         // pétition offline (statut = 2)
@@ -904,7 +904,7 @@ case 'index': // affichage de la page d'accueil des pétitions
     $petitions_count_online = getPetitionsCountOnline(1);
     $choix_online           = 1;
     $petitions_sql_online   = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions') . ' WHERE status = "'.$choix_online.'"';
-    $petitions_pagestart    = isset($_GET['page']) ? intval($_GET['page']) : 0;
+    $petitions_pagestart    = isset($_GET['page']) ? (int)$_GET['page'] : 0;
 
     if ($petitions_count_online < 1) {
         $no_petition_active = _MD_XPETITIONS_NO_ACTIVE;
@@ -936,7 +936,7 @@ case 'index': // affichage de la page d'accueil des pétitions
         $petitions_count_archive = getPetitionsCountOnline(3);
         $choix_archive           = 3;
         $petitions_sql_archive   = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions') . ' WHERE status = "'.$choix_archive.'"';
-        $petitions_pagestart2    = isset($_GET['page']) ? intval($_GET['page']) : 0;
+        $petitions_pagestart2    = isset($_GET['page']) ? (int)$_GET['page'] : 0;
 
         if ($petitions_count_archive < 1) {
             $no_petition_archive = _MD_XPETITIONS_NO_ARCHIVE;

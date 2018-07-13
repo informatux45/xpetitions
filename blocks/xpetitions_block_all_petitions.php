@@ -24,7 +24,7 @@ function b_xpetitions_all_petitions_show($options)
 
     $xpetitions_details = getPetitionsOnline(1);
 
-    $options[0] = (intval($options[0]) >= 8) ? $options[0] : '8';
+    $options[0] = ((int)$options[0] >= 8) ? $options[0] : '8';
 
     if ($xpetitions_details) {
         foreach ($xpetitions_details as $row) {

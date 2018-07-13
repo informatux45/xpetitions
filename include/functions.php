@@ -269,7 +269,7 @@ function formatdatestamp($date)
 function deleteFile($delfile, $id, $link, $link_file)
 {
     updatePetitionFile($id, $link, $link_file);
-    $delete = unlink("$delfile");
+    $delete = unlink((string)$delfile);
 }
 
 function ExporterSignatures($p)

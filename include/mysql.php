@@ -644,7 +644,7 @@ function limite($petitions_pagestart, $petitions_count, $ligneparpage, $petition
     // vérification de la présence de $_REQUEST['page']
     // et que le paramètre n'est pas supérieur au nombre de ligne de la requête
     if (isset($_REQUEST['page']) && ($petitions_pagestart < $petitions_count)) {
-        $page = intval($_REQUEST['page']);
+        $page = (int)$_REQUEST['page'];
         $petitions_sql .= ' LIMIT ' . $page . ',' . $ligneparpage . ';';
         $result = $xoopsDB->query($petitions_sql);
     }

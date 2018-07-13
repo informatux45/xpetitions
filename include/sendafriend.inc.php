@@ -18,7 +18,7 @@ include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 <script type="text/javascript" src="<?php echo XOOPS_URL.$module_url; ?>/include/functions.js"></script>
 <?php
 
-$post = intval($_REQUEST['id']);
+$post = (int)$_REQUEST['id'];
 
 // Initialisation du formulaire
 if (isset($post)) {

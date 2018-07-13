@@ -57,7 +57,7 @@ switch ($op) {
 
         $petitions_count      = getPetitionsCount();
         $petitions_sql        = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions');
-        $petitions_pagestart  = isset($_GET['page']) ? intval($_GET['page']) : 0;
+        $petitions_pagestart  = isset($_GET['page']) ? (int)$_GET['page'] : 0;
 
         if ($petitions_count < 1) {
             echo '<tr><td colspan="5">';
@@ -138,7 +138,7 @@ switch ($op) {
     include XOOPS_ROOT_PATH.'/header.php';
     // récupération des données
     extract($_POST, EXTR_OVERWRITE);
-    $id          = intval($id);
+    $id          = (int)$id;
     $title       = $myts->oopsAddSlashes($title);
     $description = $myts->oopsAddSlashes($description);
     $email       = $myts->oopsAddSlashes($email);
@@ -159,7 +159,7 @@ switch ($op) {
         $link      = '0';
         updatePetitionFile($id, $link, $link_file);
         if (file_exists($delfile)) {
-            $delete = unlink("$delfile");
+            $delete = unlink((string)$delfile);
         }
     }
 
@@ -218,9 +218,9 @@ switch ($op) {
 
     case 'delete': // suppression d'une pétition avant confirmation
     include XOOPS_ROOT_PATH.'/header.php';
-    $delid   = intval($_REQUEST['id']);
+    $delid   = (int)$_REQUEST['id'];
     $delname = $myts->oopsAddSlashes($_REQUEST['name']);
-    $ok      = isset($_REQUEST['ok']) ? intval($_REQUEST['ok']) : 0;
+    $ok      = isset($_REQUEST['ok']) ? (int)$_REQUEST['ok'] : 0;
     // confirmation donc suppression de la pétition
     if ($ok == 1 && isset($delid) && isset($delname)) {
         $delete_petition = deletePetition($delid, $delname);
@@ -236,7 +236,7 @@ switch ($op) {
     xoops_cp_header();
     xpetitions_adminmenu('petitions.php');
 
-    $petitionid = getPetitionDetails(intval($_REQUEST['id']));
+    $petitionid = getPetitionDetails((int)$_REQUEST['id']);
     // récupération des variables
     $name        = $petitionid['name'];
     $title       = $petitionid['title'];

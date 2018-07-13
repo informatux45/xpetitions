@@ -23,10 +23,10 @@ function b_xpetitions_last_signs_show($options)
 
     $block = [];
 
-    $number_signatures = intval($options[4]);
-    $petition_detail   = getPetitionDetails(intval($options[6]));
+    $number_signatures = (int)$options[4];
+    $petition_detail   = getPetitionDetails((int)$options[6]);
 
-    $options[1] = (intval($options[1]) >= 8) ? $options[1] : '8';
+    $options[1] = ((int)$options[1] >= 8) ? $options[1] : '8';
 
     // si option 'affichage infos titre de la pétition'
     if ($options[0] == 1) {

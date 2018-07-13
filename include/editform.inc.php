@@ -14,7 +14,7 @@
 // includes
 include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
-$post    = intval($_GET['id']);
+$post    = (int)$_GET['id'];
 $is_file = getPetitionDetails($post);
 
 // Initialisation du formulaire
