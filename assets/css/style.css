@@ -1,0 +1,281 @@
+/* ******************************************* */
+/*                INFORMATUX                   */
+/*         http://www.informatux.com/          */
+/*       SOLUTIONS AND WEB DEVELOPMENT         */
+/*             Patrice BOUTHIER                */
+/*                   2008                      */
+/* ------------------------------------------- */
+/*    XOOPS - PHP Content Management System    */
+/*         Copyright (c) 2000-2016 XOOPS.org        */
+/*            <https://xoops.org/>          */
+/* ******************************************* */
+
+/* Admin menu */
+#buttontop {
+    float: left;
+    width: 100%;
+    background: #e7e7e7;
+    font-size: 93%;
+    line-height: normal;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin: 0;
+}
+
+#buttonbar {
+    float: left;
+    width: 100%;
+    background: #e7e7e7 url('../images/bg.png') repeat-x left bottom;
+    font-size: 93%;
+    line-height: normal;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin-bottom: 12px;
+}
+
+#buttonbar ul {
+    margin: 0;
+    margin-top: 15px;
+    padding: 10px 10px 0;
+    list-style: none;
+}
+
+#buttonbar li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#buttonbar a {
+    float: left;
+    background: url('../images/left_both.png') no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 9px;
+    border-bottom: 1px solid #000;
+    text-decoration: none;
+}
+
+#buttonbar a span {
+    float: left;
+    display: block;
+    background: url('../images/right_both.png') no-repeat right top;
+    padding: 5px 15px 4px 6px;
+    font-weight: normal;
+    color: #765;
+    color: white;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#buttonbar a span {
+    float: none;
+}
+
+/* End IE5-Mac hack */
+#buttonbar a:hover span {
+    color: #333;
+}
+
+#buttonbar #current a {
+    background-position: 0 -150px;
+    border-width: 0;
+}
+
+#buttonbar #current a span {
+    background-position: 100% -150px;
+    padding-bottom: 5px;
+    color: #333;
+}
+
+#buttonbar a:hover {
+    background-position: 0% -150px;
+}
+
+#buttonbar a:hover span {
+    background-position: 100% -150px;
+}
+
+.bg1 {
+    font-size: 12px;
+    font-weight: normal;
+    background-color: #C8DBDB;
+}
+
+.bg2 {
+    font-size: 12px;
+    font-weight: normal;
+    background-color: #DEEFEF;
+}
+
+.bg3 {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #2F5376;
+    color: #ffffff;
+}
+
+.bg4 {
+}
+
+.bg5 {
+}
+
+/* style template */
+div#xpetitions_help_a {
+    border: 0px solid silver;
+    background: url('../images/help2.png') no-repeat top left;
+    text-align: center;
+    line-height: 22px;
+    text-align: left;
+    cursor: pointer;
+    padding-left: 30px;
+}
+
+.xpetitions_help_title {
+    color: navy;
+}
+
+.xpetitions_help {
+    font: normal 12px;
+    color: blue;
+    text-align: left;
+}
+
+/*a.xpetitions_help_a {font: normal 14px; color: blue;}*/
+
+.xpetitions_header {
+    width: 100%;
+    border-bottom: 1px solid silver;
+    margin: 5px 0px 12px 0px;
+    padding: 0;
+}
+
+.xpetitions_title {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    padding: 0px;
+}
+
+.xpetitions_name {
+    font-size: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+.xpetitions_name a {
+    font-size: 10px;
+    font-weight: bold;
+    color: gray;
+}
+
+.xpetitions_home {
+    width: 100%;
+    line-height: 18px;
+    font-weight: normal;
+    font-size: 14px;
+    color: black;
+    background-color: silver;
+    padding: 3px;
+}
+
+.xpetitions_offline {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    padding: 0px 0px 12px 0px;
+}
+
+.xpetitions_sign {
+    width: 99%;
+    border: 1px solid gray;
+    padding: 3px;
+    background-color: silver;
+    text-align: center;
+    font: normal 12px;
+    color: black;
+    margin: 12px 0px;
+    clear: both;
+}
+
+.xpetitions_sign a {
+    font: bold 12px;
+    color: #363636;
+    text-decoration: none;
+}
+
+.xpetitions_sign a:hover {
+    color: #363636;
+    text-decoration: underline;
+}
+
+.xpetitions_sign_recorded {
+    font: normal 12px;
+    color: black;
+    padding: 3px;
+    margin-top: 12px;
+    height: 100%;
+}
+
+.xpetitions_sign_img {
+    float: left;
+    margin: 0px 15px 0px 0px;
+}
+
+.xpetitions_allsigns_cpt {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.xpetitions_allsigns_title {
+    font: normal 14px;
+    color: black;
+    text-align: center;
+}
+
+.xpetitions_allsigns_show {
+    font-weight: normal;
+    font-size: 11px;
+    color: black;
+    padding: 20px;
+}
+
+.xpetitions_allsigns_letter {
+    font-weight: normal;
+    font-size: 12px;
+    color: black;
+    text-decoration: underline;
+}
+
+.xpetitions_allsigns_big_letter {
+    font-size: 24px;
+    color: red;
+}
+
+.xpetitions_block_title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.xpetitions_block_title_u {
+    font-weight: normal;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.xpetitions_verfication_ok {
+    width: auto;
+    border: 1px solid green;
+    padding: 5px;
+    background-color: #e6ffee;
+}
+
+.xpetitions_verfication_ko {
+    width: auto;
+    border: 1px solid red;
+    padding: 5px;
+    background-color: #fff0f2;
+}
