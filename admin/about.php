@@ -8,11 +8,11 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
-include_once 'header.inc.php';
+require_once __DIR__ . '/header.inc.php';
 
 //----------------------------------------------------------------------------//
 //
@@ -20,7 +20,7 @@ if (!isset($_REQUEST['op'])) {
     xoops_cp_header();
     xpetitions_adminmenu('about.php'); ?>
 
-<!-- <br /> -->
+<!-- <br> -->
 <table border="0" cellspacing="1" style="width: 100%;" class="outer">
   <tr>
     <th><?php echo _AM_XPETITIONS_ABOUT_1; ?></th>
@@ -32,7 +32,7 @@ if (!isset($_REQUEST['op'])) {
   </tr>
 </table>
 
-<br />
+<br>
 <table border="0" cellspacing="1" style="width: 100%" class="outer">
   <tr>
     <th colspan="2">Informations Version</th>
@@ -50,7 +50,7 @@ if (!isset($_REQUEST['op'])) {
   <tr>
 </table>
 
-<br />
+<br>
 <table border="0" cellspacing="1" style="width: 100%;" class="outer">
   <tr>
     <th colspan="2"><?php echo _AM_XPETITIONS_ABOUT_3; ?></th>
@@ -75,7 +75,7 @@ if (!isset($_REQUEST['op'])) {
   </tr>
 </table>
 
-<br />
+<br>
 <table border="0" cellspacing="1" style="width: 100%;" class="outer">
   <tr>
     <th><?php echo _AM_XPETITIONS_ABOUT_6; ?></th>

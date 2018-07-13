@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
@@ -20,7 +20,7 @@ $email_toconfirmed = getEmailInfos('2'); // Email aux signataires pour validatio
 // Initialisation du formulaire
 $emails = new XoopsThemeForm(_AM_XPETITIONS_TITLE_EMAILS, 'emailform', 'email.php?op=update');
 
-echo '<br />';
+echo '<br>';
 
 // Message aux signataires à valider par email (sujet)
 $field_submess_to = new XoopsFormText(_AM_XPETITIONS_SUB_EMAIL_TO, 'subject_toconfirmed', 50, 255, $email_toconfirmed['subject']);

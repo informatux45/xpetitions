@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
@@ -20,7 +20,7 @@ $latecomer = new XoopsThemeForm(_AM_XPETITIONS_TITLE_LATECOMERFORM, 'latecomerfo
 $petition_name  = getPetitionDetails($_GET['id']);
 $sample_message =  getEmailInfos('1'); // Email aux retardataires
 
-echo '<br />';
+echo '<br>';
 // Message aux retardataires
 $field_message = new XoopsFormTextArea(_AM_XPETITIONS_MESS_LATECOMER, 'message', $sample_message['message'], 7, 10);
 $latecomer->addElement($field_message, true);

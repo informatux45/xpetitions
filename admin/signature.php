@@ -3,7 +3,7 @@
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //
-//                       <http://www.xoops.org/>                             //
+//                       <https://www.xoops.org>                             //
 //  ------------------------------------------------------------------------ //
 //  This program is free software; you can redistribute it and/or modify     //
 //  it under the terms of the GNU General Public License as published by     //
@@ -26,7 +26,7 @@
 //  ------------------------------------------------------------------------ //
 
 // includes
-include_once 'header.inc.php';
+require_once __DIR__ . '/header.inc.php';
 include_once XOOPS_ROOT_PATH . '/header.php';
 include_once XOOPS_ROOT_PATH . '/class/xoopsmailer.php';
 include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
@@ -97,7 +97,7 @@ case 'signma': // Enregistrer/Supprimer des signatures manuellement
 	<?php
 
     // Formulaire insérer/supprimer des signatures
-    include '../include/adddel_signs.inc.php';
+    require  dirname(__DIR__) . '/include/adddel_signs.inc.php';
 
     //echo '</div>'; // fin id central
     xpetitions_adminfooter();
@@ -117,7 +117,7 @@ case 'novalid': // Formulaire d'envoi email multiple pour les retardataires
 	<?php
 
     // Formulaire d'envoi email multiple (retardataires)
-    include '../include/sendlatecomer.inc.php';
+    require  dirname(__DIR__) . '/include/sendlatecomer.inc.php';
 
     xpetitions_adminfooter();
         xoops_cp_footer();
@@ -197,7 +197,7 @@ case 'recorded': // Affichage des signatures enregistrées
     $petition_id   = $_REQUEST['id'];
 
     // Tableau des signatures
-    echo '<br /><table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="1" class="outer">';
+    echo '<br><table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="1" class="outer">';
     echo '<tbody><tr class="bg3">';
     echo '<td style="text-align: center;" colspan="8">' . _AM_XPETITIONS_SIGN_DETAIL . '</td>';
     echo '</tr><tr class="bg3">';
@@ -248,7 +248,7 @@ case 'recorded': // Affichage des signatures enregistrées
     }
 
     echo '</tbody></table>';
-    echo "<div align='right'>".$pagenav->renderNav().'</div><br />';
+    echo "<div align='right'>".$pagenav->renderNav().'</div><br>';
 
     xpetitions_adminfooter();
     xoops_cp_footer();
@@ -271,7 +271,7 @@ case 'extract': // Extraire les signatures validées au format csv
     $date                 = date('jmY-Hi');
 
     echo _AM_XPETITIONS_SIGN_CSV_TITLE;
-    echo _AM_XPETITIONS_SIGN_CSV_PETITION.$myts->DisplayTarea($petition_title['title']).'<br /><br />';
+    echo _AM_XPETITIONS_SIGN_CSV_PETITION.$myts->DisplayTarea($petition_title['title']).'<br><br>';
 
     echo '<div id="construct_csv">'. _AM_XPETITIONS_SIGN_CSV_INPROGRESS .'</div>';
 
@@ -282,7 +282,7 @@ case 'extract': // Extraire les signatures validées au format csv
         }
         fclose($file);
         echo '<script type="text/javascript">chdiv("construct_csv","'. _AM_XPETITIONS_SIGN_CSV_SUCCESS .'");</script>';
-        echo '<br />';
+        echo '<br>';
         echo 'T&eacute;l&eacute;charger le fichier g&eacute;n&eacute;r&eacute; : '; ?><a href="<?php echo XOOPS_URL.'/modules/'.$xoopsModule->getVar('dirname').'/csv/cvs_'.$date.'.csv'; ?>">cvs_<?php echo $date; ?>.csv</a><?php
     } else {
         echo '<script type="text/javascript">chdiv("construct_csv","'. _AM_XPETITIONS_SIGN_CSV_ERROR .'");</script>';
@@ -305,7 +305,7 @@ case 'tab': // Récapitulatifs des signatures par pétitions
 	<?php
 
     // Tableau des pétitions
-    echo '<br /><table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="1" class="outer">';
+    echo '<br><table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="1" class="outer">';
     echo '<tbody><tr class="bg3">';
     echo '<td style="text-align: center;" colspan="6">' . _AM_XPETITIONS_SIGN_TAB . '</td>';
     echo '</tr><tr class="bg3">';
@@ -363,7 +363,7 @@ case 'tab': // Récapitulatifs des signatures par pétitions
             echo '</tr>';
         }
         echo '</tbody></table>';
-        echo "<div align='right'>".$pagenav->renderNav().'</div><br />';
+        echo "<div align='right'>".$pagenav->renderNav().'</div><br>';
     }
 
     xpetitions_adminfooter();
@@ -393,7 +393,7 @@ case 'signshow': // Gestion de l'affichage des signatures
     $nbcol = $signshow_nbcol['options'];
 
     // Formulaire insérer/supprimer des signatures
-    include '../include/signs.inc.php';
+    require  dirname(__DIR__) . '/include/signs.inc.php';
 
     xpetitions_adminfooter();
     xoops_cp_footer();

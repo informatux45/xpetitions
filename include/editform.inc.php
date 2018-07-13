@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
@@ -66,7 +66,7 @@ $editform->insertBreak(_AM_XPETITIONS_BREAK_ADDFORM, 'bg3');
 
 // Affichage d'un fichier uploader si présent
 if ('1' == $is_file['file']) {
-    $field_file_show = new XoopsFormElementTray(_AM_XPETITIONS_FILE_SHOW_ADDFORM, '<br />');
+    $field_file_show = new XoopsFormElementTray(_AM_XPETITIONS_FILE_SHOW_ADDFORM, '<br>');
     $field_file_show->setDescription(_AM_XPETITIONS_FILE_SHOW_ADDFORM_DSC);
     $field_file_check = new XoopsFormCheckBox('', 'file_delete', 0);
     $link_file = sprintf("<a href='%s%s/%s' target='_blank'>%s</a>\n", XOOPS_URL, $xoopsModuleConfig['path_upload'], $is_file['link_file'], $is_file['link_file']);

@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 define('_AM_XPETITIONS_XOOPS_PRO', 'http://www.informatux.com/');
@@ -17,11 +17,11 @@ define('_AM_XPETITIONS_XOOPS_PRO2', 'WEB solutions and development');
 define('_AM_XPETITIONS_XOOPS_PRO3', 'Do you need help with this module?');
 
 // * header.inc.php *
-define('_AM_XPETITIONS_MISSING', 'The ModuleAdmin class is not installed, install it on your xoops.<br />/Frameworks/moduleclasses/moduleadmin/');
+define('_AM_XPETITIONS_MISSING', 'The ModuleAdmin class is not installed, install it on your xoops.<br>/Frameworks/moduleclasses/moduleadmin/');
 
 // * index.php *
 define('_AM_XPETITIONS_INDEX_HELP1', '<b>HELP</b>');
-define('_AM_XPETITIONS_INDEX_HELP2', "- Please click on the name of a petition to open its homepage.<br />- The date displayed is that of the day the petition was put online.<br />- Petition status can be set to three levels:<br />* <b style='color: green;'>Active</b> (The petition can be signed as long as the petition date is in the past)<br />* <b style='color: orange;'>Offline</b> (The petition is not displayed and cannot be signed)<br />* <b style='color: red;'>Archived</b> (The petition is displayed but cannot be signed)<br />- Possible actions:<br />* Modification (You can modify everything except for the name of the signatures table)<br />* Deletion (This will delete the petition, including all attached signatures. If you want to keep your petition without displaying it nor registering new signatures, set it to 'Offline')");
+define('_AM_XPETITIONS_INDEX_HELP2', "- Please click on the name of a petition to open its homepage.<br>- The date displayed is that of the day the petition was put online.<br>- Petition status can be set to three levels:<br>* <b style='color: green;'>Active</b> (The petition can be signed as long as the petition date is in the past)<br>* <b style='color: orange;'>Offline</b> (The petition is not displayed and cannot be signed)<br>* <b style='color: red;'>Archived</b> (The petition is displayed but cannot be signed)<br>- Possible actions:<br>* Modification (You can modify everything except for the name of the signatures table)<br>* Deletion (This will delete the petition, including all attached signatures. If you want to keep your petition without displaying it nor registering new signatures, set it to 'Offline')");
 define('_AM_XPETITIONS_INDEX', 'Homepage');
 define('_AM_XPETITIONS_CREATION', 'Creation');
 define('_AM_XPETITIONS_MODIFICATION', 'Modification');
@@ -68,13 +68,13 @@ define('_AM_XPETITIONS_DIR_NOT_CREATED', 'Error creating directory!');
 define('_AM_XPETITIONS_TITLE1_ADDFORM', 'Create a petition');
 define('_AM_XPETITIONS_TITLE1_EDITFORM', 'Modify a petition');
 define('_AM_XPETITIONS_NAME_ADDFORM', 'Name');
-define('_AM_XPETITIONS_NAME_ADDFORM_DSC', "Name of the petition's MySQL table (no spaces, no special characters)<br />Example: mypetition<br /><span style='color: red;'>This field cannot be modified in 'Modification' mode</span>");
+define('_AM_XPETITIONS_NAME_ADDFORM_DSC', "Name of the petition's MySQL table (no spaces, no special characters)<br>Example: mypetition<br><span style='color: red;'>This field cannot be modified in 'Modification' mode</span>");
 define('_AM_XPETITIONS_TITLE2_ADDFORM', 'Title');
 define('_AM_XPETITIONS_TITLE2_ADDFORM_DSC', 'Title of the petition as seen by visitors');
 define('_AM_XPETITIONS_DESC_ADDFORM', 'Description');
 define('_AM_XPETITIONS_DESC_ADDFORM_DSC', 'Insert the text of your petition here');
 define('_AM_XPETITIONS_EMAIL_ADDFORM', 'Reply email address');
-define('_AM_XPETITIONS_EMAIL_ADDFORM_DSC', 'Email address from which confirmation and reminder messages will be sent.<br />Example: noreply@petition.com');
+define('_AM_XPETITIONS_EMAIL_ADDFORM_DSC', 'Email address from which confirmation and reminder messages will be sent.<br>Example: noreply@petition.com');
 define('_AM_XPETITIONS_STATUS_ADDFORM', 'Status');
 define('_AM_XPETITIONS_STATUS_ADDFORM_DSC', 'Status of the petition');
 define('_AM_XPETITIONS_DATE_ADDFORM', 'Date');
@@ -96,7 +96,7 @@ define('_AM_XPETITIONS_FILE_ADDFORM', 'Upload a file');
 define('_AM_XPETITIONS_FILE_ADDFORM_DSC', "You may add a PDF or DOC document containing the text of the petition so that people who will not sign it online can download it and print it (if you upload a file, a link will automatically appear in the petition's toolbar).");
 define('_AM_XPETITIONS_BREAK_ADDFORM', '<b>Upload a printable version of the petition</b>');
 define('_AM_XPETITIONS_FILE_SHOW_ADDFORM', 'File uploaded;');
-define('_AM_XPETITIONS_FILE_SHOW_ADDFORM_DSC', 'To display the file, click on its name.<br />To delete it, tick the box and confirm.<br />To replace or update it, upload a new file (this will NOT delete the existing file, except if you tick its deletion box)');
+define('_AM_XPETITIONS_FILE_SHOW_ADDFORM_DSC', 'To display the file, click on its name.<br>To delete it, tick the box and confirm.<br>To replace or update it, upload a new file (this will NOT delete the existing file, except if you tick its deletion box)');
 define('_AM_XPETITIONS_DELETE_FILE_ADDFORM', 'Delete file');
 define('_AM_XPETITIONS_STATUS1', 'active');
 define('_AM_XPETITIONS_STATUS2', 'offline');
@@ -112,7 +112,7 @@ define('_AM_XPETITIONS_SIGN_DOUBLE', 'Signature already exists in database!');
 define('_AM_XPETITIONS_VALID_INSERT', 'Sucessfully created in database!');
 define('_AM_XPETITIONS_VALID_UPDATE', 'Database update successfull!');
 define('_AM_XPETITIONS_VALID_DELETE', 'Deletion successfull!');
-define('_AM_XPETITIONS_DELETE_CONFIRM', 'Are you sure you want to delete this petition?<br />This will also delete all the signatures attached to this petition.');
+define('_AM_XPETITIONS_DELETE_CONFIRM', 'Are you sure you want to delete this petition?<br>This will also delete all the signatures attached to this petition.');
 define('_AM_XPETITIONS_DELETE_SIGN', 'Are you sure you want to delete this signature?');
 define('_AM_XPETITIONS_ERROR_FILE_UPLOAD', 'Error while uploading the file!!!');
 
@@ -125,9 +125,9 @@ define('_AM_XPETITIONS_SIGN_TAB4', 'Registered');
 define('_AM_XPETITIONS_SIGN_TAB5', 'Confirmed');
 define('_AM_XPETITIONS_SIGN_TAB6', 'Unconfirmed');
 define('_AM_XPETITIONS_SIGN_HELP1', '<b>HELP</b>');
-define('_AM_XPETITIONS_SIGN_HELP2', "- Clicking on the 'Registered' counter diplays the signatures sent in by visitors.<br />- Clicking on the 'Confirmed' counter allows you to export confirmed signatures to a spreadsheet (.csv).<br />- Clicking on the 'Unconfirmed' counter allows you to send a reminder email to all thos who have registered a signature but have not yet confrimed it and/or force the validation of the unconfirmed signatures by a simple click.<br />- If you wish to delete or add individual signatures (such as those received on paper), click on 'Register/Delete signatures manually'.");
+define('_AM_XPETITIONS_SIGN_HELP2', "- Clicking on the 'Registered' counter diplays the signatures sent in by visitors.<br>- Clicking on the 'Confirmed' counter allows you to export confirmed signatures to a spreadsheet (.csv).<br>- Clicking on the 'Unconfirmed' counter allows you to send a reminder email to all thos who have registered a signature but have not yet confrimed it and/or force the validation of the unconfirmed signatures by a simple click.<br>- If you wish to delete or add individual signatures (such as those received on paper), click on 'Register/Delete signatures manually'.");
 define('_AM_XPETITIONS_SIGN_HELP3',
-       'You can personalise the reminder e-mail sent to the authors of unconfirmed signatures. You can insert the following tags (complete with punctuation) in the message:<br />{USER_NAME} : Name of the person who signed.<br />{USER_EMAIL} : Their email address.<br />{LINK_URL} : Link to signature confirmation.<br />{SITE_NAME} : Name of your website.<br />{SITE_URL} : Url of your website.<br />');
+       'You can personalise the reminder e-mail sent to the authors of unconfirmed signatures. You can insert the following tags (complete with punctuation) in the message:<br>{USER_NAME} : Name of the person who signed.<br>{USER_EMAIL} : Their email address.<br>{LINK_URL} : Link to signature confirmation.<br>{SITE_NAME} : Name of your website.<br>{SITE_URL} : Url of your website.<br>');
 define('_AM_XPETITIONS_SAVE_SIGN', 'Register/Delete signatures manually');
 define('_AM_XPETITIONS_DEL_SIGN', 'Delete signature');
 define('_AM_XPETITIONS_DEL_TITLE', 'Click on a petition to show signatures');
@@ -142,7 +142,7 @@ define('_AM_XPETITIONS_SIGN_DETAIL7', 'Date');
 define('_AM_XPETITIONS_SIGN_DETAIL8', 'validated');
 define('_AM_XPETITIONS_SIGN_NONE', 'No signature to display');
 define('_AM_XPETITIONS_TITLE_LATECOMERFORM', 'Send an email to the authors of unconfirmed signatures');
-define('_AM_XPETITIONS_MESS_LATECOMER', 'Message sent to the authors of unconfirmed signatures.<br /><i>(Help file on automatic tags)</i>');
+define('_AM_XPETITIONS_MESS_LATECOMER', 'Message sent to the authors of unconfirmed signatures.<br><i>(Help file on automatic tags)</i>');
 define('_AM_XPETITIONS_MSG_BUTTON_LATECOMER2', 'Send an email to the %s authors of unconfirmed signatures');
 define('_AM_XPETITIONS_MSG_BUTTON_LATECOMER1', 'Send an email to the %s authors of unconfirmed signatures');
 define('_AM_XPETITIONS_SUBMIT_LATECOMER', 'Send message');
@@ -160,7 +160,7 @@ define('_AM_XPETITIONS_SIGN_CSV_DATE', 'DATE');
 define('_AM_XPETITIONS_SIGN_CSV_IP', 'IP ADDRESS');
 define('_AM_XPETITIONS_SIGN_CSV_INPROGRESS', 'Generating CSV file...');
 define('_AM_XPETITIONS_SIGN_CSV_SUCCESS', 'CSV file generated successfully!');
-define('_AM_XPETITIONS_SIGN_CSV_ERROR', "Error while generating file!<br />Do you have 'write' permission on the 'xpetitions/csv/' folder?");
+define('_AM_XPETITIONS_SIGN_CSV_ERROR', "Error while generating file!<br>Do you have 'write' permission on the 'xpetitions/csv/' folder?");
 define('_AM_XPETITIONS_SIGN_CSV_TITLE', '<h1>EXTRACTING SIGNATURES (CSV format)</h1>');
 define('_AM_XPETITIONS_SIGN_CSV_PETITION', '<u>For the petition:</u> ');
 define('_AM_XPETITIONS_SIGN_HELP4', 'Help on registering/deleting signatures');
@@ -187,19 +187,19 @@ define('_AM_XPETITIONS_FORCE_SIGN_CONFIRM', "Would you force the validation of t
 
 define('_AM_XPETITIONS_TITLE_SHOW_SIGN', 'Display of signatures');
 define('_AM_XPETITIONS_SELECT_SHOW', 'Choice of the signatures display');
-define('_AM_XPETITIONS_SELECT_SHOW_DSC', 'Choose the direction of the signatures display of your petitions.<br />Either in columns, or the some following the others separated by commas.');
+define('_AM_XPETITIONS_SELECT_SHOW_DSC', 'Choose the direction of the signatures display of your petitions.<br>Either in columns, or the some following the others separated by commas.');
 define('_AM_XPETITIONS_SELECT_SHOW1', 'Column');
 define('_AM_XPETITIONS_SELECT_SHOW2', 'Line');
 define('_AM_XPETITIONS_SELECT_NBCOL', 'Number of columns');
 define('_AM_XPETITIONS_SELECT_NBCOL_DSC', 'If you choose column display, You can choose the number of column to show your signatories.');
 define('_AM_XPETITIONS_INFOS_SIGN', 'Present information in signatures');
-define('_AM_XPETITIONS_INFOS_SIGN_DSC', "Mark the information that you want to see appearing on the petitions signatures.<br />If you decide not to choose option, then it will appear only the lastname and the firstname of your signatories.<br /><br />If you choose options, these will appear between the brackets as below:<br />Patrice BOUTHIER <span style='font-weight: bold;'>(</span><span style='color: red;'>Web Developer - FRANCE - contact@informatux.com</span><span style='font-weight: bold;'>)</span>");
+define('_AM_XPETITIONS_INFOS_SIGN_DSC', "Mark the information that you want to see appearing on the petitions signatures.<br>If you decide not to choose option, then it will appear only the lastname and the firstname of your signatories.<br><br>If you choose options, these will appear between the brackets as below:<br>Patrice BOUTHIER <span style='font-weight: bold;'>(</span><span style='color: red;'>Web Developer - FRANCE - contact@informatux.com</span><span style='font-weight: bold;'>)</span>");
 define('_AM_XPETITIONS_INFOS_SIGN1', 'Job');
 define('_AM_XPETITIONS_INFOS_SIGN2', 'Country');
 define('_AM_XPETITIONS_INFOS_SIGN3', 'Email');
 define('_AM_XPETITIONS_INFOS_SIGN4', 'City');
 define('_AM_XPETITIONS_INFOS_SIGN5', 'Date');
-define('_AM_XPETITIONS_SIGN_HELP5', "Choose here how the petitions signatures will be shown when the Internet users will consult them on your website.<br /><br /><span style='text-decoration: underline;'>Two choices :</span><br />- Display in column (also choose the number of columns)<br />- Display in line (separated by commas)<br /><br />Choose the formatting of a signature among the available options (job, country, email, city, date).<br />If you choose options, they will appear in brackets with the lastname and the firstname of the signatory.<br />If you do not choose option, only the lastname and the firstname will appear.");
+define('_AM_XPETITIONS_SIGN_HELP5', "Choose here how the petitions signatures will be shown when the Internet users will consult them on your website.<br><br><span style='text-decoration: underline;'>Two choices :</span><br>- Display in column (also choose the number of columns)<br>- Display in line (separated by commas)<br><br>Choose the formatting of a signature among the available options (job, country, email, city, date).<br>If you choose options, they will appear in brackets with the lastname and the firstname of the signatory.<br>If you do not choose option, only the lastname and the firstname will appear.");
 
 
 // * email.php
@@ -214,12 +214,12 @@ define('_AM_XPETITIONS_SUB_EMAIL_TODSC', "You can automatically insert your peti
 define('_AM_XPETITIONS_MESS_EMAIL_TO', 'Confirmation message sent at the moment of the signature');
 define('_AM_XPETITIONS_MESS_EMAIL_TODSC', 'You can insert tags in the body of the message (see Help)');
 define('_AM_XPETITIONS_MESS_EMAIL_HELP1', '<b>Help</b>');
-define('_AM_XPETITIONS_MESS_EMAIL_HELP2', "<div style='font-weight: normal; text-align: center;'>You can insert tags in the body of the message (please copy exact syntax) :</div><br /><table style='text-align: left; width: 100%;' border='0' cellpadding='0' cellspacing='0'><tbody><tr><td style='text-align: center; vertical-align: middle;'><span style='font-weight: bold; text-decoration: underline;'>Email to authors of unconfirmed signatures</span></td><td style='text-align: center; vertical-align: middle;'><span style='font-weight: bold; text-decoration: underline;'>Email sent at the moment of the signature</span></td></tr><tr><td style='width: 50%; text-align: center; vertical-align: top;'>{PETITION} name of the petition<br />{USER_NAME} Complete name of unconfirmed.<br />{USER_EMAIL} Email of unconfirmed.<br />{LINK_URL} Link to be clicked that the unconfirmed validates his signature.<br />{SITE_NAME} Website name.<br />{SITE_URL} Website Url.</td><td style='width: 50%; text-align: center; vertical-align: top;'>{PETITION} name of the petition<br />{PRENOM} firstname of the signature author<br />{NOM} lastname of signature author<br />{INFOS} informations about the signature author<br />{VALIDATION} Confirmation link for the signature<br />{SITENAME} Website name<br />{SITESLOGAN} Website slogan<br />{SITEURL} Website Url</td></tr></tbody></table>");
+define('_AM_XPETITIONS_MESS_EMAIL_HELP2', "<div style='font-weight: normal; text-align: center;'>You can insert tags in the body of the message (please copy exact syntax) :</div><br><table style='text-align: left; width: 100%;' border='0' cellpadding='0' cellspacing='0'><tbody><tr><td style='text-align: center; vertical-align: middle;'><span style='font-weight: bold; text-decoration: underline;'>Email to authors of unconfirmed signatures</span></td><td style='text-align: center; vertical-align: middle;'><span style='font-weight: bold; text-decoration: underline;'>Email sent at the moment of the signature</span></td></tr><tr><td style='width: 50%; text-align: center; vertical-align: top;'>{PETITION} name of the petition<br>{USER_NAME} Complete name of unconfirmed.<br>{USER_EMAIL} Email of unconfirmed.<br>{LINK_URL} Link to be clicked that the unconfirmed validates his signature.<br>{SITE_NAME} Website name.<br>{SITE_URL} Website Url.</td><td style='width: 50%; text-align: center; vertical-align: top;'>{PETITION} name of the petition<br>{PRENOM} firstname of the signature author<br>{NOM} lastname of signature author<br>{INFOS} informations about the signature author<br>{VALIDATION} Confirmation link for the signature<br>{SITENAME} Website name<br>{SITESLOGAN} Website slogan<br>{SITEURL} Website Url</td></tr></tbody></table>");
 define('_AM_XPETITIONS_MESS_NONE', '');
 
 // * field.php
 define('_AM_XPETITIONS_FIELD_HELP1', '<b>Help</b>');
-define('_AM_XPETITIONS_FIELD_HELP2', "Manage the petitions signatures form.<br /><br />You can post or not the form fields and make them or not 'required'.<br /><br />If you select fields 'required' and that it is not selected 'visible', this one will not appear in the form and its character of obligation will not be taken. It is necessary initially that fields is 'visible' so that the parameter 'required' is accessible.");
+define('_AM_XPETITIONS_FIELD_HELP2', "Manage the petitions signatures form.<br><br>You can post or not the form fields and make them or not 'required'.<br><br>If you select fields 'required' and that it is not selected 'visible', this one will not appear in the form and its character of obligation will not be taken. It is necessary initially that fields is 'visible' so that the parameter 'required' is accessible.");
 define('_AM_XPETITIONS_TITLE_FIELDS', 'Form fields managment of petitions signatures');
 define('_AM_XPETITIONS_FIELD_VISIBLE', 'Visible&nbsp;&nbsp;');
 define('_AM_XPETITIONS_FIELD_OBLIGATORY', 'Required');
@@ -240,17 +240,17 @@ define('_AM_XPETITIONS_CAPTCHA_SAMPLES', ' among those available and visible by 
 define('_AM_XPETITIONS_STATUS_CAPTCHA', 'Status of the anti-spam check (update your %s) : ');
 define('_AM_XPETITIONS_CAPTCHA_SUBMIT', 'Validate your captcha');
 define('_AM_XPETITIONS_CAPTCHA_HELP1', '<b>HELP</b>');
-define('_AM_XPETITIONS_CAPTCHA_HELP2', "Choose the adapted CAPTCHA to your server either to your envy.<br />If the status of the anti-spam check is <span style='color: red;'>NO</span>, then the choice of the captcha will not be visible in your forms.");
+define('_AM_XPETITIONS_CAPTCHA_HELP2', "Choose the adapted CAPTCHA to your server either to your envy.<br>If the status of the anti-spam check is <span style='color: red;'>NO</span>, then the choice of the captcha will not be visible in your forms.");
 define('_AM_XPETITIONS_CAPTCHA_CHOICE', 'What captcha do you want to use?');
 define('_AM_XPETITIONS_CAPTCHA_CHOICE1', 'Choice 1 : Captcha (K.OHWADA)');
 define('_AM_XPETITIONS_CAPTCHA_CHOICE1A', 'Choice 1');
-define('_AM_XPETITIONS_CAPTCHA_CHOICE1_DSC', 'To modify the preferences of the CAPTCHA images shown in your forms, modify the file /xpetitions/class/captcha_x/captcha_x.ini .<br />The explanations of the various options are in the file.');
+define('_AM_XPETITIONS_CAPTCHA_CHOICE1_DSC', 'To modify the preferences of the CAPTCHA images shown in your forms, modify the file /xpetitions/class/captcha_x/captcha_x.ini .<br>The explanations of the various options are in the file.');
 define('_AM_XPETITIONS_CAPTCHA_CHOICE2', 'Choice 2 : Captcha (JPGRAPH)');
 define('_AM_XPETITIONS_CAPTCHA_CHOICE2A', 'Choice 2');
-define('_AM_XPETITIONS_CAPTCHA_CHOICE2_DSC', 'To modify the preferences of the CAPTCHA images shown in your forms, modify the file /xpetitions/generate.php .<br />The only available option is the present number of characters in the CAPTCHA image.');
+define('_AM_XPETITIONS_CAPTCHA_CHOICE2_DSC', 'To modify the preferences of the CAPTCHA images shown in your forms, modify the file /xpetitions/generate.php .<br>The only available option is the present number of characters in the CAPTCHA image.');
 define('_AM_XPETITIONS_CAPTCHA_CHOICE3', 'Choice 3 : Captcha (TEXT)');
 define('_AM_XPETITIONS_CAPTCHA_CHOICE3A', 'Choice 3');
-define('_AM_XPETITIONS_CAPTCHA_CHOICE3_DSC', 'No regulation is necessary.<br />The questions are unpredictable, refresh the page to see the other questions.');
+define('_AM_XPETITIONS_CAPTCHA_CHOICE3_DSC', 'No regulation is necessary.<br>The questions are unpredictable, refresh the page to see the other questions.');
 
 // * about.php *
 define('_AM_XPETITIONS_ABOUT_1', 'About');

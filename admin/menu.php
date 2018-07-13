@@ -8,17 +8,17 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
-defined('XOOPS_ROOT_PATH') or die('Restricted access');
+defined('XOOPS_ROOT_PATH') || die('Restricted access');
 $path = dirname(dirname(dirname(__DIR__)));
 
 global $xoopsModule, $xoopsUser;
 
 $dirname        = basename(dirname(__DIR__));
-$module_handler = xoops_getHandler('module');
-$module         = $module_handler->getByDirname($dirname);
+$moduleHandler = xoops_getHandler('module');
+$module         = $moduleHandler->getByDirname($dirname);
 $pathIcon32     = $module->getInfo('icons32');
 $pathLanguage   = $path . $module->getInfo('dirmoduleadmin');
 

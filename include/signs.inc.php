@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
@@ -63,7 +63,7 @@ if (1 == $date) {
     $field_signs5->setExtra('checked');
 }
 
-$field_signs = new XoopsFormElementTray(_AM_XPETITIONS_INFOS_SIGN, '<br />');
+$field_signs = new XoopsFormElementTray(_AM_XPETITIONS_INFOS_SIGN, '<br>');
 $field_signs->addElement($field_signs1); // Emploi
 $field_signs->addElement($field_signs2); // Pays
 $field_signs->addElement($field_signs3); // Email

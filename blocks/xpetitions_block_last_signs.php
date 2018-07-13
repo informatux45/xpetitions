@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 function b_xpetitions_last_signs_show($options)
@@ -76,57 +76,57 @@ function b_xpetitions_last_signs_edit($options)
     require_once XOOPS_ROOT_PATH . '/modules/xpetitions/include/mysql.php';
     $myts = MyTextSanitizer::getInstance();
 
-    $form = '<span style="font-weight: bold;">'._MB_XPETITIONS_INFOS.'</span><br />';
+    $form = '<span style="font-weight: bold;">'._MB_XPETITIONS_INFOS.'</span><br>';
 
     $form .= _MB_XPETITIONS_INFOS_TITLE . '<input type="radio" name="options[0]" value="1"';
     if (1 == $options[0]) {
-        $form .= ' checked="checked"';
+        $form .= ' checked';
     }
-    $form .= ' />' . _YES . '<input type="radio" name="options[0]" value="0"';
+    $form .= ' >' . _YES . '<input type="radio" name="options[0]" value="0"';
     if (0 == $options[0]) {
-        $form .= ' checked="checked"';
+        $form .= ' checked';
     }
-    $form .= ' />' . _NO;
+    $form .= ' >' . _NO;
 
-    $form .= '<br />' . _MB_XPETITIONS_INFOS_TITLE_SIZE . "<input type='text' name='options[1]' size='3' value='" . $options[1] . "' />";
+    $form .= '<br>' . _MB_XPETITIONS_INFOS_TITLE_SIZE . "<input type='text' name='options[1]' size='3' value='" . $options[1] . "' >";
 
     $form .= _MB_XPETITIONS_INFOS_TITLE_SIZE_DSC;
 
-    $form .= '<br />' . _MB_XPETITIONS_INFOS_DATE . '<input type="radio" name="options[2]" value="1"';
+    $form .= '<br>' . _MB_XPETITIONS_INFOS_DATE . '<input type="radio" name="options[2]" value="1"';
     if (1 == $options[2]) {
-        $form .= ' checked="checked"';
+        $form .= ' checked';
     }
-    $form .= ' />' . _YES . '<input type="radio" name="options[2]" value="0"';
+    $form .= ' >' . _YES . '<input type="radio" name="options[2]" value="0"';
     if (0 == $options[2]) {
-        $form .= ' checked="checked"';
+        $form .= ' checked';
     }
-    $form .= ' />' . _NO;
+    $form .= ' >' . _NO;
 
-    $form .= '<br />' . _MB_XPETITIONS_INFOS_SIGNS . '<input type="radio" name="options[3]" value="1"';
+    $form .= '<br>' . _MB_XPETITIONS_INFOS_SIGNS . '<input type="radio" name="options[3]" value="1"';
     if (1 == $options[3]) {
-        $form .= ' checked="checked"';
+        $form .= ' checked';
     }
-    $form .= ' />' . _YES . '<input type="radio" name="options[3]" value="0"';
+    $form .= ' >' . _YES . '<input type="radio" name="options[3]" value="0"';
     if (0 == $options[3]) {
-        $form .= ' checked="checked"';
+        $form .= ' checked';
     }
-    $form .= ' />' . _NO;
+    $form .= ' >' . _NO;
 
-    $form .= "<br /><br /><span style='font-weight: bold;'>" . _MB_XPETITIONS_RECORDED_TITLE . '</span>';
+    $form .= "<br><br><span style='font-weight: bold;'>" . _MB_XPETITIONS_RECORDED_TITLE . '</span>';
 
-    $form .= '<br />' . _MB_XPETITIONS_NUMBER_SIGNS . "<input type='text' name='options[4]' size='3' value='" . $options[4] . "' />";
+    $form .= '<br>' . _MB_XPETITIONS_NUMBER_SIGNS . "<input type='text' name='options[4]' size='3' value='" . $options[4] . "' >";
 
-    $form .= '<br />' . _MB_XPETITIONS_SIGNS_DATE . '<input type="radio" name="options[5]" value="1"';
+    $form .= '<br>' . _MB_XPETITIONS_SIGNS_DATE . '<input type="radio" name="options[5]" value="1"';
     if (1 == $options[5]) {
-        $form .= ' checked="checked"';
+        $form .= ' checked';
     }
-    $form .= ' />' . _YES . '<input type="radio" name="options[5]" value="0"';
+    $form .= ' >' . _YES . '<input type="radio" name="options[5]" value="0"';
     if (0 == $options[5]) {
-        $form .= ' checked="checked"';
+        $form .= ' checked';
     }
-    $form .= ' />' . _NO;
+    $form .= ' >' . _NO;
 
-    $form .= '<br /><br /><span style="font-weight: bold;">'._MB_XPETITIONS_CHOOSE.'</span><br />';
+    $form .= '<br><br><span style="font-weight: bold;">'._MB_XPETITIONS_CHOOSE.'</span><br>';
 
     $option_select = getPetitionsOnline(1);
     $form .= '<select name="options[6]" size="5" style="width: 200px;">';

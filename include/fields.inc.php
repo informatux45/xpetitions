@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
@@ -20,7 +20,7 @@ include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 // Initialisation du formulaire
 $fields = new XoopsThemeForm(_AM_XPETITIONS_TITLE_FIELDS, 'fieldform', 'field.php?op=update');
 
-echo '<br />';
+echo '<br>';
 
 // Champs "nom"
 $field_lastname1 = new XoopsFormCheckBox('', 'field_lastname1', 0);

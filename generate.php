@@ -8,10 +8,10 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
-include '../../mainfile.php';
+require  dirname(dirname(__DIR__)) . '/mainfile.php';
 
 session_start();
 
@@ -19,7 +19,7 @@ session_start();
 $_SESSION['captcha_image'] = '';
 
 // Appel de la librairie
-require 'class/antispam_jpgraph.php';
+require __DIR__ . '/class/antispam_jpgraph.php';
 
 // Instancier
 $obj_captcha = new Antispam();

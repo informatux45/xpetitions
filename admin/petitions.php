@@ -3,7 +3,7 @@
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //
-//                       <http://www.xoops.org/>                             //
+//                       <https://www.xoops.org>                             //
 //  ------------------------------------------------------------------------ //
 //  This program is free software; you can redistribute it and/or modify     //
 //  it under the terms of the GNU General Public License as published by     //
@@ -26,7 +26,7 @@
 //  ------------------------------------------------------------------------ //
 
 // includes
-include_once 'header.inc.php';
+require_once __DIR__ . '/header.inc.php';
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB, $pathIcon16;
 
 $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : 'petitions';
@@ -46,7 +46,7 @@ switch ($op) {
         helpMenu(_AM_XPETITIONS_INDEX_HELP1, _AM_XPETITIONS_INDEX_HELP2);
 
         // Tableau des pétitions
-        echo '<br /><table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="1" class="outer">';
+        echo '<br><table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="1" class="outer">';
         echo '<tbody><tr class="bg3">';
         echo '<td style="width: 5%; text-align: center;">'  . _AM_XPETITIONS_INDEX_TAB1 . '</td>';
         echo '<td style="width: 50%; text-align: center;">' . _AM_XPETITIONS_INDEX_TAB2 . '</td>';
@@ -81,15 +81,15 @@ switch ($op) {
                 // 1 : Online
                 // 2 : Offline
                 // 3 : Archive
-                echo '<img src="'.$pathIcon16.'/'.(1 == $row['status'] ? 'on' : 'off') . '.png" />';
+                echo '<img src="'.$pathIcon16.'/'.(1 == $row['status'] ? 'on' : 'off') . '.png" >';
                 echo '</td><td style="text-align: center;">';
-                echo '<a href="petitions.php?op=modif&id='.$row['id'].'"><img src="'.$pathIcon16.'/edit.png" alt="'._AM_XPETITIONS_UPDATE.'" title="'._AM_XPETITIONS_UPDATE.'" /></a>';
+                echo '<a href="petitions.php?op=modif&id='.$row['id'].'"><img src="'.$pathIcon16.'/edit.png" alt="'._AM_XPETITIONS_UPDATE.'" title="'._AM_XPETITIONS_UPDATE.'" ></a>';
                 echo '&nbsp;';
-                echo '<a href="petitions.php?op=delete&id='.$row['id'].'&name='.$row['name'].'&ok=0"><img src="'.$pathIcon16.'/delete.png" alt="'._AM_XPETITIONS_CANCEL.'" title="'._AM_XPETITIONS_CANCEL.'" /></a>';
+                echo '<a href="petitions.php?op=delete&id='.$row['id'].'&name='.$row['name'].'&ok=0"><img src="'.$pathIcon16.'/delete.png" alt="'._AM_XPETITIONS_CANCEL.'" title="'._AM_XPETITIONS_CANCEL.'" ></a>';
                 echo '</td></tr>';
             }
             echo '</tbody></table>';
-            echo "<div align='right'>".$pagenav->renderNav().'</div><br />';
+            echo "<div align='right'>".$pagenav->renderNav().'</div><br>';
         }
     break;
     case 'post': // formulaire posté
@@ -213,7 +213,7 @@ switch ($op) {
     $status      = '';
     $whoview     = '';
 
-    include '../include/addform.inc.php'; // affichage du formulaire
+    require  dirname(__DIR__) . '/include/addform.inc.php'; // affichage du formulaire
     break;
 
     case 'delete': // suppression d'une pétition avant confirmation
@@ -246,7 +246,7 @@ switch ($op) {
     $date        = $petitionid['date'];
     $whoview     = $petitionid['whoview'];
     // affichage du formulaire
-    include '../include/editform.inc.php';
+    require  dirname(__DIR__) . '/include/editform.inc.php';
     break;
     
 }

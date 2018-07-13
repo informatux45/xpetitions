@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 function xpetitions_search($queryarray, $andor, $limit, $offset, $userid)
@@ -32,7 +32,7 @@ function xpetitions_search($queryarray, $andor, $limit, $offset, $userid)
     $result = $xoopsDB->query($sql, $limit, $offset);
     $ret = [];
     $i = 0;
-    while ($myrow = $xoopsDB->fetchArray($result)) {
+    while (false !== ($myrow = $xoopsDB->fetchArray($result))) {
         // 		$ret[$i]['image'] = "images/cat/default.gif";
         $ret[$i]['link'] = 'index.php?id=' . $myrow['id'] . '';
         $ret[$i]['title'] = $myrow['title'];

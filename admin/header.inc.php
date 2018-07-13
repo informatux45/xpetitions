@@ -7,7 +7,7 @@
 */
 
 // includes
-include '../../../include/cp_header.php';
+require  dirname(dirname(dirname(__DIR__))) . '/include/cp_header.php';
 
 if (file_exists($GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/moduleadmin.php'))) {
     include_once $GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/moduleadmin.php');
@@ -15,18 +15,18 @@ if (file_exists($GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/m
     redirect_header('../../../admin.php', 5, _AM_XPETITIONS_MISSING, false);
 }
 
-if (file_exists('../language/' . $xoopsConfig['language'] . '/main.php')) {
-    include '../language/' . $xoopsConfig['language'] . '/main.php';
+if (file_exists(__DIR__ . '/../language/' . $xoopsConfig['language'] . '/main.php')) {
+    require  dirname(__DIR__) . '/language/' . $xoopsConfig['language'] . '/main.php';
 } else {
-    include '../language/english/main.php';
+    require  dirname(__DIR__) . '/language/english/main.php';
 }
 
 // module fonctions
-include_once '../include/functions.php';
-include_once '../include/config.php';
-include_once '../include/mysql.php';
+require_once dirname(__DIR__) . '/include/functions.php';
+require_once dirname(__DIR__) . '/include/config.php';
+require_once dirname(__DIR__) . '/include/mysql.php';
 
-$moduleInfo      = $module_handler->get($xoopsModule->getVar('mid'));
+$moduleInfo      = $moduleHandler->get($xoopsModule->getVar('mid'));
 $pathModuleAdmin = $xoopsModule->getInfo('dirmoduleadmin');
 $pathIcon16      = '../'.$xoopsModule->getInfo('icons16');
 $pathIcon32      = '../'.$xoopsModule->getInfo('icons32');

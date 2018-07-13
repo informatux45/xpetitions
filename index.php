@@ -8,10 +8,10 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
-include 'header.php';
+require __DIR__ . '/header.php';
 
 if (!isset($_REQUEST['op']) && !isset($_REQUEST['id'])) {
     $op       = 'index';
@@ -26,7 +26,7 @@ if (!isset($_REQUEST['op']) && !isset($_REQUEST['id'])) {
     $template = 'display_'.$op;
 }
 
-$xoopsOption['template_main'] = 'xpetitions_' . $template . '.html';
+$GLOBALS['xoopsOption']['template_main'] = 'xpetitions_' . $template . '.html';
 include XOOPS_ROOT_PATH . '/header.php';
 include XOOPS_ROOT_PATH . '/class/pagenav.php';
 
@@ -359,7 +359,7 @@ case 'friend_send': // envoi du message à un ami
                 switch ($captcha_inprogress['options']) {
                                 case '1':
                 default: // Option CAPTCHA (K.OHWADA) => 1
-                require_once 'class/captcha_x/class.captcha_x.php';
+                require_once __DIR__ . '/class/captcha_x/class.captcha_x.php';
                 $captcha_check = new captcha_x();
                 if (!isset($captcha) || !$captcha_check->validate($captcha)) {
                     redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
@@ -448,8 +448,8 @@ case 'friend': // saisie des coordonnées pour l'envoi par mail d'un message à 
             // initialisation des variables
             $yourname = $friendname = $femail = '';
             // affichage du formulaire
-            echo '<br />';
-            include 'include/sendafriend.inc.php';
+            echo '<br>';
+            require __DIR__ . '/include/sendafriend.inc.php';
         }
     } else {
         // controle du résultat de la requête SQL
@@ -548,7 +548,7 @@ case 'sign': // enregistrement d'une signature en ligne par email (par retour de
                     switch ($captcha_inprogress['options']) {
                                 case '1':
                 default: // Option CAPTCHA (K.OHWADA) => 1
-                require_once 'class/captcha_x/class.captcha_x.php';
+                require_once __DIR__ . '/class/captcha_x/class.captcha_x.php';
                 $captcha_check = new captcha_x();
                 if (!isset($captcha) || !$captcha_check->validate($captcha)) {
                     redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
@@ -559,7 +559,7 @@ case 'sign': // enregistrement d'une signature en ligne par email (par retour de
                 if (!empty($captcha) && !empty($_SESSION['captcha_image']) && strtolower($captcha) == $_SESSION['captcha_image']) {
                     continue;
                 } else {
-                    redirect_header('javascript:history.go(-1)', 2, 'captcha = ' . $captcha . '<br />session = ' . $_SESSION['captcha_image'] . '<br />' . _MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, 'captcha = ' . $captcha . '<br>session = ' . $_SESSION['captcha_image'] . '<br>' . _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
 
@@ -714,7 +714,7 @@ case 'presign': // enregistrement d'une signature en ligne en automatique (doubl
                     switch ($captcha_inprogress['options']) {
                                 case '1':
                 default: // Option CAPTCHA (K.OHWADA) => 1
-                require_once 'class/captcha_x/class.captcha_x.php';
+                require_once __DIR__ . '/class/captcha_x/class.captcha_x.php';
                 $captcha_check = new captcha_x();
                 if (!isset($captcha) || !$captcha_check->validate($captcha)) {
                     redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
@@ -725,7 +725,7 @@ case 'presign': // enregistrement d'une signature en ligne en automatique (doubl
                 if (!empty($captcha) && !empty($_SESSION['captcha_image']) && strtolower($captcha) == $_SESSION['captcha_image']) {
                     continue;
                 } else {
-                    redirect_header('javascript:history.go(-1)', 2, 'captcha = ' . $captcha . '<br />session = ' . $_SESSION['captcha_image'] . '<br />' . _MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, 'captcha = ' . $captcha . '<br>session = ' . $_SESSION['captcha_image'] . '<br>' . _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
 
@@ -803,8 +803,8 @@ case 'form': // affichage du formulaire de signature de la pétition
             // initialisation des variables
             $firstname = $lastname = $address = $zip = $city = $country = $job = $email = '';
             // affichage du formulaire
-            echo '<br />';
-            include 'include/signform.inc.php';
+            echo '<br>';
+            require __DIR__ . '/include/signform.inc.php';
             echo _MD_XPETITIONS_FORM_REQUIRED;
         }
     } else {
@@ -922,7 +922,7 @@ case 'index': // affichage de la page d'accueil des pétitions
             $petitions[] = $petition;
         }
         $xoopsTpl->assign('petitions', $petitions);
-        $page_nav = "<div align='right'>".$pagenav->renderNav().'</div><br />';
+        $page_nav = "<div align='right'>".$pagenav->renderNav().'</div><br>';
         $xoopsTpl->assign('pagenav', $page_nav);
     }
 
@@ -954,7 +954,7 @@ case 'index': // affichage de la page d'accueil des pétitions
                 $petitions_arch[] = $petition_arch;
             }
             $xoopsTpl->assign('petitions_arch', $petitions_arch);
-            $page_nav2 = "<div align='right'>".$pagenav2->renderNav().'</div><br />';
+            $page_nav2 = "<div align='right'>".$pagenav2->renderNav().'</div><br>';
             $xoopsTpl->assign('pagenav', $page_nav2);
         }
     }

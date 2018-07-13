@@ -5,7 +5,7 @@
 
         <div class="xpetitions_title"><{$petition_title}><br>
             <{$whoview}>
-            <{if $xoops_isadmin == true}>
+            <{if $xoops_isadmin === true}>
                 &nbsp;
                 <a href="<{$xoops_url}><{$link_adm_modif}>"><img src="<{xoModuleIcons16 edit.png}>"></a>
                 &nbsp;

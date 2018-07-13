@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // formulaire double combo - choix dans la liste des signatures
@@ -43,8 +43,8 @@ echo '</select>&nbsp;&nbsp;&nbsp;';
 
 <select name="signs" size="5" style="width: 250px;">
 
-</select><br /><br />
-<input type="submit" value="<?php echo _AM_XPETITIONS_DEL_SIGN; ?>" />
+</select><br><br>
+<input type="submit" value="<?php echo _AM_XPETITIONS_DEL_SIGN; ?>" >
 </fieldset>
 </div>
 

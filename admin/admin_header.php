@@ -4,16 +4,16 @@ $path = dirname(dirname(dirname(__DIR__)));
 require_once $path . '/mainfile.php';
 //require_once $path . '/include/cp_functions.php';
 require_once $path . '/include/cp_header.php';
-require_once __DIR__ . '/../include/functions.php';
-require_once __DIR__ . '/../include/config.php';
-require_once __DIR__ . '/../include/mysql.php';
+require_once  dirname(__DIR__) . '/include/functions.php';
+require_once  dirname(__DIR__) . '/include/config.php';
+require_once  dirname(__DIR__) . '/include/mysql.php';
 
 //require_once $GLOBALS['xoops']->path('www/include/cp_functions.php');
 //require_once $GLOBALS['xoops']->path('www/include/cp_header.php');
 //require_once $GLOBALS['xoops']->path('www/class/xoopsformloader.php');
 
-//require_once __DIR__ . '/../class/utility.php';
-//require_once __DIR__ . '/../include/common.php';
+//require_once  dirname(__DIR__) . '/class/utility.php';
+//require_once  dirname(__DIR__) . '/include/common.php';
 
 $moduleDirName = basename(dirname(__DIR__));
 

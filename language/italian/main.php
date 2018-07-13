@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // index
@@ -31,7 +31,7 @@ define('_MD_XPETITIONS_NO_DETAIL', 'Nessuna informazione per questa petizione');
 define('_MD_XPETITIONS_OFFLINE', 'Petizione disattivata');
 
 // formulaire de signature d'une petition
-define('_MD_XPETITIONS_TITLE_SIGNFORM', '<br />Compila questo form per firmare la petizione.<br />Una richiesta via %s &egrave; necessaria per convalidare la firma.<br />Tutti i campi contrassegnati con * sono richiesti.<br /><br />');
+define('_MD_XPETITIONS_TITLE_SIGNFORM', '<br>Compila questo form per firmare la petizione.<br>Una richiesta via %s &egrave; necessaria per convalidare la firma.<br>Tutti i campi contrassegnati con * sono richiesti.<br><br>');
 define('_MD_XPETITIONS_TITLE_SIGNFORM1', 'email');
 define('_MD_XPETITIONS_TITLE_SIGNFORM2', 'Doppio click');
 define('_MD_XPETITIONS_FNAME_SIGNFORM', 'Nome');
@@ -43,11 +43,11 @@ define('_MD_XPETITIONS_COUNTRY_SIGNFORM', 'Nazione');
 define('_MD_XPETITIONS_JOB_SIGNFORM', 'Occupazione');
 define('_MD_XPETITIONS_EMAIL_SIGNFORM', 'Indirizzo Email');
 define('_MD_XPETITIONS_SUBMIT', 'Firma la petizione');
-define('_MD_XPETITIONS_CAPTCHA', "Inserisci il testo visualizzato nell'immagine.<br />Rispetta le maiuscole e le minuscole.<br />Se non riesci a leggere il testo, puoi cambiarlo cliccando sull'immagine.");
+define('_MD_XPETITIONS_CAPTCHA', "Inserisci il testo visualizzato nell'immagine.<br>Rispetta le maiuscole e le minuscole.<br>Se non riesci a leggere il testo, puoi cambiarlo cliccando sull'immagine.");
 define('_MD_XPETITIONS_CAPTCHA_DSC', 'Verifica Anti-spam');
 
 // formulaire de présignature d'une pétition
-define('_MD_XPETITIONS_SIGN_PRESIGNED', 'Grazie per aver firmato questa petizione.<br />La tua firma verr&agrave; memorizzata nel nostro database dopo che avrai cliccato il bottone sottostante.<br/> Il tuo nome apparir&agrave; nella lista dei firmatari.<br /><br />');
+define('_MD_XPETITIONS_SIGN_PRESIGNED', 'Grazie per aver firmato questa petizione.<br>La tua firma verr&agrave; memorizzata nel nostro database dopo che avrai cliccato il bottone sottostante.<br> Il tuo nome apparir&agrave; nella lista dei firmatari.<br><br>');
 
 //urbanspaceman 22/05/09
 define('_MD_XPETITIONS_WHOVIEW1', 'Le firme di questa petizione sono pubbliche');
@@ -58,29 +58,29 @@ define('_MD_XPETITIONS_WHOVIEW3', "Le firme di questa petizione sono visibili so
 define('_MD_XPETITIONS_PRESIGN_VALUE', 'Conferma la tua firma');
 
 // formulaire pour prevenir un ami
-define('_MD_XPETITIONS_TITLE_FRIENDFORM', '<br />Compila questo form per invitare un amico a firmare la petizione.<br />Ricever&agrave; una mail con il link alla petizione.<br />Tutti i campi sono richiesti.<br /><br />');
+define('_MD_XPETITIONS_TITLE_FRIENDFORM', '<br>Compila questo form per invitare un amico a firmare la petizione.<br>Ricever&agrave; una mail con il link alla petizione.<br>Tutti i campi sono richiesti.<br><br>');
 define('_MD_XPETITIONS_YNAME_FRIENDFORM', 'Il nome del tuo amico');
 define('_MD_XPETITIONS_FNAME_FRIENDFORM', 'Il tuo nome');
 define('_MD_XPETITIONS_FEMAIL_FRIENDFORM', 'Indirizzo mail del tuo amico');
 define('_MD_XPETITIONS_SUBMIT_FRIEND', 'Invita');
 define('_MD_XPETITIONS_EMAIL_FORMAT_FRIENDFORM', 'Messaggio inviato :');
 define('_MD_XPETITIONS_EMAIL_FORMAT_DSC', "<span style='font-weight: bold;' id='contact'></span>");
-define('_MD_XPETITIONS_EMAIL_FRIENDFORM', "Ciao <span style='font-weight: bold;' id='your_name'></span>,<br /><br /><span style='font-weight: bold;' id='friend_name'></span> ti ha inviato un messaggio da questo sito: <span style='font-weight: bold;'>%s</span>.<br />Puoi firmare la petizione '(<span style='font-weight: bold;'>%s</span>)' al seguente indirizzo:<br /><span style='font-weight: bold;'>%s</span><br /><br />Grazie<br />Arrivederci.<br />");
+define('_MD_XPETITIONS_EMAIL_FRIENDFORM', "Ciao <span style='font-weight: bold;' id='your_name'></span>,<br><br><span style='font-weight: bold;' id='friend_name'></span> ti ha inviato un messaggio da questo sito: <span style='font-weight: bold;'>%s</span>.<br>Puoi firmare la petizione '(<span style='font-weight: bold;'>%s</span>)' al seguente indirizzo:<br><span style='font-weight: bold;'>%s</span><br><br>Grazie<br>Arrivederci.<br>");
 define('_MD_XPETITIONS_EMAIL_FRIENDFORM_SEND', "Ciao %s,\n\n%s ti ha inviato un messaggio da questo sito: %s.\nPuoi firmare la petizione '(%s)' al seguente indirizzo:\n%s\n\Grazie\nArrivederci\n\n%s\n%s\n%s");
-define('_MD_XPETITIONS_EMAIL_SEND', 'La mail &egrave; stata inviata correttamente al tuo amico.<br />Grazie per esserti interessato al nostro sito.');
+define('_MD_XPETITIONS_EMAIL_SEND', 'La mail &egrave; stata inviata correttamente al tuo amico.<br>Grazie per esserti interessato al nostro sito.');
 define('_MD_XPETITIONS_SUBJECT_EMAIL', 'Petizione dal sito web %s');
 
 // enregistrement d'une signature
 define('_MD_XPETITIONS_SIGN_RECORDED',
-       'Grazie per aver firmato la nostra petizione online.<br /><br />La tua firma &egrave; ora registrata nel nostro database. Tuttavia, devi confermare la firma cliccando sul link che ti abbiamo mandato via mail.<br />Una volta cliccato il link, la tua firma verr&agrave; conteggiata.');
-define('_MD_XPETITIONS_SIGN_VALID', 'La tua firma &egrave; stata confermata.<br />Adesso &egrave; visibile nella lista dei firmatari.<br />Grazie per il supporto.');
-define('_MD_XPETITIONS_SIGN_ERROR', "Si &egrave; verificato un errore durante la registrazione della tua firma nel nostro database.<br />Potrebbe trattarsi di un errore di trasferimento dati.<br />Riprova nuovamente. Se il problema persiste, contattaci via mail.<br /><br />Ci scusiamo per l'inconvenienza.");
+       'Grazie per aver firmato la nostra petizione online.<br><br>La tua firma &egrave; ora registrata nel nostro database. Tuttavia, devi confermare la firma cliccando sul link che ti abbiamo mandato via mail.<br>Una volta cliccato il link, la tua firma verr&agrave; conteggiata.');
+define('_MD_XPETITIONS_SIGN_VALID', 'La tua firma &egrave; stata confermata.<br>Adesso &egrave; visibile nella lista dei firmatari.<br>Grazie per il supporto.');
+define('_MD_XPETITIONS_SIGN_ERROR', "Si &egrave; verificato un errore durante la registrazione della tua firma nel nostro database.<br>Potrebbe trattarsi di un errore di trasferimento dati.<br>Riprova nuovamente. Se il problema persiste, contattaci via mail.<br><br>Ci scusiamo per l'inconvenienza.");
 
 // signature en double
-define('_MD_XPETITIONS_SIGN_DOUBLE', "Il tuo nome e/o indirizzo mail risultano gi&agrave; registrati nel nostro database.<br />Se si tratta di un errore di battitura ricompila il form,<br />altrimenti significa che hai gi&agrave; firmato questa petizione.<br /><a href='javascript:history.go(-1)'>Torna al form</a>");
+define('_MD_XPETITIONS_SIGN_DOUBLE', "Il tuo nome e/o indirizzo mail risultano gi&agrave; registrati nel nostro database.<br>Se si tratta di un errore di battitura ricompila il form,<br>altrimenti significa che hai gi&agrave; firmato questa petizione.<br><a href='javascript:history.go(-1)'>Torna al form</a>");
 
 // voir toutes les signatures
-define('_MD_XPETITIONS_TITLE_ALLSIGNS', 'Lista delle firme:<br /><br />');
+define('_MD_XPETITIONS_TITLE_ALLSIGNS', 'Lista delle firme:<br><br>');
 define('_MD_XPETITIONS_CPT_ALLSIGNS', 'firme registrate');
 define('_MD_XPETITIONS_ALL_ALLSIGNS', 'Tutte');
 define('_MD_XPETITIONS_ALLSIGNS_CHOOSE', 'Scegli una lettera.');

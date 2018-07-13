@@ -8,11 +8,11 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
-include_once 'header.inc.php';
+require_once __DIR__ . '/header.inc.php';
 include_once XOOPS_ROOT_PATH . '/header.php';
 include_once XOOPS_ROOT_PATH . '/class/xoopsmailer.php';
 include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
@@ -33,7 +33,7 @@ switch ($op) {
     // Aide
     helpMenu(_AM_XPETITIONS_MESS_EMAIL_HELP1, _AM_XPETITIONS_MESS_EMAIL_HELP2);
 
-    include '../include/emails.inc.php'; // affichage du formulaire
+    require  dirname(__DIR__) . '/include/emails.inc.php'; // affichage du formulaire
     break;
 
     case 'update': // Mise à jour des emails

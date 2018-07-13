@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
@@ -17,7 +17,7 @@ include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 // Préparation des tableaux à fournir au formulaire
 $xpetitions_name = getPetitionsInfos();
 
-include 'delform.inc.php';
+require __DIR__ . '/delform.inc.php';
 
 // Initialisation du formulaire
 $addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE_ADDFORM, 'addform', 'signature.php?op=addsign');
@@ -74,5 +74,5 @@ $button_tray->addElement(new XoopsFormButton('', 'post', _AM_XPETITIONS_SUBMIT, 
 $addform->addElement($button_tray);
 
 // Affichage du formulaire
-echo '<br />';
+echo '<br>';
 $addform->display();

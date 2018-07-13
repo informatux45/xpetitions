@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // Le nom du module
@@ -46,14 +46,14 @@ define('_MI_XPETITIONS_ADMIN_SIGN_PAGE_DSC', 'Numero di firme da visualizzate la
 define('_MI_XPETITIONS_INDEX_SIGNS', 'Visualizza il numero di firme per ogni petizione');
 define('_MI_XPETITIONS_INDEX_SIGNS_DSC', 'Questa opzione visualizza il numero di firme confermate per ogni petizione lato sitoweb. Il contatore appare dopo la prima firma confermata.');
 define('_MI_XPETITIONS_INDEX_ARCHI', 'Visualizza le petizioni archiviate nell\'homepage del modulo');
-define('_MI_XPETITIONS_INDEX_ARCHI_DSC', 'Questa opzione visualizza le petizioni messe in archivio lato sitoweb.<br />Nota: Le petizioni archiviate non possono essere firmate');
+define('_MI_XPETITIONS_INDEX_ARCHI_DSC', 'Questa opzione visualizza le petizioni messe in archivio lato sitoweb.<br>Nota: Le petizioni archiviate non possono essere firmate');
 define('_MI_XPETITIONS_SIGN_TITLE', 'Titolo per il link alla firma');
 
 
 
 define('_MI_XPETITIONS_SIGN_TITLE_DSC', 'Titolo del link per raggiungere il form per firmare la petizione');
 define('_MI_XPETITIONS_SIGN_DOWNL', 'Titolo del link per la versione per la stampa');
-define('_MI_XPETITIONS_SIGN_DOWNL_DSC', 'Titolo del link che permette al visitatore di scaricare una copia della petizione per la stampa.<br />Se non ci sono file allegati il link non &egrave; visibile.');
+define('_MI_XPETITIONS_SIGN_DOWNL_DSC', 'Titolo del link che permette al visitatore di scaricare una copia della petizione per la stampa.<br>Se non ci sono file allegati il link non &egrave; visibile.');
 define('_MI_XPETITIONS_SIGN_FRIEND', 'Titolo per il link \'segnala ad un amico\'');
 define('_MI_XPETITIONS_SIGN_FRIEND_DSC', 'Titolo del link che permette di invitare un amico a firmare la petizione');
 define('_MI_XPETITIONS_SIGN_SHOW', 'Titolo del link \'vedi tutte le firme\'');
@@ -61,13 +61,13 @@ define('_MI_XPETITIONS_SIGN_SHOW_DSC', 'Titolo del link che permette di consulta
 define('_MI_XPETITIONS_SEND_FRIEN', 'Permetti agli utenti di invitare amici');
 define('_MI_XPETITIONS_SEND_FRIEN_DSC', 'Questa opzione abilita o disabilita la possibilit&agrave; di invitare un amico a firmare la petizione');
 define('_MI_XPETITIONS_PATH_UPLOAD', 'Percorso per l\'upload del file per la versione stampa');
-define('_MI_XPETITIONS_PATH_UPLOAD_DSC', 'Il percorso per il file deve essere specificato partendo dalla root del sito.<br />Esempio: per caricare un file in http://www.yoursite.com/uploads/xpetitions,<br />devi inserire \'/upload/xpetitions\' (senza lo slash finale).<br />Non dimenticare di creare la cartella e settare i permessi a 777 (rwxrwxrwx).');
+define('_MI_XPETITIONS_PATH_UPLOAD_DSC', 'Il percorso per il file deve essere specificato partendo dalla root del sito.<br>Esempio: per caricare un file in http://www.yoursite.com/uploads/xpetitions,<br>devi inserire \'/upload/xpetitions\' (senza lo slash finale).<br>Non dimenticare di creare la cartella e settare i permessi a 777 (rwxrwxrwx).');
 define('_MI_XPETITIONS_CAPTCHA_IMG', 'Verifica Anti-spam');
 define('_MI_XPETITIONS_CAPTCHA_IMG_DSC', 'Puoi attivare il codice di verifica come misura precauzionale per evitare Spam indesiderato.');
 define('_MI_SSECTION_WYSIWYG', '<span style="color: red;">NUOVO</span> : Tipo di editor');
 define('_MI_SSECTION_WYSIWYGDSC', 'Seleziona il tipo di editor per creare le petizioni. Se selezioni un editor diverso da XoopsEditor, devi installarlo sul sito.');
 define('_MI_XPETITIONS_VALID_METHOD', '<span style="color: red;">NUOVO</span> : Tipo di validazione per la firma');
-define('_MI_XPETITIONS_VALID_METHODSC', 'La firma pu&ograve; essere validata in due modi:<br />1. Email : Una mail viene inviata al firmatario che dovr&agrave; confermare la propria firma cliccando su un link inviato via mail<br />2. Auto : La firma viene validata automaticamente cliccando su un pulsante al momento della firma, senza l\'invio di nessuna mail');
+define('_MI_XPETITIONS_VALID_METHODSC', 'La firma pu&ograve; essere validata in due modi:<br>1. Email : Una mail viene inviata al firmatario che dovr&agrave; confermare la propria firma cliccando su un link inviato via mail<br>2. Auto : La firma viene validata automaticamente cliccando su un pulsante al momento della firma, senza l\'invio di nessuna mail');
 
 // xoops version
 define('_MI_XPETITIONS_INDEX', 'Template della pagina di index');

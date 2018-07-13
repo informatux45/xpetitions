@@ -8,11 +8,11 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
-include_once 'header.inc.php';
+require_once __DIR__ . '/header.inc.php';
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
 include XOOPS_ROOT_PATH.'/header.php';

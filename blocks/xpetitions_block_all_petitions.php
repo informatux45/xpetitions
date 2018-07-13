@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 function b_xpetitions_all_petitions_show($options)
@@ -53,7 +53,7 @@ function b_xpetitions_all_petitions_edit($options)
     require_once XOOPS_ROOT_PATH . '/modules/xpetitions/include/mysql.php';
     $myts = MyTextSanitizer::getInstance();
 
-    $form = _MB_XPETITIONS_INFOS_TITLE_SIZE_P . "<input type='text' name='options[0]' size='3' value='" . $options[0] . "' />";
+    $form = _MB_XPETITIONS_INFOS_TITLE_SIZE_P . "<input type='text' name='options[0]' size='3' value='" . $options[0] . "' >";
 
     $form .= _MB_XPETITIONS_INFOS_TITLE_SIZE_DSC;
 
