@@ -575,13 +575,13 @@ class AntiSpam
     {
         $d='';
         for ($i=0; $i < $aLen; ++$i) {
-            if (rand(0, 9) < 6) {
+            if (mt_rand(0, 9) < 6) {
                 // Digits
-                $d .= chr(ord('1') + rand(0, 8));
+                $d .= chr(ord('1') + mt_rand(0, 8));
             } else {
                 // Letters
                 do {
-                    $offset = rand(0, 25);
+                    $offset = mt_rand(0, 25);
                 } while ($offset==14);
                 $d .= chr(ord('a') + $offset);
             }

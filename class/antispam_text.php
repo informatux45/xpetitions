@@ -33,7 +33,7 @@ function _captchaCalculChiffres()
     $operators = ['-', '+', '*'];
     $operator = $operators[array_rand($operators)];// on recupere l'operateur de calcul
     
-    $nb1 = rand(1, 10);
+    $nb1 = mt_rand(1, 10);
     $nb2 = ($operator === '-') ? mt_rand(1, $nb1) : mt_rand(1, 10); // on evite les resultats negatif en cas de soustraction
     
     $calcul = $nb1.' '.$operator.' '.$nb2;

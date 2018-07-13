@@ -224,7 +224,7 @@ function showLettersSigns($id, $module_url, $link)
 
 function createKey()
 {
-    return md5(uniqid(rand()));
+    return md5(uniqid(mt_rand()));
 }
 
 function filled_out($form_vars)
