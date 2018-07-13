@@ -159,7 +159,7 @@ switch ($op) {
         $link      = '0';
         updatePetitionFile($id, $link, $link_file);
         if (file_exists($delfile)) {
-            $delete = unlink((string)$delfile);
+            $delete = unlink($delfile);
         }
     }
 
