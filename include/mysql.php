@@ -290,7 +290,7 @@ function getSignatureId($petition_name, $cle)
     global $xoopsDB;
     $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . ' WHERE cle = "'.$cle.'"';
     $result = $xoopsDB->query($sql);
-    if (0 == $result) {
+    if (false === $result) {
         return false;
     }
     $result = $xoopsDB->fetchArray($result);
@@ -325,7 +325,7 @@ function getEmailInfos($id)
     global $xoopsDB;
     $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_emails') . ' WHERE id = "'.$id.'"';
     $result = $xoopsDB->query($sql);
-    if (0 == $result) {
+    if (false === $result) {
         return false;
     }
     $result = $xoopsDB->fetchArray($result);
@@ -339,7 +339,7 @@ function getOptionInfos($name)
     global $xoopsDB;
     $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_options') . ' WHERE name = "'.$name.'"';
     $result = $xoopsDB->query($sql);
-    if (0 == $result) {
+    if (false === $result) {
         return false;
     }
     $result = $xoopsDB->fetchArray($result);
