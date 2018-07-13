@@ -26,7 +26,7 @@ class HandDigits
     public $iHeight=30;
     public $iWidth=30;
 
-    public function HandDigits()
+    public function __construct()
     {
 
 //==========================================================
@@ -560,7 +560,7 @@ class AntiSpam
     private $iData='';
     private $iDD=null;
 
-    public function AntiSpam($aData='')
+    public function __construct($aData='')
     {
         $this->iData = $aData;
         $this->iDD = new HandDigits();

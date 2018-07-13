@@ -71,7 +71,7 @@ class captcha_x
      * @return void
      * @constructor
      */
-    public function captcha_x()
+    public function __construct()
     {
         $this->INI = parse_ini_file(dirname(__FILE__) . '/captcha_x.ini', true);
     }
