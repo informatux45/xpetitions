@@ -11,5 +11,4 @@
 /*            <http://www.xoops.org/>          */
 /* ******************************************* */
 
-define("_AM_XPETITIONS_VERSION",	"1.10");
-?>
+define("_AM_XPETITIONS_VERSION", "1.10");

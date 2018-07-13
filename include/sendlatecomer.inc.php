@@ -36,7 +36,7 @@ $latecomer->addElement($field_hidden2);
 $nb_latecomer = getSignaturesInfos($_GET['name'], 0);
 $button_msg   = ($nb_latecomer < 2) ? sprintf(_AM_XPETITIONS_MSG_BUTTON_LATECOMER1, $nb_latecomer) : sprintf(_AM_XPETITIONS_MSG_BUTTON_LATECOMER2, $nb_latecomer);
 $button_tray  = new XoopsFormElementTray($button_msg);
-$button_tray->addElement(new XoopsFormButton('','post', _AM_XPETITIONS_SUBMIT_LATECOMER, 'submit'));
+$button_tray->addElement(new XoopsFormButton('', 'post', _AM_XPETITIONS_SUBMIT_LATECOMER, 'submit'));
 $latecomer->addElement($button_tray);
 
 // Affichage du formulaire

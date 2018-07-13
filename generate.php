@@ -29,5 +29,3 @@ $_SESSION['captcha_image'] = $obj_captcha->Rand(7);
 
 // Envoyer l'image contenant la chaîne au navigateur
 $obj_captcha->Stroke();
-
-?>

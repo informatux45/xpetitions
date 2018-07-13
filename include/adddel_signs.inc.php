@@ -63,17 +63,16 @@ $addform->addElement($field_date, true);
 $field_petition_name = new XoopsFormSelect(_AM_XPETITIONS_PETITIONS_ADDFORM, 'name_petition', '');
 $xpetitions_name = getPetitionsInfos();
 foreach ($xpetitions_name as $row) {
-	$xpetitions_liste = array($row['name'] => substr($myts->DisplayTarea($row['title']),0, 50));
-	$field_petition_name->addOptionArray($xpetitions_liste);
+    $xpetitions_liste = array($row['name'] => substr($myts->DisplayTarea($row['title']), 0, 50));
+    $field_petition_name->addOptionArray($xpetitions_liste);
 }
 $addform->addElement($field_petition_name, true);
 
 // Bouton Ajouter/soumettre
 $button_tray = new XoopsFormElementTray('');
-$button_tray->addElement(new XoopsFormButton('','post', _AM_XPETITIONS_SUBMIT, 'submit'));
+$button_tray->addElement(new XoopsFormButton('', 'post', _AM_XPETITIONS_SUBMIT, 'submit'));
 $addform->addElement($button_tray);
 
 // Affichage du formulaire
 echo '<br />';
 $addform->display();
-?>

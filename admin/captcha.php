@@ -21,40 +21,41 @@ $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : 'index';
 
 switch ($op) {
 
-	default: // Affichage du formulaire captcha.inc.php
-	xoops_cp_header();
-	xpetitions_adminmenu('captcha.php');
+    default: // Affichage du formulaire captcha.inc.php
+    xoops_cp_header();
+    xpetitions_adminmenu('captcha.php');
 
-	// Aide
-	helpMenu(_AM_XPETITIONS_CAPTCHA_HELP1, _AM_XPETITIONS_CAPTCHA_HELP2);
-	echo '<br />';
+    // Aide
+    helpMenu(_AM_XPETITIONS_CAPTCHA_HELP1, _AM_XPETITIONS_CAPTCHA_HELP2);
+    echo '<br />';
 
-	?>
+    ?>
 	<script type="text/javascript" src="<?php echo XOOPS_URL.'/modules/'.$xoopsModule->getVar('dirname'); ?>/include/functions.js"></script>
 	<?php
 
-	if ($xoopsModuleConfig['captcha_image'] == 1)
-		$captcha_status = '<span style="color: green;">' . strtoupper(_YES) . '</span>';
-	else
-		$captcha_status = '<span style="color: red;">' . strtoupper(_NO) . '</span>';
+    if ($xoopsModuleConfig['captcha_image'] == 1) {
+        $captcha_status = '<span style="color: green;">' . strtoupper(_YES) . '</span>';
+    } else {
+        $captcha_status = '<span style="color: red;">' . strtoupper(_NO) . '</span>';
+    }
 
-	echo '<div style="font-weight: bold;">' . sprintf(_AM_XPETITIONS_STATUS_CAPTCHA, "<a class=\"nobutton\" href=\"../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod=".$xoopsModule->getVar('mid')."\">" . _AM_XPETITIONS_GENERALSET . "</a>") . $captcha_status . '</div>';
+    echo '<div style="font-weight: bold;">' . sprintf(_AM_XPETITIONS_STATUS_CAPTCHA, "<a class=\"nobutton\" href=\"../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod=".$xoopsModule->getVar('mid')."\">" . _AM_XPETITIONS_GENERALSET . "</a>") . $captcha_status . '</div>';
 
-	include "../include/captcha.inc.php"; // affichage du formulaire
-	break;
+    include "../include/captcha.inc.php"; // affichage du formulaire
+    break;
 
-	case "update": // Mise à jour des champs
-	$captcha_choice = (!isset($_POST['captcha_choice'])) ? 1 : $_POST['captcha_choice'];
+    case "update": // Mise à jour des champs
+    $captcha_choice = (!isset($_POST['captcha_choice'])) ? 1 : $_POST['captcha_choice'];
 
-	$update_captcha = updateOption('captcha', $captcha_choice);
+    $update_captcha = updateOption('captcha', $captcha_choice);
 
-	if (!$update_captcha) {
-		redirect_header("captcha.php", 2, _AM_XPETITIONS_ERROR_UPDATE);
-	} else {
-		redirect_header("captcha.php", 2, _AM_XPETITIONS_VALID_UPDATE);
-	}
+    if (!$update_captcha) {
+        redirect_header("captcha.php", 2, _AM_XPETITIONS_ERROR_UPDATE);
+    } else {
+        redirect_header("captcha.php", 2, _AM_XPETITIONS_VALID_UPDATE);
+    }
 
-	break;
+    break;
 
 }
 

@@ -57,5 +57,3 @@ $i++;
 $adminmenu[$i]['title'] = _MI_XPETITIONS_MENU3;
 $adminmenu[$i]['link']  = "admin/about.php";
 $adminmenu[$i]['icon']  = $pathIcon32.'/about.png';
-
-?>

@@ -16,10 +16,9 @@ include_once("header.inc.php");
 
 //----------------------------------------------------------------------------//
 //
-if(!isset($_REQUEST['op'])) {
-xoops_cp_header();
-xpetitions_adminmenu('about.php');
-?>
+if (!isset($_REQUEST['op'])) {
+    xoops_cp_header();
+    xpetitions_adminmenu('about.php'); ?>
 
 <!-- <br /> -->
 <table border="0" cellspacing="1" style="width: 100%;" class="outer">
@@ -40,7 +39,7 @@ xpetitions_adminmenu('about.php');
   </tr>
   <tr>
     <td class="head" width="100">Version</td>
-	<td class="odd"> <?php echo $xoopsModule->getVar('name'); ?> : <?php echo number_format(round($xoopsModule->getVar('version')/100 , 2), 2); ?></td>
+	<td class="odd"> <?php echo $xoopsModule->getVar('name'); ?> : <?php echo number_format(round($xoopsModule->getVar('version')/100, 2), 2); ?></td>
   </tr>
   <tr>
     <td class="head" width="100"><?php echo _AM_XPETITIONS_ABOUT_2; ?></td>
@@ -91,6 +90,6 @@ xpetitions_adminmenu('about.php');
 <?php
 
 xpetitions_adminfooter();
-xoops_cp_footer();
+    xoops_cp_footer();
 }
 ?>

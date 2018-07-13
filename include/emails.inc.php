@@ -42,7 +42,7 @@ $emails->addElement($field_mess_un, true);
 
 // Bouton Soumettre
 $button_tray  = new XoopsFormElementTray(_AM_XPETITIONS_MESS_NONE);
-$button_tray->addElement(new XoopsFormButton('','post', _AM_XPETITIONS_SUBMIT_EMAILS, 'submit'));
+$button_tray->addElement(new XoopsFormButton('', 'post', _AM_XPETITIONS_SUBMIT_EMAILS, 'submit'));
 $emails->addElement($button_tray);
 
 // Affichage du formulaire

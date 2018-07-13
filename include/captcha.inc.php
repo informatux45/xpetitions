@@ -60,7 +60,7 @@ $captcha->addElement($captcha_choice, true);
 
 // Bouton Soumettre
 $button_tray  = new XoopsFormElementTray(_AM_XPETITIONS_MESS_NONE);
-$button_tray->addElement(new XoopsFormButton('','post', _AM_XPETITIONS_CAPTCHA_SUBMIT, 'submit'));
+$button_tray->addElement(new XoopsFormButton('', 'post', _AM_XPETITIONS_CAPTCHA_SUBMIT, 'submit'));
 $captcha->addElement($button_tray);
 
 // Affichage du formulaire

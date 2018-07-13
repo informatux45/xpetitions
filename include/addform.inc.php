@@ -60,7 +60,7 @@ $addform->addElement($field_date);
 
 
 // Affichage d'une séparation
-$addform->insertBreak(_AM_XPETITIONS_BREAK_ADDFORM,'bg3');
+$addform->insertBreak(_AM_XPETITIONS_BREAK_ADDFORM, 'bg3');
 
 // Insérer/Modifier une pétition papier
 $max_upload = $xoopsModuleConfig['upload_size'];
@@ -70,9 +70,8 @@ $addform->addElement($field_file);
 
 // Bouton Ajouter/soumettre
 $button_tray = new XoopsFormElementTray('');
-$button_tray->addElement(new XoopsFormButton('','post', _AM_XPETITIONS_SUBMIT, 'submit'));
+$button_tray->addElement(new XoopsFormButton('', 'post', _AM_XPETITIONS_SUBMIT, 'submit'));
 $addform->addElement($button_tray);
 
 // Affichage du formulaire
 $addform->display();
-?>

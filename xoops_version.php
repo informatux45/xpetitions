@@ -301,7 +301,7 @@ $modversion['config'][$i]['options'] = XoopsLists::getEditorList();
 $modversion['config'][$i]['default'] ='default';
 
 $i++;
-$modversion['config'][$i]['name'] = 'signature_download'; // intitule du lien pour telecharger la petition papier 
+$modversion['config'][$i]['name'] = 'signature_download'; // intitule du lien pour telecharger la petition papier
 $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_DOWNL';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_DOWNL_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
@@ -339,5 +339,3 @@ $modversion['config'][$i]['description'] = '_MI_XPETITIONS_PATH_UPLOAD_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
 $modversion['config'][$i]['default'] = '/uploads/xpetitions';
-
-?>

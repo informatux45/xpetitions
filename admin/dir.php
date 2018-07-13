@@ -26,5 +26,3 @@ $message = (!$create_dir) ? redirect_header("javascript:history.go(-1)", 2, _AM_
 
 xrent_adminfooter();
 xoops_cp_footer();
-
-?>

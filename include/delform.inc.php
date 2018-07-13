@@ -27,16 +27,16 @@ var group=new Array();
 $i = 0;
 $groups = '';
 foreach ($xpetitions_infos as $row) {
-	echo '<option value="'.$row['name'].'">'.$myts->DisplayTarea($row['title']).'</option>';
-	$j = 0;
-	$xpetitions_signs_details = getSignaturesDetails($row['name'], 2);
-	foreach ($xpetitions_signs_details as $row) {
-		$xpetitions_group_signs[$i][$j] = $row['name'].' '.$row['prenom'].' ('.$row['job'].')';
-		$xpetitions_group_value[$i][$j] = $row['id'];
-		$groups .= 'group['.$i.']['.$j.'] = new Option("'.$xpetitions_group_signs[$i][$j].'","'.$xpetitions_group_value[$i][$j].'");';
-		$j++;
-	}
-	$i++;
+    echo '<option value="'.$row['name'].'">'.$myts->DisplayTarea($row['title']).'</option>';
+    $j = 0;
+    $xpetitions_signs_details = getSignaturesDetails($row['name'], 2);
+    foreach ($xpetitions_signs_details as $row) {
+        $xpetitions_group_signs[$i][$j] = $row['name'].' '.$row['prenom'].' ('.$row['job'].')';
+        $xpetitions_group_value[$i][$j] = $row['id'];
+        $groups .= 'group['.$i.']['.$j.'] = new Option("'.$xpetitions_group_signs[$i][$j].'","'.$xpetitions_group_value[$i][$j].'");';
+        $j++;
+    }
+    $i++;
 }
 echo '</select>&nbsp;&nbsp;&nbsp;';
 ?>
@@ -57,9 +57,9 @@ group[i]=new Array();
 
 <?php
 if ($groups == '') {
-	echo '';
+    echo '';
 } else {
-	echo $groups;
+    echo $groups;
 }
 ?>
 

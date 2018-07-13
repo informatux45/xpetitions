@@ -14,8 +14,9 @@
 // includes
 include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
 
-if (is_file(XOOPS_ROOT_PATH . "/class/wysiwyg/formwysiwygtextarea.php"))
-	include_once(XOOPS_ROOT_PATH . "/class/wysiwyg/formwysiwygtextarea.php");
+if (is_file(XOOPS_ROOT_PATH . "/class/wysiwyg/formwysiwygtextarea.php")) {
+    include_once(XOOPS_ROOT_PATH . "/class/wysiwyg/formwysiwygtextarea.php");
+}
 
 // Initialisation du formulaire
 $signsform = new XoopsThemeForm(_AM_XPETITIONS_TITLE_SHOW_SIGN, "signsform", "signature.php?op=signshow_update");
@@ -39,27 +40,27 @@ $signsform->addElement($field_select2, true);
 $field_signs1 = new XoopsFormCheckBox('', 'job');
 $field_signs1->addOption(1, _AM_XPETITIONS_INFOS_SIGN1);
 if ($job == 1) {
-	$field_signs1->setExtra("checked");
+    $field_signs1->setExtra("checked");
 }
 $field_signs2 = new XoopsFormCheckBox('', 'country');
 $field_signs2->addOption(1, _AM_XPETITIONS_INFOS_SIGN2);
 if ($country == 1) {
-	$field_signs2->setExtra("checked");
+    $field_signs2->setExtra("checked");
 }
 $field_signs3 = new XoopsFormCheckBox('', 'email');
 $field_signs3->addOption(1, _AM_XPETITIONS_INFOS_SIGN3);
 if ($email == 1) {
-	$field_signs3->setExtra("checked");
+    $field_signs3->setExtra("checked");
 }
 $field_signs4 = new XoopsFormCheckBox('', 'city');
 $field_signs4->addOption(1, _AM_XPETITIONS_INFOS_SIGN4);
 if ($city == 1) {
-	$field_signs4->setExtra("checked");
+    $field_signs4->setExtra("checked");
 }
 $field_signs5 = new XoopsFormCheckBox('', 'date');
 $field_signs5->addOption(1, _AM_XPETITIONS_INFOS_SIGN5);
 if ($date == 1) {
-	$field_signs5->setExtra("checked");
+    $field_signs5->setExtra("checked");
 }
 
 $field_signs = new XoopsFormElementTray(_AM_XPETITIONS_INFOS_SIGN, '<br />');
@@ -73,9 +74,8 @@ $signsform->addElement($field_signs, true);
 
 // Bouton Ajouter/soumettre
 $button_tray = new XoopsFormElementTray('');
-$button_tray->addElement(new XoopsFormButton('','post', _AM_XPETITIONS_SUBMIT, 'submit'));
+$button_tray->addElement(new XoopsFormButton('', 'post', _AM_XPETITIONS_SUBMIT, 'submit'));
 $signsform->addElement($button_tray);
 
 // Affichage du formulaire
 $signsform->display();
-?>

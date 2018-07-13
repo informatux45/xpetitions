@@ -56,14 +56,14 @@ $server_php_version        = phpversion();
 $xpetition_csv_php_version = version_compare($server_php_version, "5.1.0", ">=");
 
 $home_info = array($dir_upload_xpetitions,
-		   $xpetitions_petitions_create,
-		   $xpetitions_petitions_online,
-		   $xpetitions_petitions_offline,
-		   $xpetitions_petitions_archives,
-		   $dir_upload_xpetitions_writable,
-		   $dir_csv_xpetitions_writable,
-		   $xpetition_csv_php_version
-		   );
+           $xpetitions_petitions_create,
+           $xpetitions_petitions_online,
+           $xpetitions_petitions_offline,
+           $xpetitions_petitions_archives,
+           $dir_upload_xpetitions_writable,
+           $dir_csv_xpetitions_writable,
+           $xpetition_csv_php_version
+           );
 
 xpetitions_adminmenu('index.php', $home_info);
 

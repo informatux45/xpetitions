@@ -62,19 +62,19 @@ $field_whoview->setDescription(_AM_XPETITIONS_WHOVIEW_ADDFORM_DSC);
 $editform->addElement($field_whoview, true);
 
 // Affichage d'une séparation
-$editform->insertBreak(_AM_XPETITIONS_BREAK_ADDFORM,'bg3');
+$editform->insertBreak(_AM_XPETITIONS_BREAK_ADDFORM, 'bg3');
 
 // Affichage d'un fichier uploader si présent
 if ($is_file['file'] == '1') {
-$field_file_show = new XoopsFormElementTray(_AM_XPETITIONS_FILE_SHOW_ADDFORM,'<br />');
-$field_file_show->setDescription(_AM_XPETITIONS_FILE_SHOW_ADDFORM_DSC);
-$field_file_check = new XoopsFormCheckBox('', 'file_delete', 0);
-$link_file = sprintf("<a href='%s%s/%s' target='_blank'>%s</a>\n", XOOPS_URL, $xoopsModuleConfig['path_upload'], $is_file['link_file'], $is_file['link_file']);
-$field_file_check->addOption(1, $link_file);
-$field_file_show->addElement($field_file_check,false);
-$label_delete = new XoopsFormLabel(_AM_XPETITIONS_DELETE_FILE_ADDFORM,'');
-$field_file_show->addElement($label_delete,false);
-$editform->addElement($field_file_show);
+    $field_file_show = new XoopsFormElementTray(_AM_XPETITIONS_FILE_SHOW_ADDFORM, '<br />');
+    $field_file_show->setDescription(_AM_XPETITIONS_FILE_SHOW_ADDFORM_DSC);
+    $field_file_check = new XoopsFormCheckBox('', 'file_delete', 0);
+    $link_file = sprintf("<a href='%s%s/%s' target='_blank'>%s</a>\n", XOOPS_URL, $xoopsModuleConfig['path_upload'], $is_file['link_file'], $is_file['link_file']);
+    $field_file_check->addOption(1, $link_file);
+    $field_file_show->addElement($field_file_check, false);
+    $label_delete = new XoopsFormLabel(_AM_XPETITIONS_DELETE_FILE_ADDFORM, '');
+    $field_file_show->addElement($label_delete, false);
+    $editform->addElement($field_file_show);
 }
 
 // Insérer/Modifier une pétition papier
@@ -89,9 +89,8 @@ $editform->addElement($field_hidden);
 
 // Bouton Ajouter/soumettre
 $button_tray = new XoopsFormElementTray('');
-$button_tray->addElement(new XoopsFormButton('','post', _AM_XPETITIONS_SUBMIT, 'submit'));
+$button_tray->addElement(new XoopsFormButton('', 'post', _AM_XPETITIONS_SUBMIT, 'submit'));
 $editform->addElement($button_tray);
 
 // Affichage du formulaire
 $editform->display();
-?>
