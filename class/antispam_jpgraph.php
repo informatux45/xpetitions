@@ -582,7 +582,7 @@ class AntiSpam
                 // Letters
                 do {
                     $offset = mt_rand(0, 25);
-                } while ($offset==14);
+                } while (14 == $offset);
                 $d .= chr(ord('a') + $offset);
             }
         }
@@ -593,12 +593,12 @@ class AntiSpam
     public function Stroke()
     {
         $n=strlen($this->iData);
-        if ($n==0) {
+        if (0 == $n) {
             return false;
         }
 
         for ($i=0; $i < $n; ++$i) {
-            if ($this->iData[$i]==='0' || strtolower($this->iData[$i])==='o') {
+            if ('0' === $this->iData[$i] || 'o' === strtolower($this->iData[$i])) {
                 return false;
             }
         }

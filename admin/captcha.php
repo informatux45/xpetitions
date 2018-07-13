@@ -33,7 +33,7 @@ switch ($op) {
 	<script type="text/javascript" src="<?php echo XOOPS_URL.'/modules/'.$xoopsModule->getVar('dirname'); ?>/include/functions.js"></script>
 	<?php
 
-    if ($xoopsModuleConfig['captcha_image'] == 1) {
+    if (1 == $xoopsModuleConfig['captcha_image']) {
         $captcha_status = '<span style="color: green;">' . strtoupper(_YES) . '</span>';
     } else {
         $captcha_status = '<span style="color: red;">' . strtoupper(_NO) . '</span>';

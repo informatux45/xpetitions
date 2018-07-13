@@ -39,27 +39,27 @@ $signsform->addElement($field_select2, true);
 // Choix des champs visibles par signataire
 $field_signs1 = new XoopsFormCheckBox('', 'job');
 $field_signs1->addOption(1, _AM_XPETITIONS_INFOS_SIGN1);
-if ($job == 1) {
+if (1 == $job) {
     $field_signs1->setExtra('checked');
 }
 $field_signs2 = new XoopsFormCheckBox('', 'country');
 $field_signs2->addOption(1, _AM_XPETITIONS_INFOS_SIGN2);
-if ($country == 1) {
+if (1 == $country) {
     $field_signs2->setExtra('checked');
 }
 $field_signs3 = new XoopsFormCheckBox('', 'email');
 $field_signs3->addOption(1, _AM_XPETITIONS_INFOS_SIGN3);
-if ($email == 1) {
+if (1 == $email) {
     $field_signs3->setExtra('checked');
 }
 $field_signs4 = new XoopsFormCheckBox('', 'city');
 $field_signs4->addOption(1, _AM_XPETITIONS_INFOS_SIGN4);
-if ($city == 1) {
+if (1 == $city) {
     $field_signs4->setExtra('checked');
 }
 $field_signs5 = new XoopsFormCheckBox('', 'date');
 $field_signs5->addOption(1, _AM_XPETITIONS_INFOS_SIGN5);
-if ($date == 1) {
+if (1 == $date) {
     $field_signs5->setExtra('checked');
 }
 

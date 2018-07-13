@@ -37,7 +37,7 @@ function getPetitionsInfos()
         return false;
     }
     $petitions = dbResultToArray($result);
-    if ($petitions == 0) {
+    if (0 == $petitions) {
         return false;
     }
 
@@ -53,7 +53,7 @@ function getPetitionDetails($id)
         return false;
     }
     $petitions = $xoopsDB->fetchArray($result);
-    if ($petitions == 0) {
+    if (0 == $petitions) {
         return false;
     }
 
@@ -70,7 +70,7 @@ function getPetitionsCount()
         return false;
     }
     $num_petitions = $xoopsDB->getRowsNum($result);
-    if ($num_petitions == 0) {
+    if (0 == $num_petitions) {
         return false;
     }
 
@@ -90,7 +90,7 @@ function getPetitionsCountOnline($choix)
         return false;
     }
     $num_petitions = $xoopsDB->getRowsNum($result);
-    if ($num_petitions == 0) {
+    if (0 == $num_petitions) {
         return false;
     }
 
@@ -110,7 +110,7 @@ function getPetitionsOnline($choix)
         return false;
     }
     $petitions = dbResultToArray($result);
-    if ($petitions == 0) {
+    if (0 == $petitions) {
         return false;
     }
 
@@ -127,7 +127,7 @@ function getPetitionsId($petition_name)
         return false;
     }
     $petitionid = $xoopsDB->fetchArray($result);
-    if ($petitionid == 0) {
+    if (0 == $petitionid) {
         return false;
     }
 
@@ -144,7 +144,7 @@ function getPetitionId($petition_name)
         return false;
     }
     $petitionid = $xoopsDB->fetchArray($result);
-    if ($petitionid == 0) {
+    if (0 == $petitionid) {
         return false;
     }
 
@@ -158,7 +158,7 @@ function getSignaturesInfos($petition_name, $param)
     // 1 = validées
     // 2 = totales
     global $xoopsDB;
-    if ($param == '2') {
+    if ('2' == $param) {
         $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name);
     } else {
         $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . ' WHERE validation = "'.$param.'"';
@@ -179,7 +179,7 @@ function getSignaturesDetails($petition_name, $param)
     // 1 = validées
     // 2 = totales
     global $xoopsDB;
-    if ($param == '2') {
+    if ('2' == $param) {
         $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name);
     } else {
         $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . ' WHERE validation = "'.$param.'"';
@@ -189,7 +189,7 @@ function getSignaturesDetails($petition_name, $param)
         return 0;
     }
     $number_signs = dbResultToArray($result);
-    if ($number_signs == 0) {
+    if (0 == $number_signs) {
         return false;
     }
 
@@ -207,7 +207,7 @@ function getSignaturesCsv($petition_name)
         return 0;
     }
     $csv_signs = dbResultToArray($result);
-    if ($csv_signs == 0) {
+    if (0 == $csv_signs) {
         return false;
     }
 
@@ -229,7 +229,7 @@ function getSignaturesBlock($petition_name, $param, $count)
 
     // récupération du nombre total de signatures avec $param
     $total_number_signs = $xoopsDB->getRowsNum($result1);
-    if ($total_number_signs == 0) {
+    if (0 == $total_number_signs) {
         return false;
     }
 
@@ -242,7 +242,7 @@ function getSignaturesBlock($petition_name, $param, $count)
     }
 
     $number_signs = dbResultToArray($result2);
-    if ($number_signs == 0) {
+    if (0 == $number_signs) {
         return false;
     }
 
@@ -267,7 +267,7 @@ function getSignatureLetter($letter, $petition_name)
     // Obtenir une liste de signature commençant par la lettre --
     // all - correspond à toutes les lettres de l'alphabet
     global $xoopsDB;
-    if ($letter === 'all') {
+    if ('all' === $letter) {
         $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . ' WHERE validation = "1" ORDER BY upper(name),lower(prenom)';
     } else {
         $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . ' WHERE validation = "1" AND name LIKE "'.$letter.'%" ORDER BY name,prenom';
@@ -277,7 +277,7 @@ function getSignatureLetter($letter, $petition_name)
         return false;
     }
     $petitions_letter = dbResultToArray($result);
-    if ($petitions_letter == 0) {
+    if (0 == $petitions_letter) {
         return false;
     }
 
@@ -290,7 +290,7 @@ function getSignatureId($petition_name, $cle)
     global $xoopsDB;
     $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . ' WHERE cle = "'.$cle.'"';
     $result = $xoopsDB->query($sql);
-    if ($result == 0) {
+    if (0 == $result) {
         return false;
     }
     $result = $xoopsDB->fetchArray($result);
@@ -311,10 +311,10 @@ function getFieldInfos($id, $pos)
     }
     $result = $xoopsDB->fetchRow($result);
 
-    if ($pos == 1) {
+    if (1 == $pos) {
         return $result['visibility'];
     }
-    if ($pos == 2) {
+    if (2 == $pos) {
         return $result['obligatory'];
     }
 }
@@ -325,7 +325,7 @@ function getEmailInfos($id)
     global $xoopsDB;
     $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_emails') . ' WHERE id = "'.$id.'"';
     $result = $xoopsDB->query($sql);
-    if ($result == 0) {
+    if (0 == $result) {
         return false;
     }
     $result = $xoopsDB->fetchArray($result);
@@ -339,7 +339,7 @@ function getOptionInfos($name)
     global $xoopsDB;
     $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_options') . ' WHERE name = "'.$name.'"';
     $result = $xoopsDB->query($sql);
-    if ($result == 0) {
+    if (0 == $result) {
         return false;
     }
     $result = $xoopsDB->fetchArray($result);

@@ -56,7 +56,7 @@ for (i=0; i<groups; i++)
 group[i]=new Array();
 
 <?php
-if ($groups == '') {
+if ('' == $groups) {
     echo '';
 } else {
     echo $groups;

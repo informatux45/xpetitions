@@ -81,7 +81,7 @@ switch ($op) {
                 // 1 : Online
                 // 2 : Offline
                 // 3 : Archive
-                echo '<img src="'.$pathIcon16.'/'.($row['status'] == 1 ? 'on' : 'off').'.png" />';
+                echo '<img src="'.$pathIcon16.'/'.(1 == $row['status'] ? 'on' : 'off') . '.png" />';
                 echo '</td><td style="text-align: center;">';
                 echo '<a href="petitions.php?op=modif&id='.$row['id'].'"><img src="'.$pathIcon16.'/edit.png" alt="'._AM_XPETITIONS_UPDATE.'" title="'._AM_XPETITIONS_UPDATE.'" /></a>';
                 echo '&nbsp;';
@@ -110,8 +110,8 @@ switch ($op) {
 
     // taille du fichier avant upload
     $file_size = $_FILES[$file]['size'];
-    if ($file_size != '0') {
-        if ($_FILES[$file]['tmp_name'] == '' || !is_readable($_FILES[$file]['tmp_name'])) {
+    if ('0' != $file_size) {
+        if ('' == $_FILES[$file]['tmp_name'] || !is_readable($_FILES[$file]['tmp_name'])) {
             // upload echoué retour au formulaire
             redirect_header('javascript:history.go(-1)', 2, _AM_XPETITIONS_ERROR_FILE_UPLOAD) ;
             exit ;
@@ -153,7 +153,7 @@ switch ($op) {
     // vérification si suppression
     $petitionid = getPetitionDetails($id);
 
-    if ($checkbox == '1') {
+    if ('1' == $checkbox) {
         $delfile   = $upload_dir.'/'.$petitionid['link_file'];
         $link_file = '';
         $link      = '0';
@@ -166,13 +166,13 @@ switch ($op) {
 
     $petition    = getPetitionDetails($id);
     // Vérification si présence fichier
-    if (!empty($file) || $file != '') {
+    if (!empty($file) || '' != $file) {
 
     // taille du fichier avant upload
         $file_size = $_FILES['file']['size'];
         // update du fichier enregistré
-        if ($file_size != 0) {
-            if ($_FILES['file']['tmp_name'] == '' || !is_readable($_FILES['file']['tmp_name'])) {
+        if (0 != $file_size) {
+            if ('' == $_FILES['file']['tmp_name'] || !is_readable($_FILES['file']['tmp_name'])) {
                 // upload echoué retour au formulaire
                 redirect_header('javascript:history.go(-1)', 2, _AM_XPETITIONS_ERROR_FILE_UPLOAD) ;
                 exit ;
@@ -222,7 +222,7 @@ switch ($op) {
     $delname = $myts->oopsAddSlashes($_REQUEST['name']);
     $ok      = isset($_REQUEST['ok']) ? (int)$_REQUEST['ok'] : 0;
     // confirmation donc suppression de la pétition
-    if ($ok == 1 && isset($delid) && isset($delname)) {
+    if (1 == $ok && isset($delid) && isset($delname)) {
         $delete_petition = deletePetition($delid, $delname);
         $message = (!$delete_petition) ? redirect_header('index.php', 2, _AM_XPETITIONS_ERROR_DELETE) : redirect_header('index.php', 2, _AM_XPETITIONS_VALID_DELETE);
     } else {

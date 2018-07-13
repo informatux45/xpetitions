@@ -29,7 +29,7 @@ function b_xpetitions_last_signs_show($options)
     $options[1] = ((int)$options[1] >= 8) ? $options[1] : '8';
 
     // si option 'affichage infos titre de la pétition'
-    if ($options[0] == 1) {
+    if (1 == $options[0]) {
         if (strlen($petition_detail['title']) >= $options[1]) {
             $block['xpetitions_title'] = substr($myts->DisplayTarea(strtolower($petition_detail['title'])), 0, $options[1]) . '...';
         } else {
@@ -37,12 +37,12 @@ function b_xpetitions_last_signs_show($options)
         }
     }
     // si option 'affichage infos date de mise en ligne'
-    if ($options[2] == 1) {
+    if (1 == $options[2]) {
         $block['xpetitions_online'] = formatdatefr($petition_detail['date']);
     }
 
     // si option 'affichage infos nombres totales de signatures enregistrées'
-    if ($options[3] == 1) {
+    if (1 == $options[3]) {
         $block['xpetitions_recorded'] = getSignaturesInfos($petition_name_table, '1');
     }
 
@@ -52,7 +52,7 @@ function b_xpetitions_last_signs_show($options)
             $signatures['name']   = strtoupper($row['name']);
             $signatures['prenom'] = strtolower($row['prenom']);
             // si option 'affichage de la date'
-            if ($options[5] == 1) {
+            if (1 == $options[5]) {
                 $signatures['date'] = formatdatefr($row['date']);
             }
 
@@ -79,11 +79,11 @@ function b_xpetitions_last_signs_edit($options)
     $form = '<span style="font-weight: bold;">'._MB_XPETITIONS_INFOS.'</span><br />';
 
     $form .= _MB_XPETITIONS_INFOS_TITLE . '<input type="radio" name="options[0]" value="1"';
-    if ($options[0] == 1) {
+    if (1 == $options[0]) {
         $form .= ' checked="checked"';
     }
     $form .= ' />' . _YES . '<input type="radio" name="options[0]" value="0"';
-    if ($options[0] == 0) {
+    if (0 == $options[0]) {
         $form .= ' checked="checked"';
     }
     $form .= ' />' . _NO;
@@ -93,21 +93,21 @@ function b_xpetitions_last_signs_edit($options)
     $form .= _MB_XPETITIONS_INFOS_TITLE_SIZE_DSC;
 
     $form .= '<br />' . _MB_XPETITIONS_INFOS_DATE . '<input type="radio" name="options[2]" value="1"';
-    if ($options[2] == 1) {
+    if (1 == $options[2]) {
         $form .= ' checked="checked"';
     }
     $form .= ' />' . _YES . '<input type="radio" name="options[2]" value="0"';
-    if ($options[2] == 0) {
+    if (0 == $options[2]) {
         $form .= ' checked="checked"';
     }
     $form .= ' />' . _NO;
 
     $form .= '<br />' . _MB_XPETITIONS_INFOS_SIGNS . '<input type="radio" name="options[3]" value="1"';
-    if ($options[3] == 1) {
+    if (1 == $options[3]) {
         $form .= ' checked="checked"';
     }
     $form .= ' />' . _YES . '<input type="radio" name="options[3]" value="0"';
-    if ($options[3] == 0) {
+    if (0 == $options[3]) {
         $form .= ' checked="checked"';
     }
     $form .= ' />' . _NO;
@@ -117,11 +117,11 @@ function b_xpetitions_last_signs_edit($options)
     $form .= '<br />' . _MB_XPETITIONS_NUMBER_SIGNS . "<input type='text' name='options[4]' size='3' value='" . $options[4] . "' />";
 
     $form .= '<br />' . _MB_XPETITIONS_SIGNS_DATE . '<input type="radio" name="options[5]" value="1"';
-    if ($options[5] == 1) {
+    if (1 == $options[5]) {
         $form .= ' checked="checked"';
     }
     $form .= ' />' . _YES . '<input type="radio" name="options[5]" value="0"';
-    if ($options[5] == 0) {
+    if (0 == $options[5]) {
         $form .= ' checked="checked"';
     }
     $form .= ' />' . _NO;

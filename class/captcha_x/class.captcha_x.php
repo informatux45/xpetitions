@@ -212,7 +212,7 @@ class captcha_x
         // whether use the local fonts or the system fonts
         if ($use_local_fonts) {
             $font_path = realpath(__DIR__ . '/fonts');
-            if (@putenv('GDFONTPATH=' . $font_path) === false) {
+            if (false === @putenv('GDFONTPATH=' . $font_path)) {
                 $no_putenv = true;
             }
         }

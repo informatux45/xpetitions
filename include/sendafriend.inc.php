@@ -47,7 +47,7 @@ if (isset($post)) {
     $friendform->addElement($field_friend_format_email);
 
     // Captcha image si option à oui
-    if ($xoopsModuleConfig['captcha_image'] == '1') {
+    if ('1' == $xoopsModuleConfig['captcha_image']) {
         // --------------------------------
         // Recuperation du captcha en cours
         // --------------------------------

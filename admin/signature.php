@@ -43,7 +43,7 @@ case 'delsign': // Supprimer une signature
     $xpetitions_signid = $_POST['signs'];
     $ok = isset($_REQUEST['ok']) ? (int)$_REQUEST['ok'] : 0;
 
-    if ($ok == 1 && isset($xpetitions_signid) && isset($xpetitions_name)) {
+    if (1 == $ok && isset($xpetitions_signid) && isset($xpetitions_name)) {
         $xpetitions_delete = deleteSignature($xpetitions_name, $xpetitions_signid);
     
         if (!$xpetitions_delete) {
@@ -129,7 +129,7 @@ case 'signfo': // Validation forcée des signatures non validées
     $petition_name = $myts->oopsAddSlashes($_REQUEST['name']);
     $ok            = isset($_REQUEST['ok']) ? (int)$_REQUEST['ok'] : 0;
     // confirmation donc suppression de la pétition
-    if ($ok == 1 && isset($petition_name)) {
+    if (1 == $ok && isset($petition_name)) {
         $update_validation = validSignatureForced($petition_name);
         $message = (!$update_validation) ? redirect_header('signature.php', 2, _AM_XPETITIONS_ERROR_UPDATE) : redirect_header('signature.php', 2, _AM_XPETITIONS_VALID_UPDATE);
     } else {
@@ -241,7 +241,7 @@ case 'recorded': // Affichage des signatures enregistrées
             echo '</td><td style="text-align: center;">';
             echo formatdatefr($row['date']);
             echo '</td><td style="text-align: center;">';
-            $validation = ($row['validation'] == 1) ? _YES : _NO;
+            $validation = (1 == $row['validation']) ? _YES : _NO;
             echo $validation;
         }
         echo '</tr>';
@@ -343,19 +343,19 @@ case 'tab': // Récapitulatifs des signatures par pétitions
             $totales = getSignaturesInfos($row['name'], 2);
             $valides = getSignaturesInfos($row['name'], 1);
             $novalid = getSignaturesInfos($row['name'], 0);
-            if ($totales == 0) {
+            if (0 == $totales) {
                 echo '0';
             } else {
                 echo '<a href="signature.php?id='.$row['id'].'&name='.$row['name'].'&op=recorded">' . $totales . '</a>';
             }
             echo '</td><td style="text-align: center;">';
-            if ($valides == 0) {
+            if (0 == $valides) {
                 echo '0';
             } else {
                 echo '<a href="signature.php?id='.$row['id'].'&name='.$row['name'].'&op=extract">' . $valides . '</a>';
             }
             echo '</td><td style="text-align: center;">';
-            if ($novalid == 0) {
+            if (0 == $novalid) {
                 echo '0';
             } else {
                 echo '<a href="signature.php?id='.$row['id'].'&name='.$row['name'].'&op=novalid">' . $novalid . '</a>';

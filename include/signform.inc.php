@@ -29,14 +29,14 @@ if (isset($post)) {
     // Formulaire a valider par email ou en automatique
     // 0 : automatique
     // 1 : email
-    if ($xoopsModuleConfig['validation_form'] == '1') {
+    if ('1' == $xoopsModuleConfig['validation_form']) {
         $signform = new XoopsThemeForm(sprintf(_MD_XPETITIONS_TITLE_SIGNFORM, _MD_XPETITIONS_TITLE_SIGNFORM1), 'signform', 'index.php?id=' . $post . '&op=sign');
     } else {
         $signform = new XoopsThemeForm(sprintf(_MD_XPETITIONS_TITLE_SIGNFORM, _MD_XPETITIONS_TITLE_SIGNFORM2), 'signform', 'index.php?id=' . $post . '&op=presign');
     }
 
     // Prénom du signataire
-    if ($xoopsVersion == '2016') {
+    if ('2016' == $xoopsVersion) {
         $field_firstname = new XoopsFormText(_MD_XPETITIONS_FNAME_SIGNFORM.' *', 'firstname', 35, 50, $firstname);
     } else {
         $field_firstname = new XoopsFormText(_MD_XPETITIONS_FNAME_SIGNFORM, 'firstname', 35, 50, $firstname);
@@ -44,7 +44,7 @@ if (isset($post)) {
     $signform->addElement($field_firstname, true);
 
     // Nom du signataire
-    if ($xoopsVersion == '2016') {
+    if ('2016' == $xoopsVersion) {
         $field_lastname = new XoopsFormText(_MD_XPETITIONS_LNAME_SIGNFORM.' *', 'lastname', 35, 50, $lastname);
     } else {
         $field_lastname = new XoopsFormText(_MD_XPETITIONS_LNAME_SIGNFORM, 'lastname', 35, 50, $lastname);
@@ -53,9 +53,9 @@ if (isset($post)) {
 
 
     // Adresse du signataire
-    if (getFieldInfos(3, 1) == 1) {
-        if (getFieldInfos(3, 2) == 1) {
-            if ($xoopsVersion == '2016') {
+    if (1 == getFieldInfos(3, 1)) {
+        if (1 == getFieldInfos(3, 2)) {
+            if ('2016' == $xoopsVersion) {
                 $field_address = new XoopsFormText(_MD_XPETITIONS_ADDRESS_SIGNFORM.' *', 'address', 35, 100, $address);
             } else {
                 $field_address = new XoopsFormText(_MD_XPETITIONS_ADDRESS_SIGNFORM, 'address', 35, 100, $address);
@@ -68,9 +68,9 @@ if (isset($post)) {
     }
 
     // Code postal du signataire
-    if (getFieldInfos(4, 1) == 1) {
-        if (getFieldInfos(4, 2) == 1) {
-            if ($xoopsVersion == '2016') {
+    if (1 == getFieldInfos(4, 1)) {
+        if (1 == getFieldInfos(4, 2)) {
+            if ('2016' == $xoopsVersion) {
                 $field_zip = new XoopsFormText(_MD_XPETITIONS_ZIP_SIGNFORM.' *', 'zip', 35, 10, $zip);
             } else {
                 $field_zip = new XoopsFormText(_MD_XPETITIONS_ZIP_SIGNFORM, 'zip', 35, 10, $zip);
@@ -83,9 +83,9 @@ if (isset($post)) {
     }
 
     // Ville du signataire
-    if (getFieldInfos(5, 1) == 1) {
-        if (getFieldInfos(5, 2) == 1) {
-            if ($xoopsVersion == '2016') {
+    if (1 == getFieldInfos(5, 1)) {
+        if (1 == getFieldInfos(5, 2)) {
+            if ('2016' == $xoopsVersion) {
                 $field_city = new XoopsFormText(_MD_XPETITIONS_CITY_SIGNFORM.' *', 'city', 35, 50, $city);
             } else {
                 $field_city = new XoopsFormText(_MD_XPETITIONS_CITY_SIGNFORM, 'city', 35, 50, $city);
@@ -98,9 +98,9 @@ if (isset($post)) {
     }
 
     // Pays du signataire
-    if (getFieldInfos(6, 1) == 1) {
-        if (getFieldInfos(6, 2) == 1) {
-            if ($xoopsVersion == '2016') {
+    if (1 == getFieldInfos(6, 1)) {
+        if (1 == getFieldInfos(6, 2)) {
+            if ('2016' == $xoopsVersion) {
                 $field_country = new XoopsFormSelectCountry(_MD_XPETITIONS_COUNTRY_SIGNFORM.' *', 'country', $country, 1);
             } else {
                 $field_country = new XoopsFormSelectCountry(_MD_XPETITIONS_COUNTRY_SIGNFORM, 'country', $country, 1);
@@ -113,9 +113,9 @@ if (isset($post)) {
     }
 
     // Profession du signataire
-    if (getFieldInfos(7, 1) == 1) {
-        if (getFieldInfos(7, 2) == 1) {
-            if ($xoopsVersion == '2016') {
+    if (1 == getFieldInfos(7, 1)) {
+        if (1 == getFieldInfos(7, 2)) {
+            if ('2016' == $xoopsVersion) {
                 $field_job = new XoopsFormText(_MD_XPETITIONS_JOB_SIGNFORM.' *', 'job', 35, 50, $job);
             } else {
                 $field_job = new XoopsFormText(_MD_XPETITIONS_JOB_SIGNFORM, 'job', 35, 50, $job);
@@ -128,7 +128,7 @@ if (isset($post)) {
     }
 
     // Adresse email du signataire (pour validation)
-    if ($xoopsVersion == '2016') {
+    if ('2016' == $xoopsVersion) {
         $field_email = new XoopsFormText(_MD_XPETITIONS_EMAIL_SIGNFORM.' *', 'email', 35, 100, $email);
     } else {
         $field_email = new XoopsFormText(_MD_XPETITIONS_EMAIL_SIGNFORM, 'email', 35, 100, $email);
@@ -136,7 +136,7 @@ if (isset($post)) {
     $signform->addElement($field_email, true);
 
     // Captcha image si option à oui
-    if ($xoopsModuleConfig['captcha_image'] == '1') {
+    if ('1' == $xoopsModuleConfig['captcha_image']) {
         // --------------------------------
         // Recuperation du captcha en cours
         // --------------------------------

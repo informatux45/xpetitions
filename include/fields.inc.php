@@ -57,13 +57,13 @@ $fields->addElement($field_firstname);
 // Champs "adresse"
 $field_address1 = new XoopsFormCheckBox('', 'field_address1');
 $field_address1->addOption(1, _AM_XPETITIONS_FIELD_VISIBLE);
-if (getFieldInfos(3, 1) == 1) {
+if (1 == getFieldInfos(3, 1)) {
     $field_address1->setExtra('checked');
 }
 
 $field_address2 = new XoopsFormCheckBox('', 'field_address2');
 $field_address2->addOption(1, _AM_XPETITIONS_FIELD_OBLIGATORY);
-if (getFieldInfos(3, 2) == 1) {
+if (1 == getFieldInfos(3, 2)) {
     $field_address2->setExtra('checked');
 }
 
@@ -75,13 +75,13 @@ $fields->addElement($field_address);
 // Champs "code postal"
 $field_zip1 = new XoopsFormCheckBox('', 'field_zip1');
 $field_zip1->addOption(1, _AM_XPETITIONS_FIELD_VISIBLE);
-if (getFieldInfos(4, 1) == 1) {
+if (1 == getFieldInfos(4, 1)) {
     $field_zip1->setExtra('checked');
 }
 
 $field_zip2 = new XoopsFormCheckBox('', 'field_zip2');
 $field_zip2->addOption(1, _AM_XPETITIONS_FIELD_OBLIGATORY);
-if (getFieldInfos(4, 2) == 1) {
+if (1 == getFieldInfos(4, 2)) {
     $field_zip2->setExtra('checked');
 }
 
@@ -93,13 +93,13 @@ $fields->addElement($field_zip, true);
 // Champs "ville"
 $field_city1 = new XoopsFormCheckBox('', 'field_city1');
 $field_city1->addOption(1, _AM_XPETITIONS_FIELD_VISIBLE);
-if (getFieldInfos(5, 1) == 1) {
+if (1 == getFieldInfos(5, 1)) {
     $field_city1->setExtra('checked');
 }
 
 $field_city2 = new XoopsFormCheckBox('', 'field_city2');
 $field_city2->addOption(1, _AM_XPETITIONS_FIELD_OBLIGATORY);
-if (getFieldInfos(5, 2) == 1) {
+if (1 == getFieldInfos(5, 2)) {
     $field_city2->setExtra('checked');
 }
 
@@ -111,13 +111,13 @@ $fields->addElement($field_city, true);
 // Champs "pays"
 $field_country1 = new XoopsFormCheckBox('', 'field_country1');
 $field_country1->addOption(1, _AM_XPETITIONS_FIELD_VISIBLE);
-if (getFieldInfos(6, 1) == 1) {
+if (1 == getFieldInfos(6, 1)) {
     $field_country1->setExtra('checked');
 }
 
 $field_country2 = new XoopsFormCheckBox('', 'field_country2');
 $field_country2->addOption(1, _AM_XPETITIONS_FIELD_OBLIGATORY);
-if (getFieldInfos(6, 2) == 1) {
+if (1 == getFieldInfos(6, 2)) {
     $field_country2->setExtra('checked');
 }
 
@@ -129,13 +129,13 @@ $fields->addElement($field_country, true);
 // Champs "profession"
 $field_job1 = new XoopsFormCheckBox('', 'field_job1');
 $field_job1->addOption(1, _AM_XPETITIONS_FIELD_VISIBLE);
-if (getFieldInfos(7, 1) == 1) {
+if (1 == getFieldInfos(7, 1)) {
     $field_job1->setExtra('checked');
 }
 
 $field_job2 = new XoopsFormCheckBox('', 'field_job2');
 $field_job2->addOption(1, _AM_XPETITIONS_FIELD_OBLIGATORY);
-if (getFieldInfos(7, 2) == 1) {
+if (1 == getFieldInfos(7, 2)) {
     $field_job2->setExtra('checked');
 }
 

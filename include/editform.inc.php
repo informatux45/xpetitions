@@ -65,7 +65,7 @@ $editform->addElement($field_whoview, true);
 $editform->insertBreak(_AM_XPETITIONS_BREAK_ADDFORM, 'bg3');
 
 // Affichage d'un fichier uploader si présent
-if ($is_file['file'] == '1') {
+if ('1' == $is_file['file']) {
     $field_file_show = new XoopsFormElementTray(_AM_XPETITIONS_FILE_SHOW_ADDFORM, '<br />');
     $field_file_show->setDescription(_AM_XPETITIONS_FILE_SHOW_ADDFORM_DSC);
     $field_file_check = new XoopsFormCheckBox('', 'file_delete', 0);

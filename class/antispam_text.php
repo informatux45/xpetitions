@@ -34,7 +34,7 @@ function _captchaCalculChiffres()
     $operator = $operators[array_rand($operators)];// on recupere l'operateur de calcul
     
     $nb1 = mt_rand(1, 10);
-    $nb2 = ($operator === '-') ? mt_rand(1, $nb1) : mt_rand(1, 10); // on evite les resultats negatif en cas de soustraction
+    $nb2 = ('-' === $operator) ? mt_rand(1, $nb1) : mt_rand(1, 10); // on evite les resultats negatif en cas de soustraction
     
     $calcul = $nb1.' '.$operator.' '.$nb2;
     
@@ -44,7 +44,7 @@ function _captchaCalculChiffres()
     
     eval('$_SESSION[\'captchaResult\'] = strval('.$nb1.$operator.$nb2.');');
 
-    return _MD_XPETITIONS_CAPTCHA_TXT_2.' <b>'.$nb1.' '.($operator === '*' ? 'x' : $operator).' '.$nb2.'</b>';
+    return _MD_XPETITIONS_CAPTCHA_TXT_2.' <b>'.$nb1.' '.('*' === $operator ? 'x' : $operator) . ' ' . $nb2 . '</b>';
 }
 
 function _captchaCalculLettres()
@@ -63,7 +63,7 @@ function _captchaCalculLettres()
     $nb1 = array_rand($num);
     $nb2 = array_rand($num);
     
-    if ($operator === '-' && $nb1 < $nb2) {
+    if ('-' === $operator && $nb1 < $nb2) {
         while ($nb1 < ($nb2 = array_rand($num)));
     } // on evite les resultats negatif en cas de soustraction
     
@@ -89,9 +89,9 @@ function _captchaAlphaNum()
     
     $_SESSION['captcha_image'] = $str[$pos-1];
     
-    if ($pos === 1) {
+    if (1 === $pos) {
         $pos = _MD_XPETITIONS_CAPTCHA_TXT_THEFIRST;
-    } elseif ($pos === 2) {
+    } elseif (2 === $pos) {
         $pos = _MD_XPETITIONS_CAPTCHA_TXT_THESECOND;
     } elseif ($pos === $length) {
         $pos = _MD_XPETITIONS_CAPTCHA_TXT_THELAST;
@@ -127,7 +127,7 @@ function checkCaptcha($postVarName = 'captchaResult', $caseInsensitive = false)
         return false;
     }
     
-    if ($caseInsensitive === true && !is_numeric($_SESSION['captcha_image'])) {
+    if (true === $caseInsensitive && !is_numeric($_SESSION['captcha_image'])) {
         $_POST[$postVarName] = strtolower($_POST[$postVarName]);
         $_SESSION['captcha_image'] = strtolower($_SESSION['captcha_image']);
     }
