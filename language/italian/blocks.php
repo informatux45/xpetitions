@@ -11,7 +11,7 @@
 /*            <http://www.xoops.org/>          */
 /* ******************************************* */
 
-// block affichage des dernières pétitions
+// block affichage des derniÃ¨res pÃ©titions
 define("_MB_XPETITIONS_NOSIGN", "Nessuna firma");
 define("_MB_XPETITIONS_NONE", "Nessuna petizione");
 define("_MB_XPETITIONS_TITLE", "Petizione:");
