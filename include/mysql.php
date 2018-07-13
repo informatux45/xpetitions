@@ -267,7 +267,7 @@ function getSignatureLetter($letter, $petition_name)
     // Obtenir une liste de signature commençant par la lettre --
     // all - correspond à toutes les lettres de l'alphabet
     global $xoopsDB;
-    if ($letter == 'all') {
+    if ($letter === 'all') {
         $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . ' WHERE validation = "1" ORDER BY upper(name),lower(prenom)';
     } else {
         $sql = 'SELECT * FROM ' . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . ' WHERE validation = "1" AND name LIKE "'.$letter.'%" ORDER BY name,prenom';

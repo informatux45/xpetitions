@@ -132,7 +132,7 @@ case 'allsigns': // affichage des signatures validées
                     $petition_letter['date']      = formatdatefr($row['date']);
                     $petitions_letter[]           = $petition_letter;
                 }
-                if ($myts->addSlashes($_REQUEST['letter'] == 'all')) {
+                if ($myts->addSlashes($_REQUEST['letter'] === 'all')) {
                     $allsigns_letter = _MD_XPETITIONS_ALLSIGNS_LETTER_ALL;
                 } else {
                     $allsigns_letter = sprintf(_MD_XPETITIONS_ALLSIGNS_LETTER, $myts->addSlashes($_REQUEST['letter']), count($petitions_letter));
@@ -147,7 +147,7 @@ case 'allsigns': // affichage des signatures validées
                 // Si plus de 1 colonne
                 $xpetitions_signs_show  = getOptionInfos('signature_show');
                 $xpetitions_signs_nbcol = getOptionInfos('signature_nbcol');
-                if ($xpetitions_signs_show['options'] == 'colonne' && $xpetitions_signs_nbcol['options'] > 1) {
+                if ($xpetitions_signs_show['options'] === 'colonne' && $xpetitions_signs_nbcol['options'] > 1) {
                     $xpetitions_sign_divcol = floor(100/$xpetitions_signs_nbcol['options']);
                     $xpetitions_sign_nb     = ceil(count($petitions_letter)/$xpetitions_signs_nbcol['options'])-1;
                     $xoopsTpl->assign('petitions_sign_divcol', $xpetitions_sign_divcol);
@@ -156,7 +156,7 @@ case 'allsigns': // affichage des signatures validées
                 $xoopsTpl->assign('petitions_signs_show', $xpetitions_signs_show['options']);
                 $xoopsTpl->assign('petitions_sign_nb', $xpetitions_sign_nb);
             } else {
-                if ($myts->addSlashes($_REQUEST['letter']) == 'all') {
+                if ($myts->addSlashes($_REQUEST['letter']) === 'all') {
                     $petitions_noletter = _MD_XPETITIONS_ALLSIGNS_NOLETTER_ALL;
                 } else {
                     $petitions_noletter = sprintf(_MD_XPETITIONS_ALLSIGNS_NOLETTER, $myts->addSlashes($_REQUEST['letter']));

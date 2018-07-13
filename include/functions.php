@@ -135,7 +135,7 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = [])
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
                     echo $indexAdmin->renderButton('left');
                 }
-                if ($op == 'novalid') {
+                if ($op === 'novalid') {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
@@ -143,13 +143,13 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = [])
                     $indexAdmin->addItemButton(_AM_XPETITIONS_FORCE_SIGN, 'signature.php?op=signfo&id='.$_REQUEST['id'].'&name='.$_REQUEST['name'].'&ok=0', 'button_ok');
                     echo $indexAdmin->renderButton('left');
                 }
-                if ($op == 'recorded') {
+                if ($op === 'recorded') {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
                     echo $indexAdmin->renderButton('left');
                 }
-                if ($op == 'extract') {
+                if ($op === 'extract') {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
@@ -210,7 +210,7 @@ function showLettersSigns($id, $module_url, $link)
     $signs_lettre = 65;
     while ($signs_lettre < 92) {
         $class_sign     = ($_GET['letter'] == chr($signs_lettre)) ? 'xpetitions_allsigns_big_letter' : '';
-        $class_sign_all = ($_GET['letter'] == 'all') ? 'xpetitions_allsigns_big_letter' : '';
+        $class_sign_all = ($_GET['letter'] === 'all') ? 'xpetitions_allsigns_big_letter' : '';
         if ($signs_lettre == 91) {
             $petition_allsigns_letter['letter'] = '<a class="'.$class_sign_all.'" href="'.XOOPS_URL.$module_url.$link.'all"><span class="'.$class_sign_all.'">'._MD_XPETITIONS_ALL_ALLSIGNS.'</span></a>';
         } else {
