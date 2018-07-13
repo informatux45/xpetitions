@@ -405,11 +405,11 @@ case 'signshow_update': // Mise a jour de l'affichage des signatures
     // Récupération des variables
     $col     = $_POST['col'];
     $nbcol   = $_POST['nbcol'];
-    $job     = $_POST['job'] ? $_POST['job'] : 0;
-    $country = $_POST['country'] ? $_POST['country'] : 0;;
-    $email   = $_POST['email'] ? $_POST['email'] : 0;
-    $city    = $_POST['city'] ? $_POST['city'] : 0;
-    $date    = $_POST['date'] ? $_POST['date'] : 0;
+    $job     = $_POST['job'] ?: 0;
+    $country = $_POST['country'] ?: 0;;
+    $email   = $_POST['email'] ?: 0;
+    $city    = $_POST['city'] ?: 0;
+    $date    = $_POST['date'] ?: 0;
 
     // Preparation pour l'enregistrement
     $entries = $job.'|'.$country.'|'.$email.'|'.$city.'|'.$date;

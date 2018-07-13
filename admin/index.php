@@ -40,10 +40,10 @@ $dir_upload_xpetitions = XOOPS_ROOT_PATH . $xoopsModuleConfig['path_upload'] . '
 $dir_csv_xpetitions    = XOOPS_ROOT_PATH . '/modules/' . $xoopsModule->getVar('dirname') . '/csv/';
 
 // Recuperer les valeurs de la synthese
-$xpetitions_petitions_create   = getPetitionsCount() ? getPetitionsCount() : '0';
-$xpetitions_petitions_online   = getPetitionsCountOnline(1) ? getPetitionsCountOnline(1) : '0';
-$xpetitions_petitions_offline  = getPetitionsCountOnline(2) ? getPetitionsCountOnline(2) : '0';
-$xpetitions_petitions_archives = getPetitionsCountOnline(3) ? getPetitionsCountOnline(3) : '0';
+$xpetitions_petitions_create   = getPetitionsCount() ?: '0';
+$xpetitions_petitions_online   = getPetitionsCountOnline(1) ?: '0';
+$xpetitions_petitions_offline  = getPetitionsCountOnline(2) ?: '0';
+$xpetitions_petitions_archives = getPetitionsCountOnline(3) ?: '0';
 
 // Droits du repertoire d'upload
 $dir_upload_xpetitions_writable = @is_writable($dir_upload_xpetitions);
