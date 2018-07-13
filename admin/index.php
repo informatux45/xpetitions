@@ -52,7 +52,7 @@ $dir_upload_xpetitions_writable = @is_writable($dir_upload_xpetitions);
 $dir_csv_xpetitions_writable = @is_writable($dir_csv_xpetitions);
 
 // Version de PHP (upload csv)
-$server_php_version        = phpversion();
+$server_php_version        = PHP_VERSION;
 $xpetition_csv_php_version = version_compare($server_php_version, '5.1.0', '>=');
 
 $home_info = [
