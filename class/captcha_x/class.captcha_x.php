@@ -96,7 +96,7 @@ class captcha_x
         $this->_print_letters();
         $this->_add_dust_and_scratches($bg_color_1);
         
-        header("Content-type: image/jpeg");
+        header('Content-type: image/jpeg');
         imagejpeg($this->image);
         imagedestroy($this->image);
     }

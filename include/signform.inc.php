@@ -12,7 +12,7 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
+include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
 
 ?>
 <script type="text/javascript" src="<?php echo XOOPS_URL.$module_url; ?>/include/functions.js"></script>
@@ -30,9 +30,9 @@ if (isset($post)) {
     // 0 : automatique
     // 1 : email
     if ($xoopsModuleConfig['validation_form'] == '1') {
-        $signform = new XoopsThemeForm(sprintf(_MD_XPETITIONS_TITLE_SIGNFORM, _MD_XPETITIONS_TITLE_SIGNFORM1), "signform", "index.php?id=".$post."&op=sign");
+        $signform = new XoopsThemeForm(sprintf(_MD_XPETITIONS_TITLE_SIGNFORM, _MD_XPETITIONS_TITLE_SIGNFORM1), 'signform', 'index.php?id=' . $post . '&op=sign');
     } else {
-        $signform = new XoopsThemeForm(sprintf(_MD_XPETITIONS_TITLE_SIGNFORM, _MD_XPETITIONS_TITLE_SIGNFORM2), "signform", "index.php?id=".$post."&op=presign");
+        $signform = new XoopsThemeForm(sprintf(_MD_XPETITIONS_TITLE_SIGNFORM, _MD_XPETITIONS_TITLE_SIGNFORM2), 'signform', 'index.php?id=' . $post . '&op=presign');
     }
 
     // Prénom du signataire
@@ -143,7 +143,7 @@ if (isset($post)) {
         $captcha_inprogress = getOptionInfos('captcha');
         switch ($captcha_inprogress['options']) {
         default: // Option CAPTCHA (K.OHWADA) => 1
-        $server1  = XOOPS_URL . $module_url . "/server.php";
+        $server1  = XOOPS_URL . $module_url . '/server.php';
         $onclick1 = "javasript:this.src='". $server1 ."?'+Math.random();";
         $captcha1  = _MD_XPETITIONS_CAPTCHA ."<br />\n";
         $captcha1 .= '<img src="'. $server1 .'" onclick="'. $onclick1 .'" alt="CAPTCHA image" style="padding: 3px;  cursor: pointer;" />'."<br />\n";
@@ -151,8 +151,8 @@ if (isset($post)) {
         $signform->addElement(new XoopsFormLabel(_MD_XPETITIONS_CAPTCHA_DSC, $captcha1), true);
         break;
 
-        case "2": // Option CAPTCHA (Jpgraph) => 2
-        $server2  = XOOPS_URL . $module_url . "/generate.php";
+        case '2': // Option CAPTCHA (Jpgraph) => 2
+        $server2  = XOOPS_URL . $module_url . '/generate.php';
         $onclick2 = "javasript:this.src='". $server2 ."?'+Math.random();";
         $captcha2  = _MD_XPETITIONS_CAPTCHA ."<br />\n";
         $captcha2 .= '<img src="'. $server2 .'" onclick="'. $onclick2 .'" alt="CAPTCHA image" style="padding: 3px; cursor: pointer;" />'."<br />\n";
@@ -160,8 +160,8 @@ if (isset($post)) {
         $signform->addElement(new XoopsFormLabel(_MD_XPETITIONS_CAPTCHA_DSC, $captcha2), true);
         break;
 
-        case "3": // Option CAPTCHA (Texte) => 3
-        require_once(XOOPS_ROOT_PATH . $module_url . "/class/antispam_text.php");
+        case '3': // Option CAPTCHA (Texte) => 3
+        require_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php');
         $captcha3  = getCaptcha() . "<br />\n";
         $captcha3 .= '<input name="captcha" type="text" />';
         $signform->addElement(new XoopsFormLabel(_MD_XPETITIONS_CAPTCHA_DSC, $captcha3), true);

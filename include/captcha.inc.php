@@ -13,19 +13,19 @@
 
 // includes
 $module_url = '/modules/' . $xoopsModule->getVar('dirname');
-include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
-include_once(XOOPS_ROOT_PATH . $module_url . "/class/antispam_jpgraph.php");
-include_once(XOOPS_ROOT_PATH . $module_url . "/class/antispam_text.php");
+include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
+include_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_jpgraph.php');
+include_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php');
 
 // Initialisation du formulaire
-$captcha = new XoopsThemeForm(_AM_XPETITIONS_TITLE_CAPTCHA . _AM_XPETITIONS_CAPTCHA_SAMPLES, "captchaform", "captcha.php?op=update");
+$captcha = new XoopsThemeForm(_AM_XPETITIONS_TITLE_CAPTCHA . _AM_XPETITIONS_CAPTCHA_SAMPLES, 'captchaform', 'captcha.php?op=update');
 
 echo '<br />';
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 //                     Captcha 1 : K.OHWADA                    -=
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-$server1  = XOOPS_URL.$module_url."/server.php";
+$server1  = XOOPS_URL.$module_url . '/server.php';
 $onclick1 = "javasript:this.src='". $server1 ."?'+Math.random();";
 $captcha_kohwada  = '<img src="'. $server1 .'" onclick="'. $onclick1 .'" alt="CAPTCHA K.OHWADA" title="CAPTCHA K.OHWADA" style="padding: 0px; border: 2px solid black; cursor: pointer;" />'."<br />\n";
 $captcha->addElement(new XoopsFormLabel(_AM_XPETITIONS_CAPTCHA_CHOICE1 . '<br /><span style="font-weight: normal;">' . _AM_XPETITIONS_CAPTCHA_CHOICE1_DSC . '</span>', $captcha_kohwada));
@@ -33,7 +33,7 @@ $captcha->addElement(new XoopsFormLabel(_AM_XPETITIONS_CAPTCHA_CHOICE1 . '<br />
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 //                     Captcha 2 : JPGRAPH                     -=
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-$server2  = XOOPS_URL.$module_url."/generate.php";
+$server2  = XOOPS_URL.$module_url . '/generate.php';
 $onclick2 = "javasript:this.src='". $server2 ."?'+Math.random();";
 $captcha_jpgraph  = '<img src="'. $server2 .'" onclick="'. $onclick2 .'" alt="CAPTCHA Jpgraph" title="CAPTCHA Jpgraph" style="padding: 3px; cursor: pointer;" />'."<br />\n";
 $captcha->addElement(new XoopsFormLabel(_AM_XPETITIONS_CAPTCHA_CHOICE2 . '<br /><span style="font-weight: normal;">' . _AM_XPETITIONS_CAPTCHA_CHOICE2_DSC . '</span>', $captcha_jpgraph));

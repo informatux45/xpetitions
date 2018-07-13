@@ -12,9 +12,9 @@
 /* ******************************************* */
 
 // includes
-include_once("header.inc.php");
-include_once(XOOPS_ROOT_PATH."/header.php");
-include_once XOOPS_ROOT_PATH."/class/xoopsmailer.php";
+include_once('header.inc.php');
+include_once(XOOPS_ROOT_PATH . '/header.php');
+include_once XOOPS_ROOT_PATH . '/class/xoopsmailer.php';
 include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
 
 $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : 'index';
@@ -39,20 +39,20 @@ switch ($op) {
         $captcha_status = '<span style="color: red;">' . strtoupper(_NO) . '</span>';
     }
 
-    echo '<div style="font-weight: bold;">' . sprintf(_AM_XPETITIONS_STATUS_CAPTCHA, "<a class=\"nobutton\" href=\"../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod=".$xoopsModule->getVar('mid')."\">" . _AM_XPETITIONS_GENERALSET . "</a>") . $captcha_status . '</div>';
+    echo '<div style="font-weight: bold;">' . sprintf(_AM_XPETITIONS_STATUS_CAPTCHA, '<a class="nobutton" href="../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod=' . $xoopsModule->getVar('mid') . '">' . _AM_XPETITIONS_GENERALSET . '</a>') . $captcha_status . '</div>';
 
-    include "../include/captcha.inc.php"; // affichage du formulaire
+    include '../include/captcha.inc.php'; // affichage du formulaire
     break;
 
-    case "update": // Mise à jour des champs
+    case 'update': // Mise à jour des champs
     $captcha_choice = (!isset($_POST['captcha_choice'])) ? 1 : $_POST['captcha_choice'];
 
     $update_captcha = updateOption('captcha', $captcha_choice);
 
     if (!$update_captcha) {
-        redirect_header("captcha.php", 2, _AM_XPETITIONS_ERROR_UPDATE);
+        redirect_header('captcha.php', 2, _AM_XPETITIONS_ERROR_UPDATE);
     } else {
-        redirect_header("captcha.php", 2, _AM_XPETITIONS_VALID_UPDATE);
+        redirect_header('captcha.php', 2, _AM_XPETITIONS_VALID_UPDATE);
     }
 
     break;

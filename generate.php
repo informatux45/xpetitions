@@ -11,7 +11,7 @@
 /*            <http://www.xoops.org/>          */
 /* ******************************************* */
 
-include("../../mainfile.php");
+include('../../mainfile.php');
 
 session_start();
 
@@ -19,7 +19,7 @@ session_start();
 $_SESSION['captcha_image'] = '';
 
 // Appel de la librairie
-require "class/antispam_jpgraph.php";
+require 'class/antispam_jpgraph.php';
 
 // Instancier
 $obj_captcha = new Antispam();

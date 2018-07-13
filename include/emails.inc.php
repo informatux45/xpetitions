@@ -12,13 +12,13 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
+include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
 
 $email_unconfirmed = getEmailInfos('1'); // Email aux retardataires
 $email_toconfirmed = getEmailInfos('2'); // Email aux signataires pour validation
 
 // Initialisation du formulaire
-$emails = new XoopsThemeForm(_AM_XPETITIONS_TITLE_EMAILS, "emailform", "email.php?op=update");
+$emails = new XoopsThemeForm(_AM_XPETITIONS_TITLE_EMAILS, 'emailform', 'email.php?op=update');
 
 echo '<br />';
 

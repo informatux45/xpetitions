@@ -26,7 +26,7 @@
 //  ------------------------------------------------------------------------ //
 
 // includes
-include_once("header.inc.php");
+include_once('header.inc.php');
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB, $pathIcon16;
 
 $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : 'petitions';
@@ -37,7 +37,7 @@ $mimetypes   = ['application/pdf', 'application/msword'];
 $upload_dir  = XOOPS_ROOT_PATH.$xoopsModuleConfig['path_upload'];
 
 switch ($op) {
-    case "petitions": //
+    case 'petitions': //
     default:
         include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
     xoops_cp_header();
@@ -92,7 +92,7 @@ switch ($op) {
             echo "<div align='right'>".$pagenav->renderNav().'</div><br />';
         }
     break;
-    case "post": // formulaire posté
+    case 'post': // formulaire posté
     include XOOPS_ROOT_PATH.'/header.php';
     // récupération des données
     $name        = $myts->oopsAddSlashes($_POST['name']);
@@ -105,15 +105,15 @@ switch ($op) {
     $link_file   = '';
     $link        = '0';
 
-    include_once(XOOPS_ROOT_PATH."/class/uploader.php");
-    $file = trim($_POST["xoops_upload_file"][0]);
+    include_once(XOOPS_ROOT_PATH . '/class/uploader.php');
+    $file = trim($_POST['xoops_upload_file'][0]);
 
     // taille du fichier avant upload
     $file_size = $_FILES[$file]['size'];
     if ($file_size != '0') {
-        if ($_FILES[$file]['tmp_name'] == "" || !is_readable($_FILES[$file]['tmp_name'])) {
+        if ($_FILES[$file]['tmp_name'] == '' || !is_readable($_FILES[$file]['tmp_name'])) {
             // upload echoué retour au formulaire
-            redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_ERROR_FILE_UPLOAD) ;
+            redirect_header('javascript:history.go(-1)', 2, _AM_XPETITIONS_ERROR_FILE_UPLOAD) ;
             exit ;
         }
         // création de l'objet uploader
@@ -130,11 +130,11 @@ switch ($op) {
     }
 
     $create_petition = insertPetition($name, $title, $description, $email, $date, $status, $whoview, $link, $link_file);
-    $message = (!$create_petition) ? redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_ERROR_INSERT) : redirect_header("petitions.php", 2, _AM_XPETITIONS_VALID_INSERT);
+    $message = (!$create_petition) ? redirect_header('javascript:history.go(-1)', 2, _AM_XPETITIONS_ERROR_INSERT) : redirect_header('petitions.php', 2, _AM_XPETITIONS_VALID_INSERT);
 
     break;
 
-    case "update": // formulaire posté (mis à jour)
+    case 'update': // formulaire posté (mis à jour)
     include XOOPS_ROOT_PATH.'/header.php';
     // récupération des données
     extract($_POST, EXTR_OVERWRITE);
@@ -147,8 +147,8 @@ switch ($op) {
     $date        = formatdatestamp($date);
     $checkbox    = $_POST['file_delete'];
 
-    include_once(XOOPS_ROOT_PATH."/class/uploader.php");
-    $file = $_POST["xoops_upload_file"][0];
+    include_once(XOOPS_ROOT_PATH . '/class/uploader.php');
+    $file = $_POST['xoops_upload_file'][0];
 
     // vérification si suppression
     $petitionid = getPetitionDetails($id);
@@ -166,15 +166,15 @@ switch ($op) {
 
     $petition    = getPetitionDetails($id);
     // Vérification si présence fichier
-    if (!empty($file) || $file != "") {
+    if (!empty($file) || $file != '') {
 
     // taille du fichier avant upload
         $file_size = $_FILES['file']['size'];
         // update du fichier enregistré
         if ($file_size != 0) {
-            if ($_FILES['file']['tmp_name'] == "" || !is_readable($_FILES['file']['tmp_name'])) {
+            if ($_FILES['file']['tmp_name'] == '' || !is_readable($_FILES['file']['tmp_name'])) {
                 // upload echoué retour au formulaire
-                redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_ERROR_FILE_UPLOAD) ;
+                redirect_header('javascript:history.go(-1)', 2, _AM_XPETITIONS_ERROR_FILE_UPLOAD) ;
                 exit ;
             }
             // création de l'objet uploader
@@ -196,12 +196,12 @@ switch ($op) {
     
     $update_petition = updatePetition($id, $title, $description, $email, $status, $whoview, $date, $link, $link_file);
     
-    $message = (!$update_petition) ? redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_ERROR_UPDATE) : redirect_header("petitions.php", 2, _AM_XPETITIONS_VALID_UPDATE);
+    $message = (!$update_petition) ? redirect_header('javascript:history.go(-1)', 2, _AM_XPETITIONS_ERROR_UPDATE) : redirect_header('petitions.php', 2, _AM_XPETITIONS_VALID_UPDATE);
 
     break;
 
 
-    case "form": // affichage du formulaire
+    case 'form': // affichage du formulaire
     xoops_cp_header();
     xpetitions_adminmenu('petitions.php');
 
@@ -209,14 +209,14 @@ switch ($op) {
     $name        = '';
     $title       = '';
     $description = '';
-    $email       = !empty($xoopsUser) ? $xoopsUser->getVar("email", "E") : "";
+    $email       = !empty($xoopsUser) ? $xoopsUser->getVar('email', 'E') : '';
     $status      = '';
     $whoview     = '';
 
-    include "../include/addform.inc.php"; // affichage du formulaire
+    include '../include/addform.inc.php'; // affichage du formulaire
     break;
 
-    case "delete": // suppression d'une pétition avant confirmation
+    case 'delete': // suppression d'une pétition avant confirmation
     include XOOPS_ROOT_PATH.'/header.php';
     $delid   = intval($_REQUEST['id']);
     $delname = $myts->oopsAddSlashes($_REQUEST['name']);
@@ -224,7 +224,7 @@ switch ($op) {
     // confirmation donc suppression de la pétition
     if ($ok == 1 && isset($delid) && isset($delname)) {
         $delete_petition = deletePetition($delid, $delname);
-        $message = (!$delete_petition) ? redirect_header("index.php", 2, _AM_XPETITIONS_ERROR_DELETE) : redirect_header("index.php", 2, _AM_XPETITIONS_VALID_DELETE);
+        $message = (!$delete_petition) ? redirect_header('index.php', 2, _AM_XPETITIONS_ERROR_DELETE) : redirect_header('index.php', 2, _AM_XPETITIONS_VALID_DELETE);
     } else {
         xoops_cp_header();
         xoops_confirm(['op' => 'delete', 'id' => $delid, 'name' => $delname, 'ok' => 1], 'petitions.php', _AM_XPETITIONS_DELETE_CONFIRM);
@@ -232,7 +232,7 @@ switch ($op) {
     }
     break;
 
-    case "modif": // modification d'une pétition
+    case 'modif': // modification d'une pétition
     xoops_cp_header();
     xpetitions_adminmenu('petitions.php');
 
@@ -246,7 +246,7 @@ switch ($op) {
     $date        = $petitionid['date'];
     $whoview     = $petitionid['whoview'];
     // affichage du formulaire
-    include "../include/editform.inc.php";
+    include '../include/editform.inc.php';
     break;
     
 }

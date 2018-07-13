@@ -12,10 +12,10 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
+include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
 
 // Initialisation du formulaire
-$latecomer = new XoopsThemeForm(_AM_XPETITIONS_TITLE_LATECOMERFORM, "latecomerform", "signature.php?id=".$_GET['id']."&op=latecomer_send");
+$latecomer = new XoopsThemeForm(_AM_XPETITIONS_TITLE_LATECOMERFORM, 'latecomerform', 'signature.php?id=' . $_GET['id'] . '&op=latecomer_send');
 
 $petition_name  = getPetitionDetails($_GET['id']);
 $sample_message =  getEmailInfos('1'); // Email aux retardataires

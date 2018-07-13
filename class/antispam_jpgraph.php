@@ -620,7 +620,7 @@ class AntiSpam
         }
 
         imagecopy($resimg, $img, 2, 2, 0, 0, $start, $this->iDD->iHeight);
-        header("Content-type: image/jpeg");
+        header('Content-type: image/jpeg');
         imagejpeg($resimg);
         return true;
     }

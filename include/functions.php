@@ -33,7 +33,7 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = [])
         
     switch ($navigation) {
         
-            case "index.php":
+            case 'index.php':
                 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         //              Nouvelle box
         // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -115,11 +115,11 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = [])
         echo $indexAdmin->renderIndex();
             break;
             
-            case "about.php":
+            case 'about.php':
                 echo $indexAdmin->renderAbout();
             break;
         
-            case "petitions.php":
+            case 'petitions.php':
                 if (!isset($_REQUEST['op'])) {
                     // Creer une nouvelle petition
                     $indexAdmin->addItemButton(_AM_XPETITIONS_CREATE_BUTTON, 'petitions.php?op=form', 'add', '');
@@ -127,7 +127,7 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = [])
                 }
             break;
             
-            case "signature.php":
+            case 'signature.php':
                 $op = (isset($_REQUEST['op'])) ? trim($_REQUEST['op']) : false;
                 if (!isset($op)) {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
@@ -164,10 +164,10 @@ function xpetitions_adminfooter()
 {
     global $xoopsModule;
 
-    $modfootertxt = "Module " . $xoopsModule->getVar('name') . " - Version " . $xoopsModule->getVar('version')/100 . " - INFORMATUX.COM";
+    $modfootertxt = 'Module ' . $xoopsModule->getVar('name') . ' - Version ' . $xoopsModule->getVar('version') / 100 . ' - INFORMATUX.COM';
     $urlMod  = XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname');
-    $urlSup  = "http://www.informatux.com/";
-    $urlSup2 = "https://github.com/informatux45/xpetitions";
+    $urlSup  = 'http://www.informatux.com/';
+    $urlSup2 = 'https://github.com/informatux45/xpetitions';
 
     echo "<div style='padding-top: 8px; padding-bottom: 10px; text-align: center;'><a href='" . $urlSup2 . "' target='_blank'><img src='" . $urlMod . "/images/xpetitions_icone.png' title='" . $modfootertxt . "' alt='" . $modfootertxt . "'/></a><div class='xpetitions_admin_footer_inf2'>Developed and maintained by <a href='" . $urlSup . "'>INFORMATUX</a></div></div>";
 } // fin de la fonction
@@ -259,7 +259,7 @@ function formatdatestamp($date)
     // intialisation
     $formatdatestamp = $date;
     // formatage
-    list($annee, $mois, $jour) = explode("-", $formatdatestamp);
+    list($annee, $mois, $jour) = explode('-', $formatdatestamp);
     // affichage
     $returndate = mktime(0, 0, 0, $mois, $jour, $annee);
     
@@ -278,8 +278,8 @@ function ExporterSignatures($p)
     $fichier       = "$dir/signature.csv";
     $infosPetition = LireInfosPetition($p);
     
-    $q = "SELECT * FROM ${prefixe}".$infosPetition['nom']." ORDER BY nom";
-    $d = @mysql_query($q) or die("ListeSignature :: ".mysql_error());
+    $q = "SELECT * FROM ${prefixe}".$infosPetition['nom'] . ' ORDER BY nom';
+    $d = @mysql_query($q) or die('ListeSignature :: ' . mysql_error());
     
     while ($row = @mysql_fetch_assoc($d)) {
         $texte .= implode('|', $row)."\n";
@@ -288,14 +288,14 @@ function ExporterSignatures($p)
         echo "impossible d'ouvrir $fichier<br>";
         exit;
     }
-    fwrite($hdl, $texte) or die("Ecriture impossible");
+    fwrite($hdl, $texte) or die('Ecriture impossible');
     ;
     fclose($hdl);
-    header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // some day in the past
-    header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
-    header("Content-type: application/x-download");
+    header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // some day in the past
+    header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+    header('Content-type: application/x-download');
     header("Content-Disposition: attachment; filename={$fichier}");
-    header("Content-Transfer-Encoding: binary");
+    header('Content-Transfer-Encoding: binary');
     readfile($fichier);
 }
 
@@ -320,19 +320,19 @@ function mailValid($email)
     }
 }
 
-function getEditor($caption, $name, $value = "", $width = '100%', $height ='400px', $supplemental='', $dhtml = true)
+function getEditor($caption, $name, $value = '', $width = '100%', $height ='400px', $supplemental='', $dhtml = true)
 {
     global $xoopsModuleConfig;
     $editor = false;
     $xv     = str_replace('XOOPS ', '', XOOPS_VERSION);
 
     $editor_configs           = [];
-    $editor_configs["name"]   = $name;
-    $editor_configs["value"]  = $value;
-    $editor_configs["rows"]   = 10;
-    $editor_configs["cols"]   = 40;
-    $editor_configs["width"]  = "100%";
-    $editor_configs["height"] = "400px";
+    $editor_configs['name']   = $name;
+    $editor_configs['value']  = $value;
+    $editor_configs['rows']   = 10;
+    $editor_configs['cols']   = 40;
+    $editor_configs['width']  = '100%';
+    $editor_configs['height'] = '400px';
 
     switch (strtolower($xoopsModuleConfig['use_wysiwyg'])) {
                 case 'tiny':

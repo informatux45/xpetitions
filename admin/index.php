@@ -26,7 +26,7 @@
 //  ------------------------------------------------------------------------ //
 
 // includes
-include_once("header.inc.php");
+include_once('header.inc.php');
 
 xoops_cp_header();
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
@@ -53,7 +53,7 @@ $dir_csv_xpetitions_writable = @is_writable($dir_csv_xpetitions);
 
 // Version de PHP (upload csv)
 $server_php_version        = phpversion();
-$xpetition_csv_php_version = version_compare($server_php_version, "5.1.0", ">=");
+$xpetition_csv_php_version = version_compare($server_php_version, '5.1.0', '>=');
 
 $home_info = [
     $dir_upload_xpetitions,

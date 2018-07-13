@@ -11,7 +11,7 @@
 /*            <http://www.xoops.org/>          */
 /* ******************************************* */
 
-include "../../mainfile.php";
+include '../../mainfile.php';
 include XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->getVar('dirname').'/include/functions.php';
 include XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->getVar('dirname').'/include/mysql.php';
 

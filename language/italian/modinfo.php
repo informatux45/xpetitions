@@ -70,27 +70,27 @@ define('_MI_XPETITIONS_VALID_METHOD', '<span style="color: red;">NUOVO</span> : 
 define('_MI_XPETITIONS_VALID_METHODSC', 'La firma pu&ograve; essere validata in due modi:<br />1. Email : Una mail viene inviata al firmatario che dovr&agrave; confermare la propria firma cliccando su un link inviato via mail<br />2. Auto : La firma viene validata automaticamente cliccando su un pulsante al momento della firma, senza l\'invio di nessuna mail');
 
 // xoops version
-define("_MI_XPETITIONS_INDEX", "Template della pagina di index");
-define("_MI_XPETITIONS_HEADER", "Template per l'header dell'index");
-define("_MI_XPETITIONS_FOOTER", "Template per il footer dell'index");
-define("_MI_XPETITIONS_DISPLAY_INDEX", "Template per la pagina di index delle petizioni");
-define("_MI_XPETITIONS_DISPLAY_FORM", "Template per il form della firma");
-define("_MI_XPETITIONS_DISPLAY_TOOLBAR", "Template per la toolbar della petizione");
-define("_MI_XPETITIONS_DISPLAY_SIGNS", "Template per la conferma della firma");
-define("_MI_XPETITIONS_DISPLAY_FRIEND", "Template per il form 'invita un amico'");
-define("_MI_XPETITIONS_DISPLAY_ALLSIGNS", "Template per la visualizzazione delle firme");
-define("_MI_XPETITIONS_DISPLAY_FRIEND_SEND", "Template per la mail 'invita un amico'");
-define("_MI_XPETITIONS_DISPLAY_VALID", "Template per la conferma della firma");
-define("_MI_XPETITIONS_DISPLAY_PRESIGN", "Template per la pre-firma prima della convalida automatica");
-define("_MI_XPETITIONS_DISPLAY_VALID_PRESIGN", "Template per la conferma della firma");
+define('_MI_XPETITIONS_INDEX', 'Template della pagina di index');
+define('_MI_XPETITIONS_HEADER', "Template per l'header dell'index");
+define('_MI_XPETITIONS_FOOTER', "Template per il footer dell'index");
+define('_MI_XPETITIONS_DISPLAY_INDEX', 'Template per la pagina di index delle petizioni');
+define('_MI_XPETITIONS_DISPLAY_FORM', 'Template per il form della firma');
+define('_MI_XPETITIONS_DISPLAY_TOOLBAR', 'Template per la toolbar della petizione');
+define('_MI_XPETITIONS_DISPLAY_SIGNS', 'Template per la conferma della firma');
+define('_MI_XPETITIONS_DISPLAY_FRIEND', "Template per il form 'invita un amico'");
+define('_MI_XPETITIONS_DISPLAY_ALLSIGNS', 'Template per la visualizzazione delle firme');
+define('_MI_XPETITIONS_DISPLAY_FRIEND_SEND', "Template per la mail 'invita un amico'");
+define('_MI_XPETITIONS_DISPLAY_VALID', 'Template per la conferma della firma');
+define('_MI_XPETITIONS_DISPLAY_PRESIGN', 'Template per la pre-firma prima della convalida automatica');
+define('_MI_XPETITIONS_DISPLAY_VALID_PRESIGN', 'Template per la conferma della firma');
 
 // xoops version config
-define("_MI_XPETITIONS_SIGN_TITLE_DEFAULT", "Firmo");
-define("_MI_XPETITIONS_SIGN_DOWNL_DEFAULT", "Scaricare una versione stampabile della petizione");
-define("_MI_XPETITIONS_SIGN_FRIEND_DEFAULT", "Dillo ad un amico");
-define("_MI_XPETITIONS_SIGN_SHOW_DEFAULT", "Vedere firme");
+define('_MI_XPETITIONS_SIGN_TITLE_DEFAULT', 'Firmo');
+define('_MI_XPETITIONS_SIGN_DOWNL_DEFAULT', 'Scaricare una versione stampabile della petizione');
+define('_MI_XPETITIONS_SIGN_FRIEND_DEFAULT', 'Dillo ad un amico');
+define('_MI_XPETITIONS_SIGN_SHOW_DEFAULT', 'Vedere firme');
 
 // blocks
-define("_MI_XPETITIONS_BNAME1", "Ultime firme");
-define("_MI_XPETITIONS_BNAME2", "Petizioni attive");
-define("_MI_XPETITIONS_BNAME3", "Petizioni in archivio");
+define('_MI_XPETITIONS_BNAME1', 'Ultime firme');
+define('_MI_XPETITIONS_BNAME2', 'Petizioni attive');
+define('_MI_XPETITIONS_BNAME3', 'Petizioni in archivio');

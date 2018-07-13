@@ -26,16 +26,16 @@
 //  ------------------------------------------------------------------------ //
 
 // includes
-include_once("header.inc.php");
-include_once(XOOPS_ROOT_PATH."/header.php");
-include_once XOOPS_ROOT_PATH."/class/xoopsmailer.php";
+include_once('header.inc.php');
+include_once(XOOPS_ROOT_PATH . '/header.php');
+include_once XOOPS_ROOT_PATH . '/class/xoopsmailer.php';
 include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
 
 $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : 'tab';
 
 switch ($op) {
 
-case "delsign": // Supprimer une signature
+case 'delsign': // Supprimer une signature
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
     // Récupération des variables
@@ -47,10 +47,10 @@ case "delsign": // Supprimer une signature
         $xpetitions_delete = deleteSignature($xpetitions_name, $xpetitions_signid);
     
         if (!$xpetitions_delete) {
-            redirect_header("signature.php?op=signma", 2, _AM_XPETITIONS_ERROR_DELETE);
+            redirect_header('signature.php?op=signma', 2, _AM_XPETITIONS_ERROR_DELETE);
             exit;
         } else {
-            redirect_header("signature.php?op=signma", 2, _AM_XPETITIONS_VALID_DELETE);
+            redirect_header('signature.php?op=signma', 2, _AM_XPETITIONS_VALID_DELETE);
         }
     } else {
         xoops_cp_header();
@@ -59,7 +59,7 @@ case "delsign": // Supprimer une signature
     }
     break;
 
-case "addsign": // Ajouter manuellement une signature
+case 'addsign': // Ajouter manuellement une signature
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
     // Récupération des variables
@@ -74,17 +74,17 @@ case "addsign": // Ajouter manuellement une signature
         $insert_signature = insertSignaturesMan($name_petition, $petitionid['id'], strtoupper($lastname), strtolower($firstname), $address, $zip, strtoupper($city), $country, $job, $email, formatdatestamp($date));
 
         if (!$insert_signature) {
-            redirect_header("signature.php?op=signma", 2, _AM_XPETITIONS_ERROR_INSERT);
+            redirect_header('signature.php?op=signma', 2, _AM_XPETITIONS_ERROR_INSERT);
             exit;
         } else {
-            redirect_header("signature.php?op=signma", 2, _AM_XPETITIONS_VALID_INSERT);
+            redirect_header('signature.php?op=signma', 2, _AM_XPETITIONS_VALID_INSERT);
         }
     } else {
-        redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_SIGN_DOUBLE);
+        redirect_header('javascript:history.go(-1)', 2, _AM_XPETITIONS_SIGN_DOUBLE);
     }
     break;
 
-case "signma": // Enregistrer/Supprimer des signatures manuellement
+case 'signma': // Enregistrer/Supprimer des signatures manuellement
     xoops_cp_header();
     xpetitions_adminmenu('signature.php');
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
@@ -97,14 +97,14 @@ case "signma": // Enregistrer/Supprimer des signatures manuellement
 	<?php
 
     // Formulaire insérer/supprimer des signatures
-    include "../include/adddel_signs.inc.php";
+    include '../include/adddel_signs.inc.php';
 
     //echo '</div>'; // fin id central
     xpetitions_adminfooter();
     xoops_cp_footer();
     break;
 
-case "novalid": // Formulaire d'envoi email multiple pour les retardataires
+case 'novalid': // Formulaire d'envoi email multiple pour les retardataires
     xoops_cp_header();
     xpetitions_adminmenu('signature.php');
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
@@ -117,13 +117,13 @@ case "novalid": // Formulaire d'envoi email multiple pour les retardataires
 	<?php
 
     // Formulaire d'envoi email multiple (retardataires)
-    include "../include/sendlatecomer.inc.php";
+    include '../include/sendlatecomer.inc.php';
 
     xpetitions_adminfooter();
         xoops_cp_footer();
     break;
 
-case "signfo": // Validation forcée des signatures non validées
+case 'signfo': // Validation forcée des signatures non validées
     include XOOPS_ROOT_PATH.'/header.php';
     $petition_id   = intval($_REQUEST['id']);
     $petition_name = $myts->oopsAddSlashes($_REQUEST['name']);
@@ -131,7 +131,7 @@ case "signfo": // Validation forcée des signatures non validées
     // confirmation donc suppression de la pétition
     if ($ok == 1 && isset($petition_name)) {
         $update_validation = validSignatureForced($petition_name);
-        $message = (!$update_validation) ? redirect_header("signature.php", 2, _AM_XPETITIONS_ERROR_UPDATE) : redirect_header("signature.php", 2, _AM_XPETITIONS_VALID_UPDATE);
+        $message = (!$update_validation) ? redirect_header('signature.php', 2, _AM_XPETITIONS_ERROR_UPDATE) : redirect_header('signature.php', 2, _AM_XPETITIONS_VALID_UPDATE);
     } else {
         xoops_cp_header();
         $petition_title = getPetitionDetails($id);
@@ -140,7 +140,7 @@ case "signfo": // Validation forcée des signatures non validées
     }
     break;
 
-case "latecomer_send": // Envoi des emails aux retardaires
+case 'latecomer_send': // Envoi des emails aux retardaires
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
     // Récupération des variables
@@ -153,18 +153,18 @@ case "latecomer_send": // Envoi des emails aux retardaires
     // Remplacer les chaines de caracteres dans le corps du message
     foreach ($array_latecomers as $row) {
         $body = $_POST['message'];
-        $body = preg_replace("/{USER_NAME}/", $row['prenom'].' '.$row['name'], $body);
-        $body = preg_replace("/{PETITION}/", $myts->DisplayTarea($petition_detail['title']), $body);
-        $body = preg_replace("/{USER_EMAIL}/", $row['email'], $body);
-        $body = preg_replace("/{SITE_URL}/", XOOPS_URL, $body);
-        $body = preg_replace("/{SITE_NAME}/", $myts->DisplayTarea($xoopsConfig['sitename']), $body);
-        $body = preg_replace("/{LINK_URL}/", $link_url.$row['cle'], $body);
+        $body = preg_replace('/{USER_NAME}/', $row['prenom'] . ' ' . $row['name'], $body);
+        $body = preg_replace('/{PETITION}/', $myts->DisplayTarea($petition_detail['title']), $body);
+        $body = preg_replace('/{USER_EMAIL}/', $row['email'], $body);
+        $body = preg_replace('/{SITE_URL}/', XOOPS_URL, $body);
+        $body = preg_replace('/{SITE_NAME}/', $myts->DisplayTarea($xoopsConfig['sitename']), $body);
+        $body = preg_replace('/{LINK_URL}/', $link_url . $row['cle'], $body);
         $body = stripslashes($body);
 
         $get_subject    = getEmailInfos('1'); // Email aux retardataires
         $sample_subject = $get_subject['subject'];
-        $sample_subject = preg_replace("/{SITE_NAME}/", $myts->DisplayTarea($xoopsConfig['sitename']), $sample_subject);
-        $sample_subject = preg_replace("/{PETITION}/", $myts->DisplayTarea($petition_detail['title']), $sample_subject);
+        $sample_subject = preg_replace('/{SITE_NAME}/', $myts->DisplayTarea($xoopsConfig['sitename']), $sample_subject);
+        $sample_subject = preg_replace('/{PETITION}/', $myts->DisplayTarea($petition_detail['title']), $sample_subject);
 
         // envoi d'un email à votre ami
         $site_email  = $petition_email;
@@ -179,17 +179,17 @@ case "latecomer_send": // Envoi des emails aux retardaires
         $xoopsMailer->setSubject($sample_subject);
         $xoopsMailer->setBody($body);
         if (!$xoopsMailer->send(true)) {
-            redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_EMAIL_SEND_ERROR_LATECOMER);
+            redirect_header('javascript:history.go(-1)', 2, _AM_XPETITIONS_EMAIL_SEND_ERROR_LATECOMER);
         }
     }
     if ($xoopsMailer->getErrors()) {
-        redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_LATECOMER_SEND_ERROR);
+        redirect_header('javascript:history.go(-1)', 2, _AM_XPETITIONS_LATECOMER_SEND_ERROR);
     }
     // message de confirmation
-    redirect_header("signature.php", 2, _AM_XPETITIONS_EMAIL_SEND_LATECOMER);
+    redirect_header('signature.php', 2, _AM_XPETITIONS_EMAIL_SEND_LATECOMER);
     break;
 
-case "recorded": // Affichage des signatures enregistrées
+case 'recorded': // Affichage des signatures enregistrées
     xoops_cp_header();
     xpetitions_adminmenu('signature.php');
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
@@ -254,7 +254,7 @@ case "recorded": // Affichage des signatures enregistrées
     xoops_cp_footer();
     break;
 
-case "extract": // Extraire les signatures validées au format csv
+case 'extract': // Extraire les signatures validées au format csv
     xoops_cp_header();
     xpetitions_adminmenu('signature.php');
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
@@ -268,7 +268,7 @@ case "extract": // Extraire les signatures validées au format csv
     $petition_title       = getPetitionDetails(intval($_GET['id']));
     $petition_sign_entete = [_AM_XPETITIONS_SIGN_CSV_LASTNAME, _AM_XPETITIONS_SIGN_CSV_FIRSTNAME, _AM_XPETITIONS_SIGN_CSV_EMAIL, _AM_XPETITIONS_SIGN_CSV_ADDRESS, _AM_XPETITIONS_SIGN_CSV_ZIP, _AM_XPETITIONS_SIGN_CSV_CITY, _AM_XPETITIONS_SIGN_CSV_COUNTRY, _AM_XPETITIONS_SIGN_CSV_JOB, _AM_XPETITIONS_SIGN_CSV_IP];
     $petition_signs       = getSignaturesCsv($petition_name);
-    $date                 = date("jmY-Hi");
+    $date                 = date('jmY-Hi');
 
     echo _AM_XPETITIONS_SIGN_CSV_TITLE;
     echo _AM_XPETITIONS_SIGN_CSV_PETITION.$myts->DisplayTarea($petition_title['title']).'<br /><br />';
@@ -291,7 +291,7 @@ case "extract": // Extraire les signatures validées au format csv
     xoops_cp_footer();
     break;
 
-case "tab": // Récapitulatifs des signatures par pétitions
+case 'tab': // Récapitulatifs des signatures par pétitions
     default:
     xoops_cp_header();
     xpetitions_adminmenu('signature.php');
@@ -370,7 +370,7 @@ case "tab": // Récapitulatifs des signatures par pétitions
     xoops_cp_footer();
     break;
 
-case "signshow": // Gestion de l'affichage des signatures
+case 'signshow': // Gestion de l'affichage des signatures
     xoops_cp_header();
     xpetitions_adminmenu('signature.php');
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
@@ -386,20 +386,20 @@ case "signshow": // Gestion de l'affichage des signatures
     $signshow_col   = getOptionInfos('signature_show');
     $signshow_nbcol = getOptionInfos('signature_nbcol');
     $signshow_entry = getOptionInfos('signature_entry');
-    list($job, $country, $email, $city, $date) = explode("|", $signshow_entry['options']);
+    list($job, $country, $email, $city, $date) = explode('|', $signshow_entry['options']);
 
     // Assignation des variables
     $col   = $signshow_col['options'];
     $nbcol = $signshow_nbcol['options'];
 
     // Formulaire insérer/supprimer des signatures
-    include "../include/signs.inc.php";
+    include '../include/signs.inc.php';
 
     xpetitions_adminfooter();
     xoops_cp_footer();
     break;
 
-case "signshow_update": // Mise a jour de l'affichage des signatures
+case 'signshow_update': // Mise a jour de l'affichage des signatures
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
     // Récupération des variables
@@ -418,9 +418,9 @@ case "signshow_update": // Mise a jour de l'affichage des signatures
     $update_signshow = updateSignaturesShow($col, $nbcol, $entries);
 
     if (!$update_signshow) {
-        redirect_header("signature.php?op=signshow", 2, _AM_XPETITIONS_ERROR_UPDATE);
+        redirect_header('signature.php?op=signshow', 2, _AM_XPETITIONS_ERROR_UPDATE);
     } else {
-        redirect_header("signature.php?op=signshow", 2, _AM_XPETITIONS_VALID_UPDATE);
+        redirect_header('signature.php?op=signshow', 2, _AM_XPETITIONS_VALID_UPDATE);
     }
     break;
 }

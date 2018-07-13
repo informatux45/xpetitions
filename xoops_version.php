@@ -14,18 +14,18 @@
 // Directory XPETITIONS
 $xpetition_dirname = basename(dirname(__FILE__));
 
-$modversion['version']        = "1.21";
+$modversion['version']        = '1.21';
 $modversion['module_status']  = 'Beta 1';
 $modversion['release_date']   = '2018/07/11';
 $modversion['name']           = _MI_XPETITIONS_NAME;
 $modversion['description']    = _MI_XPETITIONS_DESC;
-$modversion['credits']        = "Module de petitions en ligne (INFORMATUX).";
-$modversion['author']         = "INFORMATUX - Consultant informatique [www.informatux.com]";
+$modversion['credits']        = 'Module de petitions en ligne (INFORMATUX).';
+$modversion['author']         = 'INFORMATUX - Consultant informatique [www.informatux.com]';
 $modversion['help']           = 'page=help';
 $modversion['license']        = 'GPLv2 see LICENSE';
-$modversion['license_url']    = "//www.gnu.org/licenses/gpl-2.0.html";
+$modversion['license_url']    = '//www.gnu.org/licenses/gpl-2.0.html';
 $modversion['official']       = 0;
-$modversion['image']          = "images/xpetitions_logo.png";
+$modversion['image']          = 'images/xpetitions_logo.png';
 $modversion['dirname']        = $xpetition_dirname;
 $modversion['dirmoduleadmin'] = '/Frameworks/moduleclasses/moduleadmin';
 $modversion['icons16']        = '../../Frameworks/moduleclasses/icons/16';
@@ -33,79 +33,79 @@ $modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
 // System menu
 $modversion['system_menu'] = 1;
 // About
-$modversion["module_website_url"]  = "//www.informatux.com/";
-$modversion["module_website_name"] = "INFORMATUX";
-$modversion["status_version"]      = "Stable";
+$modversion['module_website_url']  = '//www.informatux.com/';
+$modversion['module_website_name'] = 'INFORMATUX';
+$modversion['status_version']      = 'Stable';
 $modversion['min_php']             = '5.2';
-$modversion['min_xoops']           = "2.5.0";
+$modversion['min_xoops']           = '2.5.0';
 $modversion['min_admin']           = '1.1';
 $modversion['min_db']              = ['mysql' => '5.0.7', 'mysqli' => '5.0.7'];
-$modversion['author_realname']     = "Patrice BOUTHIER";
-$modversion['author_website_url']  = "//www.informatux.com";
-$modversion['author_website_name'] = "Consultant informatique";
-$modversion['author_email']        = "contact@informatux.com";
-$modversion['demo_site_url']       = "";
-$modversion['demo_site_name']      = "";
-$modversion['support_site_url']    = "https://github.com/informatux45/xpetitions";
-$modversion['support_site_name']   = "Consultant informatique - Github";
-$modversion['submit_bug']          = "https://github.com/informatux45/xpetitions";
-$modversion['submit_feature']      = "https://github.com/informatux45/xpetitions";
+$modversion['author_realname']     = 'Patrice BOUTHIER';
+$modversion['author_website_url']  = '//www.informatux.com';
+$modversion['author_website_name'] = 'Consultant informatique';
+$modversion['author_email']        = 'contact@informatux.com';
+$modversion['demo_site_url']       = '';
+$modversion['demo_site_name']      = '';
+$modversion['support_site_url']    = 'https://github.com/informatux45/xpetitions';
+$modversion['support_site_name']   = 'Consultant informatique - Github';
+$modversion['submit_bug']          = 'https://github.com/informatux45/xpetitions';
+$modversion['submit_feature']      = 'https://github.com/informatux45/xpetitions';
 
 // Developers
-$modversion['contributors']['developers'][0]['name']    = "Patrice Bouthier";
-$modversion['contributors']['developers'][0]['uname']   = "webmaster";
-$modversion['contributors']['developers'][0]['email']   = "contact@informatux.com";
-$modversion['contributors']['developers'][0]['website'] = "//www.informatux.com";
+$modversion['contributors']['developers'][0]['name']    = 'Patrice Bouthier';
+$modversion['contributors']['developers'][0]['uname']   = 'webmaster';
+$modversion['contributors']['developers'][0]['email']   = 'contact@informatux.com';
+$modversion['contributors']['developers'][0]['website'] = '//www.informatux.com';
 
 // Translators
-$modversion['contributors']['translators'][0]['language'] = "English";
-$modversion['contributors']['translators'][0]['name']     = "Thomas Hubert";
-$modversion['contributors']['translators'][0]['uname']    = "thubert";
-$modversion['contributors']['translators'][0]['email']    = "";
-$modversion['contributors']['translators'][0]['website']  = "";
+$modversion['contributors']['translators'][0]['language'] = 'English';
+$modversion['contributors']['translators'][0]['name']     = 'Thomas Hubert';
+$modversion['contributors']['translators'][0]['uname']    = 'thubert';
+$modversion['contributors']['translators'][0]['email']    = '';
+$modversion['contributors']['translators'][0]['website']  = '';
 
-$modversion['contributors']['translators'][1]['language'] = "Italian";
-$modversion['contributors']['translators'][1]['name']     = "Francesco Mulassano";
-$modversion['contributors']['translators'][1]['uname']    = "";
-$modversion['contributors']['translators'][1]['email']    = "info@takeaweb.it";
-$modversion['contributors']['translators'][1]['website']  = "//www.takeaweb.it";
+$modversion['contributors']['translators'][1]['language'] = 'Italian';
+$modversion['contributors']['translators'][1]['name']     = 'Francesco Mulassano';
+$modversion['contributors']['translators'][1]['uname']    = '';
+$modversion['contributors']['translators'][1]['email']    = 'info@takeaweb.it';
+$modversion['contributors']['translators'][1]['website']  = '//www.takeaweb.it';
 
 // Testers
-$modversion['contributors']['testers'][0]['name']    = "Patrice Bouthier";
-$modversion['contributors']['testers'][0]['uname']   = "webmaster";
-$modversion['contributors']['testers'][0]['email']   = "contact@informatux.com";
-$modversion['contributors']['testers'][0]['website'] = "//www.informatux.com";
+$modversion['contributors']['testers'][0]['name']    = 'Patrice Bouthier';
+$modversion['contributors']['testers'][0]['uname']   = 'webmaster';
+$modversion['contributors']['testers'][0]['email']   = 'contact@informatux.com';
+$modversion['contributors']['testers'][0]['website'] = '//www.informatux.com';
 
-$modversion['contributors']['testers'][1]['language'] = "Italian";
-$modversion['contributors']['testers'][1]['name']     = "Francesco Mulassano";
-$modversion['contributors']['testers'][1]['uname']    = "";
-$modversion['contributors']['testers'][1]['email']    = "info@takeaweb.it";
-$modversion['contributors']['testers'][1]['website']  = "//www.takeaweb.it";
+$modversion['contributors']['testers'][1]['language'] = 'Italian';
+$modversion['contributors']['testers'][1]['name']     = 'Francesco Mulassano';
+$modversion['contributors']['testers'][1]['uname']    = '';
+$modversion['contributors']['testers'][1]['email']    = 'info@takeaweb.it';
+$modversion['contributors']['testers'][1]['website']  = '//www.takeaweb.it';
 
 // Documenters
-$modversion['contributors']['documenters'][0]['name']    = "Patrice Bouthier";
-$modversion['contributors']['documenters'][0]['uname']   = "webmaster";
-$modversion['contributors']['documenters'][0]['email']   = "contact@informatux.com";
-$modversion['contributors']['documenters'][0]['website'] = "//www.informatux.com";
+$modversion['contributors']['documenters'][0]['name']    = 'Patrice Bouthier';
+$modversion['contributors']['documenters'][0]['uname']   = 'webmaster';
+$modversion['contributors']['documenters'][0]['email']   = 'contact@informatux.com';
+$modversion['contributors']['documenters'][0]['website'] = '//www.informatux.com';
 
 // Mysql file
-$modversion['sqlfile']['mysql'] = "sql/mysql.sql";
+$modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
 
 // Tables created by sql file
-$modversion['tables'][0] = "xpetitions_emails";
-$modversion['tables'][1] = "xpetitions_petitions";
-$modversion['tables'][2] = "xpetitions_fields";
-$modversion['tables'][3] = "xpetitions_options";
+$modversion['tables'][0] = 'xpetitions_emails';
+$modversion['tables'][1] = 'xpetitions_petitions';
+$modversion['tables'][2] = 'xpetitions_fields';
+$modversion['tables'][3] = 'xpetitions_options';
 
 // Admin things
 $modversion['hasAdmin']   = 1;
-$modversion['adminindex'] = "admin/index.php";
-$modversion['adminmenu']  = "admin/menu.php";
+$modversion['adminindex'] = 'admin/index.php';
+$modversion['adminmenu']  = 'admin/menu.php';
 
 // Search
 $modversion['hasSearch']      = 1;
-$modversion['search']['file'] = "include/search.inc.php";
-$modversion['search']['func'] = $modversion["dirname"] . "_search";
+$modversion['search']['file'] = 'include/search.inc.php';
+$modversion['search']['func'] = $modversion['dirname'] . '_search';
 
 // Menu
 $modversion['hasMain'] = 1;
@@ -155,31 +155,31 @@ $modversion['templates'][13]['description'] = _MI_XPETITIONS_DISPLAY_VALID_PRESI
 $j = 0;
 
 $j++;
-$modversion['blocks'][$j]['file']        = "xpetitions_block_last_signs.php";
+$modversion['blocks'][$j]['file']        = 'xpetitions_block_last_signs.php';
 $modversion['blocks'][$j]['name']        = _MI_XPETITIONS_BNAME1;
 $modversion['blocks'][$j]['description'] = 'Afficher les derni&egrave;res signatures';
-$modversion['blocks'][$j]['show_func']   = "b_xpetitions_last_signs_show";
-$modversion['blocks'][$j]['edit_func']   = "b_xpetitions_last_signs_edit";
+$modversion['blocks'][$j]['show_func']   = 'b_xpetitions_last_signs_show';
+$modversion['blocks'][$j]['edit_func']   = 'b_xpetitions_last_signs_edit';
 $modversion['blocks'][$j]['options']     = '20|5';
 $modversion['blocks'][$j]['template']    = 'xpetitions_block_last_signs.html';
 
 // Block that displays the all petitions
 $j++;
-$modversion['blocks'][$j]['file']        = "xpetitions_block_all_petitions.php";
+$modversion['blocks'][$j]['file']        = 'xpetitions_block_all_petitions.php';
 $modversion['blocks'][$j]['name']        = _MI_XPETITIONS_BNAME2;
 $modversion['blocks'][$j]['description'] = 'Afficher toutes les p&eacute;titions en ligne';
-$modversion['blocks'][$j]['show_func']   = "b_xpetitions_all_petitions_show";
-$modversion['blocks'][$j]['edit_func']   = "b_xpetitions_all_petitions_edit";
+$modversion['blocks'][$j]['show_func']   = 'b_xpetitions_all_petitions_show';
+$modversion['blocks'][$j]['edit_func']   = 'b_xpetitions_all_petitions_edit';
 $modversion['blocks'][$j]['options']     = '50';
 $modversion['blocks'][$j]['template']    = 'xpetitions_block_all_petitions.html';
 
 // Block that displays the all archives petitions
 $j++;
-$modversion['blocks'][$j]['file']        = "xpetitions_block_all_archives.php";
+$modversion['blocks'][$j]['file']        = 'xpetitions_block_all_archives.php';
 $modversion['blocks'][$j]['name']        = _MI_XPETITIONS_BNAME3;
 $modversion['blocks'][$j]['description'] = 'Afficher toutes les p&eacute;titions archiv&eacute;es';
-$modversion['blocks'][$j]['show_func']   = "b_xpetitions_all_archives_show";
-$modversion['blocks'][$j]['edit_func']   = "b_xpetitions_all_archives_edit";
+$modversion['blocks'][$j]['show_func']   = 'b_xpetitions_all_archives_show';
+$modversion['blocks'][$j]['edit_func']   = 'b_xpetitions_all_archives_edit';
 $modversion['blocks'][$j]['options']     = '50';
 $modversion['blocks'][$j]['template']    = 'xpetitions_block_all_archives.html';
 

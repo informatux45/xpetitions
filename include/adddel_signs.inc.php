@@ -12,15 +12,15 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
+include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
 
 // Préparation des tableaux à fournir au formulaire
 $xpetitions_name = getPetitionsInfos();
 
-include("delform.inc.php");
+include('delform.inc.php');
 
 // Initialisation du formulaire
-$addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE_ADDFORM, "addform", "signature.php?op=addsign");
+$addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE_ADDFORM, 'addform', 'signature.php?op=addsign');
 
 // Prénom du signataire
 $field_firstname = new XoopsFormText(_AM_XPETITIONS_FNAME_ADDFORM, 'firstname', 35, 50, '');

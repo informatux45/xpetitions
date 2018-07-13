@@ -12,13 +12,13 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
+include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
 
 $post    = intval($_GET['id']);
 $is_file = getPetitionDetails($post);
 
 // Initialisation du formulaire
-$editform = new XoopsThemeForm(_AM_XPETITIONS_TITLE1_EDITFORM, "editform", "petitions.php?op=update");
+$editform = new XoopsThemeForm(_AM_XPETITIONS_TITLE1_EDITFORM, 'editform', 'petitions.php?op=update');
 $editform->setExtra("enctype='multipart/form-data'");
 
 // Nom de la table des signatures de la pétition

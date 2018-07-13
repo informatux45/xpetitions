@@ -200,7 +200,7 @@ function getSignaturesCsv($petition_name)
 {
     // Extraire les signatures validées pour un fichier csv
     global $xoopsDB;
-    $sql = "SELECT name, prenom, email, address, zip, city, country, job, ip FROM " . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . " WHERE validation = 1";
+    $sql = 'SELECT name, prenom, email, address, zip, city, country, job, ip FROM ' . $xoopsDB->prefix('xpetitions_petitions_' . $petition_name) . ' WHERE validation = 1';
 
     $result = $xoopsDB->query($sql);
     if (!$result) {
@@ -351,7 +351,7 @@ function insertSignatures($name_petition, $id, $firstname, $lastname, $address, 
 {
     // insertion d'une nouvelle signature
     global $xoopsDB;
-    $sql = "INSERT INTO " . $xoopsDB->prefix('xpetitions_petitions_'.$name_petition) . " VALUES (
+    $sql = 'INSERT INTO ' . $xoopsDB->prefix('xpetitions_petitions_' . $name_petition) . " VALUES (
 	    '', '$id', '0', '0', '$firstname', '$lastname', '$email', '$address', '$zip', '$city', '$country', '$job', '$date', '$ip', '$cle')";
     $result = $xoopsDB->query($sql);
     if (!$result) {
@@ -365,7 +365,7 @@ function insertPreSignatures($name_petition, $id, $firstname, $lastname, $addres
 {
     // insertion d'une nouvelle signature
     global $xoopsDB;
-    $sql = "INSERT INTO " . $xoopsDB->prefix('xpetitions_petitions_'.$name_petition) . " VALUES (
+    $sql = 'INSERT INTO ' . $xoopsDB->prefix('xpetitions_petitions_' . $name_petition) . " VALUES (
 	    '', '$id', '1', '0', '$firstname', '$lastname', '$email', '$address', '$zip', '$city', '$country', '$job', '$date', '$ip', '$cle')";
     $result = $xoopsDB->query($sql);
     if (!$result) {
@@ -379,7 +379,7 @@ function insertSignaturesMan($name_petition, $id, $firstname, $lastname, $addres
 {
     // insertion d'une nouvelle signature
     global $xoopsDB;
-    $sql = "INSERT INTO " . $xoopsDB->prefix('xpetitions_petitions_'.$name_petition) . " VALUES (
+    $sql = 'INSERT INTO ' . $xoopsDB->prefix('xpetitions_petitions_' . $name_petition) . " VALUES (
 	    '', '$id', '1', '0', '$firstname', '$lastname', '$email', '$address', '$zip', '$city', '$country', '$job', '$date', '0.0.0.0', 'f0f0f0f0f0f0f0')";
     $result = $xoopsDB->query($sql);
     if (!$result) {
@@ -429,7 +429,7 @@ function insertPetition($name, $title, $description, $email, $date, $status, $wh
         return false;
     }
 
-    $sql2 = "INSERT INTO " . $xoopsDB->prefix('xpetitions_petitions') . " VALUES (
+    $sql2 = 'INSERT INTO ' . $xoopsDB->prefix('xpetitions_petitions') . " VALUES (
 	    '', '$name', '$title', '$description', '$email', '$date', '$status', '$whoview', '$link', '$linkfile')";
     $result2 = $xoopsDB->query($sql2);
     if (!$result2) {
@@ -461,7 +461,7 @@ function updateFields($field_address1, $field_address2, $field_zip1, $field_zip2
 {
     // mise à jour d'une pétition
     global $xoopsDB;
-    $sql1 = "UPDATE " . $xoopsDB->prefix('xpetitions_fields') . "
+    $sql1 = 'UPDATE ' . $xoopsDB->prefix('xpetitions_fields') . "
            SET visibility ='$field_address1',
            obligatory = '$field_address2'
            WHERE id= '3'";
@@ -469,7 +469,7 @@ function updateFields($field_address1, $field_address2, $field_zip1, $field_zip2
     if (!$result1) {
         return false;
     }
-    $sql2 = "UPDATE " . $xoopsDB->prefix('xpetitions_fields') . "
+    $sql2 = 'UPDATE ' . $xoopsDB->prefix('xpetitions_fields') . "
            SET visibility ='$field_zip1',
            obligatory = ' $field_zip2'
            WHERE id= '4'";
@@ -477,7 +477,7 @@ function updateFields($field_address1, $field_address2, $field_zip1, $field_zip2
     if (!$result2) {
         return false;
     }
-    $sql3 = "UPDATE " . $xoopsDB->prefix('xpetitions_fields') . "
+    $sql3 = 'UPDATE ' . $xoopsDB->prefix('xpetitions_fields') . "
            SET visibility ='$field_city1',
            obligatory = '$field_city2'
            WHERE id= '5'";
@@ -485,7 +485,7 @@ function updateFields($field_address1, $field_address2, $field_zip1, $field_zip2
     if (!$result3) {
         return false;
     }
-    $sql4 = "UPDATE " . $xoopsDB->prefix('xpetitions_fields') . "
+    $sql4 = 'UPDATE ' . $xoopsDB->prefix('xpetitions_fields') . "
            SET visibility ='$field_country1',
            obligatory = '$field_country2'
            WHERE id= '6'";
@@ -493,7 +493,7 @@ function updateFields($field_address1, $field_address2, $field_zip1, $field_zip2
     if (!$result4) {
         return false;
     }
-    $sql5 = "UPDATE " . $xoopsDB->prefix('xpetitions_fields') . "
+    $sql5 = 'UPDATE ' . $xoopsDB->prefix('xpetitions_fields') . "
            SET visibility ='$field_job1',
            obligatory = '$field_job2'
            WHERE id= '7'";
@@ -509,7 +509,7 @@ function updateEmail($subject_unconfirmed, $message_unconfirmed, $subject_toconf
 {
     // mise à jour des infos emails type
     global $xoopsDB;
-    $sql1 = "UPDATE " . $xoopsDB->prefix('xpetitions_emails') . "
+    $sql1 = 'UPDATE ' . $xoopsDB->prefix('xpetitions_emails') . "
            SET subject ='$subject_unconfirmed',
            message = '$message_unconfirmed'
            WHERE id= '1'";
@@ -518,7 +518,7 @@ function updateEmail($subject_unconfirmed, $message_unconfirmed, $subject_toconf
         return false;
     }
 
-    $sql2 = "UPDATE " . $xoopsDB->prefix('xpetitions_emails') . "
+    $sql2 = 'UPDATE ' . $xoopsDB->prefix('xpetitions_emails') . "
            SET subject ='$subject_toconfirmed',
            message = '$message_toconfirmed'
            WHERE id= '2'";
@@ -534,7 +534,7 @@ function updatePetition($id, $title, $description, $email, $status, $whoview, $d
 {
     // mise à jour d'une pétition
     global $xoopsDB;
-    $sql = "UPDATE " . $xoopsDB->prefix('xpetitions_petitions') . "
+    $sql = 'UPDATE ' . $xoopsDB->prefix('xpetitions_petitions') . "
            SET title ='$title',
            description = '$description',
            email = '$email',
@@ -556,7 +556,7 @@ function updatePetitionFile($id, $link, $link_file)
 {
     // mise à jour d'un fichier de pétition
     global $xoopsDB;
-    $sql = "UPDATE " . $xoopsDB->prefix('xpetitions_petitions') . "
+    $sql = 'UPDATE ' . $xoopsDB->prefix('xpetitions_petitions') . "
            SET file = '$link',
            link_file = '$link_file'
            WHERE id= '$id'";
@@ -572,7 +572,7 @@ function updateOption($name, $value_option, $value_div = null, $sort = null)
 {
     // mise à jour d'une option
     global $xoopsDB;
-    $sql = "UPDATE " . $xoopsDB->prefix('xpetitions_options') . "
+    $sql = 'UPDATE ' . $xoopsDB->prefix('xpetitions_options') . "
            SET options = '$value_option'
            WHERE name = '$name'";
     $result = $xoopsDB->query($sql);
@@ -587,19 +587,19 @@ function updateSignaturesShow($col, $nbcol, $entries)
 {
     // mise à jour de l'affichage des signatures
     global $xoopsDB;
-    $sql1    = "UPDATE " . $xoopsDB->prefix('xpetitions_options') . " SET options = '$col' WHERE name = 'signature_show'";
+    $sql1    = 'UPDATE ' . $xoopsDB->prefix('xpetitions_options') . " SET options = '$col' WHERE name = 'signature_show'";
     $result1 = $xoopsDB->query($sql1);
     if (!$result1) {
         return false;
     }
 
-    $sql2    = "UPDATE " . $xoopsDB->prefix('xpetitions_options') . " SET options = '$nbcol' WHERE name = 'signature_nbcol'";
+    $sql2    = 'UPDATE ' . $xoopsDB->prefix('xpetitions_options') . " SET options = '$nbcol' WHERE name = 'signature_nbcol'";
     $result2 = $xoopsDB->query($sql2);
     if (!$result2) {
         return false;
     }
 
-    $sql3    = "UPDATE " . $xoopsDB->prefix('xpetitions_options') . " SET options = '$entries' WHERE name = 'signature_entry'";
+    $sql3    = 'UPDATE ' . $xoopsDB->prefix('xpetitions_options') . " SET options = '$entries' WHERE name = 'signature_entry'";
     $result3 = $xoopsDB->query($sql3);
     if (!$result3) {
         return false;
@@ -612,7 +612,7 @@ function validSignatureForced($petition_name)
 {
     // mise à jour de la signature pour validation
     global $xoopsDB;
-    $sql = "UPDATE " . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . "
+    $sql = 'UPDATE ' . $xoopsDB->prefix('xpetitions_petitions_' . $petition_name) . "
            SET validation = '1'";
     $result = $xoopsDB->queryF($sql);
     if (!$result) {
@@ -626,7 +626,7 @@ function validSignature($petition_name, $petition_cle, $date_sign)
 {
     // mise à jour de la signature pour validation
     global $xoopsDB;
-    $sql = "UPDATE " . $xoopsDB->prefix('xpetitions_petitions_'.$petition_name) . "
+    $sql = 'UPDATE ' . $xoopsDB->prefix('xpetitions_petitions_' . $petition_name) . "
            SET validation = '1',
            date = '$date_sign'
            WHERE cle = '$petition_cle'";
@@ -645,12 +645,12 @@ function limite($petitions_pagestart, $petitions_count, $ligneparpage, $petition
     // et que le paramètre n'est pas supérieur au nombre de ligne de la requête
     if (isset($_REQUEST['page']) && ($petitions_pagestart < $petitions_count)) {
         $page = intval($_REQUEST['page']);
-        $petitions_sql .= " LIMIT ".$page.",".$ligneparpage.";";
+        $petitions_sql .= ' LIMIT ' . $page . ',' . $ligneparpage . ';';
         $result = $xoopsDB->query($petitions_sql);
     }
     // Sinon on affiche la première page
     else {
-        $petitions_sql .= " LIMIT 0,".$ligneparpage.";";
+        $petitions_sql .= ' LIMIT 0,' . $ligneparpage . ';';
         $result = $xoopsDB->query($petitions_sql);
     }
     return $result;

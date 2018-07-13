@@ -15,7 +15,7 @@ function xpetitions_search($queryarray, $andor, $limit, $offset, $userid)
 {
     global $xoopsDB, $xoopsModule, $xoopsModuleConfig;
     
-    $sql = "SELECT id, title, description, date FROM ".$xoopsDB->prefix('xpetitions_petitions')." WHERE ";
+    $sql = 'SELECT id, title, description, date FROM ' . $xoopsDB->prefix('xpetitions_petitions') . ' WHERE ';
     list($CID, $pagetitle, $pageheadline, $page, $htmlfile) = $xoopsDB->fetchRow($sql);
 
     // because count() returns 1 even if a supplied variable
@@ -26,15 +26,15 @@ function xpetitions_search($queryarray, $andor, $limit, $offset, $userid)
             $sql .= " $andor ";
             $sql .= "(title LIKE '%$queryarray[$i]%' OR description LIKE '%$queryarray[$i]%' OR date LIKE '%$queryarray[$i]%')";
         }
-        $sql .= ") ";
+        $sql .= ') ';
     }
-    $sql .= "ORDER BY date DESC";
+    $sql .= 'ORDER BY date DESC';
     $result = $xoopsDB->query($sql, $limit, $offset);
     $ret = [];
     $i = 0;
     while ($myrow = $xoopsDB->fetchArray($result)) {
         // 		$ret[$i]['image'] = "images/cat/default.gif";
-        $ret[$i]['link'] = "index.php?id=".$myrow['id']."";
+        $ret[$i]['link'] = 'index.php?id=' . $myrow['id'] . '';
         $ret[$i]['title'] = $myrow['title'];
         $ret[$i]['time'] = $myrow['date'];
         $i++;

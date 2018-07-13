@@ -11,7 +11,7 @@
 /*            <http://www.xoops.org/>          */
 /* ******************************************* */
 
-include("header.php");
+include('header.php');
 
 if (!isset($_REQUEST['op']) && !isset($_REQUEST['id'])) {
     $op       = 'index';
@@ -27,43 +27,43 @@ if (!isset($_REQUEST['op']) && !isset($_REQUEST['id'])) {
 }
 
 $xoopsOption['template_main'] = 'xpetitions_' . $template . '.html';
-include(XOOPS_ROOT_PATH."/header.php");
-include(XOOPS_ROOT_PATH."/class/pagenav.php");
+include(XOOPS_ROOT_PATH . '/header.php');
+include(XOOPS_ROOT_PATH . '/class/pagenav.php');
 
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
 // url du module
 $module_url = '/modules/' . $xoopsModule->getVar('dirname');
-$xoopsTpl->assign("xpetitions_urlmod", $module_url);
+$xoopsTpl->assign('xpetitions_urlmod', $module_url);
 
 // si l'option barre de navigation à oui alors on l'affiche
 $name_nav = ($xoopsModuleConfig['navigation'] == 1) ? '1' : '';
-$xoopsTpl->assign("name_nav", $name_nav);
+$xoopsTpl->assign('name_nav', $name_nav);
 
 // si l'option barre de navigation lien de la page accueil à oui alors on l'affiche
 $name_nav_home = ($xoopsModuleConfig['navigation_home'] == 1) ? '1' : '';
-$xoopsTpl->assign("name_nav_home", $name_nav_home);
+$xoopsTpl->assign('name_nav_home', $name_nav_home);
 
 // si l'option affichage des petitions de la page accueil : Ligne (1) ou Colonne (2)
-$xoopsTpl->assign("show_petitions_home", $xoopsModuleConfig['show_petitions_home']);
+$xoopsTpl->assign('show_petitions_home', $xoopsModuleConfig['show_petitions_home']);
 
 // urbanspaceman mod
 if (isset($id)) {
     $petition_detail = getPetitionDetails(intval($id));
     if ($petition_detail['whoview'] == '1') {
-        $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW1);
-        $xoopsTpl->assign("whoview_group", 1);
+        $xoopsTpl->assign('whoview', _MD_XPETITIONS_WHOVIEW1);
+        $xoopsTpl->assign('whoview_group', 1);
     } elseif ($petition_detail['whoview'] == '2') {
-        $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW2);
-        $xoopsTpl->assign("whoview_group", 2);
+        $xoopsTpl->assign('whoview', _MD_XPETITIONS_WHOVIEW2);
+        $xoopsTpl->assign('whoview_group', 2);
     } elseif ($petition_detail['whoview'] == '3') {
-        $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW3);
-        $xoopsTpl->assign("whoview_group", 3);
+        $xoopsTpl->assign('whoview', _MD_XPETITIONS_WHOVIEW3);
+        $xoopsTpl->assign('whoview_group', 3);
     }
 }
 
 switch ($op) {
-case "allsigns": // affichage des signatures validées
+case 'allsigns': // affichage des signatures validées
     $petition_detail = getPetitionDetails(intval($id));
     $petition_name   = $petition_detail['name'];
     $status          = $petition_detail['status'];
@@ -73,18 +73,18 @@ case "allsigns": // affichage des signatures validées
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_OFFLINE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_OFFLINE,
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.intval($id);
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_ALLSIGNS;
             $xoopsTpl->assign([
-        "name_nav1"      => $name_nav1,
-        "name_nav2"      => $name_nav2,
-        "link_nav1"      => $link_nav1,
-        "petition_title" => $name_nav1,
+                                  'name_nav1'      => $name_nav1,
+                                  'name_nav2'      => $name_nav2,
+                                  'link_nav1'      => $link_nav1,
+                                  'petition_title' => $name_nav1,
                               ]);
         }
 
@@ -93,19 +93,19 @@ case "allsigns": // affichage des signatures validées
         $option1 = getOptionInfos('signature_show');
         $option2 = getOptionInfos('signature_nbcol');
         $option3 = getOptionInfos('signature_entry');
-        list($signature_job, $signature_country, $signature_email, $signature_city, $signature_date) = explode("|", $option3['options']);
+        list($signature_job, $signature_country, $signature_email, $signature_city, $signature_date) = explode('|', $option3['options']);
         $xpetitions_signature_col   = $option1['options'];
         $xpetitions_signature_nbcol = $option2['options'];
 
         // Assignation des variables smarty
         $xoopsTpl->assign([
-        "petitions_option_col"     =>	$xpetitions_signature_col,
-        "petitions_option_nbcol"   =>	$xpetitions_signature_nbcol,
-        "petitions_option_job"     =>	$signature_job,
-        "petitions_option_country" =>	$signature_country,
-        "petitions_option_email"   =>	$signature_email,
-        "petitions_option_city"    =>	$signature_city,
-        "petitions_option_date"    =>	$signature_date
+                              'petitions_option_col'     =>	$xpetitions_signature_col,
+                              'petitions_option_nbcol'   =>	$xpetitions_signature_nbcol,
+                              'petitions_option_job'     =>	$signature_job,
+                              'petitions_option_country' =>	$signature_country,
+                              'petitions_option_email'   =>	$signature_email,
+                              'petitions_option_city'    =>	$signature_city,
+                              'petitions_option_date'    =>	$signature_date
                           ]);
 
         // affichage des lettres alphabétiques
@@ -115,9 +115,9 @@ case "allsigns": // affichage des signatures validées
         $show_cpt      .= ' '._MD_XPETITIONS_CPT_ALLSIGNS;
         $allsigns_title = _MD_XPETITIONS_TITLE_ALLSIGNS;
         $xoopsTpl->assign([
-        "petitions_allsigns"       => $show_signs,
-        "petitions_allsigns_title" => $allsigns_title,
-        "petitions_allsigns_cpt"   => $show_cpt,
+                              'petitions_allsigns'       => $show_signs,
+                              'petitions_allsigns_title' => $allsigns_title,
+                              'petitions_allsigns_cpt'   => $show_cpt,
                           ]);
         if ($_REQUEST['letter']) {
             $aff_signatures = getSignatureLetter($myts->addSlashes($_REQUEST['letter']), $petition_name);
@@ -138,9 +138,9 @@ case "allsigns": // affichage des signatures validées
                     $allsigns_letter = sprintf(_MD_XPETITIONS_ALLSIGNS_LETTER, $myts->addSlashes($_REQUEST['letter']), count($petitions_letter));
                 }
                 $xoopsTpl->assign([
-                "petitions_allsigns_show"    => $petitions_letter,
-                "petitions_allsigns_letter"  => $allsigns_letter,
-                "petitions_allsigns_counter" => count($petitions_letter)
+                                      'petitions_allsigns_show'    => $petitions_letter,
+                                      'petitions_allsigns_letter'  => $allsigns_letter,
+                                      'petitions_allsigns_counter' => count($petitions_letter)
                                   ]);
 
                 // Calcul des tailles des colonnes
@@ -150,33 +150,33 @@ case "allsigns": // affichage des signatures validées
                 if ($xpetitions_signs_show['options'] == 'colonne' && $xpetitions_signs_nbcol['options'] > 1) {
                     $xpetitions_sign_divcol = floor(100/$xpetitions_signs_nbcol['options']);
                     $xpetitions_sign_nb     = ceil(count($petitions_letter)/$xpetitions_signs_nbcol['options'])-1;
-                    $xoopsTpl->assign("petitions_sign_divcol", $xpetitions_sign_divcol);
+                    $xoopsTpl->assign('petitions_sign_divcol', $xpetitions_sign_divcol);
                 }
                 // Assignation de l'etat de l'affichage des signatures
-                $xoopsTpl->assign("petitions_signs_show", $xpetitions_signs_show['options']);
-                $xoopsTpl->assign("petitions_sign_nb", $xpetitions_sign_nb);
+                $xoopsTpl->assign('petitions_signs_show', $xpetitions_signs_show['options']);
+                $xoopsTpl->assign('petitions_sign_nb', $xpetitions_sign_nb);
             } else {
                 if ($myts->addSlashes($_REQUEST['letter']) == 'all') {
                     $petitions_noletter = _MD_XPETITIONS_ALLSIGNS_NOLETTER_ALL;
                 } else {
                     $petitions_noletter = sprintf(_MD_XPETITIONS_ALLSIGNS_NOLETTER, $myts->addSlashes($_REQUEST['letter']));
                 }
-                $xoopsTpl->assign("petitions_allsigns_noshow", $petitions_noletter);
+                $xoopsTpl->assign('petitions_allsigns_noshow', $petitions_noletter);
             }
         } else {
-            $xoopsTpl->assign("petitions_allsigns_noshow", _MD_XPETITIONS_ALLSIGNS_CHOOSE);
+            $xoopsTpl->assign('petitions_allsigns_noshow', _MD_XPETITIONS_ALLSIGNS_CHOOSE);
         }
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
         $xoopsTpl->assign([
-    "name_nav1"        => $name_nav1,
-    "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
+                              'name_nav1'        => $name_nav1,
+                              'petition_offline' => _MD_XPETITIONS_NO_DETAIL,
                           ]);
     }
     break;
 
-case "valid": // validation d'un signature
+case 'valid': // validation d'un signature
     $petition_detail = getPetitionDetails(intval($id));
     $status          = $petition_detail['status'];
     if ($petition_detail) {
@@ -184,24 +184,24 @@ case "valid": // validation d'un signature
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_OFFLINE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_OFFLINE,
                               ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_ARCHIVE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_ARCHIVE,
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.intval($id);
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_VALID;
             $xoopsTpl->assign([
-        "name_nav1"      => $name_nav1,
-        "name_nav2"      => $name_nav2,
-        "link_nav1"      => $link_nav1,
-        "petition_title" => $name_nav1,
+                                  'name_nav1'      => $name_nav1,
+                                  'name_nav2'      => $name_nav2,
+                                  'link_nav1'      => $link_nav1,
+                                  'petition_title' => $name_nav1,
                               ]);
         }
         // récupération des variables
@@ -215,28 +215,28 @@ case "valid": // validation d'un signature
             if (!$valid_sign) {
                 // erreur dans la validation
                 $petition_sign_valid = _MD_XPETITIONS_SIGN_ERROR;
-                $xoopsTpl->assign("petition_sign_valid", $petition_sign_valid);
+                $xoopsTpl->assign('petition_sign_valid', $petition_sign_valid);
                 break;
             }
             // message de confirmation
             $petition_sign_valid = _MD_XPETITIONS_SIGN_VALID;
-            $xoopsTpl->assign("petition_sign_valid", $petition_sign_valid);
+            $xoopsTpl->assign('petition_sign_valid', $petition_sign_valid);
         } else {
             // erreur dans la récupération du lien de l'email
             $petition_sign_valid = _MD_XPETITIONS_SIGN_ERROR;
-            $xoopsTpl->assign("petition_sign_valid", $petition_sign_valid);
+            $xoopsTpl->assign('petition_sign_valid', $petition_sign_valid);
         }
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
         $xoopsTpl->assign([
-    "name_nav1"        => $name_nav1,
-    "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
+                              'name_nav1'        => $name_nav1,
+                              'petition_offline' => _MD_XPETITIONS_NO_DETAIL,
                           ]);
     }
     break;
 
-case "validpre": // validation d'un signature
+case 'validpre': // validation d'un signature
     $petition_detail = getPetitionDetails(intval($id));
     $status          = $petition_detail['status'];
     if ($petition_detail) {
@@ -244,24 +244,24 @@ case "validpre": // validation d'un signature
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_OFFLINE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_OFFLINE,
                               ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_ARCHIVE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_ARCHIVE,
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.intval($id);
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_VALID;
             $xoopsTpl->assign([
-        "name_nav1"      => $name_nav1,
-        "name_nav2"      => $name_nav2,
-        "link_nav1"      => $link_nav1,
-        "petition_title" => $name_nav1,
+                                  'name_nav1'      => $name_nav1,
+                                  'name_nav2'      => $name_nav2,
+                                  'link_nav1'      => $link_nav1,
+                                  'petition_title' => $name_nav1,
                               ]);
         }
         // récupération des variables
@@ -288,32 +288,32 @@ case "validpre": // validation d'un signature
                 if (!$insert_presign) {
                     // erreur dans l'insertion
                     $petition_sign_valid = _MD_XPETITIONS_SIGN_ERROR;
-                    $xoopsTpl->assign("petition_sign_valid", $petition_sign_valid);
+                    $xoopsTpl->assign('petition_sign_valid', $petition_sign_valid);
                     break;
                 }
                 // message de confirmation
                 $petition_sign_valid = _MD_XPETITIONS_SIGN_VALID;
-                $xoopsTpl->assign("petition_presign_valid", $petition_sign_valid);
+                $xoopsTpl->assign('petition_presign_valid', $petition_sign_valid);
             } else {
                 // erreur dans la récupération des données
                 $petition_sign_valid = _MD_XPETITIONS_SIGN_ERROR;
-                $xoopsTpl->assign("petition_presign_valid", $petition_sign_valid);
+                $xoopsTpl->assign('petition_presign_valid', $petition_sign_valid);
             }
         } else {
             $petition_sign = _MD_XPETITIONS_SIGN_DOUBLE;
-            $xoopsTpl->assign("petition_sign", $petition_sign);
+            $xoopsTpl->assign('petition_sign', $petition_sign);
         }
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
         $xoopsTpl->assign([
-    "name_nav1"        => $name_nav1,
-    "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
+                              'name_nav1'        => $name_nav1,
+                              'petition_offline' => _MD_XPETITIONS_NO_DETAIL,
                           ]);
     }
     break;
 
-case "friend_send": // envoi du message à un ami
+case 'friend_send': // envoi du message à un ami
     $petition_detail = getPetitionDetails(intval($id));
     $petition_email  = $petition_detail['email'];
     $status = $petition_detail['status'];
@@ -322,24 +322,24 @@ case "friend_send": // envoi du message à un ami
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_OFFLINE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_OFFLINE,
                               ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_ARCHIVE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_ARCHIVE,
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.intval($id);
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_FRIEND;
             $xoopsTpl->assign([
-        "name_nav1"      => $name_nav1,
-        "name_nav2"      => $name_nav2,
-        "link_nav1"      => $link_nav1,
-        "petition_title" => $name_nav1,
+                                  'name_nav1'      => $name_nav1,
+                                  'name_nav2'      => $name_nav2,
+                                  'link_nav1'      => $link_nav1,
+                                  'petition_title' => $name_nav1,
                               ]);
             // récupération des variables
             $yourname   = $myts->addSlashes(trim($_POST['yourname']));
@@ -349,7 +349,7 @@ case "friend_send": // envoi du message à un ami
             $body       = sprintf(_MD_XPETITIONS_EMAIL_FRIENDFORM_SEND, $yourname, $friendname, $xoopsConfig['sitename'], $name_nav1, XOOPS_URL.$module_url.'/index.php?id='.intval($id), $xoopsConfig['sitename'], $xoopsConfig['slogan'], XOOPS_URL);
 
             if (!filled_out($_POST)) {
-                redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_ERROR_BLANK);
+                redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_ERROR_BLANK);
                 break;
             }
             // vérification captcha si option à oui
@@ -357,33 +357,33 @@ case "friend_send": // envoi du message à un ami
                 // Recuperation de l'option captcha
                 $captcha_inprogress = getOptionInfos('captcha');
                 switch ($captcha_inprogress['options']) {
-                                case "1":
+                                case '1':
                 default: // Option CAPTCHA (K.OHWADA) => 1
                 require_once('class/captcha_x/class.captcha_x.php');
                 $captcha_check = new captcha_x();
                 if (!isset($captcha) || !$captcha_check->validate($captcha)) {
-                    redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
 
-                case "2": // Option CAPTCHA (JPGRAPH) => 2
+                case '2': // Option CAPTCHA (JPGRAPH) => 2
                 if (!empty($captcha) && !empty($_SESSION['captcha_image']) && strtolower($captcha) == $_SESSION['captcha_image']) {
                     continue;
                 } else {
-                    redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
 
-                case "3": // Option CAPTCHA (TEXTE) => 3
-                require_once(XOOPS_ROOT_PATH . $module_url . "/class/antispam_text.php");
+                case '3': // Option CAPTCHA (TEXTE) => 3
+                require_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php');
                 if ($_SESSION['captcha_image'] != $captcha) {
-                    redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
             }
             }
             // envoi d'un email à votre ami
-            include XOOPS_ROOT_PATH."/class/xoopsmailer.php";
+            include XOOPS_ROOT_PATH . '/class/xoopsmailer.php';
             $semail  = $petition_email;
             $sname   = $xoopsConfig['sitename'];
             $subject = sprintf(_MD_XPETITIONS_SUBJECT_EMAIL, $sname);
@@ -401,24 +401,24 @@ case "friend_send": // envoi du message à un ami
             $xoopsMailer->send(true);
     
             if ($xoopsMailer->getErrors()) {
-                redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_EMAIL_SEND_ERROR);
+                redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_EMAIL_SEND_ERROR);
             }
 
             // message de confirmation
             $petition_email_send = _MD_XPETITIONS_EMAIL_SEND;
-            $xoopsTpl->assign("petition_email_send", $petition_email_send);
+            $xoopsTpl->assign('petition_email_send', $petition_email_send);
         }
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
         $xoopsTpl->assign([
-    "name_nav1"        => $name_nav1,
-    "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
+                              'name_nav1'        => $name_nav1,
+                              'petition_offline' => _MD_XPETITIONS_NO_DETAIL,
                           ]);
     }
     break;
 
-case "friend": // saisie des coordonnées pour l'envoi par mail d'un message à un ami
+case 'friend': // saisie des coordonnées pour l'envoi par mail d'un message à un ami
     $petition_detail = getPetitionDetails(intval($id));
     $status = $petition_detail['status'];
     if ($petition_detail) {
@@ -426,42 +426,42 @@ case "friend": // saisie des coordonnées pour l'envoi par mail d'un message à 
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_OFFLINE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_OFFLINE,
                               ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_ARCHIVE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_ARCHIVE,
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_FRIEND;
             $xoopsTpl->assign([
-        "name_nav1"      => $name_nav1,
-        "name_nav2"      => $name_nav2,
-        "link_nav1"      => $link_nav1,
-        "petition_title" => $name_nav1,
+                                  'name_nav1'      => $name_nav1,
+                                  'name_nav2'      => $name_nav2,
+                                  'link_nav1'      => $link_nav1,
+                                  'petition_title' => $name_nav1,
                               ]);
             // initialisation des variables
             $yourname = $friendname = $femail = '';
             // affichage du formulaire
             echo '<br />';
-            include "include/sendafriend.inc.php";
+            include 'include/sendafriend.inc.php';
         }
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
         $xoopsTpl->assign([
-    "name_nav1"        => $name_nav1,
-    "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
+                              'name_nav1'        => $name_nav1,
+                              'petition_offline' => _MD_XPETITIONS_NO_DETAIL,
                           ]);
     }
     break;
 
-case "sign": // enregistrement d'une signature en ligne par email (par retour de lien)
+case 'sign': // enregistrement d'une signature en ligne par email (par retour de lien)
     $petition_detail = getPetitionDetails(intval($id));
     $name_petition   = $petition_detail['name'];
     $email_petition  = $petition_detail['email'];
@@ -471,24 +471,24 @@ case "sign": // enregistrement d'une signature en ligne par email (par retour de
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_OFFLINE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_OFFLINE,
                               ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_ARCHIVE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_ARCHIVE,
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_SIGN_RECORDED;
             $xoopsTpl->assign([
-        "name_nav1"      => $name_nav1,
-        "name_nav2"      => $name_nav2,
-        "link_nav1"      => $link_nav1,
-        "petition_title" => $name_nav1,
+                                  'name_nav1'      => $name_nav1,
+                                  'name_nav2'      => $name_nav2,
+                                  'link_nav1'      => $link_nav1,
+                                  'petition_title' => $name_nav1,
                               ]);
             // récupération des données
             $firstname = $myts->addSlashes(trim($_POST['firstname']));
@@ -546,27 +546,27 @@ case "sign": // enregistrement d'une signature en ligne par email (par retour de
                     // Recuperation de l'option captcha
                     $captcha_inprogress = getOptionInfos('captcha');
                     switch ($captcha_inprogress['options']) {
-                                case "1":
+                                case '1':
                 default: // Option CAPTCHA (K.OHWADA) => 1
                 require_once('class/captcha_x/class.captcha_x.php');
                 $captcha_check = new captcha_x();
                 if (!isset($captcha) || !$captcha_check->validate($captcha)) {
-                    redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
 
-                case "2": // Option CAPTCHA (JPGRAPH) => 2
+                case '2': // Option CAPTCHA (JPGRAPH) => 2
                 if (!empty($captcha) && !empty($_SESSION['captcha_image']) && strtolower($captcha) == $_SESSION['captcha_image']) {
                     continue;
                 } else {
-                    redirect_header("javascript:history.go(-1)", 2, 'captcha = '.$captcha.'<br />session = '.$_SESSION['captcha_image'].'<br />'._MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, 'captcha = ' . $captcha . '<br />session = ' . $_SESSION['captcha_image'] . '<br />' . _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
 
-                case "3": // Option CAPTCHA (TEXTE) => 3
-                require_once(XOOPS_ROOT_PATH . $module_url . "/class/antispam_text.php");
+                case '3': // Option CAPTCHA (TEXTE) => 3
+                require_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php');
                 if ($_SESSION['captcha_image'] != $captcha) {
-                    redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
             }
@@ -580,23 +580,23 @@ case "sign": // enregistrement d'une signature en ligne par email (par retour de
                 // préparation du corps de l'email
         $email_validation = getEmailInfos('2'); // Email aux signataires pour validation
         $body = $email_validation['message'];
-                $body = preg_replace("/{PRENOM}/", $firstname, $body);
-                $body = preg_replace("/{NOM}/", $lastname, $body);
-                $body = preg_replace("/{PETITION}/", $name_nav1, $body);
-                $body = preg_replace("/{INFOS}/", $job, $body);
-                $body = preg_replace("/{SITEURL}/", XOOPS_URL, $body);
-                $body = preg_replace("/{SITENAME}/", $myts->DisplayTarea($xoopsConfig['sitename']), $body);
-                $body = preg_replace("/{SITESLOGAN}/", $myts->DisplayTarea($xoopsConfig['slogan']), $body);
-                $body = preg_replace("/{VALIDATION}/", $urlcle, $body);
+                $body = preg_replace('/{PRENOM}/', $firstname, $body);
+                $body = preg_replace('/{NOM}/', $lastname, $body);
+                $body = preg_replace('/{PETITION}/', $name_nav1, $body);
+                $body = preg_replace('/{INFOS}/', $job, $body);
+                $body = preg_replace('/{SITEURL}/', XOOPS_URL, $body);
+                $body = preg_replace('/{SITENAME}/', $myts->DisplayTarea($xoopsConfig['sitename']), $body);
+                $body = preg_replace('/{SITESLOGAN}/', $myts->DisplayTarea($xoopsConfig['slogan']), $body);
+                $body = preg_replace('/{VALIDATION}/', $urlcle, $body);
                 $body = stripslashes($body);
 
                 // préparation du sujet de l'email
                 $sample_subject = $email_validation['subject'];
-                $sample_subject = preg_replace("/{SITENAME}/", $myts->DisplayTarea($xoopsConfig['sitename']), $sample_subject);
-                $sample_subject = preg_replace("/{PETITION}/", $myts->DisplayTarea($petition_detail['title']), $sample_subject);
+                $sample_subject = preg_replace('/{SITENAME}/', $myts->DisplayTarea($xoopsConfig['sitename']), $sample_subject);
+                $sample_subject = preg_replace('/{PETITION}/', $myts->DisplayTarea($petition_detail['title']), $sample_subject);
 
                 // envoi email de confirmation au signataire
-                include XOOPS_ROOT_PATH."/class/xoopsmailer.php";
+                include XOOPS_ROOT_PATH . '/class/xoopsmailer.php';
                 if (get_xoops_version() >= 230) {
                     $xoopsMailer = xoops_getMailer();
                 } else {
@@ -618,23 +618,23 @@ case "sign": // enregistrement d'une signature en ligne par email (par retour de
 
                 // message de remerciement
                 $petition_sign = _MD_XPETITIONS_SIGN_RECORDED;
-                $xoopsTpl->assign("petition_sign", $petition_sign);
+                $xoopsTpl->assign('petition_sign', $petition_sign);
             } else {
                 $petition_sign = _MD_XPETITIONS_SIGN_DOUBLE;
-                $xoopsTpl->assign("petition_sign", $petition_sign);
+                $xoopsTpl->assign('petition_sign', $petition_sign);
             }
         }
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
         $xoopsTpl->assign([
-    "name_nav1"        => $name_nav1,
-    "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
+                              'name_nav1'        => $name_nav1,
+                              'petition_offline' => _MD_XPETITIONS_NO_DETAIL,
                           ]);
     }
     break;
 
-case "presign": // enregistrement d'une signature en ligne en automatique (double click)
+case 'presign': // enregistrement d'une signature en ligne en automatique (double click)
     $petition_detail = getPetitionDetails(intval($id));
     $name_petition   = $petition_detail['name'];
     $email_petition  = $petition_detail['email'];
@@ -644,24 +644,24 @@ case "presign": // enregistrement d'une signature en ligne en automatique (doubl
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_OFFLINE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_OFFLINE,
                               ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_ARCHIVE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_ARCHIVE,
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_PRESIGNED;
             $xoopsTpl->assign([
-        "name_nav1"      => $name_nav1,
-        "name_nav2"      => $name_nav2,
-        "link_nav1"      => $link_nav1,
-        "petition_title" => $name_nav1,
+                                  'name_nav1'      => $name_nav1,
+                                  'name_nav2'      => $name_nav2,
+                                  'link_nav1'      => $link_nav1,
+                                  'petition_title' => $name_nav1,
                               ]);
             // récupération des données
             $firstname = $myts->addSlashes(trim($_POST['firstname']));
@@ -712,68 +712,68 @@ case "presign": // enregistrement d'une signature en ligne en automatique (doubl
                     // Recuperation de l'option captcha
                     $captcha_inprogress = getOptionInfos('captcha');
                     switch ($captcha_inprogress['options']) {
-                                case "1":
+                                case '1':
                 default: // Option CAPTCHA (K.OHWADA) => 1
                 require_once('class/captcha_x/class.captcha_x.php');
                 $captcha_check = new captcha_x();
                 if (!isset($captcha) || !$captcha_check->validate($captcha)) {
-                    redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
 
-                case "2": // Option CAPTCHA (JPGRAPH) => 2
+                case '2': // Option CAPTCHA (JPGRAPH) => 2
                 if (!empty($captcha) && !empty($_SESSION['captcha_image']) && strtolower($captcha) == $_SESSION['captcha_image']) {
                     continue;
                 } else {
-                    redirect_header("javascript:history.go(-1)", 2, 'captcha = '.$captcha.'<br />session = '.$_SESSION['captcha_image'].'<br />'._MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, 'captcha = ' . $captcha . '<br />session = ' . $_SESSION['captcha_image'] . '<br />' . _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
 
-                case "3": // Option CAPTCHA (TEXTE) => 3
-                require_once(XOOPS_ROOT_PATH . $module_url . "/class/antispam_text.php");
+                case '3': // Option CAPTCHA (TEXTE) => 3
+                require_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php');
                 if ($_SESSION['captcha_image'] != $captcha) {
-                    redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
+                    redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
                 break;
             }
                 }
                 // Passage des variables (form hidden)
                 $xoopsTpl->assign([
-        "pre_firstname"	=> $firstname,
-        "pre_lastname"	=> $lastname,
-        "pre_address"	=> $address,
-        "pre_zip"	=> $zip,
-        "pre_city"	=> $city,
-        "pre_country"	=> $country,
-        "pre_job"	=> $job,
-        "pre_email"	=> $email,
-        "pre_date"	=> $date,
-        "pre_ip"	=> $ip,
-        "pre_cle"	=> $cle
+                                      'pre_firstname' => $firstname,
+                                      'pre_lastname'  => $lastname,
+                                      'pre_address'   => $address,
+                                      'pre_zip'       => $zip,
+                                      'pre_city'      => $city,
+                                      'pre_country'   => $country,
+                                      'pre_job'       => $job,
+                                      'pre_email'     => $email,
+                                      'pre_date'      => $date,
+                                      'pre_ip'        => $ip,
+                                      'pre_cle'       => $cle
                                   ]);
 
                 // message de validation par click
                 $petition_presign1 = _MD_XPETITIONS_SIGN_PRESIGNED;
                 $petition_submit  = _MD_XPETITIONS_PRESIGN_VALUE;
-                $xoopsTpl->assign("petition_presign_valid", $petition_presign1);
-                $xoopsTpl->assign("petition_value", $petition_submit);
-                $xoopsTpl->assign("petition_presign_form_action", $urlcle);
+                $xoopsTpl->assign('petition_presign_valid', $petition_presign1);
+                $xoopsTpl->assign('petition_value', $petition_submit);
+                $xoopsTpl->assign('petition_presign_form_action', $urlcle);
             } else {
                 $petition_presign2 = _MD_XPETITIONS_SIGN_DOUBLE;
-                $xoopsTpl->assign("petition_presign", $petition_presign2);
+                $xoopsTpl->assign('petition_presign', $petition_presign2);
             }
         }
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
         $xoopsTpl->assign([
-    "name_nav1"        => $name_nav1,
-    "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
+                              'name_nav1'        => $name_nav1,
+                              'petition_offline' => _MD_XPETITIONS_NO_DETAIL,
                           ]);
     }
     break;
 
-case "form": // affichage du formulaire de signature de la pétition
+case 'form': // affichage du formulaire de signature de la pétition
     $petition_detail = getPetitionDetails(intval($id));
     $status = $petition_detail['status'];
     if ($petition_detail) {
@@ -781,43 +781,43 @@ case "form": // affichage du formulaire de signature de la pétition
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_OFFLINE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_OFFLINE,
                               ]);
         } elseif ($status == '3') {
             $name_nav1 = _MD_XPETITIONS_ARCHIVE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_ARCHIVE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_ARCHIVE,
                               ]);
         } else {
             $name_nav1 = $myts->DisplayTarea($petition_detail['title']);
             $link_nav1 = $module_url.'/index.php?id='.$id;
             $name_nav2 = _MD_XPETITIONS_HOME_NAV_SIGN;
             $xoopsTpl->assign([
-        "name_nav1"      => $name_nav1,
-        "name_nav2"      => $name_nav2,
-        "link_nav1"      => $link_nav1,
-        "petition_title" => $name_nav1,
+                                  'name_nav1'      => $name_nav1,
+                                  'name_nav2'      => $name_nav2,
+                                  'link_nav1'      => $link_nav1,
+                                  'petition_title' => $name_nav1,
                               ]);
             // initialisation des variables
             $firstname = $lastname = $address = $zip = $city = $country = $job = $email = '';
             // affichage du formulaire
             echo '<br />';
-            include "include/signform.inc.php";
+            include 'include/signform.inc.php';
             echo _MD_XPETITIONS_FORM_REQUIRED;
         }
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
         $xoopsTpl->assign([
-    "name_nav1"        => $name_nav1,
-    "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
+                              'name_nav1'        => $name_nav1,
+                              'petition_offline' => _MD_XPETITIONS_NO_DETAIL,
                           ]);
     }
     break;
 
-case "indexid": // affichage d'une pétition à signer
+case 'indexid': // affichage d'une pétition à signer
     $petition_detail = getPetitionDetails(intval($id));
     $status = $petition_detail['status'];
     if ($petition_detail) {
@@ -825,8 +825,8 @@ case "indexid": // affichage d'une pétition à signer
         if ($status == '2') {
             $name_nav1 = _MD_XPETITIONS_OFFLINE;
             $xoopsTpl->assign([
-        "name_nav1"        => $name_nav1,
-        "petition_offline" => _MD_XPETITIONS_OFFLINE,
+                                  'name_nav1'        => $name_nav1,
+                                  'petition_offline' => _MD_XPETITIONS_OFFLINE,
                               ]);
         } else {
             // vérifier si la pétition est archivée
@@ -862,41 +862,41 @@ case "indexid": // affichage d'une pétition à signer
             $link_adm_modif     = $module_url.'/admin/petitions.php?op=modif&id='.$id;
             $link_adm_delete    = $module_url.'/admin/petitions.php?op=delete&id='.$id;
             $xoopsTpl->assign([
-        "name_nav1"             => $name_nav1,
-        "link_nav1"             => $link_nav1,
-        "name_nav2"             => $name_nav2,
-        "link_adm_modif"        => $link_adm_modif,
-        "link_adm_delete"       => $link_adm_delete,
-        "petition_sign_online"  => $petition_sign_online,
-        "petition_sign_offline" => $petition_sign_offline,
-        "petition_sign_friend"  => $petition_sign_friend,
-        "petition_sign_show"    => $petition_sign_show,
-        "link_sign_online"      => $link_sign_online,
-        "link_sign_offline"     => $link_sign_offline,
-        "link_sign_friend"      => $link_sign_friend,
-        "link_sign_show"        => $link_sign_show,
-        "petition_title"        => $myts->DisplayTarea($petition_detail['title']),
-        "petition_desc"         => $myts->DisplayTarea($petition_detail['description'], 1, 1, 1, 1, 1),
-        "petition_date"         => $petition_detail['date'],
-        "petition_id"           => $id,
+                                  'name_nav1'             => $name_nav1,
+                                  'link_nav1'             => $link_nav1,
+                                  'name_nav2'             => $name_nav2,
+                                  'link_adm_modif'        => $link_adm_modif,
+                                  'link_adm_delete'       => $link_adm_delete,
+                                  'petition_sign_online'  => $petition_sign_online,
+                                  'petition_sign_offline' => $petition_sign_offline,
+                                  'petition_sign_friend'  => $petition_sign_friend,
+                                  'petition_sign_show'    => $petition_sign_show,
+                                  'link_sign_online'      => $link_sign_online,
+                                  'link_sign_offline'     => $link_sign_offline,
+                                  'link_sign_friend'      => $link_sign_friend,
+                                  'link_sign_show'        => $link_sign_show,
+                                  'petition_title'        => $myts->DisplayTarea($petition_detail['title']),
+                                  'petition_desc'         => $myts->DisplayTarea($petition_detail['description'], 1, 1, 1, 1, 1),
+                                  'petition_date'         => $petition_detail['date'],
+                                  'petition_id'           => $id,
                               ]);
         }
     } else {
         // controle du résultat de la requête SQL
         $name_nav1 = _MD_XPETITIONS_NO_DETAIL;
         $xoopsTpl->assign([
-    "name_nav1"        => $name_nav1,
-    "petition_offline" => _MD_XPETITIONS_NO_DETAIL,
+                              'name_nav1'        => $name_nav1,
+                              'petition_offline' => _MD_XPETITIONS_NO_DETAIL,
                           ]);
     }
     break;
 
-case "index": // affichage de la page d'accueil des pétitions
+case 'index': // affichage de la page d'accueil des pétitions
     default:
     $name_nav1 = _MD_XPETITIONS_HOME_NAV;
-    $xoopsTpl->assign("name_nav1", $name_nav1);
+    $xoopsTpl->assign('name_nav1', $name_nav1);
     $home_petitions_active = _MD_XPETITIONS_HOME_TAB1;
-    $xoopsTpl->assign("home_petitions_active", $home_petitions_active);
+    $xoopsTpl->assign('home_petitions_active', $home_petitions_active);
 
     // ---------------------------
     // Liste des pétitions actives
@@ -908,7 +908,7 @@ case "index": // affichage de la page d'accueil des pétitions
 
     if ($petitions_count_online < 1) {
         $no_petition_active = _MD_XPETITIONS_NO_ACTIVE;
-        $xoopsTpl->assign("no_petition_active", $no_petition_active);
+        $xoopsTpl->assign('no_petition_active', $no_petition_active);
     } else {
         $pagenav = new XoopsPageNav($petitions_count_online, $xoopsModuleConfig['index_per_page'], $petitions_pagestart, 'page');
         $limite = limite($petitions_pagestart, $petitions_count_online, $xoopsModuleConfig['index_per_page'], $petitions_sql_online);
@@ -921,14 +921,14 @@ case "index": // affichage de la page d'accueil des pétitions
             }
             $petitions[] = $petition;
         }
-        $xoopsTpl->assign("petitions", $petitions);
+        $xoopsTpl->assign('petitions', $petitions);
         $page_nav = "<div align='right'>".$pagenav->renderNav().'</div><br />';
         $xoopsTpl->assign('pagenav', $page_nav);
     }
 
     if ($xoopsModuleConfig['petitions_archives'] == 1) {
         $home_petitions_archive = _MD_XPETITIONS_HOME_TAB2;
-        $xoopsTpl->assign("home_petitions_archive", $home_petitions_archive);
+        $xoopsTpl->assign('home_petitions_archive', $home_petitions_archive);
 
         // -----------------------------
         // Liste des pétitions archivées
@@ -940,7 +940,7 @@ case "index": // affichage de la page d'accueil des pétitions
 
         if ($petitions_count_archive < 1) {
             $no_petition_archive = _MD_XPETITIONS_NO_ARCHIVE;
-            $xoopsTpl->assign("no_petition_archive", $no_petition_archive);
+            $xoopsTpl->assign('no_petition_archive', $no_petition_archive);
         } else {
             $pagenav2 = new XoopsPageNav($petitions_count_archive, $xoopsModuleConfig['index_per_page'], $petitions_pagestart2, 'page');
             $limite2 = limite($petitions_pagestart2, $petitions_count_archive, $xoopsModuleConfig['index_per_page'], $petitions_sql_archive);
@@ -953,7 +953,7 @@ case "index": // affichage de la page d'accueil des pétitions
                 }
                 $petitions_arch[] = $petition_arch;
             }
-            $xoopsTpl->assign("petitions_arch", $petitions_arch);
+            $xoopsTpl->assign('petitions_arch', $petitions_arch);
             $page_nav2 = "<div align='right'>".$pagenav2->renderNav().'</div><br />';
             $xoopsTpl->assign('pagenav', $page_nav2);
         }
@@ -961,4 +961,4 @@ case "index": // affichage de la page d'accueil des pétitions
     break;
 }
 
-include(XOOPS_ROOT_PATH."/footer.php");
+include(XOOPS_ROOT_PATH . '/footer.php');

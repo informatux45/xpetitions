@@ -12,10 +12,10 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
+include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
 
 // Initialisation du formulaire
-$addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE1_ADDFORM, "addform", "petitions.php?op=post");
+$addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE1_ADDFORM, 'addform', 'petitions.php?op=post');
 $addform->setExtra("enctype='multipart/form-data'");
 
 // Nom de la table des signatures de la pétition

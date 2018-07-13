@@ -67,27 +67,27 @@ define('_MI_XPETITIONS_VALID_METHOD', 'Validation type of the signature form');
 define('_MI_XPETITIONS_VALID_METHODSC', 'The validation form of signatures can be validate in two ways:<br />1. Email : By email sent to the signatory (return of confirmation per link with key in the email)<br />2. Auto : Automatically on the Website by doubleClick without email sending');
 
 // xoops version
-define("_MI_XPETITIONS_INDEX", "Module template index");
-define("_MI_XPETITIONS_HEADER", "Header template for module index");
-define("_MI_XPETITIONS_FOOTER", "Footer template for module index");
-define("_MI_XPETITIONS_DISPLAY_INDEX", "Template index for petition page");
-define("_MI_XPETITIONS_DISPLAY_FORM", "Template for signature form");
-define("_MI_XPETITIONS_DISPLAY_TOOLBAR", "Template for petition toolbar");
-define("_MI_XPETITIONS_DISPLAY_SIGNS", "Template for signature confirmation");
-define("_MI_XPETITIONS_DISPLAY_FRIEND", "Template for telling a friend");
-define("_MI_XPETITIONS_DISPLAY_ALLSIGNS", "Template for displaying confirmed signatures");
-define("_MI_XPETITIONS_DISPLAY_FRIEND_SEND", "Template for email to tell a friend");
-define("_MI_XPETITIONS_DISPLAY_VALID", "Template for signature confirmation");
-define("_MI_XPETITIONS_DISPLAY_PRESIGN", "Template for pr&eacute;signature before automatic validation");
-define("_MI_XPETITIONS_DISPLAY_VALID_PRESIGN", "Template for presignature confirmation");
+define('_MI_XPETITIONS_INDEX', 'Module template index');
+define('_MI_XPETITIONS_HEADER', 'Header template for module index');
+define('_MI_XPETITIONS_FOOTER', 'Footer template for module index');
+define('_MI_XPETITIONS_DISPLAY_INDEX', 'Template index for petition page');
+define('_MI_XPETITIONS_DISPLAY_FORM', 'Template for signature form');
+define('_MI_XPETITIONS_DISPLAY_TOOLBAR', 'Template for petition toolbar');
+define('_MI_XPETITIONS_DISPLAY_SIGNS', 'Template for signature confirmation');
+define('_MI_XPETITIONS_DISPLAY_FRIEND', 'Template for telling a friend');
+define('_MI_XPETITIONS_DISPLAY_ALLSIGNS', 'Template for displaying confirmed signatures');
+define('_MI_XPETITIONS_DISPLAY_FRIEND_SEND', 'Template for email to tell a friend');
+define('_MI_XPETITIONS_DISPLAY_VALID', 'Template for signature confirmation');
+define('_MI_XPETITIONS_DISPLAY_PRESIGN', 'Template for pr&eacute;signature before automatic validation');
+define('_MI_XPETITIONS_DISPLAY_VALID_PRESIGN', 'Template for presignature confirmation');
 
 // xoops version config
-define("_MI_XPETITIONS_SIGN_TITLE_DEFAULT", "I sign");
-define("_MI_XPETITIONS_SIGN_DOWNL_DEFAULT", "Download a printable version of the petition");
-define("_MI_XPETITIONS_SIGN_FRIEND_DEFAULT", "Tell a friend");
-define("_MI_XPETITIONS_SIGN_SHOW_DEFAULT", "See signatures");
+define('_MI_XPETITIONS_SIGN_TITLE_DEFAULT', 'I sign');
+define('_MI_XPETITIONS_SIGN_DOWNL_DEFAULT', 'Download a printable version of the petition');
+define('_MI_XPETITIONS_SIGN_FRIEND_DEFAULT', 'Tell a friend');
+define('_MI_XPETITIONS_SIGN_SHOW_DEFAULT', 'See signatures');
 
 // blocks
-define("_MI_XPETITIONS_BNAME1", "Latest signatures");
-define("_MI_XPETITIONS_BNAME2", "My active petitions");
-define("_MI_XPETITIONS_BNAME3", "My archived petitions");
+define('_MI_XPETITIONS_BNAME1', 'Latest signatures');
+define('_MI_XPETITIONS_BNAME2', 'My active petitions');
+define('_MI_XPETITIONS_BNAME3', 'My archived petitions');
