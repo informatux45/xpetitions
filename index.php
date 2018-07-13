@@ -26,7 +26,7 @@ if (!isset($_REQUEST['op']) && !isset($_REQUEST['id'])) {
     $template = 'display_'.$op;
 }
 
-$GLOBALS['xoopsOption']['template_main'] = 'xpetitions_' . $template . '.html';
+$GLOBALS['xoopsOption']['template_main'] = 'xpetitions_' . $template . '.tpl';
 include XOOPS_ROOT_PATH . '/header.php';
 include XOOPS_ROOT_PATH . '/class/pagenav.php';
 

@@ -111,43 +111,43 @@ $modversion['search']['func'] = $modversion['dirname'] . '_search';
 $modversion['hasMain'] = 1;
 
 // Templates
-$modversion['templates'][1]['file']        = 'xpetitions_index.html';
+$modversion['templates'][1]['file']        = 'xpetitions_index.tpl';
 $modversion['templates'][1]['description'] = _MI_XPETITIONS_INDEX;
 
-$modversion['templates'][2]['file']        = 'xpetitions_header.html';
+$modversion['templates'][2]['file']        = 'xpetitions_header.tpl';
 $modversion['templates'][2]['description'] = _MI_XPETITIONS_HEADER;
 
-$modversion['templates'][3]['file']        = 'xpetitions_footer.html';
+$modversion['templates'][3]['file']        = 'xpetitions_footer.tpl';
 $modversion['templates'][3]['description'] = _MI_XPETITIONS_FOOTER;
 
-$modversion['templates'][4]['file']        = 'xpetitions_display_index.html';
+$modversion['templates'][4]['file']        = 'xpetitions_display_index.tpl';
 $modversion['templates'][4]['description'] = _MI_XPETITIONS_DISPLAY_INDEX;
 
-$modversion['templates'][5]['file']        = 'xpetitions_display_form.html';
+$modversion['templates'][5]['file']        = 'xpetitions_display_form.tpl';
 $modversion['templates'][5]['description'] = _MI_XPETITIONS_DISPLAY_FORM;
 
-$modversion['templates'][6]['file']        = 'xpetitions_display_toolbar.html';
+$modversion['templates'][6]['file']        = 'xpetitions_display_toolbar.tpl';
 $modversion['templates'][6]['description'] = _MI_XPETITIONS_DISPLAY_TOOLBAR;
 
-$modversion['templates'][7]['file']        = 'xpetitions_display_sign.html';
+$modversion['templates'][7]['file']        = 'xpetitions_display_sign.tpl';
 $modversion['templates'][7]['description'] = _MI_XPETITIONS_DISPLAY_SIGNS;
 
-$modversion['templates'][8]['file']        = 'xpetitions_display_friend.html';
+$modversion['templates'][8]['file']        = 'xpetitions_display_friend.tpl';
 $modversion['templates'][8]['description'] = _MI_XPETITIONS_DISPLAY_FRIEND;
 
-$modversion['templates'][9]['file']        = 'xpetitions_display_allsigns.html';
+$modversion['templates'][9]['file']        = 'xpetitions_display_allsigns.tpl';
 $modversion['templates'][9]['description'] = _MI_XPETITIONS_DISPLAY_ALLSIGNS;
 
-$modversion['templates'][10]['file']        = 'xpetitions_display_friend_send.html';
+$modversion['templates'][10]['file']        = 'xpetitions_display_friend_send.tpl';
 $modversion['templates'][10]['description'] = _MI_XPETITIONS_DISPLAY_FRIEND_SEND;
 
-$modversion['templates'][11]['file']        = 'xpetitions_display_valid.html';
+$modversion['templates'][11]['file']        = 'xpetitions_display_valid.tpl';
 $modversion['templates'][11]['description'] = _MI_XPETITIONS_DISPLAY_VALID;
 
-$modversion['templates'][12]['file']        = 'xpetitions_display_presign.html';
+$modversion['templates'][12]['file']        = 'xpetitions_display_presign.tpl';
 $modversion['templates'][12]['description'] = _MI_XPETITIONS_DISPLAY_PRESIGN;
 
-$modversion['templates'][13]['file']        = 'xpetitions_display_validpre.html';
+$modversion['templates'][13]['file']        = 'xpetitions_display_validpre.tpl';
 $modversion['templates'][13]['description'] = _MI_XPETITIONS_DISPLAY_VALID_PRESIGN;
 
 // Blocks
@@ -161,7 +161,7 @@ $modversion['blocks'][$j]['description'] = 'Afficher les derni&egrave;res signat
 $modversion['blocks'][$j]['show_func']   = 'b_xpetitions_last_signs_show';
 $modversion['blocks'][$j]['edit_func']   = 'b_xpetitions_last_signs_edit';
 $modversion['blocks'][$j]['options']     = '20|5';
-$modversion['blocks'][$j]['template']    = 'xpetitions_block_last_signs.html';
+$modversion['blocks'][$j]['template']    = 'xpetitions_block_last_signs.tpl';
 
 // Block that displays the all petitions
 $j++;
@@ -171,7 +171,7 @@ $modversion['blocks'][$j]['description'] = 'Afficher toutes les p&eacute;titions
 $modversion['blocks'][$j]['show_func']   = 'b_xpetitions_all_petitions_show';
 $modversion['blocks'][$j]['edit_func']   = 'b_xpetitions_all_petitions_edit';
 $modversion['blocks'][$j]['options']     = '50';
-$modversion['blocks'][$j]['template']    = 'xpetitions_block_all_petitions.html';
+$modversion['blocks'][$j]['template']    = 'xpetitions_block_all_petitions.tpl';
 
 // Block that displays the all archives petitions
 $j++;
@@ -181,7 +181,7 @@ $modversion['blocks'][$j]['description'] = 'Afficher toutes les p&eacute;titions
 $modversion['blocks'][$j]['show_func']   = 'b_xpetitions_all_archives_show';
 $modversion['blocks'][$j]['edit_func']   = 'b_xpetitions_all_archives_edit';
 $modversion['blocks'][$j]['options']     = '50';
-$modversion['blocks'][$j]['template']    = 'xpetitions_block_all_archives.html';
+$modversion['blocks'][$j]['template']    = 'xpetitions_block_all_archives.tpl';
 
 // Config
 $i = 0;

@@ -23,13 +23,13 @@ function b_xpetitions_last_signs_show($options)
 
     $block = [];
 
-    $number_signatures = (int)$options[4];
-    $petition_detail   = getPetitionDetails((int)$options[6]);
+    $number_signatures = isset($options[4]) ? (int)$options[4]:0;
+    $petition_detail   = isset($options[6]) ? getPetitionDetails((int)$options[6]) : '';
 
     $options[1] = ((int)$options[1] >= 8) ? $options[1] : '8';
 
     // si option 'affichage infos titre de la pétition'
-    if (1 == $options[0]) {
+    if (isset($options[0]) && 1 == $options[0]) {
         if (strlen($petition_detail['title']) >= $options[1]) {
             $block['xpetitions_title'] = substr($myts->DisplayTarea(strtolower($petition_detail['title'])), 0, $options[1]) . '...';
         } else {
@@ -37,17 +37,19 @@ function b_xpetitions_last_signs_show($options)
         }
     }
     // si option 'affichage infos date de mise en ligne'
-    if (1 == $options[2]) {
+    if (isset($options[2]) && 1 == $options[2]) {
         $block['xpetitions_online'] = formatdatefr($petition_detail['date']);
     }
 
     // si option 'affichage infos nombres totales de signatures enregistrées'
-    if (1 == $options[3]) {
+    if (isset($options[3]) && 1 == $options[3]) {
         $block['xpetitions_recorded'] = getSignaturesInfos($petition_name_table, '1');
     }
 
-    $xpetitions_signatures = getSignaturesBlock($petition_name_table, '1', $number_signatures);
-    if ($xpetitions_signatures) {
+    if (isset($petition_name_table)) {
+        $xpetitions_signatures = getSignaturesBlock($petition_name_table, '1', $number_signatures);
+    }
+    if (isset($xpetitions_signatures)) {
         foreach ($xpetitions_signatures as $row) {
             $signatures['name']   = strtoupper($row['name']);
             $signatures['prenom'] = strtolower($row['prenom']);

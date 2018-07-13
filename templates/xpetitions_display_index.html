@@ -1,4 +1,4 @@
-<{include file='db:xpetitions_header.html'}>
+<{include file='db:xpetitions_header.tpl'}>
 
 <{if !$petition_offline}>
 
@@ -12,13 +12,13 @@
 	<{/if}>
 	</div>
 
-	<{include file='db:xpetitions_display_toolbar.html'}>
+	<{include file='db:xpetitions_display_toolbar.tpl'}>
 
 	<div class="xpetition_desc">
 		<{$petition_desc}>
 	</div>
 
-	<{include file='db:xpetitions_display_toolbar.html'}>
+	<{include file='db:xpetitions_display_toolbar.tpl'}>
 
 </div>
 
@@ -26,4 +26,4 @@
 <div class="xpetitions_offline"><{$petition_offline}></div>
 <{/if}>
 
-<{include file='db:xpetitions_footer.html'}>
+<{include file='db:xpetitions_footer.tpl'}>

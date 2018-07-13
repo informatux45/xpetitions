@@ -311,10 +311,10 @@ function getFieldInfos($id, $pos)
     }
     $result = $xoopsDB->fetchRow($result);
 
-    if (1 == $pos) {
+    if (1 == $pos && isset($result['visibility'])) {
         return $result['visibility'];
     }
-    if (2 == $pos) {
+    if (2 == $pos  && isset($result['obligatory'])) {
         return $result['obligatory'];
     }
 }
@@ -352,7 +352,7 @@ function insertSignatures($name_petition, $id, $firstname, $lastname, $address, 
     // insertion d'une nouvelle signature
     global $xoopsDB;
     $sql = 'INSERT INTO ' . $xoopsDB->prefix('xpetitions_petitions_' . $name_petition) . " VALUES (
-	    '', '$id', '0', '0', '$firstname', '$lastname', '$email', '$address', '$zip', '$city', '$country', '$job', '$date', '$ip', '$cle')";
+	    0, '$id', '0', '0', '$firstname', '$lastname', '$email', '$address', '$zip', '$city', '$country', '$job', '$date', '$ip', '$cle')";
     $result = $xoopsDB->query($sql);
     if (!$result) {
         return false;
@@ -366,7 +366,7 @@ function insertPreSignatures($name_petition, $id, $firstname, $lastname, $addres
     // insertion d'une nouvelle signature
     global $xoopsDB;
     $sql = 'INSERT INTO ' . $xoopsDB->prefix('xpetitions_petitions_' . $name_petition) . " VALUES (
-	    '', '$id', '1', '0', '$firstname', '$lastname', '$email', '$address', '$zip', '$city', '$country', '$job', '$date', '$ip', '$cle')";
+	    0, '$id', '1', '0', '$firstname', '$lastname', '$email', '$address', '$zip', '$city', '$country', '$job', '$date', '$ip', '$cle')";
     $result = $xoopsDB->query($sql);
     if (!$result) {
         return false;
@@ -380,7 +380,7 @@ function insertSignaturesMan($name_petition, $id, $firstname, $lastname, $addres
     // insertion d'une nouvelle signature
     global $xoopsDB;
     $sql = 'INSERT INTO ' . $xoopsDB->prefix('xpetitions_petitions_' . $name_petition) . " VALUES (
-	    '', '$id', '1', '0', '$firstname', '$lastname', '$email', '$address', '$zip', '$city', '$country', '$job', '$date', '0.0.0.0', 'f0f0f0f0f0f0f0')";
+	    0, '$id', '1', '0', '$firstname', '$lastname', '$email', '$address', '$zip', '$city', '$country', '$job', '$date', '0.0.0.0', 'f0f0f0f0f0f0f0')";
     $result = $xoopsDB->query($sql);
     if (!$result) {
         return false;
@@ -430,7 +430,7 @@ function insertPetition($name, $title, $description, $email, $date, $status, $wh
     }
 
     $sql2 = 'INSERT INTO ' . $xoopsDB->prefix('xpetitions_petitions') . " VALUES (
-	    '', '$name', '$title', '$description', '$email', '$date', '$status', '$whoview', '$link', '$linkfile')";
+	    0, '$name', '$title', '$description', '$email', '$date', '$status', '$whoview', '$link', '$linkfile')";
     $result2 = $xoopsDB->query($sql2);
     if (!$result2) {
         return false;
