@@ -16,4 +16,4 @@ include XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->getVar('dirname').'/include/fu
 include XOOPS_ROOT_PATH.'/modules/'.$xoopsModule->getVar('dirname').'/include/mysql.php';
 
 $myts = MyTextSanitizer::getInstance();
-?>
+error_reporting(0);

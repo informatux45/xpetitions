@@ -16,6 +16,9 @@ define("_AM_XPETITIONS_XOOPS_PRO1",		"Support and updates available at ");
 define("_AM_XPETITIONS_XOOPS_PRO2",		"WEB solutions and development");
 define("_AM_XPETITIONS_XOOPS_PRO3",		"Do you need help with this module?");
 
+// * header.inc.php *
+define("_AM_XPETITIONS_MISSING",               "La classe ModuleAdmin non è presente, installarlo sul tuo Xoops.<br />/Frameworks/moduleclasses/moduleadmin/");
+
 // * index.php *
 define("_AM_XPETITIONS_INDEX_HELP1",		"<b>HELP</b>");
 define("_AM_XPETITIONS_INDEX_HELP2",		"- Clicca sul nome di una petizione per aprire la pagina dedicata.<br />- La data visualizzata riferisce alla messa online della petizione.<br />- Lo stato della petizione pu&ograve; assumere tre valori:<br />* <b style='color: green;'>Attiva</b> (La petizione pu&ograve; essere firmata)<br />* <b style='color: orange;'>Offline</b> (La petizione non viene visualizzata e non pu&ograve; essere firmata)<br />* <b style='color: red;'>Archiviata</b> (La petizione viene visualizzata in archivio ma non pu&ograve; essere firmata)<br />- Azioni possibili:<br />* Modifiche (E' possibile modificare tutto tranne il nome della tabella che contiene le firme)<br />* Eliminazione (La petizione viene cancellata dal sistema, comprese tutte le firme ad essa associate. Se vuoi mantenere la petizione e tutte le firme senza cancellarla ma rendendola non visibile, mettila nello stato 'Offline')");
@@ -45,9 +48,9 @@ define("_AM_XPETITIONS_INDEX_SUMMARY_BOX1",     "Configurazione XPETITIONS");
 define("_AM_XPETITIONS_INDEX_SUMMARY_BOX2",     "Sintesi");
 define("_AM_XPETITIONS_CREATE",			"Crea");
 define("_AM_XPETITIONS_CREATE_BUTTON",		"Crea una petizione");
-define("_AM_XPETITIONS_DIR_CREATED",            "creato");
-define("_AM_XPETITIONS_DIR_NOT_CREATED",        "non creato");
-define("_AM_XPETITIONS_DIR_TO_CREATE",          "crearla ora");
+define("_AM_XPETITIONS_DIRECTORY_CREATED",      "creato");
+define("_AM_XPETITIONS_DIRECTORY_NOT_CREATED",  "non creato");
+define("_AM_XPETITIONS_DIRECTORY_TO_CREATE",    "crearla ora");
 define("_AM_XPETITIONS_INDEX_TAB1",		"Id");
 define("_AM_XPETITIONS_INDEX_TAB2",		"Petizioni online");
 define("_AM_XPETITIONS_INDEX_TAB3",		"Data");
@@ -260,11 +263,11 @@ The forms can be accompanied by an CAPTCHA to avoid the spams (choices of 3 capt
 define("_AM_XPETITIONS_ABOUT_2",                "Update");
 define("_AM_XPETITIONS_ABOUT_2_DSC",            "Check for updates");
 define("_AM_XPETITIONS_ABOUT_3",                "Support, inquiries and comments");
-define("_AM_XPETITIONS_ABOUT_3_DSC",            " get <a href='http://www.informatux.com/xpetitions' target='_blank'>a website and a forum for tracking bugs</a>. Verify that a bug has already been submitted before adding your own.");
+define("_AM_XPETITIONS_ABOUT_3_DSC",            " get <a href='https://github.com/informatux45/xpetitions' target='_blank'>a repository for tracking bugs</a>. Verify that a bug has already been submitted before adding your own.");
 define("_AM_XPETITIONS_ABOUT_4",                "Enhancement requests");
-define("_AM_XPETITIONS_ABOUT_4_DSC",            "You can make requests for improvement on <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'> the website through the contact form</a>.");
+define("_AM_XPETITIONS_ABOUT_4_DSC",            "You can make requests for improvement on <a href='https://github.com/informatux45/xpetitions' target='_blank'> the repository through the contact form</a>.");
 define("_AM_XPETITIONS_ABOUT_5",                "Email");
-define("_AM_XPETITIONS_ABOUT_5_DSC",            "I can also be contacted by email through my website <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'>on the contact form</a>.");
+define("_AM_XPETITIONS_ABOUT_5_DSC",            "I can also be contacted by email through my website <a href='http://www.informatux.com/' target='_blank'>on the contact form</a>.");
 define("_AM_XPETITIONS_ABOUT_6",                "Special thanks");
 define("_AM_XPETITIONS_ABOUT_6_DSC",            "A big thank you to Thomas HUBERT (worldcoalition.org) for the English translation of the module.");
 ?>

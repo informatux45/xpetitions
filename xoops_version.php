@@ -14,8 +14,10 @@
 // Directory XPETITIONS
 $xpetition_dirname            = basename(dirname(__FILE__));
 
+$modversion['version']        = "1.21";
+$modversion['module_status']       = 'Beta 1';
+$modversion['release_date']        = '2018/07/11';
 $modversion['name']           = _MI_XPETITIONS_NAME;
-$modversion['version']        = "1.20";
 $modversion['description']    = _MI_XPETITIONS_DESC;
 $modversion['credits']        = "Module de petitions en ligne (INFORMATUX).";
 $modversion['author']         = "INFORMATUX - Consultant informatique [www.informatux.com]";
@@ -25,7 +27,7 @@ $modversion['license_url']    = "//www.gnu.org/licenses/gpl-2.0.html";
 $modversion['official']       = 0;
 $modversion['image']          = "images/xpetitions_logo.png";
 $modversion['dirname']        = $xpetition_dirname;
-$modversion['dirmoduleadmin'] = '../../Frameworks/moduleclasses/moduleadmin';
+$modversion['dirmoduleadmin'] = '/Frameworks/moduleclasses/moduleadmin';
 $modversion['icons16']        = '../../Frameworks/moduleclasses/icons/16';
 $modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
 
@@ -48,10 +50,10 @@ $modversion['author_website_name'] = "Consultant informatique";
 $modversion['author_email']        = "contact@informatux.com";
 $modversion['demo_site_url']       = "";
 $modversion['demo_site_name']      = "";
-$modversion['support_site_url']    = "//www.informatux.com/xpetitions";
-$modversion['support_site_name']   = "Consultant informatique - Forums";
-$modversion['submit_bug']          = "//www.informatux.com/xpetitions";
-$modversion['submit_feature']      = "//www.informatux.com/xpetitions";
+$modversion['support_site_url']    = "https://github.com/informatux45/xpetitions";
+$modversion['support_site_name']   = "Consultant informatique - Github";
+$modversion['submit_bug']          = "https://github.com/informatux45/xpetitions";
+$modversion['submit_feature']      = "https://github.com/informatux45/xpetitions";
 
 // Developers
 $modversion['contributors']['developers'][0]['name']      = "Patrice Bouthier";
@@ -287,7 +289,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_TITLE';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_TITLE_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_TITLE_DEFAULT';
+$modversion['config'][$i]['default'] = _MI_XPETITIONS_SIGN_TITLE_DEFAULT;
 
 $i++;
 $modversion['config'][$i]['name'] = 'use_wysiwyg'; // Changement de l'editeur wysiwyg de description de la petition
@@ -304,7 +306,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_DOWNL';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_DOWNL_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_DOWNL_DEFAULT';
+$modversion['config'][$i]['default'] = _MI_XPETITIONS_SIGN_DOWNL_DEFAULT;
 
 $i++;
 $modversion['config'][$i]['name'] = 'signature_friend'; // intitule du lien pour prevenir un ami
@@ -312,7 +314,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_FRIEND';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_FRIEND_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_FRIEND_DEFAULT';
+$modversion['config'][$i]['default'] = _MI_XPETITIONS_SIGN_FRIEND_DEFAULT;
 
 $i++;
 $modversion['config'][$i]['name'] = 'signature_show'; // intitule du lien pour voir les signatures
@@ -320,7 +322,7 @@ $modversion['config'][$i]['title'] = '_MI_XPETITIONS_SIGN_SHOW';
 $modversion['config'][$i]['description'] = '_MI_XPETITIONS_SIGN_SHOW_DSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'string';
-$modversion['config'][$i]['default'] = '_MI_XPETITIONS_SIGN_SHOW_DEFAULT';
+$modversion['config'][$i]['default'] = _MI_XPETITIONS_SIGN_SHOW_DEFAULT;
 
 $i++;
 $modversion['config'][$i]['name'] = 'send_a_friend'; // afficher envoyer e un ami

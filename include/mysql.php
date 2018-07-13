@@ -264,12 +264,12 @@ function getFieldInfos($id, $pos) {
    $result = $xoopsDB->query($sql);
    if (!$result)
      return false;
-   $result = @mysql_fetch_object($result);
+   $result = $xoopsDB->fetchRow($result);
 
    if ($pos == 1)
-       return $result->visibility;
+       return $result['visibility'];
    if ($pos == 2)
-       return $result->obligatory;
+       return $result['obligatory'];
 }
 
 function getEmailInfos($id) {

@@ -16,6 +16,9 @@ define("_AM_XPETITIONS_XOOPS_PRO1",		"Support and updates available at ");
 define("_AM_XPETITIONS_XOOPS_PRO2",		"WEB solutions and development");
 define("_AM_XPETITIONS_XOOPS_PRO3",		"Do you need help with this module?");
 
+// * header.inc.php *
+define("_AM_XPETITIONS_MISSING",               "The ModuleAdmin class is not installed, install it on your xoops.<br />/Frameworks/moduleclasses/moduleadmin/");
+
 // * index.php *
 define("_AM_XPETITIONS_INDEX_HELP1",		"<b>HELP</b>");
 define("_AM_XPETITIONS_INDEX_HELP2",		"- Please click on the name of a petition to open its homepage.<br />- The date displayed is that of the day the petition was put online.<br />- Petition status can be set to three levels:<br />* <b style='color: green;'>Active</b> (The petition can be signed as long as the petition date is in the past)<br />* <b style='color: orange;'>Offline</b> (The petition is not displayed and cannot be signed)<br />* <b style='color: red;'>Archived</b> (The petition is displayed but cannot be signed)<br />- Possible actions:<br />* Modification (You can modify everything except for the name of the signatures table)<br />* Deletion (This will delete the petition, including all attached signatures. If you want to keep your petition without displaying it nor registering new signatures, set it to 'Offline')");
@@ -45,9 +48,9 @@ define("_AM_XPETITIONS_INDEX_SUMMARY_BOX1",     "XPETITIONS Configuration");
 define("_AM_XPETITIONS_INDEX_SUMMARY_BOX2",     "Synthesis");
 define("_AM_XPETITIONS_CREATE",			"Creation");
 define("_AM_XPETITIONS_CREATE_BUTTON",		"Create a petition");
-define("_AM_XPETITIONS_DIR_CREATED",            "created");
-define("_AM_XPETITIONS_DIR_NOT_CREATED",        "not created");
-define("_AM_XPETITIONS_DIR_TO_CREATE",          "create it now");
+define("_AM_XPETITIONS_DIRECTORY_CREATED",      "created");
+define("_AM_XPETITIONS_DIRECTORY_NOT_CREATED",  "not created");
+define("_AM_XPETITIONS_DIRECTORY_TO_CREATE",    "create it now");
 define("_AM_XPETITIONS_INDEX_TAB1",		"Id");
 define("_AM_XPETITIONS_INDEX_TAB2",		"Online petitions");
 define("_AM_XPETITIONS_INDEX_TAB3",		"Date");
@@ -257,11 +260,11 @@ The forms can be accompanied by an CAPTCHA to avoid the spams (choices of 3 capt
 define("_AM_XPETITIONS_ABOUT_2",                "Update");
 define("_AM_XPETITIONS_ABOUT_2_DSC",            "Check for updates");
 define("_AM_XPETITIONS_ABOUT_3",                "Support, inquiries and comments");
-define("_AM_XPETITIONS_ABOUT_3_DSC",            " get <a href='http://www.informatux.com/xpetitions' target='_blank'>a website and a forum for tracking bugs</a>. Verify that a bug has already been submitted before adding your own.");
+define("_AM_XPETITIONS_ABOUT_3_DSC",            " get <a href='https://github.com/informatux45/xpetitions' target='_blank'>a repository for tracking bugs</a>. Verify that a bug has already been submitted before adding your own.");
 define("_AM_XPETITIONS_ABOUT_4",                "Enhancement requests");
-define("_AM_XPETITIONS_ABOUT_4_DSC",            "You can make requests for improvement on <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'> the website through the contact form</a>.");
+define("_AM_XPETITIONS_ABOUT_4_DSC",            "You can make requests for improvement on <a href='https://github.com/informatux45/xpetitions' target='_blank'> the repository through the contact form</a>.");
 define("_AM_XPETITIONS_ABOUT_5",                "Email");
-define("_AM_XPETITIONS_ABOUT_5_DSC",            "I can also be contacted by email through my website <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'>on the contact form</a>.");
+define("_AM_XPETITIONS_ABOUT_5_DSC",            "I can also be contacted by email through my website <a href='http://www.informatux.com/' target='_blank'>on the contact form</a>.");
 define("_AM_XPETITIONS_ABOUT_6",                "Special thanks");
 define("_AM_XPETITIONS_ABOUT_6_DSC",            "A big thank you to Thomas HUBERT (worldcoalition.org) for the English translation of the module.");
 ?>

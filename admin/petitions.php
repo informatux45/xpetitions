@@ -212,7 +212,7 @@ switch ($op) {
 	$description = '';
 	$email       = !empty($xoopsUser) ? $xoopsUser->getVar("email", "E") : "";
 	$status      = '';
-	//$whoview     = '';
+	$whoview     = '';
 
 	include "../include/addform.inc.php"; // affichage du formulaire
     break;

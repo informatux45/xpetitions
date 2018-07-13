@@ -12,7 +12,7 @@ include ('../../../include/cp_header.php');
 if ( file_exists($GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/moduleadmin.php'))){
         include_once $GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/moduleadmin.php');
 } else {
-        redirect_header("../../../admin.php", 5, _AM_MODULEADMIN_MISSING, false); 
+        redirect_header("../../../admin.php", 5, _AM_XPETITIONS_MISSING, false);
 }
 
 if ( file_exists("../language/".$xoopsConfig['language']."/main.php") ) {
@@ -26,7 +26,7 @@ include_once("../include/functions.php");
 include_once("../include/config.php");
 include_once("../include/mysql.php");
 
-$moduleInfo      =& $module_handler->get($xoopsModule->getVar('mid'));
+$moduleInfo      = $module_handler->get($xoopsModule->getVar('mid'));
 $pathModuleAdmin = $xoopsModule->getInfo('dirmoduleadmin');
 $pathIcon16      = '../'.$xoopsModule->getInfo('icons16');
 $pathIcon32      = '../'.$xoopsModule->getInfo('icons32');

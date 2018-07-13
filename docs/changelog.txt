@@ -1,16 +1,21 @@
 =========================================================
+2015/11/18  1.20 Final
+=========================================================
+[ADMIN] Modification pied de page (lien INFORMATUX / XPETITIONS)
+
+=========================================================
 2013/10/03  1.20 Final
 =========================================================
 
 Modification du module XPETITIONS pour qu'il fonctionne sous XOOPS 2.5.x.
 Mise en conformite du modules avec le Framework "ModuleClasses" en version 1.1.
-[admin] Modification de l'accueil du module pour fonctionnement avec ModuleAdmin 1.1
-[admin] Creation de la page d'index
-[admin] Creation de la page "about"
-[admin] Creation de boutons d'action sur toutes les pages admin
-[admin] Ajout d'un bouton "creer le repertoire" d'upload des fichiers joints aux petitions
-[admin - client] Nombreux tests pour corrections de bugs
-[admin] Normalisation du module (spec XOOPS)
+[ADMIN] Modification de l'accueil du module pour fonctionnement avec ModuleAdmin 1.1
+[ADMIN] Creation de la page d'index
+[ADMIN] Creation de la page "about"
+[ADMIN] Creation de boutons d'action sur toutes les pages admin
+[ADMIN] Ajout d'un bouton "creer le repertoire" d'upload des fichiers joints aux petitions
+[ADMIN - client] Nombreux tests pour corrections de bugs
+[ADMIN] Normalisation du module (spec XOOPS)
 
 
 =========================================================
@@ -51,11 +56,11 @@ Corrections mineures.
 2008/07/05  1.00 Final
 =========================================================
 
-1. [admin] Nouvel onglet admin "captcha" - preferences des images captcha par l'administration
-2. [admin] Choix de deux captchas (image ou texte)
-3. [admin] Amelioration visuel de l'aide en ligne
-4. [admin] Choix de l'affichage des signataires (vertical ou separes par des virgules)
-5. [client] Affichage des signataires : lettre selectionnee dans une couleur differente 
+1. [ADMIN] Nouvel onglet admin "captcha" - preferences des images captcha par l'administration
+2. [ADMIN] Choix de deux captchas (image ou texte)
+3. [ADMIN] Amelioration visuel de l'aide en ligne
+4. [ADMIN] Choix de l'affichage des signataires (vertical ou separes par des virgules)
+5. [CLIENT] Affichage des signataires : lettre selectionnee dans une couleur differente 
 
 
 =========================================================

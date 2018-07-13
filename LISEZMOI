@@ -56,16 +56,15 @@ Installation du module
 
 Xpetitions s'installe comme tous les autres modules Xoops.
 Vous devez copier le répertoire /xpetitions dans le répertoire des modules Xoops de votre site.
-Ensuite identifiez vous comme administrateur, menu Système admin -> modules puis dans les modules non installés,
-cliquez sur l'icône d'installation.
+Ensuite identifiez vous comme administrateur, menu Système admin -> modules puis dans les modules non installés, cliquez sur l'icône d'installation.
 Puis, suivez les instruction qui suivent à l'écran.
 
 Mettre le répertoire /xpetitions/csv/ accessible en écriture pour l'export des signatures (chmod 777).
 
-Créer un répertoire, dans le répertoire upload de Xoops, (ex: /upload/xpetitions) accessible en écriture
-pour le stockage des pétitions papiers qui vous associerez à vos pétitions en ligne.
+Créer un répertoire, dans le répertoire upload de Xoops, (ex: /upload/xpetitions) accessible en écriture pour le stockage des pétitions papiers qui vous associerez à vos pétitions en ligne.
 
-
+Il y a un fichier 'mysql.en.sql' pour les utilisateurs Anglophone dans le répertoire 'mysql'. Renommez ce fichier en 'mysql.sql' si vous souhaitez avoir les messages d'email en anglais.
+Il y a un fichier 'mysql.it.sql' pour les utilisateurs Italiens dans le répertoire 'mysql'. Renommez ce fichier en 'mysql.sql' si vous souhaitez avoir les messages d'email en italien.
 
 Versions Xoops supportées
 =========================
@@ -90,6 +89,5 @@ Mysql >= 3.23, 4.x, 5.x Php 4 & 5
 Feedback
 ========
 
-Utilisez le formulaire de contact d'INFORMATUX ou le forum du site :
-http://www.informatux.com/xpetitions
-
+Utilisez le site du dépot d'INFORMATUX:
+https://github.com/informatux45/xpetitions

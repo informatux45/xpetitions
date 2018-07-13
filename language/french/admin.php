@@ -16,6 +16,9 @@ define("_AM_XPETITIONS_XOOPS_PRO1",		"Support et mise à jour disponible sur ");
 define("_AM_XPETITIONS_XOOPS_PRO2",		"Solutions et développement WEB");
 define("_AM_XPETITIONS_XOOPS_PRO3",		"Avez-vous besoin d'aide avec ce module ?");
 
+// * header.inc.php *
+define("_AM_XPETITIONS_MISSING",               "La classe ModuleAdmin n'est pas présente, installez là sur votre xoops.<br />/Frameworks/moduleclasses/moduleadmin/");
+
 // * index.php *
 define("_AM_XPETITIONS_INDEX_HELP1",		"<b>AIDE</b>");
 define("_AM_XPETITIONS_INDEX_HELP2",		"- En cliquant sur le nom d'une pétition, vous accéder à la page d'accueil de celle-ci.<br />- La date correspond à la mise en ligne d'une pétition.<br />- Le statut d'une pétition possède 3 états :<br />* <b style='color: green;'>Active</b> (La pétition peut être signée si la date n'est pas supérieur à la date du jour)<br />* <b style='color: orange;'>hors ligne</b> (La pétition n'est pas visible et ne peut pas être signée)<br />* <b style='color: red;'>Archivée</b> (La pétition est visible mais ne peut pas être signée)<br />- Les actions possibles :<br />* Modification (Vous pouvez tout modifier sauf le nom de la table qui recevra les signatures)<br />* Suppression (Cette action supprimera la pétition en ligne y compris toutes les signatures enregistrées. Si vous souhaitez conserver votre pétition mais quelle ne soit plus signée ni accessible, modifiez l'état à 'hors ligne')");
@@ -45,9 +48,9 @@ define("_AM_XPETITIONS_INDEX_SUMMARY_BOX1",     "Configuration XPETITIONS");
 define("_AM_XPETITIONS_INDEX_SUMMARY_BOX2",     "Synthèse");
 define("_AM_XPETITIONS_CREATE",			"Création");
 define("_AM_XPETITIONS_CREATE_BUTTON",		"Créer une pétition");
-define("_AM_XPETITIONS_DIR_CREATED",            "créé");
-define("_AM_XPETITIONS_DIR_NOT_CREATED",        "pas créé");
-define("_AM_XPETITIONS_DIR_TO_CREATE",          "le créer maintenant");
+define("_AM_XPETITIONS_DIRECTORY_CREATED",      "créé");
+define("_AM_XPETITIONS_DIRECTORY_NOT_CREATED",  "pas créé");
+define("_AM_XPETITIONS_DIRECTORY_TO_CREATE",    "le créer maintenant");
 define("_AM_XPETITIONS_INDEX_TAB1",		"Id");
 define("_AM_XPETITIONS_INDEX_TAB2",		"Pétitions en ligne");
 define("_AM_XPETITIONS_INDEX_TAB3",		"Date");
@@ -254,11 +257,11 @@ define("_AM_XPETITIONS_ABOUT_1_DSC",            "Xpetitions est un module de pé
 define("_AM_XPETITIONS_ABOUT_2",                "Mise à jour");
 define("_AM_XPETITIONS_ABOUT_2_DSC",            "Vérifier les mises à jour");
 define("_AM_XPETITIONS_ABOUT_3",                "Support, demandes et commentaires");
-define("_AM_XPETITIONS_ABOUT_3_DSC",            " possède <a href='http://www.informatux.com/xpetitions' target='_blank'>un site et un forum pour le suivi des bugs</a>. Vérifier qu'un bug n'a pas déjà été soumis avant d'ajouter le votre.");
+define("_AM_XPETITIONS_ABOUT_3_DSC",            " possède <a href='https://github.com/informatux45/xpetitions' target='_blank'>un dépôt pour le suivi des bugs</a>. Vérifier qu'un bug n'a pas déjà été soumis avant d'ajouter le votre.");
 define("_AM_XPETITIONS_ABOUT_4",                "Demandes d'amélioration");
-define("_AM_XPETITIONS_ABOUT_4_DSC",            "Vous pouvez effectuer vos demandes d'amélioration sur <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'> le site par le biais du formulaire de contact</a>.");
+define("_AM_XPETITIONS_ABOUT_4_DSC",            "Vous pouvez effectuer vos demandes d'amélioration sur <a href='https://github.com/informatux45/xpetitions' target='_blank'> le dépôt par le biais du formulaire de contact</a>.");
 define("_AM_XPETITIONS_ABOUT_5",                "Email");
-define("_AM_XPETITIONS_ABOUT_5_DSC",            "Je peux aussi être contacter par email sur mon site par le biais <a href='http://www.informatux.com/xpetitions/modules/liaise' target='_blank'>du formulaire de contact</a>.");
+define("_AM_XPETITIONS_ABOUT_5_DSC",            "Je peux aussi être contacter par email sur mon site par le biais <a href='http://www.informatux.com/' target='_blank'>du formulaire de contact</a>.");
 define("_AM_XPETITIONS_ABOUT_6",                "Remerciements");
 define("_AM_XPETITIONS_ABOUT_6_DSC",            "Un grand merci à Thomas HUBERT (worldcoalition.org) pour la traduction en anglais du module.");
 ?>

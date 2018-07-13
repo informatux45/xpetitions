@@ -47,21 +47,23 @@ $xoopsTpl->assign("name_nav_home", $name_nav_home);
 // si l'option affichage des petitions de la page accueil : Ligne (1) ou Colonne (2)
 $xoopsTpl->assign("show_petitions_home", $xoopsModuleConfig['show_petitions_home']);
 
-//urbanspaceman mod
-$petition_detail = getPetitionDetails(intval($id));
-if ($petition_detail['whoview'] == '1'){
-    $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW1);
-    $xoopsTpl->assign("whoview_group", 1);
-}
+// urbanspaceman mod
+if (isset($id)) {
+    $petition_detail = getPetitionDetails(intval($id));
+    if ($petition_detail['whoview'] == '1'){
+        $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW1);
+        $xoopsTpl->assign("whoview_group", 1);
+    }
 
-elseif ($petition_detail['whoview'] == '2'){
-    $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW2);
-    $xoopsTpl->assign("whoview_group", 2);
-}
+    elseif ($petition_detail['whoview'] == '2'){
+        $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW2);
+        $xoopsTpl->assign("whoview_group", 2);
+    }
 
-elseif ($petition_detail['whoview'] == '3'){
-    $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW3);
-    $xoopsTpl->assign("whoview_group", 3);
+    elseif ($petition_detail['whoview'] == '3'){
+        $xoopsTpl->assign("whoview", _MD_XPETITIONS_WHOVIEW3);
+        $xoopsTpl->assign("whoview_group", 3);
+    }
 }
 
 switch ($op) {
@@ -365,9 +367,10 @@ case "friend_send": // envoi du message à un ami
 			// Recuperation de l'option captcha
 			$captcha_inprogress = getOptionInfos('captcha');
 			switch($captcha_inprogress['options']) {
+                                case "1":
 				default: // Option CAPTCHA (K.OHWADA) => 1
 				require_once ('class/captcha_x/class.captcha_x.php');
-				$captcha_check = &new captcha_x();
+				$captcha_check = new captcha_x();
 				if ( !isset($captcha) || !$captcha_check->validate($captcha) ) {
 					redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
 				}
@@ -554,9 +557,10 @@ case "sign": // enregistrement d'une signature en ligne par email (par retour de
 			// Recuperation de l'option captcha
 			$captcha_inprogress = getOptionInfos('captcha');
 			switch($captcha_inprogress['options']) {
+                                case "1":
 				default: // Option CAPTCHA (K.OHWADA) => 1
 				require_once ('class/captcha_x/class.captcha_x.php');
-				$captcha_check = &new captcha_x();
+				$captcha_check = new captcha_x();
 				if ( !isset($captcha) || !$captcha_check->validate($captcha) ) {
 					redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
 				}
@@ -720,9 +724,10 @@ case "presign": // enregistrement d'une signature en ligne en automatique (doubl
 			// Recuperation de l'option captcha
 			$captcha_inprogress = getOptionInfos('captcha');
 			switch($captcha_inprogress['options']) {
+                                case "1":
 				default: // Option CAPTCHA (K.OHWADA) => 1
 				require_once ('class/captcha_x/class.captcha_x.php');
-				$captcha_check = &new captcha_x();
+				$captcha_check = new captcha_x();
 				if ( !isset($captcha) || !$captcha_check->validate($captcha) ) {
 					redirect_header("javascript:history.go(-1)", 2, _MD_XPETITIONS_CAPTCHA_ERROR);
 				}

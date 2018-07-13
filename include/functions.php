@@ -50,12 +50,12 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
                 // ------------------------------------
                 $dir_upload_xpetitions = $home_info[0];
 		if (is_dir($dir_upload_xpetitions)) {
-			$dir_upload['value']  = _AM_XPETITIONS_DIR_CREATED;
+			$dir_upload['value']  = _AM_XPETITIONS_DIRECTORY_CREATED;
 			$dir_upload['button'] = '';
 			$dir_upload['color']  = 'green';
 		} else {
-			$dir_upload['value']  = _AM_XPETITIONS_DIR_NOT_CREATED . '<br />';
-			$dir_upload['button'] = '<form name="create_dir" action="dir.php" method="post"><input type="submit" value="'._AM_XPETITIONS_DIR_TO_CREATE.'" /></form>';
+			$dir_upload['value']  = _AM_XPETITIONS_DIRECTORY_NOT_CREATED . '<br />';
+			$dir_upload['button'] = '<form name="create_dir" action="dir.php" method="post"><input type="submit" value="'._AM_XPETITIONS_DIRECTORY_TO_CREATE.'" /></form>';
 			$dir_upload['color']  = 'red';
 		}
 		$indexAdmin->addInfoBoxLine($box1, _AM_XPETITIONS_CHECK1.' ('.$dir_upload_xpetitions.')'.$dir_upload['button'], $dir_upload['value'], $dir_upload['color'], 'default');
@@ -114,7 +114,6 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
             break;
             
             case "about.php":
-                //if ($navigation == 'about.php') echo $indexAdmin->renderAbout('DP72DNEB4LAZG', false);
                 echo $indexAdmin->renderAbout();
             break;
         
@@ -127,13 +126,14 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
             break;
             
             case "signature.php":
-                if (!isset($_REQUEST['op'])) {
+                $op = (isset($_REQUEST['op'])) ? trim($_REQUEST['op']) : false;
+                if (!isset($op)) {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
                     echo $indexAdmin->renderButton('left');
                 }
-                if ($_REQUEST['op'] == 'novalid') {
+                if ($op == 'novalid') {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
@@ -141,13 +141,13 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = array()) {
                     $indexAdmin->addItemButton(_AM_XPETITIONS_FORCE_SIGN, 'signature.php?op=signfo&id='.$_REQUEST['id'].'&name='.$_REQUEST['name'].'&ok=0', 'button_ok');
                     echo $indexAdmin->renderButton('left');
                 }
-                if ($_REQUEST['op'] == 'recorded') {
+                if ($op == 'recorded') {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
                     echo $indexAdmin->renderButton('left');
                 }
-                if ($_REQUEST['op'] == 'extract') {
+                if ($op == 'extract') {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SIGN_SHOW, 'signature.php?op=signshow', 'search');
@@ -165,9 +165,9 @@ global $xoopsModule;
     $modfootertxt = "Module " . $xoopsModule->getVar('name') . " - Version " . $xoopsModule->getVar('version')/100 . " - INFORMATUX.COM";
     $urlMod  = XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname');
     $urlSup  = "http://www.informatux.com/";
-    $urlSup2 = "http://www.informatux.com/xpetitions";
+    $urlSup2 = "https://github.com/informatux45/xpetitions";
 
-    echo "<div style='padding-top: 8px; padding-bottom: 10px; text-align: center;'><a href='" . $urlSup2 . "' target='_blank'><img src='" . $urlMod . "/images/xpetitions_icone.png' title='" . $modfootertxt . "' alt='" . $modfootertxt . "'/></a></div>";
+    echo "<div style='padding-top: 8px; padding-bottom: 10px; text-align: center;'><a href='" . $urlSup2 . "' target='_blank'><img src='" . $urlMod . "/images/xpetitions_icone.png' title='" . $modfootertxt . "' alt='" . $modfootertxt . "'/></a><div class='xpetitions_admin_footer_inf2'>Developed and maintained by <a href='" . $urlSup . "'>INFORMATUX</a></div></div>";
     
 } // fin de la fonction
 
@@ -305,6 +305,39 @@ function mailValid($email) {
 	} else {
 		return 0; // Non valide
 	}
+}
+
+function getEditor($caption, $name, $value = "", $width = '100%', $height ='400px', $supplemental='', $dhtml = true){
+
+global $xoopsModuleConfig;
+$editor = false;
+$xv     = str_replace('XOOPS ','',XOOPS_VERSION);
+
+$editor_configs           = array();
+$editor_configs["name"]   = $name;
+$editor_configs["value"]  = $value;
+$editor_configs["rows"]   = 10;
+$editor_configs["cols"]   = 40;
+$editor_configs["width"]  = "100%";
+$editor_configs["height"] = "400px";
+
+	switch(strtolower($xoopsModuleConfig['use_wysiwyg'])) {
+                case 'tiny':
+                case 'tinymce':
+                    $editor = new XoopsFormEditor($caption, $xoopsModuleConfig['use_wysiwyg'], $editor_configs, $nohtml = false, $onfailure = 'textarea');    
+                break;
+
+		default :
+		if ($dhtml) {
+			$editor = new XoopsFormDhtmlTextArea($caption, $name, $value, 10, 40);
+		} else {
+			$editor = new XoopsFormTextArea($caption, $name, $value, 7, 40);
+		}
+
+		break;
+	}
+
+	return $editor;
 }
 
 ?>

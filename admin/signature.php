@@ -152,35 +152,35 @@ case "latecomer_send": // Envoi des emails aux retardaires
 
 	// Remplacer les chaines de caracteres dans le corps du message
 	foreach ($array_latecomers as $row) {
-	$body = $_POST['message'];
-	$body = preg_replace("/{USER_NAME}/", $row['prenom'].' '.$row['name'], $body);
-	$body = preg_replace("/{PETITION}/", $myts->DisplayTarea($petition_detail['title']), $body);
-	$body = preg_replace("/{USER_EMAIL}/", $row['email'], $body);
-	$body = preg_replace("/{SITE_URL}/", XOOPS_URL, $body);
-	$body = preg_replace("/{SITE_NAME}/", $myts->DisplayTarea($xoopsConfig['sitename']), $body);
-	$body = preg_replace("/{LINK_URL}/", $link_url.$row['cle'], $body);
-	$body = stripslashes($body);
+            $body = $_POST['message'];
+            $body = preg_replace("/{USER_NAME}/", $row['prenom'].' '.$row['name'], $body);
+            $body = preg_replace("/{PETITION}/", $myts->DisplayTarea($petition_detail['title']), $body);
+            $body = preg_replace("/{USER_EMAIL}/", $row['email'], $body);
+            $body = preg_replace("/{SITE_URL}/", XOOPS_URL, $body);
+            $body = preg_replace("/{SITE_NAME}/", $myts->DisplayTarea($xoopsConfig['sitename']), $body);
+            $body = preg_replace("/{LINK_URL}/", $link_url.$row['cle'], $body);
+            $body = stripslashes($body);
 
-	$get_subject    = getEmailInfos('1'); // Email aux retardataires
-	$sample_subject = $get_subject['subject'];
-	$sample_subject = preg_replace("/{SITE_NAME}/", $myts->DisplayTarea($xoopsConfig['sitename']), $sample_subject);
-	$sample_subject = preg_replace("/{PETITION}/", $myts->DisplayTarea($petition_detail['title']), $sample_subject);
+            $get_subject    = getEmailInfos('1'); // Email aux retardataires
+            $sample_subject = $get_subject['subject'];
+            $sample_subject = preg_replace("/{SITE_NAME}/", $myts->DisplayTarea($xoopsConfig['sitename']), $sample_subject);
+            $sample_subject = preg_replace("/{PETITION}/", $myts->DisplayTarea($petition_detail['title']), $sample_subject);
 
-	// envoi d'un email à votre ami
-	$site_email  = $petition_email;
-	$site_name   = $xoopsConfig['sitename'];
-	$subject     = $sample_subject;
-	$xoopsMailer =& getMailer();
-	$xoopsMailer->useMail();
-	$xoopsMailer->setToEmails($row['email']);
-	// $xoopsMailer->setToEmails(array($email, $email2, $email3));
-	$xoopsMailer->setFromEmail($site_email);
-	$xoopsMailer->setFromName($site_name);
-	$xoopsMailer->setSubject($sample_subject);
-	$xoopsMailer->setBody($body);
-		if (!$xoopsMailer->send(true)) {
-			redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_EMAIL_SEND_ERROR_LATECOMER);
-		}
+            // envoi d'un email à votre ami
+            $site_email  = $petition_email;
+            $site_name   = $xoopsConfig['sitename'];
+            $subject     = $sample_subject;
+            $xoopsMailer =& getMailer();
+            $xoopsMailer->useMail();
+            $xoopsMailer->setToEmails($row['email']);
+            // $xoopsMailer->setToEmails(array($email, $email2, $email3));
+            $xoopsMailer->setFromEmail($site_email);
+            $xoopsMailer->setFromName($site_name);
+            $xoopsMailer->setSubject($sample_subject);
+            $xoopsMailer->setBody($body);
+                    if (!$xoopsMailer->send(true)) {
+                            redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_EMAIL_SEND_ERROR_LATECOMER);
+                    }
 	}
 	if($xoopsMailer->getErrors()) {
 		redirect_header("javascript:history.go(-1)", 2, _AM_XPETITIONS_LATECOMER_SEND_ERROR);

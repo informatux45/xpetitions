@@ -74,3 +74,9 @@ div#xpetitions_help_a {border: 0px solid silver; background: url('../images/help
 .xpetitions_summary_archive {color: red; font-weight: bold;}
 
 legend.label {cursor: pointer;}
+
+.xpetitions_admin_footer_inf2 {
+    display: block;
+    text-align: center;
+    font: italic bold 11px/20px Georgia, serif;
+}
