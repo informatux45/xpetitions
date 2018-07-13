@@ -17,9 +17,9 @@
     background: #e7e7e7;
     font-size: 93%;
     line-height: normal;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
     margin: 0;
 }
 
@@ -29,8 +29,8 @@
     background: #e7e7e7 url('../images/bg.png') repeat-x left bottom;
     font-size: 93%;
     line-height: normal;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
     margin-bottom: 12px;
 }
 
@@ -63,7 +63,7 @@
     padding: 5px 15px 4px 6px;
     font-weight: normal;
     color: #765;
-    color: white;
+    color: #ffffff;
 }
 
 /* Commented Backslash Hack hides rule from IE5-Mac \*/
@@ -122,7 +122,7 @@
 
 /* style template */
 div#xpetitions_help_a {
-    border: 0px solid silver;
+    border: 0px solid #c0c0c0;
     background: url('../images/help2.png') no-repeat top left;
     text-align: center;
     line-height: 22px;
@@ -132,12 +132,12 @@ div#xpetitions_help_a {
 }
 
 .xpetitions_help_title {
-    color: navy;
+    color: #000080;
 }
 
 .xpetitions_help {
     font: normal 12px;
-    color: blue;
+    color: #0000ff;
     text-align: left;
 }
 
@@ -145,7 +145,7 @@ div#xpetitions_help_a {
 
 .xpetitions_header {
     width: 100%;
-    border-bottom: 1px solid silver;
+    border-bottom: 1px solid #c0c0c0;
     margin: 5px 0px 12px 0px;
     padding: 0;
 }
@@ -153,20 +153,20 @@ div#xpetitions_help_a {
 .xpetitions_title {
     font-size: 14px;
     font-weight: bold;
-    color: black;
+    color: #000000;
     padding: 0px;
 }
 
 .xpetitions_name {
     font-size: 10px;
     font-weight: bold;
-    color: black;
+    color: #000000;
 }
 
 .xpetitions_name a {
     font-size: 10px;
     font-weight: bold;
-    color: gray;
+    color: #808080;
 }
 
 .xpetitions_home {
@@ -174,26 +174,26 @@ div#xpetitions_help_a {
     line-height: 18px;
     font-weight: normal;
     font-size: 14px;
-    color: black;
-    background-color: silver;
+    color: #000000;
+    background-color: #c0c0c0;
     padding: 3px;
 }
 
 .xpetitions_offline {
     font-size: 14px;
     font-weight: bold;
-    color: black;
+    color: #000000;
     padding: 0px 0px 12px 0px;
 }
 
 .xpetitions_sign {
     width: 99%;
-    border: 1px solid gray;
+    border: 1px solid #808080;
     padding: 3px;
-    background-color: silver;
+    background-color: #c0c0c0;
     text-align: center;
     font: normal 12px;
-    color: black;
+    color: #000000;
     margin: 12px 0px;
     clear: both;
 }
@@ -211,7 +211,7 @@ div#xpetitions_help_a {
 
 .xpetitions_sign_recorded {
     font: normal 12px;
-    color: black;
+    color: #000000;
     padding: 3px;
     margin-top: 12px;
     height: 100%;
@@ -225,34 +225,34 @@ div#xpetitions_help_a {
 .xpetitions_allsigns_cpt {
     font-weight: bold;
     font-size: 16px;
-    color: black;
+    color: #000000;
     padding: 10px;
     text-align: center;
 }
 
 .xpetitions_allsigns_title {
     font: normal 14px;
-    color: black;
+    color: #000000;
     text-align: center;
 }
 
 .xpetitions_allsigns_show {
     font-weight: normal;
     font-size: 11px;
-    color: black;
+    color: #000000;
     padding: 20px;
 }
 
 .xpetitions_allsigns_letter {
     font-weight: normal;
     font-size: 12px;
-    color: black;
+    color: #000000;
     text-decoration: underline;
 }
 
 .xpetitions_allsigns_big_letter {
     font-size: 24px;
-    color: red;
+    color: #ff0000;
 }
 
 .xpetitions_block_title {
@@ -268,14 +268,14 @@ div#xpetitions_help_a {
 
 .xpetitions_verfication_ok {
     width: auto;
-    border: 1px solid green;
+    border: 1px solid #008000;
     padding: 5px;
     background-color: #e6ffee;
 }
 
 .xpetitions_verfication_ko {
     width: auto;
-    border: 1px solid red;
+    border: 1px solid #ff0000;
     padding: 5px;
     background-color: #fff0f2;
 }
