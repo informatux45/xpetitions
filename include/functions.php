@@ -274,7 +274,7 @@ function deleteFile($delfile, $id, $link, $link_file)
 
 function ExporterSignatures($p)
 {
-    $dir           = dirname(__FILE__);
+    $dir           = __DIR__;
     $fichier       = "$dir/signature.csv";
     $infosPetition = LireInfosPetition($p);
     

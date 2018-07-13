@@ -12,7 +12,7 @@
 /* ******************************************* */
 
 // Directory XPETITIONS
-$xpetition_dirname = basename(dirname(__FILE__));
+$xpetition_dirname = basename(__DIR__);
 
 $modversion['version']        = '1.21';
 $modversion['module_status']  = 'Beta 1';

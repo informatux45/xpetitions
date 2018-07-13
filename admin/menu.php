@@ -12,11 +12,11 @@
 /* ******************************************* */
 
 defined('XOOPS_ROOT_PATH') or die('Restricted access');
-$path = dirname(dirname(dirname(dirname(__FILE__))));
+$path = dirname(dirname(dirname(__DIR__)));
 
 global $xoopsModule, $xoopsUser;
 
-$dirname        = basename(dirname(dirname(__FILE__)));
+$dirname        = basename(dirname(__DIR__));
 $module_handler = xoops_getHandler('module');
 $module         = $module_handler->getByDirname($dirname);
 $pathIcon32     = $module->getInfo('icons32');

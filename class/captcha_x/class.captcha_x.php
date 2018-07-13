@@ -73,7 +73,7 @@ class captcha_x
      */
     public function __construct()
     {
-        $this->INI = parse_ini_file(dirname(__FILE__) . '/captcha_x.ini', true);
+        $this->INI = parse_ini_file(__DIR__ . '/captcha_x.ini', true);
     }
     
     /* ========== PUBLIC METHODS ========== */
@@ -211,7 +211,7 @@ class captcha_x
 
         // whether use the local fonts or the system fonts
         if ($use_local_fonts) {
-            $font_path = realpath(dirname(__FILE__) . '/fonts');
+            $font_path = realpath(__DIR__ . '/fonts');
             if (@putenv('GDFONTPATH=' . $font_path) === false) {
                 $no_putenv = true;
             }
