@@ -248,12 +248,12 @@ class captcha_x
             $size_index     = rand(0, $font_size_count);
             $size           = $font_size[$size_index];
             
-            $angle          = ((rand(0, ($letter_precession * 2)) - $letter_precession) + 360) % 360;
+            $angle          = ((rand(0, $letter_precession * 2) - $letter_precession) + 360) % 360;
             
             $x              = $padding_left + ($box_width * $i);
             $y              = $padding_top + $size + (($box_height - $size) / 2);
             
-            $color_index    = (rand(0, $fg_colors_count));
+            $color_index    = rand(0, $fg_colors_count);
             $color          = $fg_colors[$color_index];
             $color          = imagecolorallocate($this->image, $color[0], $color[1], $color[2]);
             

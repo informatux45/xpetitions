@@ -258,7 +258,7 @@ function getSignatureDouble($petition_name, $firstname, $lastname, $email)
     $result = $xoopsDB->query($sql);
     $response = $xoopsDB->fetchArray($result);
     if ($response) {
-        return ($response['id']);
+        return $response['id'];
     }
 }
 

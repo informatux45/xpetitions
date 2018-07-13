@@ -11,7 +11,7 @@
 /*            <http://www.xoops.org/>          */
 /* ******************************************* */
 
-include('header.php');
+include 'header.php';
 
 if (!isset($_REQUEST['op']) && !isset($_REQUEST['id'])) {
     $op       = 'index';
@@ -27,8 +27,8 @@ if (!isset($_REQUEST['op']) && !isset($_REQUEST['id'])) {
 }
 
 $xoopsOption['template_main'] = 'xpetitions_' . $template . '.html';
-include(XOOPS_ROOT_PATH . '/header.php');
-include(XOOPS_ROOT_PATH . '/class/pagenav.php');
+include XOOPS_ROOT_PATH . '/header.php';
+include XOOPS_ROOT_PATH . '/class/pagenav.php';
 
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
@@ -359,7 +359,7 @@ case 'friend_send': // envoi du message à un ami
                 switch ($captcha_inprogress['options']) {
                                 case '1':
                 default: // Option CAPTCHA (K.OHWADA) => 1
-                require_once('class/captcha_x/class.captcha_x.php');
+                require_once 'class/captcha_x/class.captcha_x.php';
                 $captcha_check = new captcha_x();
                 if (!isset($captcha) || !$captcha_check->validate($captcha)) {
                     redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
@@ -375,7 +375,7 @@ case 'friend_send': // envoi du message à un ami
                 break;
 
                 case '3': // Option CAPTCHA (TEXTE) => 3
-                require_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php');
+                require_once XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php';
                 if ($_SESSION['captcha_image'] != $captcha) {
                     redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
@@ -548,7 +548,7 @@ case 'sign': // enregistrement d'une signature en ligne par email (par retour de
                     switch ($captcha_inprogress['options']) {
                                 case '1':
                 default: // Option CAPTCHA (K.OHWADA) => 1
-                require_once('class/captcha_x/class.captcha_x.php');
+                require_once 'class/captcha_x/class.captcha_x.php';
                 $captcha_check = new captcha_x();
                 if (!isset($captcha) || !$captcha_check->validate($captcha)) {
                     redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
@@ -564,7 +564,7 @@ case 'sign': // enregistrement d'une signature en ligne par email (par retour de
                 break;
 
                 case '3': // Option CAPTCHA (TEXTE) => 3
-                require_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php');
+                require_once XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php';
                 if ($_SESSION['captcha_image'] != $captcha) {
                     redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
@@ -714,7 +714,7 @@ case 'presign': // enregistrement d'une signature en ligne en automatique (doubl
                     switch ($captcha_inprogress['options']) {
                                 case '1':
                 default: // Option CAPTCHA (K.OHWADA) => 1
-                require_once('class/captcha_x/class.captcha_x.php');
+                require_once 'class/captcha_x/class.captcha_x.php';
                 $captcha_check = new captcha_x();
                 if (!isset($captcha) || !$captcha_check->validate($captcha)) {
                     redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
@@ -730,7 +730,7 @@ case 'presign': // enregistrement d'une signature en ligne en automatique (doubl
                 break;
 
                 case '3': // Option CAPTCHA (TEXTE) => 3
-                require_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php');
+                require_once XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php';
                 if ($_SESSION['captcha_image'] != $captcha) {
                     redirect_header('javascript:history.go(-1)', 2, _MD_XPETITIONS_CAPTCHA_ERROR);
                 }
@@ -961,4 +961,4 @@ case 'index': // affichage de la page d'accueil des pétitions
     break;
 }
 
-include(XOOPS_ROOT_PATH . '/footer.php');
+include XOOPS_ROOT_PATH . '/footer.php';

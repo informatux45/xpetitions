@@ -26,7 +26,7 @@
 //  ------------------------------------------------------------------------ //
 
 // includes
-include_once('header.inc.php');
+include_once 'header.inc.php';
 
 xoops_cp_header();
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;

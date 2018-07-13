@@ -12,8 +12,8 @@
 /* ******************************************* */
 
 // includes
-include_once('header.inc.php');
-include_once(XOOPS_ROOT_PATH . '/header.php');
+include_once 'header.inc.php';
+include_once XOOPS_ROOT_PATH . '/header.php';
 include_once XOOPS_ROOT_PATH . '/class/xoopsmailer.php';
 include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
 

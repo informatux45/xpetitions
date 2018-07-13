@@ -12,7 +12,7 @@
 /* ******************************************* */
 
 // includes
-include_once('header.inc.php');
+include_once 'header.inc.php';
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
 
 include XOOPS_ROOT_PATH.'/header.php';

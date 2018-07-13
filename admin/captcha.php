@@ -12,8 +12,8 @@
 /* ******************************************* */
 
 // includes
-include_once('header.inc.php');
-include_once(XOOPS_ROOT_PATH . '/header.php');
+include_once 'header.inc.php';
+include_once XOOPS_ROOT_PATH . '/header.php';
 include_once XOOPS_ROOT_PATH . '/class/xoopsmailer.php';
 include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
 
@@ -45,7 +45,7 @@ switch ($op) {
     break;
 
     case 'update': // Mise à jour des champs
-    $captcha_choice = (!isset($_POST['captcha_choice'])) ? 1 : $_POST['captcha_choice'];
+    $captcha_choice = !isset($_POST['captcha_choice']) ? 1 : $_POST['captcha_choice'];
 
     $update_captcha = updateOption('captcha', $captcha_choice);
 

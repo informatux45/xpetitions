@@ -12,12 +12,12 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
+include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
 // Préparation des tableaux à fournir au formulaire
 $xpetitions_name = getPetitionsInfos();
 
-include('delform.inc.php');
+include 'delform.inc.php';
 
 // Initialisation du formulaire
 $addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE_ADDFORM, 'addform', 'signature.php?op=addsign');

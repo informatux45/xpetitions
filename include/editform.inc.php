@@ -12,7 +12,7 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
+include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
 $post    = intval($_GET['id']);
 $is_file = getPetitionDetails($post);

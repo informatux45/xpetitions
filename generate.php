@@ -11,7 +11,7 @@
 /*            <http://www.xoops.org/>          */
 /* ******************************************* */
 
-include('../../mainfile.php');
+include '../../mainfile.php';
 
 session_start();
 

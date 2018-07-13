@@ -13,9 +13,9 @@
 
 // includes
 $module_url = '/modules/' . $xoopsModule->getVar('dirname');
-include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
-include_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_jpgraph.php');
-include_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php');
+include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
+include_once XOOPS_ROOT_PATH . $module_url . '/class/antispam_jpgraph.php';
+include_once XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php';
 
 // Initialisation du formulaire
 $captcha = new XoopsThemeForm(_AM_XPETITIONS_TITLE_CAPTCHA . _AM_XPETITIONS_CAPTCHA_SAMPLES, 'captchaform', 'captcha.php?op=update');

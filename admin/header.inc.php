@@ -7,7 +7,7 @@
 */
 
 // includes
-include('../../../include/cp_header.php');
+include '../../../include/cp_header.php';
 
 if (file_exists($GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/moduleadmin.php'))) {
     include_once $GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/moduleadmin.php');
@@ -16,15 +16,15 @@ if (file_exists($GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/m
 }
 
 if (file_exists('../language/' . $xoopsConfig['language'] . '/main.php')) {
-    include('../language/' . $xoopsConfig['language'] . '/main.php');
+    include '../language/' . $xoopsConfig['language'] . '/main.php';
 } else {
-    include('../language/english/main.php');
+    include '../language/english/main.php';
 }
 
 // module fonctions
-include_once('../include/functions.php');
-include_once('../include/config.php');
-include_once('../include/mysql.php');
+include_once '../include/functions.php';
+include_once '../include/config.php';
+include_once '../include/mysql.php';
 
 $moduleInfo      = $module_handler->get($xoopsModule->getVar('mid'));
 $pathModuleAdmin = $xoopsModule->getInfo('dirmoduleadmin');

@@ -26,7 +26,7 @@
 //  ------------------------------------------------------------------------ //
 
 // includes
-include_once('header.inc.php');
+include_once 'header.inc.php';
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB, $pathIcon16;
 
 $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : 'petitions';
@@ -105,7 +105,7 @@ switch ($op) {
     $link_file   = '';
     $link        = '0';
 
-    include_once(XOOPS_ROOT_PATH . '/class/uploader.php');
+    include_once XOOPS_ROOT_PATH . '/class/uploader.php';
     $file = trim($_POST['xoops_upload_file'][0]);
 
     // taille du fichier avant upload
@@ -147,7 +147,7 @@ switch ($op) {
     $date        = formatdatestamp($date);
     $checkbox    = $_POST['file_delete'];
 
-    include_once(XOOPS_ROOT_PATH . '/class/uploader.php');
+    include_once XOOPS_ROOT_PATH . '/class/uploader.php';
     $file = $_POST['xoops_upload_file'][0];
 
     // vérification si suppression

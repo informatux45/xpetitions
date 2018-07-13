@@ -12,7 +12,7 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
+include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
 ?>
 <script type="text/javascript" src="<?php echo XOOPS_URL.$module_url; ?>/include/functions.js"></script>
@@ -72,7 +72,7 @@ if (isset($post)) {
         break;
 
         case '3': // Option CAPTCHA (Texte) => 3
-        require_once(XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php');
+        require_once XOOPS_ROOT_PATH . $module_url . '/class/antispam_text.php';
         $captcha3  = getCaptcha() . "<br />\n";
         $captcha3 .= '<input name="captcha" type="text" />';
         $friendform->addElement(new XoopsFormLabel(_MD_XPETITIONS_CAPTCHA_DSC, $captcha3), true);

@@ -12,10 +12,10 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
+include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
 if (is_file(XOOPS_ROOT_PATH . '/class/wysiwyg/formwysiwygtextarea.php')) {
-    include_once(XOOPS_ROOT_PATH . '/class/wysiwyg/formwysiwygtextarea.php');
+    include_once XOOPS_ROOT_PATH . '/class/wysiwyg/formwysiwygtextarea.php';
 }
 
 // Initialisation du formulaire

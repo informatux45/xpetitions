@@ -128,7 +128,7 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = [])
             break;
             
             case 'signature.php':
-                $op = (isset($_REQUEST['op'])) ? trim($_REQUEST['op']) : false;
+                $op = isset($_REQUEST['op']) ? trim($_REQUEST['op']) : false;
                 if (!isset($op)) {
                     // Ajouter des signataires manuellement (suite à une signature sur une de vos pétitions papier)
                     $indexAdmin->addItemButton(_AM_XPETITIONS_SAVE_SIGN, 'signature.php?op=signma', 'add');
@@ -224,7 +224,7 @@ function showLettersSigns($id, $module_url, $link)
 
 function createKey()
 {
-    return(md5(uniqid(rand())));
+    return md5(uniqid(rand()));
 }
 
 function filled_out($form_vars)

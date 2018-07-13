@@ -15,8 +15,8 @@ function b_xpetitions_last_signs_show($options)
 {
 
 // includes
-    require_once(XOOPS_ROOT_PATH.'/modules/xpetitions/include/mysql.php');
-    require_once(XOOPS_ROOT_PATH.'/modules/xpetitions/include/functions.php');
+    require_once XOOPS_ROOT_PATH . '/modules/xpetitions/include/mysql.php';
+    require_once XOOPS_ROOT_PATH . '/modules/xpetitions/include/functions.php';
 
     global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
     $myts = MyTextSanitizer::getInstance();
@@ -31,7 +31,7 @@ function b_xpetitions_last_signs_show($options)
     // si option 'affichage infos titre de la pétition'
     if ($options[0] == 1) {
         if (strlen($petition_detail['title']) >= $options[1]) {
-            $block['xpetitions_title'] = substr($myts->DisplayTarea(strtolower($petition_detail['title'])), 0, ($options[1])).'...';
+            $block['xpetitions_title'] = substr($myts->DisplayTarea(strtolower($petition_detail['title'])), 0, $options[1]) . '...';
         } else {
             $block['xpetitions_title'] = $myts->DisplayTarea($petition_detail['title']);
         }
@@ -73,7 +73,7 @@ function b_xpetitions_last_signs_edit($options)
     // options : Nombre de signatures à afficher, affichage de la date de la signature
 
     // includes
-    require_once(XOOPS_ROOT_PATH.'/modules/xpetitions/include/mysql.php');
+    require_once XOOPS_ROOT_PATH . '/modules/xpetitions/include/mysql.php';
     $myts = MyTextSanitizer::getInstance();
 
     $form = '<span style="font-weight: bold;">'._MB_XPETITIONS_INFOS.'</span><br />';

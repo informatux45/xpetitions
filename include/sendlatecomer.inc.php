@@ -12,7 +12,7 @@
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
+include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
 // Initialisation du formulaire
 $latecomer = new XoopsThemeForm(_AM_XPETITIONS_TITLE_LATECOMERFORM, 'latecomerform', 'signature.php?id=' . $_GET['id'] . '&op=latecomer_send');

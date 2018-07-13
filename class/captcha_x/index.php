@@ -29,7 +29,7 @@ if ( ! $_POST['validate']) {
     die;
 }
 
-require_once ( './class.captcha_x.php');
+require_once './class.captcha_x.php';
 
 $captcha = &new captcha_x ();
 if ( ! $captcha->validate ( $_POST['captcha'])) {
