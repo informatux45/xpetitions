@@ -8,14 +8,14 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
+include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
 // Initialisation du formulaire
-$addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE1_ADDFORM, "addform", "petitions.php?op=post");
+$addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE1_ADDFORM, 'addform', 'petitions.php?op=post');
 $addform->setExtra("enctype='multipart/form-data'");
 
 // Nom de la table des signatures de la pétition
@@ -40,14 +40,14 @@ $addform->addElement($field_email, true);
 
 // Statut de la petition
 $field_status = new XoopsFormSelect(_AM_XPETITIONS_STATUS_ADDFORM, 'status', $status);
-$options = array('1' => _AM_XPETITIONS_STATUS1, '2' => _AM_XPETITIONS_STATUS2, '3' => _AM_XPETITIONS_STATUS3);
+$options = ['1' => _AM_XPETITIONS_STATUS1, '2' => _AM_XPETITIONS_STATUS2, '3' => _AM_XPETITIONS_STATUS3];
 $field_status->addOptionArray($options);
 $field_status->setDescription(_AM_XPETITIONS_STATUS_ADDFORM_DSC);
 $addform->addElement($field_status, true);
 
 //chi può vedere le firme di questa petizione - modifica urbanspaceman 22/05
 $field_whoview = new XoopsFormSelect(_AM_XPETITIONS_WHOVIEW_ADDFORM, 'whoview', $whoview);
-$options = array('1' => _AM_XPETITIONS_WHOVIEW1, '2' => _AM_XPETITIONS_WHOVIEW2, '3' => _AM_XPETITIONS_WHOVIEW3);
+$options = ['1' => _AM_XPETITIONS_WHOVIEW1, '2' => _AM_XPETITIONS_WHOVIEW2, '3' => _AM_XPETITIONS_WHOVIEW3];
 $field_whoview->addOptionArray($options);
 $field_whoview->setDescription(_AM_XPETITIONS_WHOVIEW_ADDFORM_DSC);
 $addform->addElement($field_whoview, true);
@@ -60,7 +60,7 @@ $addform->addElement($field_date);
 
 
 // Affichage d'une séparation
-$addform->insertBreak(_AM_XPETITIONS_BREAK_ADDFORM,'bg3');
+$addform->insertBreak(_AM_XPETITIONS_BREAK_ADDFORM, 'bg3');
 
 // Insérer/Modifier une pétition papier
 $max_upload = $xoopsModuleConfig['upload_size'];
@@ -70,9 +70,8 @@ $addform->addElement($field_file);
 
 // Bouton Ajouter/soumettre
 $button_tray = new XoopsFormElementTray('');
-$button_tray->addElement(new XoopsFormButton('','post', _AM_XPETITIONS_SUBMIT, 'submit'));
+$button_tray->addElement(new XoopsFormButton('', 'post', _AM_XPETITIONS_SUBMIT, 'submit'));
 $addform->addElement($button_tray);
 
 // Affichage du formulaire
 $addform->display();
-?>

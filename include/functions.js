@@ -7,7 +7,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org/>          */
 /* ******************************************* */
 
 /* <!-- DEBUT DE CONTROLE D'EMAIL --> */

@@ -16,11 +16,11 @@ to be working under mozilla.
                     onclick="javasript:this.src='server.php?'+Math.random();" 
                     alt="CAPTCHA image">
             </td>
-            <td><input maxlength="4" size="4" name="captcha" type="text" /></td>
+            <td><input maxlength="4" size="4" name="captcha" type="text" ></td>
         </tr>
     </table>
-    <input type="reset" />&nbsp;<input type="submit" />
-    <input type="hidden" name="validate" value="1" />
+    <input type="reset" >&nbsp;<input type="submit" >
+    <input type="hidden" name="validate" value="1" >
 </form> 
 
 <?php
@@ -29,9 +29,9 @@ if ( ! $_POST['validate']) {
     die;
 }
 
-require_once ( './class.captcha_x.php');
+require_once __DIR__ . '/class.captcha_x.php';
 
-$captcha = &new captcha_x ();
+$captcha = new captcha_x ();
 if ( ! $captcha->validate ( $_POST['captcha'])) {
     echo '<p>You\'re bot.</p>';
 } else {

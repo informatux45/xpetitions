@@ -8,8 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
-define("_AM_XPETITIONS_VERSION",	"1.10");
-?>
+define('_AM_XPETITIONS_VERSION', '1.10');

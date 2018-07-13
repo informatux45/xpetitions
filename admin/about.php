@@ -8,20 +8,19 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
-include_once("header.inc.php");
+require_once __DIR__ . '/header.inc.php';
 
 //----------------------------------------------------------------------------//
 //
-if(!isset($_REQUEST['op'])) {
-xoops_cp_header();
-xpetitions_adminmenu('about.php');
-?>
+if (!isset($_REQUEST['op'])) {
+    xoops_cp_header();
+    xpetitions_adminmenu('about.php'); ?>
 
-<!-- <br /> -->
+<!-- <br> -->
 <table border="0" cellspacing="1" style="width: 100%;" class="outer">
   <tr>
     <th><?php echo _AM_XPETITIONS_ABOUT_1; ?></th>
@@ -33,14 +32,14 @@ xpetitions_adminmenu('about.php');
   </tr>
 </table>
 
-<br />
+<br>
 <table border="0" cellspacing="1" style="width: 100%" class="outer">
   <tr>
     <th colspan="2">Informations Version</th>
   </tr>
   <tr>
     <td class="head" width="100">Version</td>
-	<td class="odd"> <?php echo $xoopsModule->getVar('name'); ?> : <?php echo number_format(round($xoopsModule->getVar('version')/100 , 2), 2); ?></td>
+	<td class="odd"> <?php echo $xoopsModule->getVar('name'); ?> : <?php echo number_format(round($xoopsModule->getVar('version')/100, 2), 2); ?></td>
   </tr>
   <tr>
     <td class="head" width="100"><?php echo _AM_XPETITIONS_ABOUT_2; ?></td>
@@ -51,7 +50,7 @@ xpetitions_adminmenu('about.php');
   <tr>
 </table>
 
-<br />
+<br>
 <table border="0" cellspacing="1" style="width: 100%;" class="outer">
   <tr>
     <th colspan="2"><?php echo _AM_XPETITIONS_ABOUT_3; ?></th>
@@ -76,7 +75,7 @@ xpetitions_adminmenu('about.php');
   </tr>
 </table>
 
-<br />
+<br>
 <table border="0" cellspacing="1" style="width: 100%;" class="outer">
   <tr>
     <th><?php echo _AM_XPETITIONS_ABOUT_6; ?></th>
@@ -91,6 +90,6 @@ xpetitions_adminmenu('about.php');
 <?php
 
 xpetitions_adminfooter();
-xoops_cp_footer();
+    xoops_cp_footer();
 }
 ?>

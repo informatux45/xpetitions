@@ -3,7 +3,7 @@
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //
-//                       <http://www.xoops.org/>                             //
+//                       <https://www.xoops.org>                             //
 //  ------------------------------------------------------------------------ //
 //  This program is free software; you can redistribute it and/or modify     //
 //  it under the terms of the GNU General Public License as published by     //
@@ -26,7 +26,7 @@
 //  ------------------------------------------------------------------------ //
 
 // includes
-include_once("header.inc.php");
+require_once __DIR__ . '/header.inc.php';
 
 xoops_cp_header();
 global $xoopsConfig, $xoopsModuleConfig, $xoopsModule, $xoopsDB;
@@ -40,10 +40,10 @@ $dir_upload_xpetitions = XOOPS_ROOT_PATH . $xoopsModuleConfig['path_upload'] . '
 $dir_csv_xpetitions    = XOOPS_ROOT_PATH . '/modules/' . $xoopsModule->getVar('dirname') . '/csv/';
 
 // Recuperer les valeurs de la synthese
-$xpetitions_petitions_create   = getPetitionsCount() ? getPetitionsCount() : '0';
-$xpetitions_petitions_online   = getPetitionsCountOnline(1) ? getPetitionsCountOnline(1) : '0';
-$xpetitions_petitions_offline  = getPetitionsCountOnline(2) ? getPetitionsCountOnline(2) : '0';
-$xpetitions_petitions_archives = getPetitionsCountOnline(3) ? getPetitionsCountOnline(3) : '0';
+$xpetitions_petitions_create   = getPetitionsCount() ?: '0';
+$xpetitions_petitions_online   = getPetitionsCountOnline(1) ?: '0';
+$xpetitions_petitions_offline  = getPetitionsCountOnline(2) ?: '0';
+$xpetitions_petitions_archives = getPetitionsCountOnline(3) ?: '0';
 
 // Droits du repertoire d'upload
 $dir_upload_xpetitions_writable = @is_writable($dir_upload_xpetitions);
@@ -52,18 +52,19 @@ $dir_upload_xpetitions_writable = @is_writable($dir_upload_xpetitions);
 $dir_csv_xpetitions_writable = @is_writable($dir_csv_xpetitions);
 
 // Version de PHP (upload csv)
-$server_php_version        = phpversion();
-$xpetition_csv_php_version = version_compare($server_php_version, "5.1.0", ">=");
+$server_php_version        = PHP_VERSION;
+$xpetition_csv_php_version = version_compare($server_php_version, '5.1.0', '>=');
 
-$home_info = array($dir_upload_xpetitions,
-		   $xpetitions_petitions_create,
-		   $xpetitions_petitions_online,
-		   $xpetitions_petitions_offline,
-		   $xpetitions_petitions_archives,
-		   $dir_upload_xpetitions_writable,
-		   $dir_csv_xpetitions_writable,
-		   $xpetition_csv_php_version
-		   );
+$home_info = [
+    $dir_upload_xpetitions,
+    $xpetitions_petitions_create,
+    $xpetitions_petitions_online,
+    $xpetitions_petitions_offline,
+    $xpetitions_petitions_archives,
+    $dir_upload_xpetitions_writable,
+    $dir_csv_xpetitions_writable,
+    $xpetition_csv_php_version
+];
 
 xpetitions_adminmenu('index.php', $home_info);
 

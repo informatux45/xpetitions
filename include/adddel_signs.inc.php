@@ -8,19 +8,19 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // includes
-include_once(XOOPS_ROOT_PATH . "/class/xoopsformloader.php");
+include_once XOOPS_ROOT_PATH . '/class/xoopsformloader.php';
 
 // Préparation des tableaux à fournir au formulaire
 $xpetitions_name = getPetitionsInfos();
 
-include("delform.inc.php");
+require __DIR__ . '/delform.inc.php';
 
 // Initialisation du formulaire
-$addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE_ADDFORM, "addform", "signature.php?op=addsign");
+$addform = new XoopsThemeForm(_AM_XPETITIONS_TITLE_ADDFORM, 'addform', 'signature.php?op=addsign');
 
 // Prénom du signataire
 $field_firstname = new XoopsFormText(_AM_XPETITIONS_FNAME_ADDFORM, 'firstname', 35, 50, '');
@@ -63,17 +63,16 @@ $addform->addElement($field_date, true);
 $field_petition_name = new XoopsFormSelect(_AM_XPETITIONS_PETITIONS_ADDFORM, 'name_petition', '');
 $xpetitions_name = getPetitionsInfos();
 foreach ($xpetitions_name as $row) {
-	$xpetitions_liste = array($row['name'] => substr($myts->DisplayTarea($row['title']),0, 50));
-	$field_petition_name->addOptionArray($xpetitions_liste);
+    $xpetitions_liste = [$row['name'] => substr($myts->DisplayTarea($row['title']), 0, 50)];
+    $field_petition_name->addOptionArray($xpetitions_liste);
 }
 $addform->addElement($field_petition_name, true);
 
 // Bouton Ajouter/soumettre
 $button_tray = new XoopsFormElementTray('');
-$button_tray->addElement(new XoopsFormButton('','post', _AM_XPETITIONS_SUBMIT, 'submit'));
+$button_tray->addElement(new XoopsFormButton('', 'post', _AM_XPETITIONS_SUBMIT, 'submit'));
 $addform->addElement($button_tray);
 
 // Affichage du formulaire
-echo '<br />';
+echo '<br>';
 $addform->display();
-?>

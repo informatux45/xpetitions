@@ -8,7 +8,7 @@
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
-/*            <http://www.xoops.org/>          */
+/*            <https://www.xoops.org>          */
 /* ******************************************* */
 
 // formulaire double combo - choix dans la liste des signatures
@@ -27,24 +27,24 @@ var group=new Array();
 $i = 0;
 $groups = '';
 foreach ($xpetitions_infos as $row) {
-	echo '<option value="'.$row['name'].'">'.$myts->DisplayTarea($row['title']).'</option>';
-	$j = 0;
-	$xpetitions_signs_details = getSignaturesDetails($row['name'], 2);
-	foreach ($xpetitions_signs_details as $row) {
-		$xpetitions_group_signs[$i][$j] = $row['name'].' '.$row['prenom'].' ('.$row['job'].')';
-		$xpetitions_group_value[$i][$j] = $row['id'];
-		$groups .= 'group['.$i.']['.$j.'] = new Option("'.$xpetitions_group_signs[$i][$j].'","'.$xpetitions_group_value[$i][$j].'");';
-		$j++;
-	}
-	$i++;
+    echo '<option value="'.$row['name'].'">'.$myts->DisplayTarea($row['title']).'</option>';
+    $j = 0;
+    $xpetitions_signs_details = getSignaturesDetails($row['name'], 2);
+    foreach ($xpetitions_signs_details as $row) {
+        $xpetitions_group_signs[$i][$j] = $row['name'].' '.$row['prenom'].' ('.$row['job'].')';
+        $xpetitions_group_value[$i][$j] = $row['id'];
+        $groups .= 'group['.$i.']['.$j.'] = new Option("'.$xpetitions_group_signs[$i][$j].'","'.$xpetitions_group_value[$i][$j].'");';
+        $j++;
+    }
+    $i++;
 }
 echo '</select>&nbsp;&nbsp;&nbsp;';
 ?>
 
 <select name="signs" size="5" style="width: 250px;">
 
-</select><br /><br />
-<input type="submit" value="<?php echo _AM_XPETITIONS_DEL_SIGN; ?>" />
+</select><br><br>
+<input type="submit" value="<?php echo _AM_XPETITIONS_DEL_SIGN; ?>" >
 </fieldset>
 </div>
 
@@ -56,10 +56,10 @@ for (i=0; i<groups; i++)
 group[i]=new Array();
 
 <?php
-if ($groups == '') {
-	echo '';
+if ('' == $groups) {
+    echo '';
 } else {
-	echo $groups;
+    echo $groups;
 }
 ?>
 
