@@ -17,7 +17,7 @@ $path = dirname(dirname(dirname(dirname(__FILE__))));
 global $xoopsModule, $xoopsUser;
 
 $dirname        = basename(dirname(dirname(__FILE__)));
-$module_handler = xoops_gethandler('module');
+$module_handler = xoops_getHandler('module');
 $module         = $module_handler->getByDirname($dirname);
 $pathIcon32     = $module->getInfo('icons32');
 $pathLanguage   = $path . $module->getInfo('dirmoduleadmin');

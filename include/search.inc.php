@@ -16,7 +16,7 @@ function xpetitions_search($queryarray, $andor, $limit, $offset, $userid)
     global $xoopsDB, $xoopsModule, $xoopsModuleConfig;
     
     $sql = "SELECT id, title, description, date FROM ".$xoopsDB->prefix('xpetitions_petitions')." WHERE ";
-    list($CID, $pagetitle, $pageheadline, $page, $htmlfile) = $xoopsDB->fetchrow($sql);
+    list($CID, $pagetitle, $pageheadline, $page, $htmlfile) = $xoopsDB->fetchRow($sql);
 
     // because count() returns 1 even if a supplied variable
     // is not an array, we must check if $querryarray is really an array

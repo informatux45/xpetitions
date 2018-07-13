@@ -45,7 +45,7 @@ function xpetitions_adminmenu($navigation = 'index.php', $home_info = [])
                 // --- Affichage de boutons
                 // ------------------------------------
                 $indexAdmin->addItemButton(_AM_XPETITIONS_CREATE_BUTTON, 'petitions.php?op=form', 'add', '');
-        $indexAdmin->addInfoBoxLine($box1, $indexAdmin->renderbutton('left'), '', '', 'default');
+        $indexAdmin->addInfoBoxLine($box1, $indexAdmin->renderButton('left'), '', '', 'default');
                 
                 // ------------------------------------
         // --- Repertoire d'upload
