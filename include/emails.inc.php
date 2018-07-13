@@ -47,4 +47,3 @@ $emails->addElement($button_tray);
 
 // Affichage du formulaire
 $emails->display();
-?> 

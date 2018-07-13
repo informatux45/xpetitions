@@ -41,4 +41,3 @@ $latecomer->addElement($button_tray);
 
 // Affichage du formulaire
 $latecomer->display();
-?> 

@@ -65,4 +65,3 @@ $captcha->addElement($button_tray);
 
 // Affichage du formulaire
 $captcha->display();
-?> 

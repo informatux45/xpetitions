@@ -167,4 +167,3 @@ $fields->addElement($button_tray);
 
 // Affichage du formulaire
 $fields->display();
-?> 
