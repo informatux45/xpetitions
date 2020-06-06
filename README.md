@@ -5,7 +5,6 @@
 
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/mambax7/xpetitions.svg?style=flat)](https://scrutinizer-ci.com/g/mambax7/xpetitions/?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/2d27c0023ee54f0b9ba2b5d17a68b2a5)](https://www.codacy.com/app/mambax7/xpetitions)
-[![Code Climate](https://img.shields.io/codeclimate/github/mambax7/xpetitions.svg?style=flat)](https://codeclimate.com/github/mambax7/xpetitions)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/9dc918fe-ea63-4675-832c-8f6c74cdf78f/mini.png)](https://insight.sensiolabs.com/projects/9dc918fe-ea63-4675-832c-8f6c74cdf78f)
 
 Description
