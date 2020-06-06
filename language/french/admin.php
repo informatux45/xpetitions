@@ -1,17 +1,17 @@
 <?php
 /* ******************************************* */
 /*                INFORMATUX                   */
-/*         http://www.informatux.com/          */
+/*         http://dev.informatux.com/          */
 /*       SOLUTIONS AND WEB DEVELOPMENT         */
 /*             Patrice BOUTHIER                */
-/*                   2008                      */
+/*                   2020                      */
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
 /*            <https://www.xoops.org>          */
 /* ******************************************* */
 
-define('_AM_XPETITIONS_XOOPS_PRO', 'https://informatux.com/');
+define('_AM_XPETITIONS_XOOPS_PRO', 'https://dev.informatux.com/');
 define('_AM_XPETITIONS_XOOPS_PRO1', 'Support et mise à jour disponible sur ');
 define('_AM_XPETITIONS_XOOPS_PRO2', 'Solutions et développement WEB');
 define('_AM_XPETITIONS_XOOPS_PRO3', "Avez-vous besoin d'aide avec ce module ?");
