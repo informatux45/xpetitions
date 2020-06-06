@@ -1,10 +1,10 @@
 <?php
 /* ******************************************* */
 /*                INFORMATUX                   */
-/*           https://informatux.com/           */
+/*        https://dev.informatux.com/          */
 /*       SOLUTIONS AND WEB DEVELOPMENT         */
 /*             Patrice BOUTHIER                */
-/*                   2008                      */
+/*                   2020                      */
 /* ------------------------------------------- */
 /*    XOOPS - PHP Content Management System    */
 /*         Copyright (c) 2000 XOOPS.org        */
@@ -14,8 +14,8 @@
 // Directory XPETITIONS
 $xpetition_dirname = basename(__DIR__);
 
-$modversion['version']        = '1.21';
-$modversion['module_status']  = 'Beta 1';
+$modversion['version']        = '1.22';
+$modversion['module_status']  = 'Stable';
 $modversion['release_date']   = '2018/07/11';
 $modversion['name']           = _MI_XPETITIONS_NAME;
 $modversion['description']    = _MI_XPETITIONS_DESC;
@@ -33,7 +33,7 @@ $modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
 // System menu
 $modversion['system_menu'] = 1;
 // About
-$modversion['module_website_url']  = 'https://informatux.com/';
+$modversion['module_website_url']  = 'https://dev.informatux.com/';
 $modversion['module_website_name'] = 'INFORMATUX';
 $modversion['status_version']      = 'Stable';
 $modversion['min_php']             = '5.2';
@@ -41,7 +41,7 @@ $modversion['min_xoops']           = '2.5.0';
 $modversion['min_admin']           = '1.1';
 $modversion['min_db']              = ['mysql' => '5.0.7', 'mysqli' => '5.0.7'];
 $modversion['author_realname']     = 'Patrice BOUTHIER';
-$modversion['author_website_url']  = 'https://informatux.com';
+$modversion['author_website_url']  = 'https://dev.informatux.com';
 $modversion['author_website_name'] = 'Consultant informatique';
 $modversion['author_email']        = 'informatux@e.email';
 $modversion['demo_site_url']       = '';
@@ -55,7 +55,7 @@ $modversion['submit_feature']      = 'https://github.com/informatux45/xpetitions
 $modversion['contributors']['developers'][0]['name']    = 'Patrice Bouthier';
 $modversion['contributors']['developers'][0]['uname']   = 'webmaster';
 $modversion['contributors']['developers'][0]['email']   = 'informatux@e.email';
-$modversion['contributors']['developers'][0]['website'] = 'https://informatux.com';
+$modversion['contributors']['developers'][0]['website'] = 'https://dev.informatux.com';
 
 // Translators
 $modversion['contributors']['translators'][0]['language'] = 'English';
@@ -74,7 +74,7 @@ $modversion['contributors']['translators'][1]['website']  = '//www.takeaweb.it';
 $modversion['contributors']['testers'][0]['name']    = 'Patrice Bouthier';
 $modversion['contributors']['testers'][0]['uname']   = 'webmaster';
 $modversion['contributors']['testers'][0]['email']   = 'informatux@e.email';
-$modversion['contributors']['testers'][0]['website'] = 'https://informatux.com';
+$modversion['contributors']['testers'][0]['website'] = 'https://dev.informatux.com';
 
 $modversion['contributors']['testers'][1]['language'] = 'Italian';
 $modversion['contributors']['testers'][1]['name']     = 'Francesco Mulassano';
@@ -86,7 +86,7 @@ $modversion['contributors']['testers'][1]['website']  = '//www.takeaweb.it';
 $modversion['contributors']['documenters'][0]['name']    = 'Patrice Bouthier';
 $modversion['contributors']['documenters'][0]['uname']   = 'webmaster';
 $modversion['contributors']['documenters'][0]['email']   = 'informatux@e.email';
-$modversion['contributors']['documenters'][0]['website'] = 'https://informatux.com';
+$modversion['contributors']['documenters'][0]['website'] = 'https://dev.informatux.com';
 
 // Mysql file
 $modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
