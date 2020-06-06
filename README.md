@@ -100,7 +100,7 @@ Feedback
 ========
 
 Utilisez le site du dépot d'INFORMATUX:
-https://github.com/informatux45/xpetitions
+https://dev.informatux.com
 
 --
 
