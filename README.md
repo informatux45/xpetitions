@@ -4,6 +4,7 @@
 [![Software License](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/mambax7/xpetitions.svg?style=flat)](https://scrutinizer-ci.com/g/mambax7/xpetitions/?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/2d27c0023ee54f0b9ba2b5d17a68b2a5)](https://www.codacy.com/app/mambax7/xpetitions)
+[![Tutorial Available](https://xoops.org/images/tutorial-available-blue.svg)](https://xoops.gitbook.io/xoops-xpetitions-module/)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/9dc918fe-ea63-4675-832c-8f6c74cdf78f/mini.png)](https://insight.sensiolabs.com/projects/9dc918fe-ea63-4675-832c-8f6c74cdf78f)
 
 Description
@@ -100,9 +101,11 @@ Feedback
 Utilisez le site du dépot d'INFORMATUX:
 https://dev.informatux.com
 
+
+DEV By INFORMATUX
+===============
+Retrouvez tous mes développements sur https://dev.informatux.com/
+
 --
-
-[![Tutorial Available](https://xoops.org/images/tutorial-available-blue.svg)](https://xoops.gitbook.io/xoops-xpetitions-module/) Tutorial: see [GitBook](https://xoops.gitbook.io/xoops-xpetitions-module/).
-
 
 Xoops sur GITHUB : https://github.com/XOOPS
