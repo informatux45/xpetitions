@@ -1,7 +1,7 @@
 =========================================================
 2020/06/06  1.22 Stable
 =========================================================
-- Update infos
+- Updated infos (changelog, version, ...)
 
 =========================================================
 2018/11/18  1.21 Beta 1
@@ -30,9 +30,9 @@ Dev: XOOPS 2.5.9, PHP 7.2.7
 - short array syntax (mamba)
 - Yoda notation (mamba)
 - started conversion to XMF (mamba)
-    &nbsp;&nbsp;- updated addInfoBoxLine entries (mamba)
-    &nbsp;&nbsp;- displayNavigation(basename(__FILE__))  (mamba)
-    &nbsp;&nbsp;- changed to ->displayButton('left') (mamba)
+    - updated addInfoBoxLine entries (mamba)
+    - displayNavigation(basename(__FILE__))  (mamba)
+    - changed to ->displayButton('left') (mamba)
 
 
 =========================================================
@@ -45,13 +45,13 @@ Dev: XOOPS 2.5.9, PHP 7.2.7
 =========================================================
 
 Modification du module XPETITIONS pour qu'il fonctionne sous XOOPS 2.5.x.
-Mise en conformite du modules avec le Framework "ModuleClasses" en version 1.1.
+Mise en conformité du modules avec le Framework "ModuleClasses" en version 1.1.
 [ADMIN] Modification de l'accueil du module pour fonctionnement avec ModuleAdmin 1.1
-[ADMIN] Creation de la page d'index
-[ADMIN] Creation de la page "about"
-[ADMIN] Creation de boutons d'action sur toutes les pages admin
-[ADMIN] Ajout d'un bouton "creer le repertoire" d'upload des fichiers joints aux petitions
-[ADMIN - client] Nombreux tests pour corrections de bugs
+[ADMIN] Création de la page d'index
+[ADMIN] Création de la page "about"
+[ADMIN] Création de boutons d'action sur toutes les pages admin
+[ADMIN] Ajout d'un bouton "créer le repertoire" d'upload des fichiers joints aux petitions
+[ADMIN - CLIENT] Nombreux tests pour corrections de bugs
 [ADMIN] Normalisation du module (spec XOOPS)
 
 
@@ -63,24 +63,25 @@ Le module a ete traduit en italien par Francesco (http://takeaweb.it).
 Francesco a egalement developpe quelques fonctionnalites supplementaires e XPETITIONS. Un grand merci e Francesco.
 
 Voici les nouveautes de cette version :
-[ADMIN] Gestion des captchas (choix de 3 captchas)
-[ADMIN] Gestion de l'affichage des signatures (colonne, ligne, informations dans les signatures)
-[ADMIN] Tableau de bord avec detection des parametres du bon fonctionnement du module
-[ADMIN] Modification des icenes de modification et de suppression
-[ADMIN] Modification de la couleur des onglets (survol)
-[ADMIN] Modification de l'affichage de l'aide (icene)
-[ADMIN] Creation d'une petition : choix de la visualisation des signatures par groupes (tous, utilisateurs enregistres, admin)
+Le module a été traduit en italien par Francesco (http://takeaweb.it).
+Francesco à également développé quelques fonctionnalités supplémentaires à XPETITIONS. Un grand merci à Francesco.
+- [ADMIN] Gestion des captchas (choix de 3 captchas)
+- [ADMIN] Gestion de l'affichage des signatures (colonne, ligne, informations dans les signatures)
+- [ADMIN] Tableau de bord avec détection des paramétres du bon fonctionnement du module
+- [ADMIN] Modification des icônes de modification et de suppression
+- [ADMIN] Modification de la couleur des onglets (survol)
+- [ADMIN] Modification de l'affichage de l'aide (icene)
+- [ADMIN] Création d'une petition : choix de la visualisation des signatures par groupes (tous, utilisateurs enregistres, admin)
 
-[FRONT] Signatures : Mise en gras de la lettre des signataires consultes (modifiable dans la feuille de style du module)
-[FRONT] Signatures : Affichage selon parametres (modifiable dans l'administration)
-[FRONT] Signatures : Contrele de l'affichage des signatures suivant parametres de groupe (tous, utilisateurs enregistres, admin)
+- [FRONT] Signatures : Mise en gras de la lettre des signataires consultés (modifiable dans la feuille de style du module)
+- [FRONT] Signatures : Affichage selon paramétres (modifiable dans l'administration)
+- [FRONT] Signatures : Contrôle de l'affichage des signatures suivant paramétres de groupe (tous, utilisateurs enregistrés, admin)
 
-[DIVERS] Nouveau logo
-[DIVERS] Modification des l'ajout des antislashs dans les chaenes
-[DIVERS] Une nouvelle table SQL (options des captchas et des signatures)
-[DIVERS] Traduction du module en italien
-[DIVERS] Traduction du fichier mysql
-
+- [DIVERS] Nouveau logo
+- [DIVERS] Modification dès l'ajout des antislashs dans les chaînes
+- [DIVERS] Une nouvelle table SQL (options des captchas et des signatures)
+- [DIVERS] Traduction du module en italien
+- [DIVERS] Traduction du fichier mysql
 
 =========================================================
 2008/09/11  1.01 Final
@@ -93,11 +94,11 @@ Corrections mineures.
 2008/07/05  1.00 Final
 =========================================================
 
-1. [ADMIN] Nouvel onglet admin "captcha" - preferences des images captcha par l'administration
+1. [ADMIN] Nouvel onglet admin "captcha" - préférences des images captcha par l'administration
 2. [ADMIN] Choix de deux captchas (image ou texte)
-3. [ADMIN] Amelioration visuel de l'aide en ligne
-4. [ADMIN] Choix de l'affichage des signataires (vertical ou separes par des virgules)
-5. [CLIENT] Affichage des signataires : lettre selectionnee dans une couleur differente 
+3. [ADMIN] Amélioration visuel de l'aide en ligne
+4. [ADMIN] Choix de l'affichage des signataires (vertical ou séparés par des virgules)
+5. [CLIENT] Affichage des signataires : lettre sélectionnée dans une couleur différente 
 
 
 =========================================================
@@ -105,9 +106,9 @@ Corrections mineures.
 =========================================================
 
 1. Nouvel onglet admin "email" - gestion des emails par l'administration
-2. Nouvel onglet admin "captcha" - preferences des images captcha par l'administration
-3. Validation des signatures par double validation sans email - reglages par les preferences
-4. Choix des editeurs pour la saisie de la petition 
+2. Nouvel onglet admin "captcha" - préférences des images captcha par l'administration
+3. Validation des signatures par double validation sans email - réglages par les préférences
+4. Choix des éditeurs pour la saisie de la pétition 
 
 
 =========================================================
@@ -117,21 +118,20 @@ Corrections mineures.
 Version stable du module XPETITIONS :
 
 - Stable : Passage en version final 0.18 du module xpetitions
-Un bug corrige (conflit de recuperation de variable rencontre sur quelques versions de xoops)
-- RC2 : Passage du module en version RC2. Correction effectuee sur le nom de la session du captcha qui rentrait en conflit avec d'autres captcha deje embarque par d'autres modules xoops.
-- RC1 : Suite aux retours effectues par les utilisateurs du module, "XPETITIONS" passe en version RC1 0.18. Le module tend vers une version stable prochainement. Merci pour tous les retours effectues
-- BETA 7 : Correction de la page index d'une petition qui affichait les icenes de modification et suppression pour les groupes autres que les administrateurs
+Un bug corrigé (conflit de récupération de variable rencontré sur quelques versions de xoops)
+- RC2 : Passage du module en version RC2. Correction effectuée sur le nom de la session du captcha qui rentrait en conflit avec d'autres captchas déjà embarqués par d'autres modules xoops.
+- RC1 : Suite aux retours effectués par les utilisateurs du module, "XPETITIONS" passe en version RC1 0.18. Le module tend vers une version stable prochainement. Merci pour tous les retours effectués
+- BETA 7 : Correction de la page index d'une pétition qui affichait les icônes de modification et suppression pour les groupes autres que les administrateurs
 - BETA 6 : Corrections pour xoops 2.0.18
 - BETA 5 : corrections de bug pour fonctionnement avec Xoops 2.0.18
 - BETA 4 : Correction du fichier index.php (accueil du module) - Erreur d'assignation d'une variable
-- BETA 3 : Modification de la verification de l'email e la signature d'un internaute
-- BETA 2 : Version 0.17 bete 2 compatible xoops 2.0.16. En cours de test pour xoops 2.0.18
-
+- BETA 3 : Modification de la vérification de l'email à la signature d'un internaute
+- BETA 2 : Version 0.17 béta 2 compatible xoops 2.0.16. En cours de test pour xoops 2.0.18
 
 =========================================================
 2008/01/23  0.17 Beta
 =========================================================
 
 Version intermediaire avant version stable 0.18.
-Pour connaitre les fonctionnalites du modules, voir la description dans la categorie Sommaire.
-Cette version fonctionne sur xoops 2.0.16 (hacke avec multilangues 2.0.7 final de Smartfactory) et fonctionnera pleinement avec xoops 2.0.18 dans la version stable. 
+Pour connaître les fonctionnalités du module, voir la description dans la catégorie Sommaire.
+Cette version fonctionne sur xoops 2.0.16 (hackée avec multilangues 2.0.7 final de Smartfactory) et fonctionnera pleinement avec xoops 2.0.18 dans la version stable. 
